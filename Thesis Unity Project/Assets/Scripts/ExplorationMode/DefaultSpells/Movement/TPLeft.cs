@@ -17,7 +17,7 @@ public class TPLeft :Action
             this.enabled = true;
             this.isRunning = true;
             Vector2 destTile = this.Wizard.transform.position;
-            destTile.x -= 0.5f;
+            destTile.x -= 50.0f;
             this.wizardmovement.WalkToDestinationTile(destTile);
         }
     }
