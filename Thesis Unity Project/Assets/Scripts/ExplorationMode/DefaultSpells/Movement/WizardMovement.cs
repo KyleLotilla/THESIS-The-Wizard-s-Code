@@ -16,7 +16,7 @@ public class WizardMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector2 srcPosition;
     private Vector2 destPosition;
-    private float delta = 0.0f;
+    private float delta = 1.0f;
 
 
     // Start is called before the first frame update
