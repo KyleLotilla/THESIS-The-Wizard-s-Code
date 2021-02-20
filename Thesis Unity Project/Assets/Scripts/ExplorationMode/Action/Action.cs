@@ -7,18 +7,6 @@ abstract public class Action : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] public GameObject Wizard { get; set; }
 
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public abstract void Execute();
     public abstract bool isFinishedExecuting();
 }
