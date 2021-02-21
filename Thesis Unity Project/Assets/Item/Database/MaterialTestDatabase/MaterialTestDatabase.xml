@@ -1,0 +1,14 @@
+<MaterialDatabase>
+	<Material>
+		<ID>0</ID>
+		<Name>Metal</Name>
+		<Description>Testing Metal</Description>
+		<Icon>metalTest</Icon>
+	</Material>
+	<Material>
+		<ID>1</ID>
+		<Name>Red Metal</Name>
+		<Description>Testing Red Metal</Description>
+		<Icon>redMetalTest</Icon>
+	</Material>
+</MaterialDatabase>
