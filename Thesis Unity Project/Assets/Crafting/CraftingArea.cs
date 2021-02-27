@@ -5,11 +5,11 @@ using UnityEngine;
 public class CraftingArea : MonoBehaviour
 {
     [SerializeField]
-    private List<InventorySlotSpace> craftingSlotSpaces;
+    private List<InventoryDropSpace> craftingSlotSpaces;
     [SerializeField]
-    private InventorySlotSpace resultSlotSpace;
+    private InventoryDropSpace resultDropSpace;
     [SerializeField]
-    private SpellSlot resultSpellSlot;
+    private SpellInventorySlot resultSpellSlot;
     [SerializeField]
     private CraftingDatabase craftingDatabase;
     [SerializeField]
@@ -24,10 +24,10 @@ public class CraftingArea : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (InventorySlotSpace slotSpace in craftingSlotSpaces)
+        foreach (InventoryDropSpace dropSpace in craftingSlotSpaces)
         {
-            slotSpace.OnSlotFilled += ShowResultSpell;
-            slotSpace.OnSlotMove += ShowResultSpell;
+            dropSpace.OnSlotFilled += ShowResultSpell;
+            dropSpace.OnSlotEmpty += ShowResultSpell;
         }
     }
 
@@ -38,21 +38,21 @@ public class CraftingArea : MonoBehaviour
 
     public void ShowResultSpell()
     {
-        if (resultSlotSpace.slot != null)
+        if (resultDropSpace.slot != null)
         {
             resultSpellSlot = null;
-            GameObject previousResultSlot = resultSlotSpace.slot;
-            resultSlotSpace.EmptySlotSpace();
+            GameObject previousResultSlot = resultDropSpace.slot;
+            resultDropSpace.slot = null;
             DestroyImmediate(previousResultSlot);
         }
         ingredients = new List<Material>();
 
-        foreach (InventorySlotSpace slotSpace in craftingSlotSpaces)
+        foreach (InventoryDropSpace slotSpace in craftingSlotSpaces)
         {
             GameObject slot = slotSpace.slot;
             if (slot != null)
             {
-                MaterialSlot materialSlot = slot.GetComponent<MaterialSlot>();
+                MaterialInventorySlot materialSlot = slot.GetComponent<MaterialInventorySlot>();
                 if (materialSlot != null)
                 {
                     if (materialSlot.material != null)
@@ -71,13 +71,13 @@ public class CraftingArea : MonoBehaviour
                 Spell resultSpell = spellDatabase.GetSpell(result);
                 if (resultSpell != null)
                 {
-                    GameObject resultSpellObject = Instantiate(spellSlotTemplate, resultSlotSpace.transform);
-                    resultSpellSlot = resultSpellObject.GetComponent<SpellSlot>();
+                    GameObject resultSpellObject = Instantiate(spellSlotTemplate, resultDropSpace.transform);
+                    resultSpellSlot = resultSpellObject.GetComponent<SpellInventorySlot>();
                     if (resultSpellSlot != null)
                     {
                         resultSpellSlot.spell = resultSpell;
                         resultSpellSlot.isDraggable = false;
-                        resultSlotSpace.FillSlotSpace(resultSpellObject);
+                        resultDropSpace.slot = resultSpellObject;
                     }
                 }
             }
@@ -86,10 +86,10 @@ public class CraftingArea : MonoBehaviour
 
     public void CraftSpell()
     {
-        foreach (InventorySlotSpace slotSpace in craftingSlotSpaces)
+        foreach (InventoryDropSpace slotSpace in craftingSlotSpaces)
         {
             GameObject slot = slotSpace.slot;
-            slotSpace.EmptySlotSpace();
+            slotSpace.slot = null;
             if (slot != null)
             {
                 DestroyImmediate(slot);
@@ -110,7 +110,7 @@ public class CraftingArea : MonoBehaviour
         }
 
 
-        resultSlotSpace.EmptySlotSpace();
+        resultDropSpace.slot = null;
         DestroyImmediate(resultSpellSlot.gameObject);
     }
 }

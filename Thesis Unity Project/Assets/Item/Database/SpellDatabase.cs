@@ -56,6 +56,11 @@ public class SpellDatabase : XMLDatabase
                     spell.icon = Resources.Load<Sprite>(spell.pathToIcon);
                 }
 
+                if (element.Elements("ActionSlot").Any())
+                {
+                    spell.pathToActionSlot = element.Element("ActionSlot").Value;
+                }
+
                 spells.Add(spell.spellID, spell);
             }
         }
@@ -72,6 +77,7 @@ public class SpellDatabase : XMLDatabase
             spellCopy.description = spell.description;
             spellCopy.icon = spell.icon;
             spellCopy.pathToIcon = spell.pathToIcon;
+            spellCopy.pathToActionSlot = spell.pathToActionSlot;
             return spellCopy;
         }
         else

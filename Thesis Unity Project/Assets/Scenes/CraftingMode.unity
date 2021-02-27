@@ -844,7 +844,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 7af02d802e4e7ab48957f354c9fe2fd0, type: 2}
   slotTemplate: {fileID: 3872191494469465374, guid: c08c5407fec1fa44589b4e780ad3b92f,
     type: 3}
-  slotSpaceTemplate: {fileID: 7195294331935169550, guid: bce903bbc64dce34992521046c57456d,
+  dropSpaceTemplate: {fileID: 7195294331935169550, guid: bce903bbc64dce34992521046c57456d,
     type: 3}
 --- !u!1001 &886689651
 PrefabInstance:
@@ -1798,7 +1798,7 @@ MonoBehaviour:
   - {fileID: 1362211718}
   - {fileID: 835499264}
   - {fileID: 1309316797}
-  resultSlotSpace: {fileID: 54448819}
+  resultDropSpace: {fileID: 54448819}
   resultSpellSlot: {fileID: 0}
   craftingDatabase: {fileID: 11400000, guid: a95d6d2e7e23ed34c9d8e5017fd2dd75, type: 2}
   spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}

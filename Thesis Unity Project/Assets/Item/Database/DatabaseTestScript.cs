@@ -15,7 +15,8 @@ public class DatabaseTestScript : MonoBehaviour
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
-
+        Spell fireBall = spellDatabase.GetSpell(0);
+        spellInventory.EquipSpell(fireBall);
     }
 
     // Update is called once per frame
