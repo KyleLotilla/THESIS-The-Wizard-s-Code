@@ -6,4 +6,25 @@
 		<Icon>fireballIcon</Icon>
 		<ActionSlot>Spell/Action Slots/ShootFireball</ActionSlot>
 	</Spell>
+	<Spell>
+		<ID>1</ID>
+		<Name>Electroshock</Name>
+		<Description>Shoot an electric shock</Description>
+		<Icon>Spell/Icons/Electroshock</Icon>
+		<ActionSlot>Spell/Action Slots/ShootElectroshock</ActionSlot>
+	</Spell>
+	<Spell>
+		<ID>2</ID>
+		<Name>Waterball</Name>
+		<Description>Shoot a water ball</Description>
+		<Icon>Spell/Icons/Waterball</Icon>
+		<ActionSlot>Spell/Action Slots/ShootWaterBall</ActionSlot>
+	</Spell>
+	<Spell>
+		<ID>3</ID>
+		<Name>Ice Shard</Name>
+		<Description>Shoot an ice shard</Description>
+		<Icon>Spell/Icons/IceShard</Icon>
+		<ActionSlot>Spell/Action Slots/ShootIceShard</ActionSlot>
+	</Spell>
 </SpellDatabase>
