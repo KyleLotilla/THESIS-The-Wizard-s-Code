@@ -1,9 +1,0 @@
-<SpellDatabase>
-	<Spell>
-		<ID>0</ID>
-		<Name>Fireball</Name>
-		<Description>Testing Fireball</Description>
-		<Icon>fireballIcon</Icon>
-		<ActionSlot>Spell/Action Slots/ShootFireball</ActionSlot>
-	</Spell>
-</SpellDatabase>
