@@ -1,0 +1,10 @@
+<CraftingDatabase>
+	<Recipe>
+		<Ingredients>
+			<ID>0</ID>
+			<ID>0</ID>
+			<ID>1</ID>
+		</Ingredients>
+		<Result>0</Result>
+	</Recipe>
+</CraftingDatabase>
