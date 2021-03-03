@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  FireBallPrefab: {fileID: 0}
+  FireBallPrefab: {fileID: 1955495123168377924, guid: dc6940fb6c0b5b7469925d0548a144fe,
+    type: 3}
   FireBallSpeed: 0
 --- !u!1001 &3893662681427370443
 PrefabInstance:
@@ -22,6 +23,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1773430049684935254, guid: 68614be7982a9274bb78c4b004da192c,
+        type: 3}
+      propertyPath: m_Text
+      value: Shoot Fireball
+      objectReference: {fileID: 0}
     - target: {fileID: 8394697629223760116, guid: 68614be7982a9274bb78c4b004da192c,
         type: 3}
       propertyPath: m_Name
