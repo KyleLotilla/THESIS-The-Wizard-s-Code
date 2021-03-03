@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  IceShardPrefab: {fileID: 0}
+  IceShardPrefab: {fileID: 1203172976080195828, guid: ca5c9947e1438b0459ddd0f3e6448962,
+    type: 3}
   IceShardSpeed: 0
 --- !u!1001 &3839240530235157047
 PrefabInstance:
@@ -25,12 +26,12 @@ PrefabInstance:
     - target: {fileID: 1773430049684935254, guid: 68614be7982a9274bb78c4b004da192c,
         type: 3}
       propertyPath: m_Text
-      value: Shoot Ice Shard
+      value: Shoot Ice Beam
       objectReference: {fileID: 0}
     - target: {fileID: 8394697629223760116, guid: 68614be7982a9274bb78c4b004da192c,
         type: 3}
       propertyPath: m_Name
-      value: ShootIceShard
+      value: ShootIceBeam
       objectReference: {fileID: 0}
     - target: {fileID: 8394697629223760117, guid: 68614be7982a9274bb78c4b004da192c,
         type: 3}

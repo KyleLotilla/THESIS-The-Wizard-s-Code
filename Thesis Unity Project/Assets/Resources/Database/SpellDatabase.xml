@@ -23,8 +23,8 @@
 	<Spell>
 		<ID>3</ID>
 		<Name>Ice Shard</Name>
-		<Description>Shoot an ice shard</Description>
-		<Icon>Spell/Icons/IceShard</Icon>
-		<ActionSlot>Spell/Action Slots/ShootIceShard</ActionSlot>
+		<Description>Shoot an ice beam</Description>
+		<Icon>Spell/Icons/Ice Beam</Icon>
+		<ActionSlot>Spell/Action Slots/ShootIceBeam</ActionSlot>
 	</Spell>
 </SpellDatabase>

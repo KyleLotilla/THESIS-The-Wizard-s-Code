@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  ElectroshockPrefab: {fileID: 0}
+  ElectroshockPrefab: {fileID: 2876813394944768396, guid: 26fd41740f7617649bfe6e3b36c14b5b,
+    type: 3}
   ElectroshockSpeed: 0
 --- !u!1001 &6839280907708146068
 PrefabInstance:
