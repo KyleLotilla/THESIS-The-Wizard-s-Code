@@ -38,6 +38,19 @@ public class WizardMovement : MonoBehaviour
         {
             this.UpdateMovement();
         }
+        #if UNITY_EDITOR
+        else
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                Walk(2.0f);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                Walk(-2.0f);
+            }
+        }
+        #endif
     }
 
     public void Walk(float displacement)
