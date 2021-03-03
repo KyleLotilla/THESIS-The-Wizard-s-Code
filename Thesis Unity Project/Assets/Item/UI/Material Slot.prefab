@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 3872191494469465442}
   canvas: {fileID: 2387194391861102077}
+  _isDraggable: 1
   iconUI: {fileID: 3872191494469465372}
 --- !u!225 &3872191494469465442
 CanvasGroup:
