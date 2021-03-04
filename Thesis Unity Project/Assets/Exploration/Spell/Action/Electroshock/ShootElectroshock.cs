@@ -13,8 +13,15 @@ public class ShootElectroshock : Action
     private float ElectroshockSpeed;
 
     private GameObject ElectroshockInstance;
+    WizardMovement wizardmovement;
     protected override void Execute()
     {
+        this.wizardmovement = this.wizard.GetComponent<WizardMovement>();
+
+        if (this.wizardmovement)
+        {
+            this.wizardmovement.Cast();
+        }
         Transform wizardtransform = this.wizard.transform;
 
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
@@ -46,6 +53,7 @@ public class ShootElectroshock : Action
         {
             if (!(this.ElectroshockInstance))
             {
+                wizardmovement.StopCasting();
                 EndExecution();
             }
         }

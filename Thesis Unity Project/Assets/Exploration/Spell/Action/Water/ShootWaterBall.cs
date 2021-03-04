@@ -13,8 +13,15 @@ public class ShootWaterBall : Action
     private float WaterBallSpeed;
 
     private GameObject WaterBallInstance;
+    WizardMovement wizardmovement;
     protected override void Execute()
     {
+        this.wizardmovement = this.wizard.GetComponent<WizardMovement>();
+
+        if (this.wizardmovement)
+        {
+            this.wizardmovement.Cast();
+        }
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
@@ -44,6 +51,7 @@ public class ShootWaterBall : Action
         {
             if (!(this.WaterBallInstance))
             {
+                wizardmovement.StopCasting();
                 EndExecution();
             }
         }

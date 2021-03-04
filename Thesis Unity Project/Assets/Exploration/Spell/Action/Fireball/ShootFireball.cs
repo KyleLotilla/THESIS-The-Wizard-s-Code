@@ -13,16 +13,16 @@ public class ShootFireball : Action
     private float FireBallSpeed;
 
     private GameObject FireBallInstance;
-    //WizardMovement wizardmovement;
+    WizardMovement wizardmovement;
 
     protected override void Execute()
     {
-        /*this.wizardmovement = this.wizard.GetComponent<WizardMovement>();
+        this.wizardmovement = this.wizard.GetComponent<WizardMovement>();
 
         if (this.wizardmovement)
         {
             this.wizardmovement.Cast();
-        }*/
+        }
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
@@ -53,6 +53,7 @@ public class ShootFireball : Action
         {
             if (!(this.FireBallInstance))
             {
+                wizardmovement.StopCasting();
                 EndExecution();
             }
         }
