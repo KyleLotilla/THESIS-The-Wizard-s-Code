@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7232616395699365967}
   - component: {fileID: 3898183320009657101}
   - component: {fileID: -6924974512132302006}
-  - component: {fileID: -2681766413323755344}
+  - component: {fileID: 6699334022770572779}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Fire
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 2
---- !u!50 &-2681766413323755344
+--- !u!50 &6699334022770572779
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
