@@ -27,9 +27,11 @@ public class FireballMovement : MonoBehaviour
 
         else
         {
+            
             Vector3 position = this.transform.position;
             position.x += this.FireballSpeed * Time.deltaTime;
             this.transform.position = position;
+            Debug.Log("Position: " + this.transform.position);
         }
 
     }

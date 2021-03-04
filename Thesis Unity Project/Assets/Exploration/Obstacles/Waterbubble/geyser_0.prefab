@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1355665610645297422}
   - component: {fileID: 2203078227240994397}
   - component: {fileID: -4113609667345424190}
+  - component: {fileID: 2922625892362158455}
   m_Layer: 0
   m_Name: geyser_0
   m_TagString: Untagged
@@ -109,3 +110,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3125, y: 2.625}
   m_EdgeRadius: 0
+--- !u!114 &2922625892362158455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145711320261481979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337f3c2028e256e4ab31fb6698bc6e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -18,9 +18,17 @@ public class GiantFireCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Water")
+        if(col.gameObject.tag != "Wizard")
         {
-            Destroy(this.gameObject);
+            if (col.gameObject.tag == "Water")
+            {
+                Destroy(this.gameObject);
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                Destroy(col.gameObject);
+            }
         }
     }
 }

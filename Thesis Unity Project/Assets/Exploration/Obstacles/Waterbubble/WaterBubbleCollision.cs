@@ -18,9 +18,17 @@ public class WaterBubbleCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Ice")
+        if (col.gameObject.tag != "Wizard")
         {
-            Destroy(this.gameObject);
-        }
+            if (col.gameObject.tag == "Ice")
+            {
+                Destroy(this.gameObject);
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                Destroy(col.gameObject);
+            }
+        }  
     }
 }
