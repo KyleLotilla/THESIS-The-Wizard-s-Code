@@ -23,12 +23,8 @@ public class IceblockCollision : MonoBehaviour
             if (col.gameObject.tag == "Fire")
             {
                 Destroy(this.gameObject);
-                Destroy(col.gameObject);
             }
-            else
-            {
-                Destroy(col.gameObject);
-            }
+            Destroy(col.gameObject);
         }  
     }
 }

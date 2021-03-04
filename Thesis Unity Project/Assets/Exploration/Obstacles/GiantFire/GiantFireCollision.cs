@@ -23,12 +23,8 @@ public class GiantFireCollision : MonoBehaviour
             if (col.gameObject.tag == "Water")
             {
                 Destroy(this.gameObject);
-                Destroy(col.gameObject);
             }
-            else
-            {
-                Destroy(col.gameObject);
-            }
+            Destroy(col.gameObject);
         }
     }
 }

@@ -23,12 +23,8 @@ public class WaterBubbleCollision : MonoBehaviour
             if (col.gameObject.tag == "Ice")
             {
                 Destroy(this.gameObject);
-                Destroy(col.gameObject);
             }
-            else
-            {
-                Destroy(col.gameObject);
-            }
+            //Destroy(col.gameObject);
         }  
     }
 }

@@ -14,6 +14,7 @@ public class ShootFireball : Action
 
     private GameObject FireBallInstance;
     WizardMovement wizardmovement;
+    private bool spawned = false;
 
     protected override void Execute()
     {
@@ -23,6 +24,11 @@ public class ShootFireball : Action
         {
             this.wizardmovement.Cast();
         }
+    }
+
+    public void SpawnFireball()
+    {
+        spawned = true;
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
@@ -33,7 +39,7 @@ public class ShootFireball : Action
         this.FireBallInstance = Instantiate(this.FireBallPrefab, FireBallPosition, wizardtransform.rotation);
         if (this.FireBallInstance)
         {
-            
+
             FireballMovement fireballmovement = this.FireBallInstance.GetComponent<FireballMovement>();
             if (fireballmovement)
             {
@@ -51,10 +57,16 @@ public class ShootFireball : Action
     {
         if (this.isExecuting)
         {
-            if (!(this.FireBallInstance))
+            Debug.Log(wizardmovement.isCasting.ToString());
+            if (!wizardmovement.isCasting && !spawned)
             {
-                wizardmovement.StopCasting();
+                SpawnFireball();
+            }
+            else if (!(this.FireBallInstance) && spawned)
+            {
+                Debug.Log("Finished Executing");
                 EndExecution();
+                spawned = false;
             }
         }
     }

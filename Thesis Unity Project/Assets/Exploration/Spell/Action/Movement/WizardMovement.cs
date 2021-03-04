@@ -126,6 +126,7 @@ public class WizardMovement : MonoBehaviour
         {
             isCasting = false;
             animator.SetBool("casting", false);
+            Debug.Log("Setting casting to false");
         }
     }
 }
