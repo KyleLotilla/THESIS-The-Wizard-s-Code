@@ -13,15 +13,20 @@ public class ShootWaterBall : Action
     private float WaterBallSpeed;
 
     private GameObject WaterBallInstance;
-    WizardMovement wizardmovement;
+    private WizardMovement wizardmovement;
+    private bool spawned = false;
     protected override void Execute()
     {
         this.wizardmovement = this.wizard.GetComponent<WizardMovement>();
-
         if (this.wizardmovement)
         {
             this.wizardmovement.Cast();
         }
+    }
+
+    public void SpawnWaterBall()
+    {
+        spawned = true;
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
@@ -49,10 +54,14 @@ public class ShootWaterBall : Action
     {
         if (this.isExecuting)
         {
-            if (!(this.WaterBallInstance))
+            if (!wizardmovement.isCasting && !spawned)
             {
-                wizardmovement.StopCasting();
+                SpawnWaterBall();
+            }
+            if (!(this.WaterBallInstance) && spawned)
+            {
                 EndExecution();
+                spawned = false;
             }
         }
     }

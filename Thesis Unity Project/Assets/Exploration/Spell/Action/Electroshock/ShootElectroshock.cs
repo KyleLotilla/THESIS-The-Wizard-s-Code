@@ -13,23 +13,26 @@ public class ShootElectroshock : Action
     private float ElectroshockSpeed;
 
     private GameObject ElectroshockInstance;
-    WizardMovement wizardmovement;
+    private WizardMovement wizardmovement;
+    private bool spawned = false;
     protected override void Execute()
     {
         this.wizardmovement = this.wizard.GetComponent<WizardMovement>();
-
         if (this.wizardmovement)
         {
             this.wizardmovement.Cast();
         }
-        Transform wizardtransform = this.wizard.transform;
+    }
 
+    public void SpawnElectroshock()
+    {
+        spawned = true;
+        Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
             this.offset.x *= -0.5f;
             this.ElectroshockSpeed *= -0.5f;
         }
-
         Vector3 ElectroshockPosition = wizardtransform.position + this.offset;
         this.ElectroshockInstance = Instantiate(this.ElectroshockPrefab, ElectroshockPosition, wizardtransform.rotation);
         if (this.ElectroshockInstance)
@@ -51,10 +54,14 @@ public class ShootElectroshock : Action
     {
         if (this.isExecuting)
         {
-            if (!(this.ElectroshockInstance))
+            if (!wizardmovement.isCasting && !spawned)
             {
-                wizardmovement.StopCasting();
+                SpawnElectroshock();
+            }
+            if (!(this.ElectroshockInstance) && spawned)
+            {
                 EndExecution();
+                spawned = false;
             }
         }
     }

@@ -13,15 +13,20 @@ public class ShootIceShard : Action
     private float IceShardSpeed;
 
     private GameObject IceShardInstance;
-    WizardMovement wizardmovement;
+    private WizardMovement wizardmovement;
+    private bool spawned = false;
     protected override void Execute()
     {
         this.wizardmovement = this.wizard.GetComponent<WizardMovement>();
-
         if (this.wizardmovement)
         {
             this.wizardmovement.Cast();
         }
+    }
+
+    public void SpawnIceShard()
+    {
+        spawned = true;
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
@@ -49,10 +54,14 @@ public class ShootIceShard : Action
     {
         if (this.isExecuting)
         {
-            if (!(this.IceShardInstance))
+            if (!wizardmovement.isCasting && !spawned)
             {
-                wizardmovement.StopCasting();
+                SpawnIceShard();
+            }
+            if (!(this.IceShardInstance) && spawned)
+            {
                 EndExecution();
+                spawned = false;
             }
         }
     }
