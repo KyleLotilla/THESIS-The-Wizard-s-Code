@@ -15,7 +15,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   FireBallPrefab: {fileID: 1955495123168377924, guid: dc6940fb6c0b5b7469925d0548a144fe,
     type: 3}
-  FireBallSpeed: 0
+  FireBallSpeed: 2
 --- !u!1001 &3893662681427370443
 PrefabInstance:
   m_ObjectHideFlags: 0
