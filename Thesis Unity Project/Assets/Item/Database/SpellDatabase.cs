@@ -25,9 +25,7 @@ public class SpellDatabase : XMLDatabase
             spells = new Dictionary<int, Spell>();
         }
 
-        #if UNITY_EDITOR
-            LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
-        #endif
+        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
     }
 
     void LoadXml(XDocument document)
