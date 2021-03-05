@@ -30,8 +30,8 @@ public class ShootFireball : Action
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
-            this.offset.x *= -0.5f;
-            this.FireBallSpeed *= -0.5f;
+            this.offset.x *= -1f;
+            this.FireBallSpeed *= -1f;
         }
         Vector3 FireBallPosition = wizardtransform.position + this.offset;
         this.FireBallInstance = Instantiate(this.FireBallPrefab, FireBallPosition, wizardtransform.rotation);
