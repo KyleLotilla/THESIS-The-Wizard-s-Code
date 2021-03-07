@@ -83,4 +83,23 @@ public class SpellDatabase : XMLDatabase
             return null;
         }
     }
+
+    public GameObject GetActionSlot(int id)
+    {
+        Spell spell = GetSpell(id);
+        if (spell != null)
+        {
+            Action action = Resources.Load<Action>(spell.pathToActionSlot);
+            if (action != null)
+            {
+                action.spell = spell;
+                return action.gameObject;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        return null;
+    }
 }

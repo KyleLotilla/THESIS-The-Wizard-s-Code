@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class QueueDropSpace : DropSpace
 {
+    public ActionSlot stackActionSlot;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,33 +28,18 @@ public class QueueDropSpace : DropSpace
             actionSlot.OnEndDrag(null);
             if (actionSlot.isInQueue)
             {
-                if (slot != null)
+                QueueDropSpace otherDropSpace = gameObject.transform.parent.gameObject.GetComponent<QueueDropSpace>();
+                if (otherDropSpace != null)
                 {
-                    QueueDropSpace otherDropSpace = gameObject.transform.parent.gameObject.GetComponent<QueueDropSpace>();
-                    if (otherDropSpace != null)
-                    {
-                        GameObject tempSlot = slot;
-                        slot = gameObject;
-                        otherDropSpace.slot = tempSlot;
-                    }
-                }
-                else
-                {
-                    slot = gameObject;
+                    SwapQueueSlot(otherDropSpace);
                 }
             }
             else
             {
-                if (slot != null)
+                if (slot == null)
                 {
-                    ActionSlot currentActionSlot = slot.GetComponent<ActionSlot>();
-                    if (currentActionSlot != null)
-                    {
-                        currentActionSlot.EnableSlot();
-                        DestroyImmediate(slot);
-                    }
+                    CreateQueueSlot(actionSlot);
                 }
-                CreateQueueSlot(actionSlot);
             }
         }
     }
@@ -73,8 +59,51 @@ public class QueueDropSpace : DropSpace
             {
                 slot = newSlot;
                 newActionSlot.isInQueue = true;
+                stackActionSlot = actionSlot;
+                BoxCollider2D collider = newSlot.GetComponent<BoxCollider2D>();
+                Rigidbody2D rigidbody = newSlot.GetComponent<Rigidbody2D>();
+                if (collider != null)
+                {
+                    Destroy(collider);
+                }
+                if (rigidbody != null)
+                {
+                    Destroy(rigidbody);
+                }
+
                 actionSlot.DisableSlot();
             }
         }
+    }
+
+    void SwapQueueSlot(QueueDropSpace otherDropSpace)
+    {
+        if (otherDropSpace != null)
+        {
+            GameObject tempSlot = slot;
+            slot = otherDropSpace.slot;
+            otherDropSpace.slot = tempSlot;
+
+            ActionSlot tempStackActionSlot = stackActionSlot;
+            stackActionSlot = otherDropSpace.stackActionSlot;
+            otherDropSpace.stackActionSlot = tempStackActionSlot;
+        }
+    }
+
+    public void RemoveSlot()
+    {
+        stackActionSlot.EnableSlot();
+        DestroyImmediate(slot);
+        slot = null;
+        stackActionSlot = null;
+    }
+
+    public void ConsumeSlot()
+    {
+        stackActionSlot.EnableSlot();
+        DestroyImmediate(slot);
+        DestroyImmediate(stackActionSlot.gameObject);
+        slot = null;
+        stackActionSlot = null;
     }
 }

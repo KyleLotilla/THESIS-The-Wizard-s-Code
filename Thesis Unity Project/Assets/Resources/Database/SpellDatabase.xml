@@ -1,27 +1,41 @@
 <SpellDatabase>
+  <Spell>
+    <ID>0</ID>
+    <Name>Move Left</Name>
+    <Description>Walk to the Left</Description>
+    <Icon>Spell/Icons/MoveLeft</Icon>
+    <ActionSlot>Spell/Action Slots/MoveLeft</ActionSlot>
+  </Spell>
+  <Spell>
+    <ID>1</ID>
+    <Name>Move Right</Name>
+    <Description>Walk to the Right</Description>
+    <Icon>Spell/Icons/MoveRight</Icon>
+    <ActionSlot>Spell/Action Slots/MoveRight</ActionSlot>
+  </Spell>
 	<Spell>
-		<ID>0</ID>
+		<ID>2</ID>
 		<Name>Fireball</Name>
-		<Description>Testing Fireball</Description>
-		<Icon>fireballIcon</Icon>
+		<Description>Shoot a Fireball</Description>
+		<Icon>Spell/Icons/Fireball</Icon>
 		<ActionSlot>Spell/Action Slots/ShootFireball</ActionSlot>
 	</Spell>
 	<Spell>
-		<ID>1</ID>
+		<ID>3</ID>
 		<Name>Electroshock</Name>
 		<Description>Shoot an electric shock</Description>
 		<Icon>Spell/Icons/Electroshock</Icon>
 		<ActionSlot>Spell/Action Slots/ShootElectroshock</ActionSlot>
 	</Spell>
 	<Spell>
-		<ID>2</ID>
+		<ID>4</ID>
 		<Name>Waterball</Name>
 		<Description>Shoot a water ball</Description>
 		<Icon>Spell/Icons/Waterball</Icon>
 		<ActionSlot>Spell/Action Slots/ShootWaterBall</ActionSlot>
 	</Spell>
 	<Spell>
-		<ID>3</ID>
+		<ID>5</ID>
 		<Name>Ice Shard</Name>
 		<Description>Shoot an ice beam</Description>
 		<Icon>Spell/Icons/Ice Beam</Icon>

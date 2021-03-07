@@ -5,13 +5,20 @@ using UnityEngine;
 public class ActionStack : MonoBehaviour
 {
     [SerializeField]
-    private SpellInventory spellInventory;
+    private Vector2 offset;
     [SerializeField]
-    private List<DropSpace> actionSpaces;
+    private SpellDatabase spellDatabase;
+    [SerializeField]
+    private int moveLeftID;
+    [SerializeField]
+    private int moveRightID;
+    [SerializeField]
+    private SpellInventory spellInventory;
+    private int numSlots;
+    [SerializeField]
+    private int maxSlots;
     [SerializeField]
     private List<GameObject> actionsPrefabs;
-    [SerializeField]
-    private List<int> slotIDPool;
     [SerializeField]
     private float spawnRate;
     [SerializeField]
@@ -19,24 +26,23 @@ public class ActionStack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<GameObject> actionSlots = spellInventory.GetEquippedActionSlots();
-
-        foreach(GameObject actionSlot in actionSlots)
+        actionsPrefabs = spellInventory.GetEquippedActionSlots();
+        GameObject moveLeftPrefab = spellDatabase.GetActionSlot(moveLeftID);
+        if (moveLeftPrefab != null)
         {
-            actionsPrefabs.Add(actionSlot);
+            actionsPrefabs.Add(moveLeftPrefab);
         }
-
-        for (int i = 0; i < actionSpaces.Count; i++)
+        GameObject moveRightPrefab = spellDatabase.GetActionSlot(moveRightID);
+        if (moveRightPrefab != null)
         {
-            slotIDPool.Add(i);
+            actionsPrefabs.Add(moveRightPrefab);
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (slotIDPool.Count > 0)
+        if (numSlots < maxSlots)
         {
             delta += Time.deltaTime;
             if (this.delta >= spawnRate)
@@ -49,32 +55,28 @@ public class ActionStack : MonoBehaviour
 
     private void SpawnAction()
     {
-        if (slotIDPool.Count > 0)
+        int randomActionIndex = Random.Range(0, this.actionsPrefabs.Count);
+        GameObject actionSlotObject = Instantiate(actionsPrefabs[randomActionIndex], this.transform);
+        if (actionSlotObject != null)
         {
-            int randomActionIndex = Random.Range(0, this.actionsPrefabs.Count);
-            int slotID = slotIDPool[0];
-            GameObject action = Instantiate(actionsPrefabs[randomActionIndex]);
-            if (action != null)
+            ActionSlot actionSlot = actionSlotObject.GetComponent<ActionSlot>();
+            RectTransform rectTransform = actionSlotObject.GetComponent<RectTransform>();
+            if (actionSlot != null)
             {
-                slotIDPool.RemoveAt(0);
-                ActionSlot actionSlot = action.GetComponent<ActionSlot>();
-                if (actionSlot != null)
-                {
-                    actionSpaces[slotID].slot = action;
-                    actionSlot.slotID = slotID;
-                }
+                actionSlot.OnSlotDestroy += DeleteAction;
+                numSlots++;
+            }
+            if (rectTransform != null)
+            {
+                rectTransform.anchorMin = new Vector2(0.5f, 1.0f);
+                rectTransform.anchorMax = new Vector2(0.5f, 1.0f);
+                rectTransform.anchoredPosition = offset;
             }
         }
     }
 
-    public void DeleteAction(int slotID)
+    private void DeleteAction()
     {
-        if (slotID >= 0 && slotID < actionSpaces.Count && !slotIDPool.Contains(slotID))
-        {
-            GameObject slot = actionSpaces[slotID].slot;
-            actionSpaces[slotID].slot = null;
-            DestroyImmediate(slot);
-            slotIDPool.Add(slotID);
-        }
+        numSlots--;
     }
 }

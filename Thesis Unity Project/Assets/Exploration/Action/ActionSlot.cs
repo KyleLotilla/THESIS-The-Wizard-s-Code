@@ -5,23 +5,9 @@ using UnityEngine.UI;
 
 public class ActionSlot : DragSlot
 {
+
     [SerializeField]
     private Image image;
-
-    [SerializeField]
-    private int _slotID;
-    public int slotID
-    {
-        get
-        {
-            return _slotID;
-        }
-        set
-        {
-            _slotID = value;
-        }
-    }
-
     [SerializeField]
     private Action _action;
     public Action action
@@ -33,12 +19,25 @@ public class ActionSlot : DragSlot
         set
         {
             _action = value;
-            image.sprite = _action.spell.icon;
+            if (image != null)
+            {
+                image.sprite = _action.spell.icon;
+            }
         }
     }
 
     public bool isInQueue { get; set; } = false;
-    
+
+    private void Start()
+    {
+        /*
+        if (image != null && action != null)
+        {
+            image.sprite = action.spell.icon;
+        }
+        */
+    }
+
     public void DisableSlot()
     {
         isDraggable = false;

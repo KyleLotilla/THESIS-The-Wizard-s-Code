@@ -12,14 +12,11 @@ public class ActionQueue : MonoBehaviour
     [SerializeField] 
     private List<QueueDropSpace> queueSlotSpaces;
     [SerializeField]
-    private ActionStack actionStack;
-    private List<ActionSlot> actionSlots;
-
+    private int currentAction;
     public bool isExecuting { get; set; }
     // Start is called before the first frame update
     void Start()
     {
-        actionSlots = new List<ActionSlot>();
     }
 
     // Update is called once per frame
@@ -29,51 +26,41 @@ public class ActionQueue : MonoBehaviour
 
     public void StartExecution()
     {
-        foreach (QueueDropSpace slotSpace in queueSlotSpaces)
+        currentAction = 0;
+        ExecuteNextAction();
+    }
+
+    void ExecuteNextAction()
+    {
+        bool foundAction = false;
+        for (; currentAction < queueSlotSpaces.Count && !foundAction; currentAction++)
         {
-            GameObject slot = slotSpace.slot;
-            if (slot != null)
+            if (queueSlotSpaces[currentAction].slot != null)
             {
-                ActionSlot actionSlot = slot.GetComponent<ActionSlot>();
-                if (actionSlot != null)
-                {
-                    actionSlots.Add(actionSlot);
-                }
+                foundAction = true;
+                break;
             }
         }
 
-        if (actionSlots.Count > 0)
+        if (foundAction)
         {
             isExecuting = true;
-            ExecuteAction();
+            queueSlotSpaces[currentAction].stackActionSlot.action.OnExecutionEnd += OnActionExecutionEnd;
+            queueSlotSpaces[currentAction].stackActionSlot.action.wizard = wizard;
+            queueSlotSpaces[currentAction].stackActionSlot.action.StartExecution();
         }
-    }
-
-    void ExecuteAction()
-    {
-        if (actionSlots.Count > 0)
+        else
         {
-            actionSlots[0].action.wizard = wizard;
-            actionSlots[0].action.StartExecution();
-            actionSlots[0].action.OnExecutionEnd += OnActionExecutionEnd;
+            isExecuting = false;
+            OnExecutionEnd?.Invoke();
         }
     }
 
     void OnActionExecutionEnd()
     {
-        actionSlots[0].action.OnExecutionEnd -= OnActionExecutionEnd;
-        actionStack.DeleteAction(actionSlots[0].slotID);
-        actionSlots[0].NofityContainerChange(null);
-        DestroyImmediate(actionSlots[0].gameObject);
-        actionSlots.RemoveAt(0);
-        
-        if (actionSlots.Count > 0)
-        {
-            ExecuteAction();
-        }
-        else
-        {
-            OnExecutionEnd?.Invoke();
-        }
+        queueSlotSpaces[currentAction].stackActionSlot.action.OnExecutionEnd -= OnActionExecutionEnd;
+        queueSlotSpaces[currentAction].ConsumeSlot();
+        currentAction++;
+        ExecuteNextAction();
     }
 }
