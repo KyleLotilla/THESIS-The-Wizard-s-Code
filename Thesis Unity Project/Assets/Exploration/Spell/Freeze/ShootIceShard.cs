@@ -30,8 +30,8 @@ public class ShootIceShard : Action
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
-            this.offset.x *= -0.5f;
-            this.IceShardSpeed *= -0.5f;
+            this.offset.x *= -1f;
+            this.IceShardSpeed *= -1f;
         }
         Vector3 IceShardPosition = wizardtransform.position + this.offset;
         this.IceShardInstance = Instantiate(this.IceShardPrefab, IceShardPosition, wizardtransform.rotation);

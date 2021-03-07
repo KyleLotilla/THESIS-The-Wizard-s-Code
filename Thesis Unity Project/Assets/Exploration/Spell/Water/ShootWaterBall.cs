@@ -30,8 +30,8 @@ public class ShootWaterBall : Action
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
-            this.offset.x *= -0.5f;
-            this.WaterBallSpeed *= -0.5f;
+            this.offset.x *= -1f;
+            this.WaterBallSpeed *= -1f;
         }
         Vector3 WaterBallPosition = wizardtransform.position + this.offset;
         this.WaterBallInstance = Instantiate(this.WaterBallPrefab, WaterBallPosition, wizardtransform.rotation);
