@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bfb4d1aed0779439829e048d3a607f, type: 3}
   m_Name: CraftingDatabaseInstance
   m_EditorClassIdentifier: 
-  pathToXMLDatabase: Assets/Resources/Database/CraftingDatabase.xml
+  pathToXMLDatabase: Database/CraftingDatabase

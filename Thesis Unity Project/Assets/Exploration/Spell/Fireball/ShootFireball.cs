@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootIceShard : Action
+public class ShootFireball : Action
 {
     [SerializeField]
     private Vector3 offset;
     [SerializeField]
-    private GameObject IceShardPrefab;
+    private GameObject FireBallPrefab;
     [SerializeField]
-    private float IceShardSpeed;
+    private float FireBallSpeed;
 
-    private GameObject IceShardInstance;
+    private GameObject FireBallInstance;
     private WizardMovement wizardmovement;
     private bool spawned = false;
     protected override void Execute()
@@ -24,23 +24,23 @@ public class ShootIceShard : Action
         }
     }
 
-    public void SpawnIceShard()
+    public void SpawnFireball()
     {
         spawned = true;
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
-            this.offset.x *= -0.5f;
-            this.IceShardSpeed *= -0.5f;
+            this.offset.x *= -1f;
+            this.FireBallSpeed *= -1f;
         }
-        Vector3 IceShardPosition = wizardtransform.position + this.offset;
-        this.IceShardInstance = Instantiate(this.IceShardPrefab, IceShardPosition, wizardtransform.rotation);
-        if (this.IceShardInstance)
+        Vector3 FireBallPosition = wizardtransform.position + this.offset;
+        this.FireBallInstance = Instantiate(this.FireBallPrefab, FireBallPosition, wizardtransform.rotation);
+        if (this.FireBallInstance)
         {
-            IceShardMovement iceshardmovement = this.IceShardInstance.GetComponent<IceShardMovement>();
-            if (iceshardmovement)
+            FireballMovement fireballmovement = this.FireBallInstance.GetComponent<FireballMovement>();
+            if (fireballmovement)
             {
-                iceshardmovement.IceShardSpeed = this.IceShardSpeed;
+                fireballmovement.FireballSpeed = this.FireBallSpeed;
             }
         }
     }
@@ -56,9 +56,9 @@ public class ShootIceShard : Action
         {
             if (!wizardmovement.isCasting && !spawned)
             {
-                SpawnIceShard();
+                SpawnFireball();
             }
-            if (!(this.IceShardInstance) && spawned)
+            else if (!(this.FireBallInstance) && spawned)
             {
                 EndExecution();
                 spawned = false;

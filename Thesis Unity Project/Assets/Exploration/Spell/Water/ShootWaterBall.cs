@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootFireball : Action
+public class ShootWaterBall : Action
 {
     [SerializeField]
     private Vector3 offset;
     [SerializeField]
-    private GameObject FireBallPrefab;
+    private GameObject WaterBallPrefab;
     [SerializeField]
-    private float FireBallSpeed;
+    private float WaterBallSpeed;
 
-    private GameObject FireBallInstance;
+    private GameObject WaterBallInstance;
     private WizardMovement wizardmovement;
     private bool spawned = false;
     protected override void Execute()
@@ -24,23 +24,23 @@ public class ShootFireball : Action
         }
     }
 
-    public void SpawnFireball()
+    public void SpawnWaterBall()
     {
         spawned = true;
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
-            this.offset.x *= -0.5f;
-            this.FireBallSpeed *= -0.5f;
+            this.offset.x *= -1f;
+            this.WaterBallSpeed *= -1f;
         }
-        Vector3 FireBallPosition = wizardtransform.position + this.offset;
-        this.FireBallInstance = Instantiate(this.FireBallPrefab, FireBallPosition, wizardtransform.rotation);
-        if (this.FireBallInstance)
+        Vector3 WaterBallPosition = wizardtransform.position + this.offset;
+        this.WaterBallInstance = Instantiate(this.WaterBallPrefab, WaterBallPosition, wizardtransform.rotation);
+        if (this.WaterBallInstance)
         {
-            FireballMovement fireballmovement = this.FireBallInstance.GetComponent<FireballMovement>();
-            if (fireballmovement)
+            WaterBallMovement waterballmovement = this.WaterBallInstance.GetComponent<WaterBallMovement>();
+            if (waterballmovement)
             {
-                fireballmovement.FireballSpeed = this.FireBallSpeed;
+                waterballmovement.WaterBallSpeed = this.WaterBallSpeed;
             }
         }
     }
@@ -56,9 +56,9 @@ public class ShootFireball : Action
         {
             if (!wizardmovement.isCasting && !spawned)
             {
-                SpawnFireball();
+                SpawnWaterBall();
             }
-            else if (!(this.FireBallInstance) && spawned)
+            if (!(this.WaterBallInstance) && spawned)
             {
                 EndExecution();
                 spawned = false;

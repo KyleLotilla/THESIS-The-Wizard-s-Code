@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootWaterBall : Action
+public class ShootIceShard : Action
 {
     [SerializeField]
     private Vector3 offset;
     [SerializeField]
-    private GameObject WaterBallPrefab;
+    private GameObject IceShardPrefab;
     [SerializeField]
-    private float WaterBallSpeed;
+    private float IceShardSpeed;
 
-    private GameObject WaterBallInstance;
+    private GameObject IceShardInstance;
     private WizardMovement wizardmovement;
     private bool spawned = false;
     protected override void Execute()
@@ -24,23 +24,23 @@ public class ShootWaterBall : Action
         }
     }
 
-    public void SpawnWaterBall()
+    public void SpawnIceShard()
     {
         spawned = true;
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
-            this.offset.x *= -0.5f;
-            this.WaterBallSpeed *= -0.5f;
+            this.offset.x *= -1f;
+            this.IceShardSpeed *= -1f;
         }
-        Vector3 WaterBallPosition = wizardtransform.position + this.offset;
-        this.WaterBallInstance = Instantiate(this.WaterBallPrefab, WaterBallPosition, wizardtransform.rotation);
-        if (this.WaterBallInstance)
+        Vector3 IceShardPosition = wizardtransform.position + this.offset;
+        this.IceShardInstance = Instantiate(this.IceShardPrefab, IceShardPosition, wizardtransform.rotation);
+        if (this.IceShardInstance)
         {
-            WaterBallMovement waterballmovement = this.WaterBallInstance.GetComponent<WaterBallMovement>();
-            if (waterballmovement)
+            IceShardMovement iceshardmovement = this.IceShardInstance.GetComponent<IceShardMovement>();
+            if (iceshardmovement)
             {
-                waterballmovement.WaterBallSpeed = this.WaterBallSpeed;
+                iceshardmovement.IceShardSpeed = this.IceShardSpeed;
             }
         }
     }
@@ -56,9 +56,9 @@ public class ShootWaterBall : Action
         {
             if (!wizardmovement.isCasting && !spawned)
             {
-                SpawnWaterBall();
+                SpawnIceShard();
             }
-            if (!(this.WaterBallInstance) && spawned)
+            if (!(this.IceShardInstance) && spawned)
             {
                 EndExecution();
                 spawned = false;

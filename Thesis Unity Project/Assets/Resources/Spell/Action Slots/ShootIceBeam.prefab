@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7d28845c65bbb47967788162cedb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0.4, y: 0, z: 0}
   IceShardPrefab: {fileID: 1203172976080195828, guid: ca5c9947e1438b0459ddd0f3e6448962,
     type: 3}
-  IceShardSpeed: 2
+  IceShardSpeed: 1.5
 --- !u!1001 &3839240530235157047
 PrefabInstance:
   m_ObjectHideFlags: 0

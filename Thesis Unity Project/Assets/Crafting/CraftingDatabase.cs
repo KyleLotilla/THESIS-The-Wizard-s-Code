@@ -29,9 +29,7 @@ public class CraftingDatabase : XMLDatabase
             recipes = new Dictionary<string, int>();
         }
 
-        #if UNITY_EDITOR
-            LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
-        #endif
+        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
     }
 
     void LoadXml(XDocument document)

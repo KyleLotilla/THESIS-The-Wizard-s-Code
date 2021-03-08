@@ -9,7 +9,9 @@ public class XMLDatabase : ScriptableObject
 {
     protected XDocument LoadLocalXmlDocument(string pathToXMLDatabase)
     {
-        FileStream stream = new FileStream(pathToXMLDatabase, FileMode.Open, FileAccess.Read);
+        //FileStream stream = new FileStream(pathToXMLDatabase, FileMode.Open, FileAccess.Read);
+        TextAsset xml = Resources.Load<TextAsset>(pathToXMLDatabase);
+        MemoryStream stream = new MemoryStream(xml.bytes);
         XDocument document = XDocument.Load(stream);
         stream.Close();
 
