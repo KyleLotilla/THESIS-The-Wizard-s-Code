@@ -10,7 +10,6 @@ public class Action : MonoBehaviour
 {
     public event OnExecutionStart OnExecutionStart;
     public event OnExecutionEnd OnExecutionEnd;
-    public Spell spell { get; set; }
     public bool isExecuting { get; set; } = false;
     public GameObject wizard { get; set; }
     protected virtual void Execute()

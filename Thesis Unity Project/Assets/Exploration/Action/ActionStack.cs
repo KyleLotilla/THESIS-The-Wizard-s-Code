@@ -5,6 +5,8 @@ using UnityEngine;
 public class ActionStack : MonoBehaviour
 {
     [SerializeField]
+    private Vector2 slotSize;
+    [SerializeField]
     private Vector2 offset;
     [SerializeField]
     private SpellDatabase spellDatabase;
@@ -63,11 +65,12 @@ public class ActionStack : MonoBehaviour
             RectTransform rectTransform = actionSlotObject.GetComponent<RectTransform>();
             if (actionSlot != null)
             {
-                actionSlot.OnSlotDestroy += DeleteAction;
+                actionSlot.OnActionSlotDestroyed += DeleteAction;
                 numSlots++;
             }
             if (rectTransform != null)
             {
+                rectTransform.sizeDelta = slotSize;
                 rectTransform.anchorMin = new Vector2(0.5f, 1.0f);
                 rectTransform.anchorMax = new Vector2(0.5f, 1.0f);
                 rectTransform.anchoredPosition = offset;

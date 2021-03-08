@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpellInventorySlot : DragSlot
+public class SpellInventorySlot : MonoBehaviour
 {
     private Spell _spell;
     [SerializeField]

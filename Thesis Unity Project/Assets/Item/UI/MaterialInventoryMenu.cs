@@ -7,9 +7,9 @@ public class MaterialInventoryMenu : MonoBehaviour
     [SerializeField]
     private MaterialInventory inventory;
     [SerializeField]
-    private GameObject slotTemplate;
+    private GameObject materialSlotPrefab;
     [SerializeField]
-    private GameObject dropSpaceTemplate;
+    private GameObject spacePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,17 +27,17 @@ public class MaterialInventoryMenu : MonoBehaviour
         RemoveAllSlots();
         foreach (Material material in inventory)
         {
-            GameObject dropSpace = Instantiate(dropSpaceTemplate, this.transform);
-            GameObject slot = Instantiate(slotTemplate, dropSpace.transform);
+            GameObject spaceObject = Instantiate(spacePrefab, this.transform);
+            GameObject slot = Instantiate(materialSlotPrefab, spaceObject.transform);
             MaterialInventorySlot materialSlot = slot.GetComponent<MaterialInventorySlot>();
             if (materialSlot != null)
             {
                 materialSlot.material = material;
             }
-            InventoryDropSpace inventoryDropSpace = dropSpace.GetComponent<InventoryDropSpace>();
-            if (inventoryDropSpace != null)
+            DragNDropSpace space = spaceObject.GetComponent<DragNDropSpace>();
+            if (space != null)
             {
-                inventoryDropSpace.slot = slot;
+                space.slot = slot;
             }
         }
     }

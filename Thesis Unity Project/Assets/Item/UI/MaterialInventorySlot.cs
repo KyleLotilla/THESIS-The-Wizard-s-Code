@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MaterialInventorySlot : DragSlot
+public class MaterialInventorySlot : MonoBehaviour
 {
     private Material _material;
     [SerializeField]

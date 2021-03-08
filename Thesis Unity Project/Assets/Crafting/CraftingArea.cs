@@ -5,9 +5,9 @@ using UnityEngine;
 public class CraftingArea : MonoBehaviour
 {
     [SerializeField]
-    private List<InventoryDropSpace> craftingSlotSpaces;
+    private List<DragNDropSpace> craftingSpaces;
     [SerializeField]
-    private InventoryDropSpace resultDropSpace;
+    private GameObject resultSpace;
     [SerializeField]
     private SpellInventorySlot resultSpellSlot;
     [SerializeField]
@@ -19,40 +19,32 @@ public class CraftingArea : MonoBehaviour
     [SerializeField]
     private SpellInventory spellInventory;
     [SerializeField]
-    private GameObject spellSlotTemplate;
+    private GameObject resultSlotPrefab;
     private List<Material> ingredients;
     // Start is called before the first frame update
     void Start()
     {
-        foreach (InventoryDropSpace dropSpace in craftingSlotSpaces)
+        foreach (DragNDropSpace space in craftingSpaces)
         {
-            dropSpace.OnSlotFilled += ShowResultSpell;
-            dropSpace.OnSlotEmpty += ShowResultSpell;
+            space.OnSlotChange += ShowResultSpell;
         }
     }
 
-    void ShowResultSpell(GameObject slot)
+    public void ShowResultSpell(GameObject slot)
     {
-        ShowResultSpell();
-    }
-
-    public void ShowResultSpell()
-    {
-        if (resultDropSpace.slot != null)
+        if (resultSpellSlot != null)
         {
+            DestroyImmediate(resultSpellSlot.gameObject);
             resultSpellSlot = null;
-            GameObject previousResultSlot = resultDropSpace.slot;
-            resultDropSpace.slot = null;
-            DestroyImmediate(previousResultSlot);
         }
         ingredients = new List<Material>();
 
-        foreach (InventoryDropSpace slotSpace in craftingSlotSpaces)
+        foreach (DragNDropSpace space in craftingSpaces)
         {
-            GameObject slot = slotSpace.slot;
-            if (slot != null)
+            GameObject spaceSlot = space.slot;
+            if (spaceSlot != null)
             {
-                MaterialInventorySlot materialSlot = slot.GetComponent<MaterialInventorySlot>();
+                MaterialInventorySlot materialSlot = spaceSlot.GetComponent<MaterialInventorySlot>();
                 if (materialSlot != null)
                 {
                     if (materialSlot.material != null)
@@ -71,13 +63,11 @@ public class CraftingArea : MonoBehaviour
                 Spell resultSpell = spellDatabase.GetSpell(result);
                 if (resultSpell != null)
                 {
-                    GameObject resultSpellObject = Instantiate(spellSlotTemplate, resultDropSpace.transform);
+                    GameObject resultSpellObject = Instantiate(resultSlotPrefab, resultSpace.transform);
                     resultSpellSlot = resultSpellObject.GetComponent<SpellInventorySlot>();
                     if (resultSpellSlot != null)
                     {
                         resultSpellSlot.spell = resultSpell;
-                        resultSpellSlot.isDraggable = false;
-                        resultDropSpace.slot = resultSpellObject;
                     }
                 }
             }
@@ -85,22 +75,7 @@ public class CraftingArea : MonoBehaviour
     }
 
     public void CraftSpell()
-    {
-        foreach (InventoryDropSpace slotSpace in craftingSlotSpaces)
-        {
-            GameObject slot = slotSpace.slot;
-            slotSpace.slot = null;
-            if (slot != null)
-            {
-                DestroyImmediate(slot);
-            }
-        }
-
-        foreach(Material material in ingredients)
-        {
-            materialInventory.RemoveMaterial(material);
-        }
-
+    {        
         if (resultSpellSlot != null)
         {
             if (resultSpellSlot.spell != null)
@@ -109,8 +84,18 @@ public class CraftingArea : MonoBehaviour
             }
         }
 
-
-        resultDropSpace.slot = null;
         DestroyImmediate(resultSpellSlot.gameObject);
+
+        foreach (DragNDropSpace space in craftingSpaces)
+        {
+            DestroyImmediate(space.slot);
+            space.slot = null;
+        }
+
+        foreach (Material material in ingredients)
+        {
+            materialInventory.RemoveMaterial(material);
+        }
+
     }
 }

@@ -10,9 +10,10 @@ public class ActionQueue : MonoBehaviour
     [SerializeField] 
     private GameObject wizard;
     [SerializeField] 
-    private List<QueueDropSpace> queueSlotSpaces;
+    private List<QueueSpaceHandler> queueSpaces;
     [SerializeField]
     private int currentAction;
+    private ActionSlot currentActionSlot;
     public bool isExecuting { get; set; }
     // Start is called before the first frame update
     void Start()
@@ -33,9 +34,9 @@ public class ActionQueue : MonoBehaviour
     void ExecuteNextAction()
     {
         bool foundAction = false;
-        for (; currentAction < queueSlotSpaces.Count && !foundAction; currentAction++)
+        for (; currentAction < queueSpaces.Count && !foundAction; currentAction++)
         {
-            if (queueSlotSpaces[currentAction].slot != null)
+            if (queueSpaces[currentAction].isFilled())
             {
                 foundAction = true;
                 break;
@@ -45,9 +46,10 @@ public class ActionQueue : MonoBehaviour
         if (foundAction)
         {
             isExecuting = true;
-            queueSlotSpaces[currentAction].stackActionSlot.action.OnExecutionEnd += OnActionExecutionEnd;
-            queueSlotSpaces[currentAction].stackActionSlot.action.wizard = wizard;
-            queueSlotSpaces[currentAction].stackActionSlot.action.StartExecution();
+            currentActionSlot = queueSpaces[currentAction].GetActionSlot();
+            currentActionSlot.action.OnExecutionEnd += OnActionExecutionEnd;
+            currentActionSlot.action.wizard = wizard;
+            currentActionSlot.action.StartExecution();
         }
         else
         {
@@ -58,8 +60,9 @@ public class ActionQueue : MonoBehaviour
 
     void OnActionExecutionEnd()
     {
-        queueSlotSpaces[currentAction].stackActionSlot.action.OnExecutionEnd -= OnActionExecutionEnd;
-        queueSlotSpaces[currentAction].ConsumeSlot();
+        currentActionSlot.action.OnExecutionEnd -= OnActionExecutionEnd;
+        currentActionSlot = null;
+        queueSpaces[currentAction].ConsumeSlot();
         currentAction++;
         ExecuteNextAction();
     }

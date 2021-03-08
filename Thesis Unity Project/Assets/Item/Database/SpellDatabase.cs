@@ -89,11 +89,11 @@ public class SpellDatabase : XMLDatabase
         Spell spell = GetSpell(id);
         if (spell != null)
         {
-            Action action = Resources.Load<Action>(spell.pathToActionSlot);
-            if (action != null)
+            ActionSlot actionSlot = Resources.Load<ActionSlot>(spell.pathToActionSlot);
+            if (actionSlot != null)
             {
-                action.spell = spell;
-                return action.gameObject;
+                actionSlot.spell = spell;
+                return actionSlot.gameObject;
             }
             else
             {

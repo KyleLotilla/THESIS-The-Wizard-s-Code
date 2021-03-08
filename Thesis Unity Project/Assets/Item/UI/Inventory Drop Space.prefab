@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 8254365832573925144}
   - component: {fileID: 8489187846477763845}
   - component: {fileID: 9071928529568437821}
-  - component: {fileID: 3518757311221968579}
   - component: {fileID: 5161215143516187705}
+  - component: {fileID: 6027257417958397648}
+  - component: {fileID: 1194958511873104055}
+  - component: {fileID: 1021569625299605034}
   m_Layer: 5
   m_Name: Inventory Drop Space
   m_TagString: Untagged
@@ -76,21 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3518757311221968579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7195294331935169550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 732cb37655c87d145a0dc7463e1eaf93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slot: {fileID: 0}
-  _isDroppable: 1
-  gridLayout: {fileID: 5161215143516187705}
 --- !u!114 &5161215143516187705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,3 +102,45 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &6027257417958397648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195294331935169550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488d77262153daf4daecd6ffae6431bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridLayout: {fileID: 5161215143516187705}
+  draggable: {fileID: 1194958511873104055}
+  droppable: {fileID: 1021569625299605034}
+  isSwappable: 0
+--- !u!114 &1194958511873104055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195294331935169550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67c5e1066eaea94f90e478bc525f9f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDraggable: 1
+--- !u!114 &1021569625299605034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195294331935169550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f905f994acf20b8408b8ce4636efc92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDroppable: 1
