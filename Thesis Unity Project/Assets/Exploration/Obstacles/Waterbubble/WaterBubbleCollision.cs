@@ -5,6 +5,8 @@ using UnityEngine;
 public class WaterBubbleCollision : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
+    private Animator animator;
     void Start()
     {
         
@@ -22,9 +24,14 @@ public class WaterBubbleCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Ice")
             {
-                Destroy(this.gameObject);
+                animator.SetBool("Disappear", true);
             }
             //Destroy(col.gameObject);
         }  
+    }
+
+    public void DisappearGeyser()
+    {
+        Destroy(this.gameObject);
     }
 }

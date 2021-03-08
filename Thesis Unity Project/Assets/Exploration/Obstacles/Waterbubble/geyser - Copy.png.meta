@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: cddef1b48f5ce534fb42435abef3740b
+guid: de3bb0716546f124d9dc780a1cea442b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 420811075881893320
-    second: firefade_0
+      213: -1683423190078040117
+    second: geyser - Copy_0
   - first:
-      213: -2430282245360179603
-    second: firefade_1
+      213: 5309048892604792778
+    second: geyser - Copy_1
   - first:
-      213: 6999476759461435901
-    second: firefade_2
+      213: -3270490651836269350
+    second: geyser - Copy_2
   - first:
-      213: 335627954676161278
-    second: firefade_3
-  - first:
-      213: 6233147174989835001
-    second: firefade_4
-  - first:
-      213: -7600877113158153496
-    second: firefade_5
-  - first:
-      213: 1353048981618589748
-    second: firefade_6
-  - first:
-      213: -7794091736121488901
-    second: firefade_7
+      213: 5391198779544559426
+    second: geyser - Copy_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: firefade_0
+      name: geyser - Copy_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 32
-        height: 29
+        x: 4
+        y: 14
+        width: 40
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cd7d77a17507d500800000000000000
-      internalID: 420811075881893320
+      spriteID: bc75ebc178743a8e0800000000000000
+      internalID: -1683423190078040117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: firefade_1
+      name: geyser - Copy_1
       rect:
         serializedVersion: 2
         x: 58
-        y: 0
-        width: 25
-        height: 27
+        y: 18
+        width: 37
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d662e5d8c27e54ed0800000000000000
-      internalID: -2430282245360179603
+      spriteID: acfb3ead6d78da940800000000000000
+      internalID: 5309048892604792778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: firefade_2
+      name: geyser - Copy_2
       rect:
         serializedVersion: 2
-        x: 111
-        y: 0
-        width: 18
-        height: 34
+        x: 105
+        y: 24
+        width: 42
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df91d452703232160800000000000000
-      internalID: 6999476759461435901
+      spriteID: adc30187412ec92d0800000000000000
+      internalID: -3270490651836269350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: firefade_3
+      name: geyser - Copy_3
       rect:
         serializedVersion: 2
-        x: 164
-        y: 0
-        width: 14
-        height: 37
+        x: 154
+        y: 30
+        width: 43
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,92 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efad927b8d368a400800000000000000
-      internalID: 335627954676161278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: firefade_4
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 0
-        width: 13
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9faaffdb456908650800000000000000
-      internalID: 6233147174989835001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: firefade_5
-      rect:
-        serializedVersion: 2
-        x: 266
-        y: 0
-        width: 12
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8eacfc86982448690800000000000000
-      internalID: -7600877113158153496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: firefade_6
-      rect:
-        serializedVersion: 2
-        x: 317
-        y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 430841941eef6c210800000000000000
-      internalID: 1353048981618589748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: firefade_7
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 0
-        width: 8
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf9cba16cd2d5d390800000000000000
-      internalID: -7794091736121488901
+      spriteID: 24fd548e9b261da40800000000000000
+      internalID: 5391198779544559426
       vertices: []
       indices: 
       edges: []

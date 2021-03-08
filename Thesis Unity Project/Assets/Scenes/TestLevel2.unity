@@ -2054,6 +2054,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplorationUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7722217054673991784, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: ShootFireBallID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
 --- !u!114 &1498756052 stripped
