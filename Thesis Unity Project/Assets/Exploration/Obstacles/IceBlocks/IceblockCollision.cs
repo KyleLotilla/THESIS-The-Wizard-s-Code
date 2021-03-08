@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class IceblockCollision : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-
+        animator.SetBool("MeltingIce", false);
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class IceblockCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Fire")
             {
+                animator.SetBool("MeltingIce", true);
                 Destroy(this.gameObject);
             }
             Destroy(col.gameObject);
