@@ -9,7 +9,7 @@ public class IceblockCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetBool("MeltingIce", false);
+        //animator.SetBool("melting", false);
     }
 
     // Update is called once per frame
@@ -24,10 +24,15 @@ public class IceblockCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Fire")
             {
-                animator.SetBool("MeltingIce", true);
-                Destroy(this.gameObject);
+                animator.SetBool("melting", true);
+                //Destroy(this.gameObject);
             }
             Destroy(col.gameObject);
         }  
+    }
+
+    public void OnMeltFinish()
+    {
+        Destroy(this.gameObject);
     }
 }
