@@ -30,8 +30,8 @@ public class ShootElectroshock : Action
         Transform wizardtransform = this.wizard.transform;
         if (wizardtransform.rotation.eulerAngles.y == 180.0f)
         {
-            this.offset.x *= -0.5f;
-            this.ElectroshockSpeed *= -0.5f;
+            this.offset.x *= -1f;
+            this.ElectroshockSpeed *= -1f;
         }
         Vector3 ElectroshockPosition = wizardtransform.position + this.offset;
         this.ElectroshockInstance = Instantiate(this.ElectroshockPrefab, ElectroshockPosition, wizardtransform.rotation);
