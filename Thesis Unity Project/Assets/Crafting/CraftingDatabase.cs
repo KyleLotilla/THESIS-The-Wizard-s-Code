@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 
 [CreateAssetMenu(menuName = "Database/Crafting Database")]
-public class CraftingDatabase : XMLDatabase
+public class CraftingDatabase : XMLDatabaseScriptableObject
 {
     private Dictionary<string, int> recipes;
     /* The key is the ingredients for the recipes. It is represented through a formatted string of space-separed integer ids of the ingredients.

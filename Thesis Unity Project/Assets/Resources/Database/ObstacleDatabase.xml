@@ -1,0 +1,17 @@
+<ObstacleDatabase>
+	<Obstacle>
+		<ID>0</ID>
+		<Name>Giant Fire</Name>
+		<Icon>Obstacle/Icons/giantFire</Icon>
+	</Obstacle>
+	<Obstacle>
+		<ID>1</ID>
+		<Name>Ice Block</Name>
+		<Icon>Obstacle/Icons/iceBlock</Icon>
+	</Obstacle>
+	<Obstacle>
+		<ID>2</ID>
+		<Name>Geyser</Name>
+		<Icon>Obstacle/Icons/geyser</Icon>
+	</Obstacle>
+</ObstacleDatabase>

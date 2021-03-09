@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Xml.Linq;
 using System.IO;
-using System.Linq;
-
-public class XMLDatabase : ScriptableObject
+public class XMLDatabaseScriptableObject : ScriptableObject
 {
     protected XDocument LoadLocalXmlDocument(string pathToXMLDatabase)
     {
