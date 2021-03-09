@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265337e56c7bc7441bf2116eddf0116f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
-  WaterBallPrefab: {fileID: 0}
-  WaterBallSpeed: 0
+  offset: {x: 0.4, y: 0, z: 0}
+  WaterBallPrefab: {fileID: 8029989075416608700, guid: eff607baa275f23439692f5705963706,
+    type: 3}
+  WaterBallSpeed: 1.5
 --- !u!1001 &7535715132195301822
 PrefabInstance:
   m_ObjectHideFlags: 0

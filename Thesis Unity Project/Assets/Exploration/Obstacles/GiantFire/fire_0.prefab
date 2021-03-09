@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3361173649227034699}
   - component: {fileID: 3361173649227034692}
   - component: {fileID: 3361173649227034693}
+  - component: {fileID: 2552912189691782800}
   m_Layer: 0
   m_Name: fire_0
   m_TagString: Untagged
@@ -122,3 +123,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f1a98f495bbf246873b4899f6fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2552912189691782800}
+--- !u!95 &2552912189691782800
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3361173649227034694}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c17c8e889b1dbf54ab9da939ac6cc8b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

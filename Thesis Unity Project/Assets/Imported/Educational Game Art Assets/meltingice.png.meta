@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 9277e7a0e94d6ad47b69af014aa5c822
+guid: 29d10214557094740a10912c9380f0c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7766822180225196991
-    second: geyser_0
+      213: -960804466773042628
+    second: meltingice_0
   - first:
-      213: 3907809102265674586
-    second: geyser_1
+      213: 8030037942308254230
+    second: meltingice_1
   - first:
-      213: -4955072980518455910
-    second: geyser_2
+      213: -7367937844835724269
+    second: meltingice_2
   - first:
-      213: 2524434941995717630
-    second: geyser_3
+      213: 7418687539261854077
+    second: meltingice_3
+  - first:
+      213: 7755623461941737972
+    second: meltingice_4
+  - first:
+      213: -1307228509255932183
+    second: meltingice_5
+  - first:
+      213: -3362158270995468908
+    second: meltingice_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,34 +120,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: geyser_0
+      name: meltingice_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 0
+        x: 11
+        y: 7
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a52639d698aa2f0800000000000000
+      internalID: -960804466773042628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meltingice_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 7
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612313ca6fc607f60800000000000000
+      internalID: 8030037942308254230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meltingice_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 7
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314d86f2193dfb990800000000000000
+      internalID: -7367937844835724269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meltingice_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 7
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71d155d20974f660800000000000000
+      internalID: 7418687539261854077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meltingice_4
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 7
         width: 37
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14c5d02a064b63490800000000000000
-      internalID: -7766822180225196991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: geyser_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 0
-        width: 40
-        height: 41
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5b659e8ca35b3630800000000000000
-      internalID: 3907809102265674586
+      spriteID: 4f9f8b4927281ab60800000000000000
+      internalID: 7755623461941737972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: geyser_2
+      name: meltingice_5
       rect:
         serializedVersion: 2
-        x: 106
-        y: 0
-        width: 40
-        height: 42
+        x: 256
+        y: 7
+        width: 39
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a95bf08906b0c3bb0800000000000000
-      internalID: -4955072980518455910
+      spriteID: 9e66989c89acbdde0800000000000000
+      internalID: -1307228509255932183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: geyser_3
+      name: meltingice_6
       rect:
         serializedVersion: 2
-        x: 154
-        y: 0
-        width: 44
-        height: 41
+        x: 305
+        y: 7
+        width: 144
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +260,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef31d386438980320800000000000000
-      internalID: 2524434941995717630
+      spriteID: 49d6ca2bdd63751d0800000000000000
+      internalID: -3362158270995468908
       vertices: []
       indices: 
       edges: []

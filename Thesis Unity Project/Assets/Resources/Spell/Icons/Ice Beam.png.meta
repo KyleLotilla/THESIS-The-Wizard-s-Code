@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 9277e7a0e94d6ad47b69af014aa5c822
+guid: e0e45acdb03e50d4bbe05e55034d03d5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7766822180225196991
-    second: geyser_0
-  - first:
-      213: 3907809102265674586
-    second: geyser_1
-  - first:
-      213: -4955072980518455910
-    second: geyser_2
-  - first:
-      213: 2524434941995717630
-    second: geyser_3
+      213: -7092911198986408507
+    second: spells_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: geyser_0
+      name: spells_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 0
-        width: 37
-        height: 42
+        x: 328
+        y: 164
+        width: 50
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,71 +116,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14c5d02a064b63490800000000000000
-      internalID: -7766822180225196991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: geyser_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 0
-        width: 40
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5b659e8ca35b3630800000000000000
-      internalID: 3907809102265674586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: geyser_2
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 0
-        width: 40
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a95bf08906b0c3bb0800000000000000
-      internalID: -4955072980518455910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: geyser_3
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 0
-        width: 44
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef31d386438980320800000000000000
-      internalID: 2524434941995717630
+      spriteID: 5cd660928dae09d90800000000000000
+      internalID: -7092911198986408507
       vertices: []
       indices: 
       edges: []

@@ -5,6 +5,8 @@ using UnityEngine;
 public class GiantFireCollision : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
+    private Animator animator;
     void Start()
     {
         
@@ -22,9 +24,14 @@ public class GiantFireCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Water")
             {
-                Destroy(this.gameObject);
+                animator.SetBool("Fading", true);
             }
             Destroy(col.gameObject);
         }
+    }
+
+    public void FinishFading()
+    {
+        Destroy(this.gameObject);
     }
 }
