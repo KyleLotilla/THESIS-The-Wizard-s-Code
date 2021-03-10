@@ -21,6 +21,8 @@ public class ActionStack : MonoBehaviour
     [SerializeField]
     private int ShootIceBeamID;
     [SerializeField]
+    private int ShootElectricityID;
+    [SerializeField]
     private SpellInventory spellInventory;
     private int numSlots;
     [SerializeField]
@@ -59,6 +61,11 @@ public class ActionStack : MonoBehaviour
         if(shootIceBeamPrefab != null)
         {
             actionsPrefabs.Add(shootIceBeamPrefab);
+        }
+        GameObject shootElectricityPrefab = spellDatabase.GetActionSlot(ShootElectricityID);
+        if(shootElectricityPrefab != null)
+        {
+            actionsPrefabs.Add(shootElectricityPrefab);
         }
     }
 

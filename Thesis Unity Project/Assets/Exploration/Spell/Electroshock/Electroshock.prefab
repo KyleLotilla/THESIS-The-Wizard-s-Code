@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1158551889969698639}
   - component: {fileID: 3833430223350859802}
   - component: {fileID: 670937981944298251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Electroshock
-  m_TagString: Untagged
+  m_TagString: Lightning
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
