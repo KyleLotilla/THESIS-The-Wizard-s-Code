@@ -117,7 +117,7 @@ MonoBehaviour:
   gridLayout: {fileID: 5161215143516187705}
   draggable: {fileID: 1194958511873104055}
   droppable: {fileID: 1021569625299605034}
-  isSwappable: 0
+  isSwappable: 1
 --- !u!114 &1194958511873104055
 MonoBehaviour:
   m_ObjectHideFlags: 0

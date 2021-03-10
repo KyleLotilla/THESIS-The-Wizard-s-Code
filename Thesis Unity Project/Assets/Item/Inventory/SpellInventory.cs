@@ -9,6 +9,20 @@ public class SpellInventory : ScriptableObject, IEnumerable
     private List<Spell> spells;
     [SerializeField]
     public List<Spell> equipped { get; private set; }
+    [SerializeField]
+    private int _maxEquipped;
+    public int maxEquipped
+    {
+        get
+        {
+            return _maxEquipped;
+        }
+        set
+
+        {
+            _maxEquipped = value;
+        }
+    }
 
     // Start is called before the first frame update
     void OnEnable()
@@ -28,7 +42,7 @@ public class SpellInventory : ScriptableObject, IEnumerable
         }
         else
         {
-            equipped = new List<Spell>();
+            equipped = new List<Spell>(maxEquipped);
         }
     }
 
@@ -51,14 +65,17 @@ public class SpellInventory : ScriptableObject, IEnumerable
 
     public void EquipSpell(Spell spell)
     {
-        if (!spell.isEquipped)
+        if (equipped.Count + 1 < maxEquipped)
         {
-            equipped.Add(spell);
-            spell.isEquipped = true;
+            if (!spell.isEquipped)
+            {
+                equipped.Add(spell);
+                spell.isEquipped = true;
+            }
         }
     }
 
-    public void UnequipItem(Spell spell)
+    public void UnequipSpell(Spell spell)
     {
         if (spell.isEquipped)
         {
