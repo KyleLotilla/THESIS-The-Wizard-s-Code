@@ -8,11 +8,11 @@ public class UICollider : MonoBehaviour
     private RectTransform rectTransform;
 
     [SerializeField]
-    private BoxCollider2D collider;
+    private BoxCollider2D boxcollider2D;
     // Start is called before the first frame update
     void Start()
     {
-        collider.size = new Vector2(rectTransform.sizeDelta.x, rectTransform.sizeDelta.y);
+        boxcollider2D.size = new Vector2(rectTransform.sizeDelta.x, rectTransform.sizeDelta.y);
     }
 
     // Update is called once per frame

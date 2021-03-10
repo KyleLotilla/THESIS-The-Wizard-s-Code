@@ -12,13 +12,17 @@ public class DatabaseTestScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Spell fireBall = spellDatabase.GetSpell(2);
+        spellInventory.EquipSpell(fireBall);
+
+        spellInventory.AddSpell(spellDatabase.GetSpell(2));
+        spellInventory.AddSpell(spellDatabase.GetSpell(5));
+        spellInventory.AddSpell(spellDatabase.GetSpell(4));
+
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
-        Spell fireBall = spellDatabase.GetSpell(0);
-        spellInventory.EquipSpell(fireBall);
-        /*Spell electro = spellDatabase.GetSpell(1);
-        spellInventory.EquipSpell(electro);*/
+
     }
 
     // Update is called once per frame

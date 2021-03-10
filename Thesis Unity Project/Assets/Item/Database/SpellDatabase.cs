@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 
 [CreateAssetMenu(menuName = "Database/Spell Database")]
-public class SpellDatabase : XMLDatabase
+public class SpellDatabase : XMLDatabaseScriptableObject
 {
     [SerializeField]
     private Dictionary<int, Spell> spells;

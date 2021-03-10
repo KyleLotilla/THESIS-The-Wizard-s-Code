@@ -15,14 +15,6 @@ public class ActionStack : MonoBehaviour
     [SerializeField]
     private int moveRightID;
     [SerializeField]
-    private int ShootFireBallID;
-    [SerializeField]
-    private int ShootWaterID;
-    [SerializeField]
-    private int ShootIceBeamID;
-    [SerializeField]
-    private int ShootElectricityID;
-    [SerializeField]
     private SpellInventory spellInventory;
     private int numSlots;
     [SerializeField]
@@ -46,26 +38,6 @@ public class ActionStack : MonoBehaviour
         if (moveRightPrefab != null)
         {
             actionsPrefabs.Add(moveRightPrefab);
-        }
-        GameObject shootFireBallPrefab = spellDatabase.GetActionSlot(ShootFireBallID);
-        if(shootFireBallPrefab != null)
-        {
-            actionsPrefabs.Add(shootFireBallPrefab);
-        }
-        GameObject shootwaterPrefab = spellDatabase.GetActionSlot(ShootWaterID);
-        if(shootwaterPrefab != null)
-        {
-            actionsPrefabs.Add(shootwaterPrefab);
-        }
-        GameObject shootIceBeamPrefab = spellDatabase.GetActionSlot(ShootIceBeamID);
-        if(shootIceBeamPrefab != null)
-        {
-            actionsPrefabs.Add(shootIceBeamPrefab);
-        }
-        GameObject shootElectricityPrefab = spellDatabase.GetActionSlot(ShootElectricityID);
-        if(shootElectricityPrefab != null)
-        {
-            actionsPrefabs.Add(shootElectricityPrefab);
         }
     }
 

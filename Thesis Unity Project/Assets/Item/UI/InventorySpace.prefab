@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8489187846477763845
 CanvasRenderer:
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 64, y: 64}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -117,7 +117,7 @@ MonoBehaviour:
   gridLayout: {fileID: 5161215143516187705}
   draggable: {fileID: 1194958511873104055}
   droppable: {fileID: 1021569625299605034}
-  isSwappable: 0
+  isSwappable: 1
 --- !u!114 &1194958511873104055
 MonoBehaviour:
   m_ObjectHideFlags: 0
