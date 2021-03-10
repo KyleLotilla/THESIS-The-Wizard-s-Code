@@ -27,19 +27,24 @@ public class RobotCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        this.robotmovement = this.GetComponent<RobotMovement>();
         if (col.gameObject.tag != "Wizard")
         {
             if (col.gameObject.tag == "Lightning")
             {
-                animator.SetBool("activate", true);
-                if (animator.GetBool("activate"))
-                {
-                    this.robotmovement.Fly(flyingSpeed);
-                    Destroy(col.gameObject);
-                }
+                animator.SetBool("On", true);
+                Destroy(col.gameObject);
             }
 
+        }
+    }
+
+    public void TurnOn()
+    {
+        this.robotmovement = this.GetComponent<RobotMovement>();
+        animator.SetBool("activate", true);
+        if (animator.GetBool("activate"))
+        {
+            this.robotmovement.Fly(flyingSpeed);
         }
     }
 }

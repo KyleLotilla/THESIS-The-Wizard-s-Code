@@ -49,6 +49,10 @@ public class RobotMovement : MonoBehaviour
         deltaPosition.y += deltaDisplacement;
         rigidBody.MovePosition(deltaPosition);
         currentDisplacement += deltaDisplacement;
+        if(deltaPosition.y >= 10.0f)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 
