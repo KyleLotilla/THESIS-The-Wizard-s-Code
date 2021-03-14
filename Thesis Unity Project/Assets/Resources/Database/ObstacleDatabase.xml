@@ -14,4 +14,9 @@
 		<Name>Geyser</Name>
 		<Icon>Obstacle/Icons/geyser</Icon>
 	</Obstacle>
+  <Obstacle>
+    <ID>3</ID>
+    <Name>Unpowered Robot</Name>
+    <Icon>Obstacle/Icons/robot</Icon>
+  </Obstacle>
 </ObstacleDatabase>

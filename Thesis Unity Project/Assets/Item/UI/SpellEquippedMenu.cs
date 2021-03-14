@@ -13,7 +13,7 @@ public class SpellEquippedMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RefreshInventory();
+        RefreshEquipped();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class SpellEquippedMenu : MonoBehaviour
 
     }
 
-    public void RefreshInventory()
+    public void RefreshEquipped()
     {
         RemoveAllSlots();
         foreach (Spell spell in inventory.equipped)

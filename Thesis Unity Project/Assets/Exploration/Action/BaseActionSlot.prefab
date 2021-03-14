@@ -224,6 +224,7 @@ MonoBehaviour:
   _spell:
     id: 0
   _action: {fileID: 0}
+  _isInQueue: 0
   references:
     version: 1
     00000000:
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 8394697629223760117}
-  collider: {fileID: 852217893698002894}
+  boxcollider2D: {fileID: 852217893698002894}
 --- !u!114 &505422348755515143
 MonoBehaviour:
   m_ObjectHideFlags: 0
