@@ -15,14 +15,22 @@ public class DatabaseTestScript : MonoBehaviour
         Spell fireBall = spellDatabase.GetSpell(2);
         spellInventory.EquipSpell(fireBall);
 
-        spellInventory.AddSpell(spellDatabase.GetSpell(2));
-        spellInventory.AddSpell(spellDatabase.GetSpell(5));
+        Spell electro = spellDatabase.GetSpell(3);
+        spellInventory.EquipSpell(electro);
+
+
+        /*
         spellInventory.AddSpell(spellDatabase.GetSpell(4));
 
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
+        materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
 
+        materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
+        materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
+
+        */
     }
 
     // Update is called once per frame

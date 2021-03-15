@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40471b3995b467c4ba4d2ca318d1d53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.4, y: 0, z: 0}
+  offset: {x: 2, y: 0, z: 0}
   ElectroshockPrefab: {fileID: 2876813394944768396, guid: 26fd41740f7617649bfe6e3b36c14b5b,
     type: 3}
   ElectroshockSpeed: 1.5

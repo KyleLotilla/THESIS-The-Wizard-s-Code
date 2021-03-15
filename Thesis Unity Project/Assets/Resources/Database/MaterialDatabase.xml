@@ -1,14 +1,44 @@
 <MaterialDatabase>
 	<Material>
 		<ID>0</ID>
-		<Name>Metal</Name>
-		<Description>Testing Metal</Description>
-		<Icon>metalTest</Icon>
+		<Name>Red Potion</Name>
+		<Description>A magical liquid embedded with Fire Elemental Properties</Description>
+		<Icon>Material/Icons/RedPotion</Icon>
 	</Material>
 	<Material>
 		<ID>1</ID>
-		<Name>Red Metal</Name>
-		<Description>Testing Red Metal</Description>
-		<Icon>redMetalTest</Icon>
+		<Name>Redstone</Name>
+		<Description>Stone originally formed from magma</Description>
+		<Icon>Material/Icons/Redstone</Icon>
 	</Material>
+  <Material>
+    <ID>2</ID>
+    <Name>Purple Cyrstal</Name>
+    <Description>A mysterious material with electricity flowing through</Description>
+    <Icon>Material/Icons/PurpleCyrstal</Icon>
+  </Material>
+  <Material>
+    <ID>3</ID>
+    <Name>Conductor</Name>
+    <Description>An Ancient relic of unknown source</Description>
+    <Icon>Material/Icons/Conductor</Icon>
+  </Material>
+  <Material>
+    <ID>4</ID>
+    <Name>Ocean Water</Name>
+    <Description>A pure water from the blue wide ocean</Description>
+    <Icon>Material/Icons/OceanWater</Icon>
+  </Material>
+  <Material>
+    <ID>5</ID>
+    <Name>Blue Crystal</Name>
+    <Description>A mineral crystallized through sub-zero temperatures</Description>
+    <Icon>Material/Icons/BlueCrystal</Icon>
+  </Material>
+  <Material>
+    <ID>6</ID>
+    <Name>Cold Feather</Name>
+    <Description>A feather of a bird who could withstand a freezing weather</Description>
+    <Icon>Material/Icons/ColdFeather</Icon>
+  </Material>
 </MaterialDatabase>

@@ -6,8 +6,7 @@ using UnityEngine;
 using System.Xml.Linq;
 using System.IO;
 
-[CreateAssetMenu(menuName = "Database/Crafting Database")]
-public class CraftingDatabase : XMLDatabaseScriptableObject
+public class CraftingDatabase : XMLDatabaseComponent, IEnumerable
 {
     private Dictionary<string, int> recipes;
     /* The key is the ingredients for the recipes. It is represented through a formatted string of space-separed integer ids of the ingredients.
@@ -15,6 +14,8 @@ public class CraftingDatabase : XMLDatabaseScriptableObject
      * The value is the result of the recipe. It is represented by the id of the resulting item.
      * 
      */
+    private List<CraftingRecipe> recipesList;
+
     [SerializeField]
     private string pathToXMLDatabase;
 
@@ -27,6 +28,7 @@ public class CraftingDatabase : XMLDatabaseScriptableObject
         else
         {
             recipes = new Dictionary<string, int>();
+            recipesList = new List<CraftingRecipe>();
         }
 
         LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
@@ -39,6 +41,7 @@ public class CraftingDatabase : XMLDatabaseScriptableObject
         {
             if (recipe.Elements("Ingredients").Any() && recipe.Elements("Result").Any())
             {
+                List<int> ingredentIDs = new List<int>();
                 string ingredientString = "";
                 foreach (XElement ingredientID in recipe.Element("Ingredients").Elements())
                 {
@@ -47,9 +50,14 @@ public class CraftingDatabase : XMLDatabaseScriptableObject
                         ingredientString += " ";
                     }
                     ingredientString += ingredientID.Value;
+                    ingredentIDs.Add(int.Parse(ingredientID.Value));
                 }
                 int resultID = int.Parse(recipe.Element("Result").Value);
                 recipes.Add(ingredientString, resultID);
+                CraftingRecipe craftingRecipe = new CraftingRecipe();
+                craftingRecipe.resultSpellID = resultID;
+                craftingRecipe.ingredientIDs = ingredentIDs;
+                recipesList.Add(craftingRecipe);
             }
         }
     }
@@ -79,4 +87,8 @@ public class CraftingDatabase : XMLDatabaseScriptableObject
         }
     }
 
+    public IEnumerator GetEnumerator()
+    {
+        return ((IEnumerable)recipesList).GetEnumerator();
+    }
 }
