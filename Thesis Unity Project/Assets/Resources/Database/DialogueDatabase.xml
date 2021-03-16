@@ -1,0 +1,10 @@
+<DialogueDatabase>
+	<Dialogue>
+		<ID>0</ID>
+		<Text>Welcome Player to this world</Text>
+	</Dialogue>
+	<Dialogue>
+		<ID>1</ID>
+		<Text>This will be a guide on how to play</Text>
+	</Dialogue>
+</DialogueDatabase>
