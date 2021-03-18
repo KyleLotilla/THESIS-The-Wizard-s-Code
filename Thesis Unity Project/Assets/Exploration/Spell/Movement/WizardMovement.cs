@@ -59,6 +59,19 @@ public class WizardMovement : MonoBehaviour
 
     }
 
+    public int checkDirection()
+    {
+        if(direction == Direction.RIGHT)
+        {
+            return 1;
+        }
+        else 
+        {
+            return 0;
+        }
+        
+    }
+
     public void Walk(float displacement)
     {
         if (displacement != 0.0f)

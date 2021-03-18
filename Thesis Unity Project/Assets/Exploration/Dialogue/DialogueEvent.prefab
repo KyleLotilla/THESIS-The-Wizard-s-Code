@@ -61,4 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueID: 1
+  DialoguePanel: {fileID: 0}
+  DialogueText: {fileID: 0}
   dialogueDatabase: {fileID: 0}

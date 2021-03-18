@@ -26,6 +26,26 @@ public class FairyFollow : MonoBehaviour
 
     void FollowPlayer()
     {
+        Vector3 eulerAngles = this.transform.eulerAngles;
+        if (this.Wizard.GetComponent<WizardMovement>().checkDirection() == 1)
+        {
+            if (eulerAngles.y != 0.0f)
+            {
+                eulerAngles.y = -180.0f;
+                this.transform.Rotate(eulerAngles);
+            }
+        }
+
+        else if(this.Wizard.GetComponent<WizardMovement>().checkDirection() == 0)
+        {
+            if (eulerAngles.y != 180.0f)
+            {
+                eulerAngles.y = 180.0f;
+                this.transform.Rotate(eulerAngles);
+            }
+        }
+
+
         Vector3 fairyPosition = this.Wizard.transform.position;
         fairyPosition.x += this.xOffset;
         fairyPosition.y += this.yOffset;
