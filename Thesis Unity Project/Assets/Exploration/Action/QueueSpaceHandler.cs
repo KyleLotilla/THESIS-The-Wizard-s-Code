@@ -43,7 +43,7 @@ public class QueueSpaceHandler : MonoBehaviour
                         droppedActionSlot.DisableSlot();
                         space.slot = queueSlot;
                     }
-                    QueueToStackSlotHandler queueToStackSlotHandler = queueSlot.GetComponent<QueueToStackSlotHandler>();
+                    QueueSlot queueToStackSlotHandler = queueSlot.GetComponent<QueueSlot>();
                     if (queueToStackSlotHandler != null)
                     {
                         queueToStackSlotHandler.stackSlot = droppedActionSlot;
@@ -76,7 +76,7 @@ public class QueueSpaceHandler : MonoBehaviour
 
     public void RemoveSlot()
     {
-        QueueToStackSlotHandler queueToStackSlotHandler = space.slot.GetComponent<QueueToStackSlotHandler>();
+        QueueSlot queueToStackSlotHandler = space.slot.GetComponent<QueueSlot>();
         if (queueToStackSlotHandler != null)
         {
             queueToStackSlotHandler.stackSlot.EnableSlot();
@@ -87,7 +87,7 @@ public class QueueSpaceHandler : MonoBehaviour
 
     public void ConsumeSlot()
     {
-        QueueToStackSlotHandler queueToStackSlotHandler = space.slot.GetComponent<QueueToStackSlotHandler>();
+        QueueSlot queueToStackSlotHandler = space.slot.GetComponent<QueueSlot>();
         if (queueToStackSlotHandler != null)
         {
             DestroyImmediate(queueToStackSlotHandler.stackSlot.gameObject);

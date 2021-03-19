@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QueueToStackSlotHandler : MonoBehaviour
+public class QueueSlot : MonoBehaviour
 {
     public ActionSlot stackSlot;
     // Start is called before the first frame update

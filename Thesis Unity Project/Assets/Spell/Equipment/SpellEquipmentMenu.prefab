@@ -598,11 +598,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e994ece944d4dc43b47aa8a2f3718c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
-  spellSlotPrefab: {fileID: 7007861043083638930, guid: c124ebef24389404184c34b8bb35aaf6,
+  slotPrefab: {fileID: 7007861043083638930, guid: c124ebef24389404184c34b8bb35aaf6,
     type: 3}
   spacePrefab: {fileID: 7195294331935169550, guid: bce903bbc64dce34992521046c57456d,
     type: 3}
+  fillExtraSlots: 1
+  slotCount: 0
+  maxSpaces: 30
+  spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
 --- !u!1 &8606681979078159617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,11 +1104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aa099ed9ffe5643a48e25b57bfe69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
-  spellSlotPrefab: {fileID: 7007861043083638930, guid: c124ebef24389404184c34b8bb35aaf6,
+  slotPrefab: {fileID: 7007861043083638930, guid: c124ebef24389404184c34b8bb35aaf6,
     type: 3}
   spacePrefab: {fileID: 5089886775096139211, guid: 9bfea10d4580b8b4aa115f7154d55f9d,
     type: 3}
+  fillExtraSlots: 1
+  slotCount: 0
+  maxSpaces: 5
+  spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
 --- !u!1 &8606681979441340359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1124,7 @@ GameObject:
   - component: {fileID: 8606681979441340360}
   - component: {fileID: 8606681979441340361}
   m_Layer: 5
-  m_Name: Equipment Menu
+  m_Name: SpellEquipmentMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
