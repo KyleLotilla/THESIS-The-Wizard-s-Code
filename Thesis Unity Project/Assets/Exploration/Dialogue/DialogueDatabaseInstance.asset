@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f550adc36848a3744a2ba10a6a6eca35, type: 3}
   m_Name: DialogueDatabaseInstance
   m_EditorClassIdentifier: 
-  pathToXMLDatabase: Database/DialogueDatabase
+  pathToXMLDatabase: Dialogue/DialogueDatabase

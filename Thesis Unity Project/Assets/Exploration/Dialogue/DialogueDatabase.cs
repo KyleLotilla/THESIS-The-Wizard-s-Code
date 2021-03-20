@@ -11,24 +11,14 @@ using System.IO;
 public class DialogueDatabase : XMLDatabaseScriptableObject
 {
     [SerializeField]
-    private Dictionary<int, Dialogue> dialogues;
+    private string text = null;
 
-    [SerializeField]
-    private string pathToXMLDatabase;
+    private string pathToXMLDatabase = null;
 
     // Start is called before the first frame update
     void OnEnable()
     {
-        if (dialogues != null)
-        {
-            dialogues.Clear();
-        }
-        else
-        {
-            dialogues = new Dictionary<int, Dialogue>();
-        }
-
-        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
+        
     }
 
 
@@ -37,30 +27,29 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
         XElement root = document.Root;
         foreach (XElement element in root.Elements())
         {
-            if (element.Elements("ID").Any())
+            if (element.Elements("Text").Any())
             {
-                Dialogue dialogue = new Dialogue();
-                dialogue.DialogueID = int.Parse(element.Element("ID").Value);
-
-                if (element.Elements("Text").Any())
-                {
-                    dialogue.text = element.Element("Text").Value;
-                }
-                dialogues.Add(dialogue.DialogueID, dialogue);
+                this.text = element.Element("Text").Value;
             }
+                
         }
     }
 
-    public Dialogue GetDialogue(int id)
+    public void setPath(string path)
     {
-        if (dialogues.ContainsKey(id))
+        pathToXMLDatabase = path;
+        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
+    }
+
+    public Dialogue GetDialogue()
+    {
+        if(this.text != null)
         {
-            Dialogue dialogue = dialogues[id];
             Dialogue Copydialogue = new Dialogue();
-            Copydialogue.DialogueID = dialogue.DialogueID;
-            Copydialogue.text = dialogue.text;
+            Copydialogue.text = this.text;
             return Copydialogue;
         }
+        
         else
         {
             return null;

@@ -4913,7 +4913,7 @@ PrefabInstance:
     - target: {fileID: 3033642671592210624, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3033642671592210626, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
@@ -5225,51 +5225,51 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 183644734, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 183644734, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 183644734, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 183644734, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 183644734, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 237.18956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 183644734, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491236409, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491236409, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491236409, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491236409, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491236409, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.89957
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491236409, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 660688711356943545, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -5379,32 +5379,32 @@ PrefabInstance:
     - target: {fileID: 910424004317894386, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 910424004317894386, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 910424004317894386, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 910424004317894386, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 910424004317894386, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 36.60956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 910424004317894386, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 910424004593343859, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -5551,6 +5551,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4103772283946692364, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5673440929356493813, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_Name
@@ -5636,7 +5641,7 @@ PrefabInstance:
     - target: {fileID: 3033642671592210624, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3033642671592210626, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
@@ -5999,6 +6004,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6616fb80053ab4143b8a8de0e861bf33,
         type: 2}
+    - target: {fileID: 3024258920583027433, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
+      propertyPath: pathToXMLDatabase
+      value: Dialogue/Dialogue1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024258920583027435, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: m_Name
@@ -6089,6 +6099,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6616fb80053ab4143b8a8de0e861bf33,
         type: 2}
+    - target: {fileID: 3024258920583027433, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
+      propertyPath: pathToXMLDatabase
+      value: Dialogue/Dialogue1
+      objectReference: {fileID: 0}
     - target: {fileID: 3024258920583027435, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: m_Name
@@ -6258,6 +6273,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6616fb80053ab4143b8a8de0e861bf33,
         type: 2}
+    - target: {fileID: 3024258920583027433, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
+      propertyPath: pathToXMLDatabase
+      value: Dialogue/Dialogue3
+      objectReference: {fileID: 0}
     - target: {fileID: 3024258920583027435, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: m_Name
