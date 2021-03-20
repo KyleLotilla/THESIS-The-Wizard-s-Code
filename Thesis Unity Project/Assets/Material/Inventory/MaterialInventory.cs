@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Inventory/Material Inventory")]
-public class MaterialInventory : ScriptableObject, IEnumerable
+public class MaterialInventory : ScriptableObject, IEnumerable<Material>
 {
     [SerializeField]
     private List<Material> materials;
+    public int Count
+    {
+        get
+        {
+            return materials.Count;
+        }
+    }
 
     // Start is called before the first frame update
     void OnEnable()
@@ -38,13 +45,19 @@ public class MaterialInventory : ScriptableObject, IEnumerable
         }
     }
 
+    public void RemoveMaterial(Material material)
+    {
+        materials.Remove(material);
+    }
+
+
     public IEnumerator GetEnumerator()
     {
         return ((IEnumerable)materials).GetEnumerator();
     }
 
-    public void RemoveMaterial(Material material)
+    IEnumerator<Material> IEnumerable<Material>.GetEnumerator()
     {
-        materials.Remove(material);
+        return ((IEnumerable<Material>)materials).GetEnumerator();
     }
 }

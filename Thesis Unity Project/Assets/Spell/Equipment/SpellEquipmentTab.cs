@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipmentTab : MonoBehaviour
+public class SpellEquipmentTab : MonoBehaviour
 {
     [SerializeField]
     private int page;
     [SerializeField]
     private SpellInventoryMenu spellInventoryMenu;
     [SerializeField]
-    private SpellEquippedMenu spellEquippedMenu;
+    private SpellEquipmentMenu spellEquippedMenu;
     [SerializeField]
     private TabsPanel tabsPanel;
 
@@ -29,8 +29,8 @@ public class EquipmentTab : MonoBehaviour
     {
         if (this.page == page)
         {
-            spellInventoryMenu.RefreshInventory();
-            spellEquippedMenu.RefreshEquipped();
+            spellInventoryMenu.RefreshMenu();
+            spellEquippedMenu.RefreshMenu();
         }
     }
 }

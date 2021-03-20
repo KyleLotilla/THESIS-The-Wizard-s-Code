@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Inventory/Spell Inventory")]
-public class SpellInventory : ScriptableObject, IEnumerable
+public class SpellInventory : ScriptableObject, IEnumerable<Spell>
 {
     [SerializeField]
     private List<Spell> spells;
     [SerializeField]
-    public List<Spell> equipped { get; private set; }
+    private List<Spell> _equipped;
+    [SerializeField]
+    public IEnumerable<Spell> equipped
+    {
+        get
+        {
+            return _equipped;
+        }
+    }
     [SerializeField]
     private int _maxEquipped;
     public int maxEquipped
@@ -38,11 +46,11 @@ public class SpellInventory : ScriptableObject, IEnumerable
 
         if (equipped != null)
         {
-            equipped.Clear();
+            _equipped.Clear();
         }
         else
         {
-            equipped = new List<Spell>(maxEquipped);
+            _equipped = new List<Spell>(maxEquipped);
         }
     }
 
@@ -65,11 +73,11 @@ public class SpellInventory : ScriptableObject, IEnumerable
 
     public void EquipSpell(Spell spell)
     {
-        if (equipped.Count + 1 < maxEquipped)
+        if (_equipped.Count + 1 < maxEquipped)
         {
             if (!spell.isEquipped)
             {
-                equipped.Add(spell);
+                _equipped.Add(spell);
                 spell.isEquipped = true;
             }
         }
@@ -79,7 +87,7 @@ public class SpellInventory : ScriptableObject, IEnumerable
     {
         if (spell.isEquipped)
         {
-            equipped.Remove(spell);
+            _equipped.Remove(spell);
             spell.isEquipped = false;
         }
     }
@@ -116,5 +124,10 @@ public class SpellInventory : ScriptableObject, IEnumerable
     public IEnumerator GetEnumerator()
     {
         return ((IEnumerable)spells).GetEnumerator();
+    }
+
+    IEnumerator<Spell> IEnumerable<Spell>.GetEnumerator()
+    {
+        return ((IEnumerable<Spell>)spells).GetEnumerator();
     }
 }
