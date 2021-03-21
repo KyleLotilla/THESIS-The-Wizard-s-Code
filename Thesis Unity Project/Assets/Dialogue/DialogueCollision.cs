@@ -31,7 +31,7 @@ public class DialogueCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        dialogueDatabase.setPath(pathToXMLDatabase);
+        dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
         
         if (col.gameObject.tag == "Wizard")
         {

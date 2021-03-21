@@ -6007,7 +6007,7 @@ PrefabInstance:
     - target: {fileID: 3024258920583027433, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: pathToXMLDatabase
-      value: Dialogue/Dialogue1
+      value: Dialogue2
       objectReference: {fileID: 0}
     - target: {fileID: 3024258920583027435, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
@@ -6102,7 +6102,7 @@ PrefabInstance:
     - target: {fileID: 3024258920583027433, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: pathToXMLDatabase
-      value: Dialogue/Dialogue1
+      value: Dialogue1
       objectReference: {fileID: 0}
     - target: {fileID: 3024258920583027435, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
@@ -6276,7 +6276,7 @@ PrefabInstance:
     - target: {fileID: 3024258920583027433, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: pathToXMLDatabase
-      value: Dialogue/Dialogue3
+      value: Dialogue3
       objectReference: {fileID: 0}
     - target: {fileID: 3024258920583027435, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
