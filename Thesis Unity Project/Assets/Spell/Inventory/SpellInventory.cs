@@ -31,7 +31,24 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
             _maxEquipped = value;
         }
     }
+    public int Count
+    {
+        get
+        {
+            return spells.Count;
+        }
+    }
 
+    public IEnumerable<Spell> fullInventory
+    {
+        get
+        {
+            List<Spell> fullInventory = new List<Spell>(spells.Count + _equipped.Count);
+            fullInventory.AddRange(_equipped);
+            fullInventory.AddRange(spells);
+            return fullInventory;
+        }
+    }
     // Start is called before the first frame update
     void OnEnable()
     {

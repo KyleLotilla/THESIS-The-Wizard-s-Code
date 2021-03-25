@@ -10,6 +10,7 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
     void Start()
     {
         items = spellInventory.equipped;
+        maxSpaces = spellInventory.maxEquipped;
         RefreshMenu();
     }
 

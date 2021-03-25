@@ -14,7 +14,18 @@ public class ItemSlotMenu<T> : MonoBehaviour
     [SerializeField]
     protected int slotCount = 0;
     [SerializeField]
-    protected int maxSpaces;
+    private int _maxSpaces;
+    public int maxSpaces
+    {
+        get
+        {
+            return _maxSpaces;
+        }
+        set
+        {
+            _maxSpaces = value;
+        }
+    }
     void Start()
     {
 
@@ -52,13 +63,19 @@ public class ItemSlotMenu<T> : MonoBehaviour
         {
             for (int i = slotCount; i < maxSpaces; i++)
             {
-                Instantiate(spacePrefab, this.transform);
+                GameObject space = Instantiate(spacePrefab, this.transform);
+                OnEmptySpaceSpawn(space);
             }
         }
 
     }
 
     protected virtual void OnSlotSpawn(GameObject slot, GameObject space, T item)
+    {
+
+    }
+
+    protected virtual void OnEmptySpaceSpawn(GameObject space)
     {
 
     }
