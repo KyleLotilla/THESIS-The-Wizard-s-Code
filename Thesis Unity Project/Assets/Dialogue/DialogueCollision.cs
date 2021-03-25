@@ -8,8 +8,6 @@ public class DialogueCollision : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField]
-    public int DialogueID;
-    [SerializeField]
     private GameObject DialoguePanel;
     [SerializeField]
     private Text DialogueText;
@@ -17,10 +15,12 @@ public class DialogueCollision : MonoBehaviour
     [SerializeField]
     private DialogueDatabase dialogueDatabase;
 
+    [SerializeField]
+    private string pathToXMLDatabase;
 
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -31,13 +31,15 @@ public class DialogueCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
+        
         if (col.gameObject.tag == "Wizard")
         {
-            if(dialogueDatabase.GetDialogue(DialogueID) != null)
+            if(dialogueDatabase.GetDialogue() != null)
             {
                 DialoguePanel.SetActive(true);
-                Debug.Log(dialogueDatabase.GetDialogue(DialogueID).text);
-                DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                //Debug.Log(dialogueDatabase.GetDialogue().text);
+                DialogueText.text = dialogueDatabase.GetDialogue().text;
                 Time.timeScale = 0;
             }
             Destroy(this.gameObject);
