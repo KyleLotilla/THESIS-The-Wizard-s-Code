@@ -18,6 +18,9 @@ public class DialogueCollision : MonoBehaviour
     [SerializeField]
     private string pathToXMLDatabase;
 
+    [SerializeField]
+    private int DialogueID;
+
     void Start()
     {
         
@@ -35,11 +38,22 @@ public class DialogueCollision : MonoBehaviour
         
         if (col.gameObject.tag == "Wizard")
         {
-            if(dialogueDatabase.GetDialogue() != null)
+            if(dialogueDatabase.GetDialogue(DialogueID) != null)
             {
                 DialoguePanel.SetActive(true);
                 //Debug.Log(dialogueDatabase.GetDialogue().text);
-                DialogueText.text = dialogueDatabase.GetDialogue().text;
+                if(dialogueDatabase.GetDialogue(DialogueID).bold != null)
+                {
+                    string test = dialogueDatabase.GetDialogue(DialogueID).bold;
+                    if (dialogueDatabase.GetDialogue(DialogueID).text.Contains(test))
+                    {
+                        DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text.Replace(test, "<b>" + test + "</b>");
+                    }
+                }
+                else
+                {
+                    DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                }
                 Time.timeScale = 0;
             }
             Destroy(this.gameObject);

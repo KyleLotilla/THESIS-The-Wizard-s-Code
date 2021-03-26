@@ -1,0 +1,31 @@
+<ExplorationMode>
+	<LevelSelect>
+		<ID>0</ID>
+		<Text>Let’s take a look at the places we can explore!</Text>
+	</LevelSelect>
+	<LevelSelect>
+		<ID>1</ID>
+		<Text>Different levels yield different materials we can use for crafting!</Text>
+	</LevelSelect>
+	<LevelSelect>
+		<ID>2</ID>
+		<Text>Also, we can revisit certain places we have been to if we need to gather more resources there.</Text>
+	</LevelSelect>
+	<LevelSelect>
+		<ID>3</ID>
+		<Text>Whenever you're ready, just choose the place you want to go to!</Text>
+	</LevelSelect>
+	<FirstStageStart>
+		<ID>4</ID>
+		<Text>Welcome back! I hope you have prepared yourself.</Text>
+	</FirstStageStart>
+	<FirstStageStart>
+		<ID>5</ID>
+		<Text>You have unlocked a new spell thanks to your new equipment. Let’s test it out! Try to use it effectively to explore this area.</Text>
+	</FirstStageStart>
+	<FirstStageStart>
+		<ID>6</ID>
+		<Bold>break down the area into smaller problems</Bold>
+		<Text>Always remember to break down the area into smaller problems and associate the obstacles with your spells!</Text>
+	</FirstStageStart>
+</ExplorationMode>

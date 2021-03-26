@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class Dialogue
 {
+    public int ID;
+    public string bold;
     public string text;
 }

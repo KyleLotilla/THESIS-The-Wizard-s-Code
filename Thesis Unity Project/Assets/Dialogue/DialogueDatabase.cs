@@ -11,14 +11,21 @@ using System.IO;
 public class DialogueDatabase : XMLDatabaseScriptableObject
 {
     [SerializeField]
-    private string text = null;
+    private Dictionary<int, Dialogue> dialogues;
 
-    private string pathToXMLDatabase = null;
+    private string pathToXMLDatabase;
 
     // Start is called before the first frame update
     void OnEnable()
     {
-        
+        if(dialogues != null)
+        {
+            dialogues.Clear();
+        }
+        else
+        {
+            dialogues = new Dictionary<int, Dialogue>();
+        }
     }
 
 
@@ -27,9 +34,20 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
         XElement root = document.Root;
         foreach (XElement element in root.Elements())
         {
-            if (element.Elements("Text").Any())
+            if (element.Elements("ID").Any())
             {
-                this.text = element.Element("Text").Value;
+                Dialogue dialogue = new Dialogue();
+                dialogue.ID = int.Parse(element.Element("ID").Value);
+
+                if (element.Elements("Text").Any())
+                {
+                    dialogue.text = element.Element("Text").Value;
+                }
+                if (element.Elements("Bold").Any())
+                {
+                    dialogue.bold = element.Element("Bold").Value;
+                }
+                dialogues.Add(dialogue.ID, dialogue);
             }
                 
         }
@@ -41,15 +59,20 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
         LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
     }
 
-    public Dialogue GetDialogue()
+    public Dialogue GetDialogue(int DialogueID)
     {
-        if(this.text != null)
+        if (dialogues.ContainsKey(DialogueID))
         {
-            Dialogue Copydialogue = new Dialogue();
-            Copydialogue.text = this.text;
-            return Copydialogue;
+            Dialogue dialogue = dialogues[DialogueID];
+            Dialogue copydialogue = new Dialogue();
+            copydialogue.text = dialogue.text;
+            if(dialogue.bold != null)
+            {
+                copydialogue.bold = dialogue.bold;
+            }
+            
+            return copydialogue;
         }
-        
         else
         {
             return null;
