@@ -53,6 +53,19 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
         }
     }
 
+    public string setBold(string bold, string text)
+    {
+        if(text.Contains(bold) != null)
+        {
+            text = text.Replace(bold, "<b>" + bold + "</b>");
+            return text;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public void setPath(string path)
     {
         pathToXMLDatabase = path;

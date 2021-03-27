@@ -45,9 +45,9 @@ public class DialogueCollision : MonoBehaviour
                 if(dialogueDatabase.GetDialogue(DialogueID).bold != null)
                 {
                     string test = dialogueDatabase.GetDialogue(DialogueID).bold;
-                    if (dialogueDatabase.GetDialogue(DialogueID).text.Contains(test))
+                    if (dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text) != null)
                     {
-                        DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text.Replace(test, "<b>" + test + "</b>");
+                        DialogueText.text = dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text);
                     }
                 }
                 else
