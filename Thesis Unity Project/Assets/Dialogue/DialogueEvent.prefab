@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789385847791002627}
   - component: {fileID: 3024258920583027432}
-  - component: {fileID: 3024258920583027433}
+  - component: {fileID: -4837046847873324330}
   m_Layer: 0
   m_Name: DialogueEvent
   m_TagString: Untagged
@@ -48,7 +48,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
---- !u!114 &3024258920583027433
+--- !u!114 &-4837046847873324330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac6e1a5daaf6954b819873c649f0ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueID: 1
   DialoguePanel: {fileID: 0}
   DialogueText: {fileID: 0}
   dialogueDatabase: {fileID: 0}
+  pathToXMLDatabase: 

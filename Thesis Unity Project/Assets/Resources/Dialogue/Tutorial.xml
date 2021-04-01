@@ -1,0 +1,39 @@
+<Tutorial>
+	<Enteringthetutorialstage>
+		<ID>0</ID>
+		<Text>Nice to meet you Player! I am Fairie! Are you ready to go on an adventure?</Text>
+	</Enteringthetutorialstage>
+
+	<Enteringthetutorialstage>
+		<ID>1</ID>
+		<Text>Don’t worry I will be here to assist you whenever we come across something worth noting!</Text>
+	</Enteringthetutorialstage>
+
+	<Enteringthetutorialstage>
+		<ID>2</ID>
+		<Bold>spellcodes</Bold>
+		<Text>Let’s start with the basics. You can use spellcodes to perform actions on the stage! </Text>
+	</Enteringthetutorialstage>
+
+	<Inspectingthestage>
+		<ID>3</ID>
+		<Bold>elemental attack</Bold>
+		<Text>Hmm… looks like there’s an ice block that’s obstructing us from getting out of here.? Maybe an appropriate elemental attack would get rid of it?
+		</Text>
+	</Inspectingthestage>
+
+	<Destroyingtheiceblock>
+		<ID>4</ID>
+		<Text>Great job! You managed to melt down the ice cube with a fireball attack. 
+		Remember, different elemental attacks affect different obstacles in different ways!.</Text>
+	</Destroyingtheiceblock>
+	<Destroyingtheiceblock>
+		<ID>5</ID>
+		<Bold>recognize a pattern</Bold>
+		<Text>Try to recognize a pattern in how elemental attacks affect certain obstacles</Text>
+	</Destroyingtheiceblock>
+	<pickingupamaterial>
+		<ID>6</ID>
+		<Text>Wow look at that! You obtained a piece of metal! Maybe this is something we could use to our advantage!</Text>
+	</pickingupamaterial>
+</Tutorial>
