@@ -21,15 +21,15 @@ public class SpellInventoryMenu : ItemSlotMenu<Spell>
 
     override protected void OnSlotSpawn(GameObject slot, GameObject space, Spell item)
     {
-        SpellInventorySlot spellInventorySlot = slot.GetComponent<SpellInventorySlot>();
-        if (spellInventorySlot != null)
+        SpellSlot spellSlot = slot.GetComponent<SpellSlot>();
+        if (spellSlot != null)
         {
-            spellInventorySlot.spell = item;
+            spellSlot.spell = item;
         }
-        DragNDropSpace dragNDropSpace = space.GetComponent<DragNDropSpace>();
-        if (dragNDropSpace != null)
+        SlotSpace slotSpace = space.GetComponent<SlotSpace>();
+        if (slotSpace != null)
         {
-            dragNDropSpace.slot = slot;
+            slotSpace.slot = slot;
         }
     }
 }

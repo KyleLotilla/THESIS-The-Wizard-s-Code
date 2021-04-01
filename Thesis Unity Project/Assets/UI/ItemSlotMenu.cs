@@ -8,7 +8,7 @@ public class ItemSlotMenu<T> : MonoBehaviour
     private GameObject slotPrefab;
     [SerializeField]
     private GameObject spacePrefab;
-    protected IEnumerable<T> items;
+    public IEnumerable<T> items;
     [SerializeField]
     private bool fillExtraSlots = true;
     [SerializeField]
@@ -26,6 +26,16 @@ public class ItemSlotMenu<T> : MonoBehaviour
             _maxSpaces = value;
         }
     }
+    [SerializeField]
+    private List<GameObject> _spaces;
+    public IEnumerable<GameObject> spaces
+    {
+        get
+        {
+            return _spaces;
+        }
+    }
+
     void Start()
     {
 
@@ -53,6 +63,7 @@ public class ItemSlotMenu<T> : MonoBehaviour
                 if (space != null)
                 {
                     slot.transform.SetParent(space.transform);
+                    _spaces.Add(space);
                 }
                 OnSlotSpawn(slot, space, item);
                 slotCount++;
@@ -64,7 +75,11 @@ public class ItemSlotMenu<T> : MonoBehaviour
             for (int i = slotCount; i < maxSpaces; i++)
             {
                 GameObject space = Instantiate(spacePrefab, this.transform);
-                OnEmptySpaceSpawn(space);
+                if (space != null)
+                {
+                    _spaces.Add(space);
+                    OnEmptySpaceSpawn(space);
+                }
             }
         }
 
@@ -86,6 +101,7 @@ public class ItemSlotMenu<T> : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        _spaces.Clear();
         slotCount = 0;
     }
 }

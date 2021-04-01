@@ -316,7 +316,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8925259955459653303}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999382
+  m_Size: 0.99899197
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -697,7 +697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00018596338}
+  m_AnchoredPosition: {x: 0, y: 0.000051810748}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8642246119043689526
@@ -718,7 +718,11 @@ MonoBehaviour:
   fillExtraSlots: 1
   slotCount: 0
   _maxSpaces: 0
+  _spaces: []
   spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
+  spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}
+  moveLeftID: 0
+  moveRightID: 1
 --- !u!114 &8023241612526883300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,7 +1973,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spacePrefab
       value: 
-      objectReference: {fileID: 778523298634770911, guid: 216805f5e075acf4fa7be70c67a7a1de,
+      objectReference: {fileID: 3919752564568284324, guid: d9a5e7daf32ed5b4f8941a2f5372ab67,
         type: 3}
     - target: {fileID: 3347005020302619812, guid: f9cfe1f31c1f59d45be0f0ddb2fef29d,
         type: 3}

@@ -50,13 +50,13 @@ public class SpellDatabase : XMLDatabaseScriptableObject
 
                 if (element.Elements("Icon").Any())
                 {
-                    spell.pathToIcon = element.Element("Icon").Value;
-                    spell.icon = Resources.Load<Sprite>(spell.pathToIcon);
+                    spell.iconPath = element.Element("Icon").Value;
+                    spell.icon = Resources.Load<Sprite>(spell.iconPath);
                 }
 
-                if (element.Elements("ActionSlot").Any())
+                if (element.Elements("Action").Any())
                 {
-                    spell.pathToActionSlot = element.Element("ActionSlot").Value;
+                    spell.actionPath = element.Element("Action").Value;
                 }
 
                 spells.Add(spell.spellID, spell);
@@ -74,32 +74,13 @@ public class SpellDatabase : XMLDatabaseScriptableObject
             spellCopy.name = spell.name;
             spellCopy.description = spell.description;
             spellCopy.icon = spell.icon;
-            spellCopy.pathToIcon = spell.pathToIcon;
-            spellCopy.pathToActionSlot = spell.pathToActionSlot;
+            spellCopy.iconPath = spell.iconPath;
+            spellCopy.actionPath = spell.actionPath;
             return spellCopy;
         }
         else
         {
             return null;
         }
-    }
-
-    public GameObject GetActionSlot(int id)
-    {
-        Spell spell = GetSpell(id);
-        if (spell != null)
-        {
-            ActionSlot actionSlot = Resources.Load<ActionSlot>(spell.pathToActionSlot);
-            if (actionSlot != null)
-            {
-                actionSlot.spell = spell;
-                return actionSlot.gameObject;
-            }
-            else
-            {
-                return null;
-            }
-        }
-        return null;
     }
 }

@@ -4,47 +4,24 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public delegate void OnSlotChange(GameObject newSlot);
 
 public class DragNDropSpace : MonoBehaviour
 {
-    public event OnSlotChange OnSlotChange;
-
-    private GameObject _slot;
-    public GameObject slot
-    {
-        get
-        {
-            return _slot;
-        }
-        set
-        {
-            _slot = value;
-            if (_slot != null)
-            {
-                _slot.transform.SetParent(this.transform, false);
-                slotCanvas = _slot.GetComponent<Canvas>();
-                slotCanvasGroup = _slot.GetComponent<CanvasGroup>();
-            }
-            OnSlotChange?.Invoke(_slot);
-        }
-    }
-
     [SerializeField]
-    private GridLayoutGroup gridLayout;
+    private SlotSpace slotSpace;
+    [SerializeField]
+    private LayoutGroup layoutGroup;
     [SerializeField]
     private Draggable draggable;
     [SerializeField]
     private Droppable droppable;
-    [SerializeField]
-    private bool isSwappable = false;
 
     private Vector3 dragStartPos;
     private CanvasGroup slotCanvasGroup;
     private Canvas slotCanvas;
     private bool isDragging = false;
 
-    void Start()
+    void Awake()
     {
         if (draggable != null)
         {
@@ -57,9 +34,39 @@ public class DragNDropSpace : MonoBehaviour
         {
             droppable.OnDropped += OnDropped;
         }
+
+        if (slotSpace != null)
+        {
+            slotSpace.OnSlotChange += OnSlotChange;
+            if (slotSpace.slot != null)
+            {
+                OnSlotChange(slotSpace.slot);
+            }
+        }
     }
 
-    // Update is called once per frame
+    private void OnSlotChange(GameObject newSlot)
+    {
+        if (newSlot !=  null)
+        {
+            CanvasGroup canvasGroup = newSlot.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                slotCanvasGroup = canvasGroup;
+            }
+            Canvas canvas = newSlot.GetComponent<Canvas>();
+            if (canvas != null)
+            {
+                slotCanvas = canvas;
+            }
+        }
+        else
+        {
+            slotCanvasGroup = null;
+            slotCanvas = null;
+        }
+    }
+
     void Update()
     {
         
@@ -67,17 +74,27 @@ public class DragNDropSpace : MonoBehaviour
 
     void OnDragStart(PointerEventData eventData)
     {
-        isDragging = true;
-        slotCanvas.overrideSorting = true;
-        slotCanvas.sortingOrder = 1;
-        slotCanvasGroup.blocksRaycasts = false;
-        gridLayout.enabled = false;
-        dragStartPos = slot.transform.position;
+        if (!slotSpace.isEmpty)
+        {
+            isDragging = true;
+            slotCanvas.overrideSorting = true;
+            slotCanvas.sortingOrder = 1;
+            slotCanvasGroup.blocksRaycasts = false;
+            layoutGroup.enabled = false;
+            dragStartPos = slotSpace.slot.transform.position;
+        }
+        else
+        {
+            eventData.pointerDrag = null;
+        }
     }
 
     void OnDragging(PointerEventData eventData)
     {
-        slot.transform.transform.position = Input.mousePosition;
+        if (!slotSpace.isEmpty)
+        {
+            slotSpace.slot.transform.position = Input.mousePosition;
+        }
     }
 
     void OnDragEnd(PointerEventData eventData)
@@ -91,29 +108,26 @@ public class DragNDropSpace : MonoBehaviour
         {
             slotCanvas.overrideSorting = false;
             slotCanvasGroup.blocksRaycasts = true;
-            gridLayout.enabled = true;
-            slot.transform.position = dragStartPos;
+            layoutGroup.enabled = true;
             isDragging = false;
+        }
+
+        if (!slotSpace.isEmpty)
+        {
+            slotSpace.slot.transform.position = dragStartPos;
         }
     }
 
     void OnDropped(PointerEventData eventData)
     {
-        if (!(slot != null && !isSwappable))
+        SlotSpace otherSpace = eventData.pointerDrag.GetComponent<SlotSpace>();
+        DragNDropSpace otherDragNDropSpace = eventData.pointerDrag.GetComponent<DragNDropSpace>();
+        if (otherSpace != null && otherDragNDropSpace != null)
         {
-            DragNDropSpace otherSpace = eventData.pointerDrag.GetComponent<DragNDropSpace>();
-            if (otherSpace != null)
-            {
-                otherSpace.StopDragging();
-                SwapSlots(otherSpace);
-            }
+            otherDragNDropSpace.StopDragging();
+            slotSpace.SwapSlots(otherSpace);
         }
     }
 
-    void SwapSlots(DragNDropSpace otherSpace)
-    {
-        GameObject temp = slot;
-        slot = otherSpace.slot;
-        otherSpace.slot = temp;
-    }
+    
 }

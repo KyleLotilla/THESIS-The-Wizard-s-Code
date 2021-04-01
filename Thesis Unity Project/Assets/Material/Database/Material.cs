@@ -13,5 +13,5 @@ public class Material
     [SerializeField]
     public Sprite icon { get; set; }
     [SerializeField]
-    public string pathToIcon { get; set; }
+    public string iconPath { get; set; }
 }

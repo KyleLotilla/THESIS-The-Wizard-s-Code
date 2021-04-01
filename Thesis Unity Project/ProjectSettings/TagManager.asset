@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Ice
   - Lightning
+  - SpellCodeAction
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class DatabaseTestScript : MonoBehaviour
     public SpellDatabase spellDatabase;
     public SpellInventory spellInventory;
     public SpellCodeInventory spellCodeInventory;
+    public Sprite spellCodeIcon1;
+    public Sprite spellCodeIcon2;
 
     // Start is called before the first frame update
     void Awake()
@@ -28,13 +30,15 @@ public class DatabaseTestScript : MonoBehaviour
         spellCode1.AddSpell(fireBall);
         spellCode1.AddSpell(spellDatabase.GetSpell(0));
         spellCode1.name = "Test1";
-        spellCodeInventory.AddSpellCode(spellCode1);
+        spellCode1.actionIcon = spellCodeIcon1;
+        spellCodeInventory.EquipSpellCode(spellCode1);
 
         SpellCode spellCode2 = new SpellCode();
         spellCode2.AddSpell(spellDatabase.GetSpell(1));
         spellCode2.AddSpell(fireBall);
         spellCode2.AddSpell(electro);
         spellCode2.name = "Test2";
+        spellCode2.actionIcon = spellCodeIcon2;
         spellCodeInventory.EquipSpellCode(spellCode2);
 
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));

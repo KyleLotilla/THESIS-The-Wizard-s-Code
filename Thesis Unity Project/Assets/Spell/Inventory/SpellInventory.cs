@@ -123,21 +123,6 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         spells.Remove(spell);
     }
 
-    public List<GameObject> GetEquippedActionSlots()
-    {
-        List<GameObject> spellActions = new List<GameObject>();
-        foreach (Spell spell in equipped)
-        {
-            ActionSlot actionSlot = Resources.Load<ActionSlot>(spell.pathToActionSlot);
-            if (actionSlot != null)
-            {
-                actionSlot.spell = spell;
-                spellActions.Add(actionSlot.gameObject);
-            }
-        }
-        return spellActions;
-    }
-
     public IEnumerator GetEnumerator()
     {
         return ((IEnumerable)spells).GetEnumerator();

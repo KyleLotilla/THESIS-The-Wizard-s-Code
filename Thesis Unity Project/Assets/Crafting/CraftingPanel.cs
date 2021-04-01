@@ -5,11 +5,11 @@ using UnityEngine;
 public class CraftingPanel : MonoBehaviour
 {
     [SerializeField]
-    private List<DragNDropSpace> craftingSpaces;
+    private List<SlotSpace> craftingSpaces;
     [SerializeField]
     private GameObject resultSpace;
     [SerializeField]
-    private SpellInventorySlot resultSpellSlot;
+    private SpellSlot resultSpellSlot;
     [SerializeField]
     private CraftingDatabase craftingDatabase;
     [SerializeField]
@@ -24,7 +24,7 @@ public class CraftingPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (DragNDropSpace space in craftingSpaces)
+        foreach (SlotSpace space in craftingSpaces)
         {
             space.OnSlotChange += ShowResultSpell;
         }
@@ -39,12 +39,12 @@ public class CraftingPanel : MonoBehaviour
         }
         ingredients = new List<Material>();
 
-        foreach (DragNDropSpace space in craftingSpaces)
+        foreach (SlotSpace space in craftingSpaces)
         {
             GameObject spaceSlot = space.slot;
             if (spaceSlot != null)
             {
-                MaterialInventorySlot materialSlot = spaceSlot.GetComponent<MaterialInventorySlot>();
+                MaterialSlot materialSlot = spaceSlot.GetComponent<MaterialSlot>();
                 if (materialSlot != null)
                 {
                     if (materialSlot.material != null)
@@ -64,7 +64,7 @@ public class CraftingPanel : MonoBehaviour
                 if (resultSpell != null)
                 {
                     GameObject resultSpellObject = Instantiate(resultSlotPrefab, resultSpace.transform);
-                    resultSpellSlot = resultSpellObject.GetComponent<SpellInventorySlot>();
+                    resultSpellSlot = resultSpellObject.GetComponent<SpellSlot>();
                     if (resultSpellSlot != null)
                     {
                         resultSpellSlot.spell = resultSpell;
@@ -86,7 +86,7 @@ public class CraftingPanel : MonoBehaviour
 
         DestroyImmediate(resultSpellSlot.gameObject);
 
-        foreach (DragNDropSpace space in craftingSpaces)
+        foreach (SlotSpace space in craftingSpaces)
         {
             DestroyImmediate(space.slot);
             space.slot = null;

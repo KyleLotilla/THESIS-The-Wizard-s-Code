@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecipeMenu : MonoBehaviour
+public class RecipeMenu : ItemSlotMenu<CraftingRecipe>
 {
     [SerializeField]
     private CraftingDatabase craftingDatabase;
     [SerializeField]
     private SpellDatabase spellDatabase;
     [SerializeField]
-    private GameObject recipeSlotPrefab;
-    [SerializeField]
     private RecipePanel recipePanel;
     // Start is called before the first frame update
     void Start()
     {
-        RefreshRecipes();
+        items = craftingDatabase;
+        RefreshMenu();
     }
 
     // Update is called once per frame
@@ -24,38 +23,24 @@ public class RecipeMenu : MonoBehaviour
         
     }
 
-    public void RefreshRecipes()
+    protected override void OnSlotSpawn(GameObject slot, GameObject space, CraftingRecipe item)
     {
-        RemoveAllSlots();
-        foreach (CraftingRecipe craftingRecipe in craftingDatabase)
+        Spell resultSpell = spellDatabase.GetSpell(item.resultSpellID);
+
+        if (resultSpell != null)
         {
-            GameObject slot = Instantiate(recipeSlotPrefab, this.transform);
-            Spell resultSpell = spellDatabase.GetSpell(craftingRecipe.resultSpellID);
-
-            if (resultSpell != null)
+            SpellSlot spellSlot = slot.GetComponent<SpellSlot>();
+            if (spellSlot != null)
             {
-                SpellInventorySlot spellSlot = slot.GetComponent<SpellInventorySlot>();
-                if (spellSlot != null)
-                {
-                    spellSlot.spell = resultSpell;
-                }
-
-                RecipeSlot recipeSlot = slot.GetComponent<RecipeSlot>();
-                if (recipeSlot != null)
-                {
-                    recipeSlot.recipe = craftingRecipe;
-                    recipeSlot.recipePanel = recipePanel;
-                }
+                spellSlot.spell = resultSpell;
             }
 
-        }
-    }
-
-    void RemoveAllSlots()
-    {
-        foreach (Transform child in this.transform)
-        {
-            Destroy(child.gameObject);
+            RecipeSlot recipeSlot = slot.GetComponent<RecipeSlot>();
+            if (recipeSlot != null)
+            {
+                recipeSlot.recipe = item;
+                recipeSlot.recipePanel = recipePanel;
+            }
         }
     }
 }

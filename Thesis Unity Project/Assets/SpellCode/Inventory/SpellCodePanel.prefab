@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 7007861043083638930, guid: c124ebef24389404184c34b8bb35aaf6,
     type: 3}
-  spacePrefab: {fileID: 9091723208373427749, guid: 16956a0a1bd52eb42ab73e06bfbc81dc,
+  spacePrefab: {fileID: 1341105697430974638, guid: 31d9362f3458635428cd76845a8d6239,
     type: 3}
   fillExtraSlots: 1
   slotCount: 0

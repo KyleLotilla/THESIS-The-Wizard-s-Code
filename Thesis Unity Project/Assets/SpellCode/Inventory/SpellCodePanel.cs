@@ -42,7 +42,7 @@ public class SpellCodePanel : MonoBehaviour
     {
         spellMenu.maxSpaces = spellCodeInventory.maxSpells;
         spellMenu.spells = spellCode;
-        nameText.text = _spellCode.name;
+        nameText.text = spellCode.name;
     }
 
 }

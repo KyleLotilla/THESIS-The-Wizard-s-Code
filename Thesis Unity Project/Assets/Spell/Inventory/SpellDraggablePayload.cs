@@ -10,7 +10,7 @@ public class SpellDraggablePayload : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        draggablePayload.OnVisualPayloadSpawn += OnVisualPayloadSpawn;
+        draggablePayload.OnDraggablePayloadSpawn += OnDraggablePayloadSpawn;
     }
 
     // Update is called once per frame
@@ -19,12 +19,12 @@ public class SpellDraggablePayload : MonoBehaviour
         
     }
 
-    void OnVisualPayloadSpawn(GameObject payload)
+    void OnDraggablePayloadSpawn(GameObject payload)
     {
-        SpellInventorySlot spellInventorySlot = payload.GetComponent<SpellInventorySlot>();
-        if (spellInventorySlot != null)
+        SpellSlot spellSlot = payload.GetComponent<SpellSlot>();
+        if (spellSlot != null)
         {
-            spellInventorySlot.spell = spell;
+            spellSlot.spell = spell;
         }
     }
 }

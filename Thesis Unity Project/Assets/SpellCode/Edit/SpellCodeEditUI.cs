@@ -60,15 +60,19 @@ public class SpellCodeEditUI : MonoBehaviour
     public void SaveSpellCode()
     {
         List<Spell> spells = new List<Spell>();
-        foreach (DragNDropSpace space in spellMenu.spaces)
+        foreach (GameObject spaceObject in spellMenu.spaces)
         {
-            GameObject slot = space.slot;
-            if (slot != null)
+            SlotSpace space = spaceObject.GetComponent<SlotSpace>();
+            if (space != null)
             {
-                SpellInventorySlot spellInventorySlot = slot.GetComponent<SpellInventorySlot>();
-                if (spellInventorySlot != null)
+                GameObject slot = space.slot;
+                if (slot != null)
                 {
-                    spells.Add(spellInventorySlot.spell);
+                    SpellSlot spellSlot = slot.GetComponent<SpellSlot>();
+                    if (spellSlot != null)
+                    {
+                        spells.Add(spellSlot.spell);
+                    }
                 }
             }
         }

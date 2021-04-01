@@ -9,7 +9,7 @@ public class Spell
     public string name;
     public string description;
     public Sprite icon;
-    public string pathToIcon;
+    public string iconPath;
     public bool isEquipped;
-    public string pathToActionSlot;
+    public string actionPath;
 }

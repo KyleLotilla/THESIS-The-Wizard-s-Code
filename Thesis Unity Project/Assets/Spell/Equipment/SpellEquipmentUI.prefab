@@ -704,11 +704,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 7007861043083638930, guid: c124ebef24389404184c34b8bb35aaf6,
     type: 3}
-  spacePrefab: {fileID: 7195294331935169550, guid: bce903bbc64dce34992521046c57456d,
+  spacePrefab: {fileID: 3210449076830711460, guid: dbcd068dc891b0848bde8aa072c17b7e,
     type: 3}
   fillExtraSlots: 1
   slotCount: 0
-  maxSpaces: 30
+  _maxSpaces: 30
+  _spaces: []
   spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
 --- !u!1 &8606681979078159617
 GameObject:
@@ -1214,7 +1215,8 @@ MonoBehaviour:
     type: 3}
   fillExtraSlots: 1
   slotCount: 0
-  maxSpaces: 5
+  _maxSpaces: 0
+  _spaces: []
   spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
 --- !u!1 &8606681979441340359
 GameObject:

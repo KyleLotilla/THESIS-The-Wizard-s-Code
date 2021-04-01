@@ -14,6 +14,7 @@ public class SpellCode : IEnumerable<Spell>
         }
     }
     public bool isEquipped { get; set; }
+    public Sprite actionIcon { get; set; }
 
     public Spell this[int i]
     {

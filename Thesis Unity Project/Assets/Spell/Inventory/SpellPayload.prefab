@@ -85,8 +85,8 @@ GameObject:
   - component: {fileID: 8254365832573925144}
   - component: {fileID: 8489187846477763845}
   - component: {fileID: 9071928529568437821}
-  - component: {fileID: 5648376500636587645}
   - component: {fileID: 6706845347127209283}
+  - component: {fileID: 1530221502938336933}
   m_Layer: 5
   m_Name: SpellPayload
   m_TagString: Untagged
@@ -151,19 +151,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5648376500636587645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7195294331935169550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8bfcc6e7191f044b28b6eba20fa6e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iconUI: {fileID: 3469431732854945788}
 --- !u!223 &6706845347127209283
 Canvas:
   m_ObjectHideFlags: 0
@@ -185,3 +172,16 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1530221502938336933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195294331935169550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b39569369ee6141baf9776572e3692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 3469431732854945788}

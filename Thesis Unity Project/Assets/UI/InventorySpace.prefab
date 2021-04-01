@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 6027257417958397648}
   - component: {fileID: 1194958511873104055}
   - component: {fileID: 1021569625299605034}
+  - component: {fileID: 4935180058416394691}
   m_Layer: 5
-  m_Name: Inventory Drop Space
+  m_Name: InventorySpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,10 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488d77262153daf4daecd6ffae6431bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridLayout: {fileID: 5161215143516187705}
+  slotSpace: {fileID: 4935180058416394691}
+  layoutGroup: {fileID: 5161215143516187705}
   draggable: {fileID: 1194958511873104055}
   droppable: {fileID: 1021569625299605034}
-  isSwappable: 1
 --- !u!114 &1194958511873104055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +145,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDroppable: 1
+--- !u!114 &4935180058416394691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7195294331935169550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f2d685fc0d4e740bfc5edfaf3c7b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isSwappable: 0
