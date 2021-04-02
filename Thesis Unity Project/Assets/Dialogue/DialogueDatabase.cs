@@ -18,14 +18,7 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
     // Start is called before the first frame update
     void OnEnable()
     {
-        if(dialogues != null)
-        {
-            dialogues.Clear();
-        }
-        else
-        {
-            dialogues = new Dictionary<int, Dialogue>();
-        }
+       
     }
 
 
@@ -66,8 +59,42 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
         }
     }
 
+    public string setFairyName(string fairy, string text)
+    {
+        if(text.Contains("Fairie") != null)
+        {
+            text.Replace("Fairie", fairy);
+            return text;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public string setPlayerName(string player, string text)
+    {
+        if(text.Contains("Player") != null)
+        {
+            text = text.Replace("Player", player);
+            return text;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public void setPath(string path)
     {
+        if (dialogues != null)
+        {
+            dialogues.Clear();
+        }
+        else
+        {
+            dialogues = new Dictionary<int, Dialogue>();
+        }
         pathToXMLDatabase = path;
         LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
     }
