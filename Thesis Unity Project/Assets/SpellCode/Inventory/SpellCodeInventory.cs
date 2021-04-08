@@ -7,6 +7,8 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
 {
     [SerializeField]
     private List<SpellCode> spellCodes;
+    [SerializeField]
+    private Sprite spellCodeIcon;
     private List<SpellCode> _equipped;
     public IEnumerable<SpellCode> equipped
     {
@@ -65,6 +67,10 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
     }
     public void AddSpellCode(SpellCode spellCode)
     {
+        if (spellCode.actionIcon == null)
+        {
+            spellCode.actionIcon = spellCodeIcon;
+        }
         spellCodes.Add(spellCode);
     }
 

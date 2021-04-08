@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4899a6e3adde6d458d3deb5a50a50ad, type: 3}
   m_Name: SpellCodeInventoryInstance
   m_EditorClassIdentifier: 
+  spellCodeIcon: {fileID: -6856720310806474580, guid: c529da40bbe24164888e33615ef92e51,
+    type: 3}
   _minSpells: 2
   _maxSpells: 3
