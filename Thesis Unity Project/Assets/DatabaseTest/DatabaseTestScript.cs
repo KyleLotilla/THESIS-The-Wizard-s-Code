@@ -49,8 +49,6 @@ public class DatabaseTestScript : MonoBehaviour
 
         materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
-
-        
     }
 
     // Update is called once per frame
