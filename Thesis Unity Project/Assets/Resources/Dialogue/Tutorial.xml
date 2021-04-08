@@ -11,8 +11,8 @@
 
 	<Enteringthetutorialstage>
 		<ID>2</ID>
-		<Bold>spellcodes</Bold>
-		<Text>Let’s start with the basics. You can use spellcodes to perform actions on the stage! </Text>
+		<Bold>spells</Bold>
+		<Text>Let’s start with the basics. You can use spells to perform actions on the stage! </Text>
 	</Enteringthetutorialstage>
 
 	<Inspectingthestage>
@@ -36,4 +36,22 @@
 		<ID>6</ID>
 		<Text>Wow look at that! You obtained a piece of metal! Maybe this is something we could use to our advantage!</Text>
 	</pickingupamaterial>
+
+	<Destroyingtheiceblock>
+		<ID>7</ID>
+		<Bold>evaluate</Bold>
+		<Text>Try to evaluate the stage before you plan your strategy!</Text>
+	</Destroyingtheiceblock>
+
+	<Destroyingtheiceblock>
+		<ID>8</ID>
+		<Bold>evaluate</Bold>
+		<Text>Maybe you could recognize a pattern in how elemental attacks affect certain obstacles.</Text>
+	</Destroyingtheiceblock>
+
+	<Destroyingtheiceblock>
+		<ID>9</ID>
+		<Bold>recognize a pattern</Bold>
+		<Text>Maybe you could recognize a pattern in how elemental attacks affect certain obstacles.</Text>
+	</Destroyingtheiceblock>
 </Tutorial>

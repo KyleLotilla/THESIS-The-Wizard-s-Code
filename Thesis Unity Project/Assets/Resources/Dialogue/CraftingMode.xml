@@ -22,4 +22,8 @@
 		<Bold>associate specific materials to corresponding equipment!</Bold>
 		<Text>Remember different types of equipment require different materials. Try to associate specific materials to corresponding equipment!</Text>
 	</Aftersuccessfullycrafting>
+	<Aftersuccessfullycrafting>
+		<ID>5</ID>
+		<Text>I think we’re done here. Let’s take a look at where we could go next.</Text>
+	</Aftersuccessfullycrafting>
 </CraftingMode>

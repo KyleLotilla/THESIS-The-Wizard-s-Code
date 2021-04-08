@@ -21,9 +21,12 @@ public class DialogueCollision : MonoBehaviour
     [SerializeField]
     private int DialogueID;
 
+    [SerializeField]
+    private Text username;
+
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -53,6 +56,17 @@ public class DialogueCollision : MonoBehaviour
                 else
                 {
                     DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                }
+                if(DialogueID == 0)
+                {
+                    if(dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text) != null)
+                    {
+                        DialogueText.text = dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text);
+                    }
+                    else
+                    {
+                        DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                    }
                 }
                 Time.timeScale = 0;
             }
