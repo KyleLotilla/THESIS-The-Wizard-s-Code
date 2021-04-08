@@ -50,8 +50,8 @@ public class MaterialDatabase : XMLDatabaseScriptableObject
 
                 if (element.Elements("Icon").Any())
                 {
-                    material.pathToIcon = element.Element("Icon").Value;
-                    material.icon = Resources.Load<Sprite>(material.pathToIcon);
+                    material.iconPath = element.Element("Icon").Value;
+                    material.icon = Resources.Load<Sprite>(material.iconPath);
                 }
 
                 materials.Add(material.materialID, material);
@@ -69,7 +69,7 @@ public class MaterialDatabase : XMLDatabaseScriptableObject
             materialCopy.name = material.name;
             materialCopy.description = material.description;
             materialCopy.icon = material.icon;
-            materialCopy.pathToIcon = material.pathToIcon;
+            materialCopy.iconPath = material.iconPath;
             return materialCopy;
         }
         else

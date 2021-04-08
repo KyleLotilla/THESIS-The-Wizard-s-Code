@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public delegate void OnVisualPayloadSpawn(GameObject visualPayload);
+public delegate void OnDraggablePayloadSpawn(GameObject payload);
 
 public class DraggablePayload : MonoBehaviour
 {
-    public event OnVisualPayloadSpawn OnVisualPayloadSpawn;
+    public event OnDraggablePayloadSpawn OnDraggablePayloadSpawn;
 
     [SerializeField]
-    private Draggable dragabble;
+    private Draggable draggable;
     [SerializeField]
-    private GameObject visualPayloadPrefab;
-    private GameObject currentVisualPayload;
+    private GameObject payload;
+    private GameObject visualPayload;
 
     // Start is called before the first frame update
     void Start()
     {
-        dragabble.OnDragStart += OnDragStart;
-        dragabble.OnDragging += OnDragging;
-        dragabble.OnDragEnd += OnDragEnd;
+        draggable.OnDragStart += OnDragStart;
+        draggable.OnDragging += OnDragging;
+        draggable.OnDragEnd += OnDragEnd;
     }
 
     // Update is called once per frame
@@ -31,20 +31,20 @@ public class DraggablePayload : MonoBehaviour
 
     void OnDragStart(PointerEventData eventData)
     {
-        currentVisualPayload = Instantiate(visualPayloadPrefab, Input.mousePosition, Quaternion.identity, this.transform);
-        if (currentVisualPayload != null)
+        visualPayload = Instantiate(payload, Input.mousePosition, Quaternion.identity, this.transform);
+        if (visualPayload != null)
         {
-            OnVisualPayloadSpawn?.Invoke(currentVisualPayload);
+            OnDraggablePayloadSpawn?.Invoke(visualPayload);
         }
     }
 
     void OnDragging(PointerEventData eventData)
     {
-        currentVisualPayload.transform.position = Input.mousePosition;
+        visualPayload.transform.position = Input.mousePosition;
     }
 
     void OnDragEnd(PointerEventData eventData)
     {
-        DestroyImmediate(currentVisualPayload);
+        DestroyImmediate(visualPayload);
     }
 }

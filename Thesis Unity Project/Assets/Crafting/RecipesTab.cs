@@ -29,7 +29,7 @@ public class RecipesTab : MonoBehaviour
         if (this.page == page)
         {
             recipePanel.Clear();
-            recipeMenu.RefreshRecipes();
+            recipeMenu.RefreshMenu();
         }
     }
 }

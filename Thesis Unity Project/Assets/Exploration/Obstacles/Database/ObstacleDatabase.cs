@@ -36,8 +36,8 @@ public class ObstacleDatabase : XMLDatabaseComponent
 
                 if (element.Elements("Icon").Any())
                 {
-                    obstacle.pathToIcon = element.Element("Icon").Value;
-                    obstacle.icon = Resources.Load<Sprite>(obstacle.pathToIcon);
+                    obstacle.iconPath = element.Element("Icon").Value;
+                    obstacle.icon = Resources.Load<Sprite>(obstacle.iconPath);
                 }
 
                 obstacles.Add(obstacle.obstacleID, obstacle);
@@ -54,7 +54,7 @@ public class ObstacleDatabase : XMLDatabaseComponent
             obstacleCopy.obstacleID = obstacle.obstacleID;
             obstacleCopy.name = obstacle.name;
             obstacleCopy.icon = obstacle.icon;
-            obstacleCopy.pathToIcon = obstacle.pathToIcon;
+            obstacleCopy.iconPath = obstacle.iconPath;
             return obstacleCopy;
         }
         else

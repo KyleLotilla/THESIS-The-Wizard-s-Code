@@ -4,22 +4,9 @@ using UnityEngine.UI;
 public class SpellEquipmentSpace : MonoBehaviour
 {
     [SerializeField]
-    DragNDropSpace space;
+    SlotSpace space;
     [SerializeField]
     private SpellInventory spellInventory;
-    private Spell _spell;
-    [SerializeField]
-    public Spell spell
-    {
-        get
-        {
-            return _spell;
-        }
-        set
-        {
-            _spell = value;
-        }
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -34,48 +21,35 @@ public class SpellEquipmentSpace : MonoBehaviour
 
     void OnSlotChange(GameObject slot)
     {
-        if (slot == null)
+        if (slot != null)
         {
-            UnequipSpell();
-        }
-        else
-        {
-            SpellInventorySlot spellInventorySlot = slot.GetComponent<SpellInventorySlot>();
-            if (spellInventorySlot != null)
+            SpellSlot spellSlot = slot.GetComponent<SpellSlot>();
+            if (spellSlot != null)
             {
-                EquipSpell(spellInventorySlot.spell);
+                Spell spell = spellSlot.spell;
+                if (!spell.isEquipped)
+                {
+                    EquipSpell(spell);
+                }
             }
         }
     }
 
-    void EquipSpell(Spell newSpell)
+    void EquipSpell(Spell spell)
     {
-        if (newSpell != null)
+        if (spell != null)
         {
-            if (!newSpell.isEquipped)
+            if (!spell.isEquipped)
             {
-                if (spell != null)
-                {
-                    UnequipSpell();
-                }
-                spellInventory.RemoveSpell(newSpell);
-                spellInventory.EquipSpell(newSpell);
-                spell = newSpell;
-                
+                spellInventory.RemoveSpell(spell);
+                spellInventory.EquipSpell(spell);
                 /*
-                foreach (Spell spell in spellInventory.equipped)
+                foreach (Spell spell1 in spellInventory.equipped)
                 {
-                    Debug.Log(spell.name);
+                    Debug.Log(spell1.name);
                 }
                 */
             }
         }
-    }
-
-    void UnequipSpell()
-    {
-        spellInventory.UnequipSpell(spell);
-        spellInventory.AddSpell(spell);
-        this.spell = null;
     }
 }

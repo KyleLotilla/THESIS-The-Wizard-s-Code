@@ -9,7 +9,7 @@ public class RecipePanel : MonoBehaviour
     [SerializeField]
     private SpellDatabase spellDatabase;
     [SerializeField]
-    private List<DragNDropSpace> ingredientSpaces;
+    private List<SlotSpace> ingredientSpaces;
     [SerializeField]
     private GameObject materialSlotPrefab;
     [SerializeField]
@@ -44,7 +44,7 @@ public class RecipePanel : MonoBehaviour
                     ingredientSpaces[i].slot = materialSlot;
                     if (materialSlot != null)
                     {
-                        MaterialInventorySlot materialInventorySlot = materialSlot.GetComponent<MaterialInventorySlot>();
+                        MaterialSlot materialInventorySlot = materialSlot.GetComponent<MaterialSlot>();
                         if (materialInventorySlot != null)
                         {
                             materialInventorySlot.material = ingredient;
@@ -59,10 +59,10 @@ public class RecipePanel : MonoBehaviour
                 resultSlot = Instantiate(resultSlotPrefab, resultSpace.transform);
                 if (resultSlot != null)
                 {
-                    SpellInventorySlot resultInventorySlot = resultSlot.GetComponent<SpellInventorySlot>();
-                    if (resultInventorySlot != null)
+                    SpellSlot resultSpellSlot = resultSlot.GetComponent<SpellSlot>();
+                    if (resultSpellSlot != null)
                     {
-                        resultInventorySlot.spell = resultSpell;
+                        resultSpellSlot.spell = resultSpell;
                     }
                 }
             }
@@ -71,7 +71,7 @@ public class RecipePanel : MonoBehaviour
 
     public void Clear()
     {
-        foreach (DragNDropSpace space in ingredientSpaces)
+        foreach (SlotSpace space in ingredientSpaces)
         {
             if (space.slot != null)
             {

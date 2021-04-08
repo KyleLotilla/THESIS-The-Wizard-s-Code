@@ -31,7 +31,24 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
             _maxEquipped = value;
         }
     }
+    public int Count
+    {
+        get
+        {
+            return spells.Count;
+        }
+    }
 
+    public IEnumerable<Spell> fullInventory
+    {
+        get
+        {
+            List<Spell> fullInventory = new List<Spell>(spells.Count + _equipped.Count);
+            fullInventory.AddRange(_equipped);
+            fullInventory.AddRange(spells);
+            return fullInventory;
+        }
+    }
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -104,21 +121,6 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
     public void RemoveSpell(Spell spell)
     {
         spells.Remove(spell);
-    }
-
-    public List<GameObject> GetEquippedActionSlots()
-    {
-        List<GameObject> spellActions = new List<GameObject>();
-        foreach (Spell spell in equipped)
-        {
-            ActionSlot actionSlot = Resources.Load<ActionSlot>(spell.pathToActionSlot);
-            if (actionSlot != null)
-            {
-                actionSlot.spell = spell;
-                spellActions.Add(actionSlot.gameObject);
-            }
-        }
-        return spellActions;
     }
 
     public IEnumerator GetEnumerator()

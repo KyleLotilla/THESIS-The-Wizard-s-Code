@@ -6,7 +6,7 @@ using UnityEngine;
 using System.Xml.Linq;
 using System.IO;
 
-public class CraftingDatabase : XMLDatabaseComponent, IEnumerable
+public class CraftingDatabase : XMLDatabaseComponent, IEnumerable<CraftingRecipe>
 {
     private Dictionary<string, int> recipes;
     /* The key is the ingredients for the recipes. It is represented through a formatted string of space-separed integer ids of the ingredients.
@@ -90,5 +90,10 @@ public class CraftingDatabase : XMLDatabaseComponent, IEnumerable
     public IEnumerator GetEnumerator()
     {
         return ((IEnumerable)recipesList).GetEnumerator();
+    }
+
+    IEnumerator<CraftingRecipe> IEnumerable<CraftingRecipe>.GetEnumerator()
+    {
+        return ((IEnumerable<CraftingRecipe>)recipesList).GetEnumerator();
     }
 }

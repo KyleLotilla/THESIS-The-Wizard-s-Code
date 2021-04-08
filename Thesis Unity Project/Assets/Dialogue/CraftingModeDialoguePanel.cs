@@ -56,7 +56,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        buttonSFX.Stop();   
         timer -= Time.deltaTime;
         if (timer <= 0.0f)
         {
@@ -88,13 +88,15 @@ public class CraftingModeDialoguePanel : MonoBehaviour
 
     public void untilCraft()
     {
+        displaySFX.Stop();
         if (DialogueID < 1 || DialogueID > 1 && DialogueID < 5)
         {
             nextText();
         }
         else if (DialogueID >= 5)
         {
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(1);
+            DialoguePanel.SetActive(false);
         }
         else
         {
@@ -108,6 +110,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
 
     public void Aftercraft()
     {
+        displaySFX.Stop();
         DialoguePanel.SetActive(true);
         nextText();
         buttonSFX.Play();

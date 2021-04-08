@@ -21,15 +21,15 @@ public class MaterialInventoryMenu : ItemSlotMenu<Material>
 
     override protected void OnSlotSpawn(GameObject slot, GameObject space, Material item)
     {
-        MaterialInventorySlot materialSlot = slot.GetComponent<MaterialInventorySlot>();
+        MaterialSlot materialSlot = slot.GetComponent<MaterialSlot>();
         if (materialSlot != null)
         {
             materialSlot.material = item;
         }
-        DragNDropSpace dragNDropSpace = space.GetComponent<DragNDropSpace>();
-        if (dragNDropSpace != null)
+        SlotSpace slotSpace = space.GetComponent<SlotSpace>();
+        if (slotSpace != null)
         {
-            dragNDropSpace.slot = slot;
+            slotSpace.slot = slot;
         }
     }
 }

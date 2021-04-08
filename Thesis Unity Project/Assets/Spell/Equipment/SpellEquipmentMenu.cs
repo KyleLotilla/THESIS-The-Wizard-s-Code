@@ -10,6 +10,7 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
     void Start()
     {
         items = spellInventory.equipped;
+        maxSpaces = spellInventory.maxEquipped;
         RefreshMenu();
     }
 
@@ -21,22 +22,17 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
 
     override protected void OnSlotSpawn(GameObject slot, GameObject space, Spell item)
     {
-        SpellInventorySlot spellInventorySlot = slot.GetComponent<SpellInventorySlot>();
-        if (spellInventorySlot != null)
+        SpellSlot spellSpell = slot.GetComponent<SpellSlot>();
+        if (spellSpell != null)
         {
-            spellInventorySlot.spell = item;
+            spellSpell.spell = item;
         }
         if (space != null)
         {
-            DragNDropSpace dragNDropSpace = space.GetComponent<DragNDropSpace>();
-            if (dragNDropSpace != null)
+            SlotSpace slotSpace = space.GetComponent<SlotSpace>();
+            if (slotSpace != null)
             {
-                dragNDropSpace.slot = slot;
-            }
-            SpellEquipmentSpace spellEquipmentSpace = space.GetComponent<SpellEquipmentSpace>();
-            if (spellEquipmentSpace != null)
-            {
-                spellEquipmentSpace.spell = item;
+                slotSpace.slot = slot;
             }
         }
     }

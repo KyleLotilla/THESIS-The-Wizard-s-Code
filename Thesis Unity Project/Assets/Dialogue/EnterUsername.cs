@@ -28,6 +28,6 @@ public class EnterUsername : MonoBehaviour
     public void setUsername()
     {
         username.text = mainInputField.text;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }
