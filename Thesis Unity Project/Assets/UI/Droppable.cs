@@ -9,7 +9,18 @@ public class Droppable : MonoBehaviour, IDropHandler
 {
     public event OnDropped OnDropped;
     [SerializeField]
-    private bool isDroppable = true;
+    private bool _isDroppable = true;
+    public bool isDroppable
+    {
+        get
+        {
+            return _isDroppable;
+        }
+        set
+        {
+            _isDroppable = value;
+        }
+    }
 
     public void OnDrop(PointerEventData eventData)
     {

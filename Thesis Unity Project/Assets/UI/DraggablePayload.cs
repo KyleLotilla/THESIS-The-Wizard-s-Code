@@ -31,7 +31,7 @@ public class DraggablePayload : MonoBehaviour
 
     void OnDragStart(PointerEventData eventData)
     {
-        visualPayload = Instantiate(payload, Input.mousePosition, Quaternion.identity, this.transform);
+        visualPayload = Instantiate(payload, Input.mousePosition, Quaternion.identity, this.transform.parent);
         if (visualPayload != null)
         {
             OnDraggablePayloadSpawn?.Invoke(visualPayload);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpellCodeSpellSpace : MonoBehaviour
+public class SpaceHiglighter : MonoBehaviour
 {
     [SerializeField]
     private Color normalColor;

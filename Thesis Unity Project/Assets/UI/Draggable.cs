@@ -14,7 +14,18 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public event OnDragEnd OnDragEnd;
 
     [SerializeField]
-    private bool isDraggable = true;
+    private bool _isDraggable = true;
+    public bool isDraggable
+    {
+        get
+        {
+            return _isDraggable;
+        }
+        set
+        {
+            _isDraggable = value;
+        }
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {

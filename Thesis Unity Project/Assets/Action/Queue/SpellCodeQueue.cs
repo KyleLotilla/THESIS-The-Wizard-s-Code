@@ -10,7 +10,7 @@ public class SpellCodeQueue : MonoBehaviour
     [SerializeField]
     private SpellCodeSpellMenu spellCodeSpellMenu;
     [SerializeField]
-    private List<SpellCodeSpellSpace> spaces;
+    private List<SpaceHiglighter> spaces;
     [SerializeField]
     private SpellCodeAction _spellCodeAction;
     public SpellCodeAction spellCodeAction
@@ -26,7 +26,7 @@ public class SpellCodeQueue : MonoBehaviour
             spellCodePanel.spellCode = spellCodeAction.spellCode;
             foreach (GameObject spaceObject in spellCodeSpellMenu.spaces)
             {
-                SpellCodeSpellSpace space = spaceObject.GetComponent<SpellCodeSpellSpace>();
+                SpaceHiglighter space = spaceObject.GetComponent<SpaceHiglighter>();
                 if (space != null)
                 {
                     spaces.Add(space);

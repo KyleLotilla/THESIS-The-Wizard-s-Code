@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class ActionQueue : MonoBehaviour
@@ -11,11 +12,10 @@ public class ActionQueue : MonoBehaviour
     private SpellCodeQueue spellCodeQueue;
     [SerializeField]
     private ActionSequence actionSequence;
-    [SerializeField] 
-    private List<QueueSpace> queueSpaces;
     [SerializeField]
-    private List<SlotSpace> spaces;
+    private List<GameObject> spaceObjects;
     [SerializeField]
+    private Button runButton;
     private List<int> executingSpaceIndices;
     private List<Action> actions;
     public bool isExecuting { get; set; }
@@ -38,18 +38,35 @@ public class ActionQueue : MonoBehaviour
     {
         executingSpaceIndices.Clear();
         actions.Clear();
-        for (int i = 0; i < spaces.Count; i++)
+        for (int i = 0; i < spaceObjects.Count; i++)
         {
-            if (!spaces[i].isEmpty)
+            SlotSpace space = spaceObjects[i].GetComponent<SlotSpace>();
+            if (!space.isEmpty)
             {
-                ActionSlot actionSlot = spaces[i].slot.GetComponent<ActionSlot>();
+                ActionSlot actionSlot = space.slot.GetComponent<ActionSlot>();
                 if (actionSlot != null)
                 {
                     actions.Add(actionSlot.action);
                     executingSpaceIndices.Add(i);
                 }
             }
+            Draggable draggable = spaceObjects[i].GetComponent<Draggable>();
+            if (draggable != null)
+            {
+                draggable.isDraggable = false;
+            }
+            Droppable droppable = spaceObjects[i].GetComponent<Droppable>();
+            if (droppable != null)
+            {
+                droppable.isDroppable = false;
+            }
+            RemoveSlotButtonHandler removeSlotButtonHandler = spaceObjects[i].GetComponent<RemoveSlotButtonHandler>();
+            if (removeSlotButtonHandler != null)
+            {
+                removeSlotButtonHandler.SetButtonActive(false);
+            }
         }
+        runButton.interactable = false;
         actionSequence.actions = actions;
         actionSequence.StartExecution();
     }
@@ -65,12 +82,27 @@ public class ActionQueue : MonoBehaviour
                 spellCodeQueue.gameObject.SetActive(true);
             }
         }
+        int currentSpace = executingSpaceIndices[actionIndex];
+        SpaceHiglighter queueSpaceColorHandler = spaceObjects[currentSpace].GetComponent<SpaceHiglighter>();
+        if (queueSpaceColorHandler)
+        {
+            queueSpaceColorHandler.HighlightSpace();
+        }
     }
 
     void OnSequenceActionExecutionEnd(int actionIndex)
     {
         int currentSpace = executingSpaceIndices[actionIndex];
-        queueSpaces[currentSpace].ConsumeSlot();
+        QueueSpace queueSpace = spaceObjects[currentSpace].GetComponent<QueueSpace>();
+        if (queueSpace != null)
+        {
+            queueSpace.ConsumeSlot();
+        }
+        SpaceHiglighter queueSpaceColorHandler = spaceObjects[currentSpace].GetComponent<SpaceHiglighter>();
+        if (queueSpaceColorHandler)
+        {
+            queueSpaceColorHandler.UnhighlightSpace();
+        }
         if (spellCodeQueue.gameObject.activeSelf)
         {
             spellCodeQueue.gameObject.SetActive(false);
@@ -79,6 +111,20 @@ public class ActionQueue : MonoBehaviour
 
     void OnSequenceExecutionEnd()
     {
+        for (int i = 0; i < spaceObjects.Count; i++)
+        {
+            Draggable draggable = spaceObjects[i].GetComponent<Draggable>();
+            if (draggable != null)
+            {
+                draggable.isDraggable = true;
+            }
+            Droppable droppable = spaceObjects[i].GetComponent<Droppable>();
+            if (droppable != null)
+            {
+                droppable.isDroppable = true;
+            }
+        }
+        runButton.interactable = true;
         isExecuting = false;
         OnExecutionEnd?.Invoke();
     }
