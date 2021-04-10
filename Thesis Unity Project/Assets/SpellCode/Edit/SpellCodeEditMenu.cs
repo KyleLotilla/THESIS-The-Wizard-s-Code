@@ -16,6 +16,11 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
     // Start is called before the first frame update
     void Start()
     {
+        RefreshMenu();
+    }
+
+    public override void RefreshMenu()
+    {
         List<Spell> spells = spellInventory.fullInventory.ToList();
         Spell moveLeftSpell = spellDatabase.GetSpell(moveLeftID);
         if (moveLeftSpell != null)
@@ -28,7 +33,7 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
             spells.Insert(1, moveRightSpell);
         }
         items = spells;
-        RefreshMenu();
+        base.RefreshMenu();
     }
 
     // Update is called once per frame

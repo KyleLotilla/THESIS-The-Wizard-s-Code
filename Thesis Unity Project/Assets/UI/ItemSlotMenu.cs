@@ -47,7 +47,7 @@ public class ItemSlotMenu<T> : MonoBehaviour
 
     }
 
-    public void RefreshMenu()
+    virtual public void RefreshMenu()
     {
         RemoveAllSpaces();
         if (items != null)

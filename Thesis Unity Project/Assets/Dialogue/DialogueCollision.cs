@@ -35,7 +35,7 @@ public class DialogueCollision : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
         

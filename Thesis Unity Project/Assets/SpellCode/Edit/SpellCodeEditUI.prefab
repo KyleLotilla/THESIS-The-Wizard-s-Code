@@ -316,7 +316,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8925259955459653303}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999652
+  m_Size: 0.9194038
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -459,6 +459,7 @@ MonoBehaviour:
   spellCodeEditMode: 0
   inputField: {fileID: 9175242747079352064}
   spellCodePanel: {fileID: 5794017775283669698}
+  spellCodeEditMenu: {fileID: 8642246119043689526}
   spellMenu: {fileID: 9175742841391234213}
   spellCodeInventory: {fileID: 11400000, guid: 6ddd5b4445676ff459e50133917c2fa8, type: 2}
 --- !u!1 &3022232560698134558
@@ -697,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000008647799}
+  m_AnchoredPosition: {x: 0, y: 0.00033329765}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8642246119043689526

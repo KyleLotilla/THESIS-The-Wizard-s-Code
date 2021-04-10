@@ -25,6 +25,8 @@ public class SpellCodeEditUI : MonoBehaviour
     [SerializeField]
     private SpellCodePanel spellCodePanel;
     [SerializeField]
+    private SpellCodeEditMenu spellCodeEditMenu;
+    [SerializeField]
     private SpellCodeSpellMenu spellMenu;
     [SerializeField]
     private SpellCodeInventory spellCodeInventory;
@@ -46,6 +48,7 @@ public class SpellCodeEditUI : MonoBehaviour
         spellCode.name = "New SpellCode";
         spellCodePanel.spellCode = spellCode;
         inputField.text = spellCode.name;
+        spellCodeEditMenu.RefreshMenu();
         spellCodeEditMode = SpellCodeEditMode.ADD;
     }
 
@@ -54,6 +57,7 @@ public class SpellCodeEditUI : MonoBehaviour
         this.spellCode = spellCode;
         spellCodePanel.spellCode = spellCode;
         inputField.text = spellCode.name;
+        spellCodeEditMenu.RefreshMenu();
         spellCodeEditMode = SpellCodeEditMode.EDIT;
     }
 

@@ -51,6 +51,8 @@ public class ActionSlot : MonoBehaviour
             _isInQueue = true;
         }
     }
+    [SerializeField]
+    private Draggable draggable;
 
     private void Start()
     {
@@ -58,6 +60,7 @@ public class ActionSlot : MonoBehaviour
 
     public void DisableSlot()
     {
+        draggable.isDraggable = false;
         Color color = _icon.color;
         color.a = 0.5f;
         _icon.color = color;
@@ -65,6 +68,7 @@ public class ActionSlot : MonoBehaviour
 
     public void EnableSlot()
     {
+        draggable.isDraggable = true;
         Color color = _icon.color;
         color.a = 1.0f;
         _icon.color = color;

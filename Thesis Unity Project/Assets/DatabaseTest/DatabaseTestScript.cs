@@ -21,13 +21,15 @@ public class DatabaseTestScript : MonoBehaviour
         Spell electro = spellDatabase.GetSpell(3);
         spellInventory.EquipSpell(electro);
 
+        /*
         spellInventory.AddSpell(spellDatabase.GetSpell(4));
         spellInventory.AddSpell(spellDatabase.GetSpell(5));
         spellInventory.AddSpell(spellDatabase.GetSpell(2));
+        */
 
         SpellCode spellCode1 = new SpellCode();
         spellCode1.AddSpell(fireBall);
-        spellCode1.AddSpell(fireBall);
+        spellCode1.AddSpell(spellDatabase.GetSpell(1));
         spellCode1.AddSpell(spellDatabase.GetSpell(1));
         spellCode1.name = "Fire n' Forget";
         spellCode1.actionIcon = spellCodeIcon1;
@@ -42,6 +44,7 @@ public class DatabaseTestScript : MonoBehaviour
         spellCode2.actionIcon = spellCodeIcon2;
         spellCodeInventory.EquipSpellCode(spellCode2);
         
+        /*
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
@@ -49,6 +52,7 @@ public class DatabaseTestScript : MonoBehaviour
 
         materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
+        */
     }
 
     // Update is called once per frame
