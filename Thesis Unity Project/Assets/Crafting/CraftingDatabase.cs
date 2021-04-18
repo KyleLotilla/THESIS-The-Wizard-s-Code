@@ -6,7 +6,7 @@ using UnityEngine;
 using System.Xml.Linq;
 using System.IO;
 
-public class CraftingDatabase : XMLDatabaseComponent, IEnumerable<CraftingRecipe>
+public class CraftingDatabase : MonoBehaviour, IEnumerable<CraftingRecipe>
 {
     private Dictionary<string, int> recipes;
     /* The key is the ingredients for the recipes. It is represented through a formatted string of space-separed integer ids of the ingredients.
@@ -17,7 +17,7 @@ public class CraftingDatabase : XMLDatabaseComponent, IEnumerable<CraftingRecipe
     private List<CraftingRecipe> recipesList;
 
     [SerializeField]
-    private string pathToXMLDatabase;
+    private XMLDocumentReader xmlDocumentReader;
 
     public void OnEnable()
     {
@@ -31,7 +31,7 @@ public class CraftingDatabase : XMLDatabaseComponent, IEnumerable<CraftingRecipe
             recipesList = new List<CraftingRecipe>();
         }
 
-        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
+        LoadXml(xmlDocumentReader.ReadXMLDocument());
     }
 
     void LoadXml(XDocument document)

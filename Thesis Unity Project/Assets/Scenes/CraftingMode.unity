@@ -3966,7 +3966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bfb4d1aed0779439829e048d3a607f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToXMLDatabase: Database/CraftingDatabase
+  xmlDocumentReader:
+    xmlTextAsset: {fileID: 4900000, guid: 7470f06a3c9955a488456e9c8e0a960e, type: 3}
 --- !u!224 &1000541021 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8254365832573925144, guid: bce903bbc64dce34992521046c57456d,

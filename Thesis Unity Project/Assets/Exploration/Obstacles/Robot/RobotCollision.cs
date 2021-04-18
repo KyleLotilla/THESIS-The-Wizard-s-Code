@@ -5,6 +5,8 @@ using UnityEngine;
 public class RobotCollision : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
+    private ScoreGiver scoreGiver;
 
     [SerializeField]
     private float flyingSpeed;
@@ -31,10 +33,14 @@ public class RobotCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Lightning")
             {
+                scoreGiver.GiveScore();
                 animator.SetBool("On", true);
                 Destroy(col.gameObject);
             }
-
+            else
+            {
+                scoreGiver.PenalizeScore();
+            }
         }
     }
 

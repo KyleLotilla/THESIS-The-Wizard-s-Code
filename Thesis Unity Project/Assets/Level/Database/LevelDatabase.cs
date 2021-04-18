@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 
-public class LevelDatabase : XMLDatabaseComponent, IEnumerable
+public class LevelDatabase : MonoBehaviour, IEnumerable
 {
     [SerializeField]
     private List<Level> levels;
 
     [SerializeField]
-    private string pathToXMLDatabase;
+    private XMLDocumentReader xmlDocumentReader;
+
+    [SerializeField]
+    private PlayerLevelProgression playerLevelProgression;
 
     public IEnumerator GetEnumerator()
     {
@@ -20,7 +23,7 @@ public class LevelDatabase : XMLDatabaseComponent, IEnumerable
     // Start is called before the first frame update
     private void Awake()
     {
-        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
+        LoadXml(xmlDocumentReader.ReadXMLDocument());
     }
 
     void LoadXml(XDocument document)
@@ -30,6 +33,11 @@ public class LevelDatabase : XMLDatabaseComponent, IEnumerable
         foreach (XElement element in root.Elements())
         {
             Level level = new Level();
+            if (element.Elements("ID").Any())
+            {
+                level.levelID = int.Parse(element.Element("ID").Value);
+            }
+
             if (element.Elements("LevelNum").Any())
             {
                 level.levelNum = int.Parse(element.Element("LevelNum").Value);
@@ -76,6 +84,17 @@ public class LevelDatabase : XMLDatabaseComponent, IEnumerable
                         level.numObstacles.Add(int.Parse(obstacle.Element("Num").Value));
                     }
                 }
+            }
+
+            LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(level.levelID);
+            if (levelProgression != null)
+            {
+                level.levelProgression = levelProgression;
+            }
+            else
+            {
+                level.levelProgression = new LevelProgression();
+                level.levelProgression.levelID = level.levelID;
             }
             levels.Add(level);
         }

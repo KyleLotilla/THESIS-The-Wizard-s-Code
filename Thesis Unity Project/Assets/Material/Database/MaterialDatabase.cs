@@ -12,7 +12,7 @@ public class MaterialDatabase : XMLDatabaseScriptableObject
     [SerializeField]
     private Dictionary<int, Material> materials;
     [SerializeField]
-    private string pathToXMLDatabase;
+    private XMLDocumentReader xmlDocumentReader;
 
     void OnEnable()
     {
@@ -25,7 +25,7 @@ public class MaterialDatabase : XMLDatabaseScriptableObject
             materials = new Dictionary<int, Material>();
         }
 
-        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
+        LoadXml(xmlDocumentReader.ReadXMLDocument());
     }
 
     void LoadXml(XDocument document)

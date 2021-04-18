@@ -1,18 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Xml;
+using System;
 using System.Linq;
 using System.Xml.Linq;
 using System.IO;
 
 [CreateAssetMenu(menuName = "Database/Spell Database")]
-public class SpellDatabase : XMLDatabaseScriptableObject
+public class SpellDatabase : ScriptableObject
 {
     [SerializeField]
     private Dictionary<int, Spell> spells;
     [SerializeField]
-    private string pathToXMLDatabase;
+    private XMLDocumentReader xmlDocumentReader;
+    [SerializeField]
+    private int _moveLeftID;
+    public int moveLeftID
+    {
+        get
+        {
+            return _moveLeftID;
+        }
+    }
+    [SerializeField]
+    private int _moveRightID;
+    public int moveRightID
+    {
+        get
+        {
+            return _moveRightID;
+        }
+    }
 
     void OnEnable()
     {
@@ -25,7 +43,7 @@ public class SpellDatabase : XMLDatabaseScriptableObject
             spells = new Dictionary<int, Spell>();
         }
 
-        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
+        LoadXml(xmlDocumentReader.ReadXMLDocument());
     }
 
     void LoadXml(XDocument document)
@@ -71,6 +89,28 @@ public class SpellDatabase : XMLDatabaseScriptableObject
             Spell spell = spells[id];
             Spell spellCopy = new Spell();
             spellCopy.spellID = spell.spellID;
+            spellCopy.instanceID = Guid.NewGuid();
+            spellCopy.name = spell.name;
+            spellCopy.description = spell.description;
+            spellCopy.icon = spell.icon;
+            spellCopy.iconPath = spell.iconPath;
+            spellCopy.actionPath = spell.actionPath;
+            return spellCopy;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public Spell GetSpell(int id, Guid instanceID)
+    {
+        if (spells.ContainsKey(id))
+        {
+            Spell spell = spells[id];
+            Spell spellCopy = new Spell();
+            spellCopy.spellID = spell.spellID;
+            spellCopy.instanceID = instanceID;
             spellCopy.name = spell.name;
             spellCopy.description = spell.description;
             spellCopy.icon = spell.icon;

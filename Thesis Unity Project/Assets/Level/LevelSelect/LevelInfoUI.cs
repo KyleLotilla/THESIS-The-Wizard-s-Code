@@ -13,6 +13,8 @@ public class LevelInfoUI : MonoBehaviour
     private MaterialsPanel materialsPanel;
     [SerializeField]
     private Image levelOverview;
+    [SerializeField]
+    private Text highScore;
     void Start()
     {
         
@@ -24,5 +26,6 @@ public class LevelInfoUI : MonoBehaviour
         obstaclesPanel.ShowObstacles(level.obstacles, level.numObstacles);
         materialsPanel.ShowMaterials(level.materials, level.numMaterials);
         levelOverview.sprite = level.levelOverview;
+        highScore.text = level.levelProgression.highScore.ToString();
     }
 }
