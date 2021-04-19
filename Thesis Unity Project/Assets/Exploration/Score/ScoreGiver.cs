@@ -53,20 +53,29 @@ public class ScoreGiver : MonoBehaviour
     public void GiveScore()
     {
         explorationScore.AddScore(amount);
-        GameObject scoreVisualObject = Instantiate(scoreVisualPrefab, this.transform.position + (Vector3) offset, Quaternion.identity);
-        if (scoreVisualObject != null)
-        {
-            TextMesh textMesh = scoreVisualObject.GetComponent<TextMesh>();
-            if (textMesh != null)
-            {
-                textMesh.text = amount.ToString();
-            }
-        }
+        ShowScoreVisual(amount);
     }
 
     public void PenalizeScore()
     {
         amount -= penalty;
-        Debug.Log(amount);
+        ShowScoreVisual(-penalty);
+    }
+
+    private void ShowScoreVisual(int score)
+    {
+        GameObject scoreVisualObject = Instantiate(scoreVisualPrefab, this.transform.position + (Vector3)offset, Quaternion.identity);
+        if (scoreVisualObject != null)
+        {
+            TextMesh textMesh = scoreVisualObject.GetComponent<TextMesh>();
+            if (textMesh != null)
+            {
+                textMesh.text = score.ToString();
+                if (score < 0)
+                {
+                    textMesh.color = new Color(0.75f, 0, 0, 1.0f);
+                }
+            }
+        }
     }
 }
