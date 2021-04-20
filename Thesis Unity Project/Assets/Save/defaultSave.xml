@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Save>
+  <Name/>
+  <Gender>MALE</Gender>
+  <Version>1.0</Version>
+  <SpellInventory>
+    <Equipped/>
+    <Inventory/>
+  </SpellInventory>
+  <SpellCodeInventory>
+    <Equipped/>
+    <Inventory/>
+  </SpellCodeInventory>
+  <MaterialInventory/>
+  <PlayerLevelProgression/>
+</Save>

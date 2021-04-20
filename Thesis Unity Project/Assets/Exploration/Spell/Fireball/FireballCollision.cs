@@ -18,12 +18,8 @@ public class FireballCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!(collision.gameObject.tag == "Player"))
+        if (!(collision.gameObject.tag == "Wizard"))
         {
-            if (collision.gameObject.tag == "FireballDestructible")
-            {
-                Destroy(collision.gameObject);
-            }
             Destroy(this.gameObject);
         }
     }

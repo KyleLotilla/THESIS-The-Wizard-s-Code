@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
     private List<Spell> spells;
     [SerializeField]
     private List<Spell> _equipped;
+    [SerializeField]
+    private Dictionary<Guid, Spell> instanceDictionary;
+
     [SerializeField]
     public IEnumerable<Spell> equipped
     {
@@ -69,11 +73,36 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         {
             _equipped = new List<Spell>(maxEquipped);
         }
+
+        if (instanceDictionary != null)
+        {
+            instanceDictionary.Clear();
+        }
+        else
+        {
+            instanceDictionary = new Dictionary<Guid, Spell>();
+        }
     }
 
     public void AddSpell(Spell spell)
     {
-        spells.Add(spell);
+        if (!instanceDictionary.ContainsKey(spell.instanceID))
+        {
+            spells.Add(spell);
+            instanceDictionary[spell.instanceID] = spell;
+        }
+    }
+
+    public Spell GetSpell(Guid instanceID)
+    {
+        if (instanceDictionary.ContainsKey(instanceID))
+        {
+            return instanceDictionary[instanceID];
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public Spell GetSpellAt(int index)
@@ -96,6 +125,7 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
             {
                 _equipped.Add(spell);
                 spell.isEquipped = true;
+                instanceDictionary[spell.instanceID] = spell;
             }
         }
     }
@@ -106,6 +136,7 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         {
             _equipped.Remove(spell);
             spell.isEquipped = false;
+            instanceDictionary[spell.instanceID] = null;
         }
     }
 
@@ -114,12 +145,14 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         foreach (Spell spell in spells)
         {
             spell.isEquipped = false;
+            instanceDictionary[spell.instanceID] = null;
         }
         spells.Clear();
     }
 
     public void RemoveSpell(Spell spell)
     {
+        instanceDictionary[spell.instanceID] = null;
         spells.Remove(spell);
     }
 

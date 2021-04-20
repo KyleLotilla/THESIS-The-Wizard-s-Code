@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 868979598238741402}
   - component: {fileID: 2555163448846713117}
   - component: {fileID: 9101289673315616973}
+  - component: {fileID: 8050385865734824721}
   - component: {fileID: 4130504812123218461}
   - component: {fileID: 852217893698002894}
   - component: {fileID: 3724112057837945675}
@@ -224,6 +225,21 @@ MonoBehaviour:
   _icon: {fileID: 5929245010889285943}
   _action: {fileID: 0}
   _isInQueue: 0
+  draggable: {fileID: 8169702786917695545}
+--- !u!114 &8050385865734824721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394697629223760116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19850f65fb1c07641ad2681a9821ced9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody2D: {fileID: 4130504812123218461}
+  velocity: {x: 0, y: 0}
 --- !u!50 &4130504812123218461
 Rigidbody2D:
   serializedVersion: 4
@@ -236,7 +252,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -297,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67c5e1066eaea94f90e478bc525f9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDraggable: 1
+  _isDraggable: 1
 --- !u!114 &9152037022567439763
 MonoBehaviour:
   m_ObjectHideFlags: 0

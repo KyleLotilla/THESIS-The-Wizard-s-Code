@@ -19,25 +19,14 @@ public class DialogueCollision : MonoBehaviour
     private string pathToXMLDatabase;
 
     [SerializeField]
+    private int DialogueID;
+
+    [SerializeField]
     private Text username;
-
-    [SerializeField]
-    private int StartIndex;
-
-    [SerializeField]
-    private int EndIndex;
-
-    [SerializeField]
-    private GameObject GuideImage;
-
-    
 
     void Start()
     {
-        Sprite temp;
-        temp = Resources.Load<Sprite>("Dialogue/VisualGuide/TempGif");
-       // GuideImage.sprite = temp;
-        
+       
     }
 
     // Update is called once per frame
@@ -46,78 +35,42 @@ public class DialogueCollision : MonoBehaviour
 
     }
 
-    public void NextText()
-    {
-        StartIndex = StartIndex + 1;
-    }
-
-    public int getStartIndex()
-    {
-        return StartIndex;
-    }
-
-    public int getEndIndex()
-    {
-        return EndIndex;
-    }
-
-    public void DestroyObject()
-    {
-        Destroy(this.gameObject);
-        Time.timeScale = 1;
-    }
-
-    public void setText()
-    {
-        GuideImage.SetActive(false);
-        if (dialogueDatabase.GetDialogue(StartIndex) != null)
-        {
-            DialoguePanel.SetActive(true);
-            //Debug.Log(dialogueDatabase.GetDialogue().text);
-            if (dialogueDatabase.GetDialogue(StartIndex).bold != null)
-            {
-                string test = dialogueDatabase.GetDialogue(StartIndex).bold;
-                if (dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(StartIndex).text) != null)
-                {
-                    DialogueText.text = dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(StartIndex).text);
-                }
-            }
-            else
-            {
-                DialogueText.text = dialogueDatabase.GetDialogue(StartIndex).text;
-            }
-            if(dialogueDatabase.GetDialogue(StartIndex).imagepath != null)
-            {
-                GuideImage.SetActive(true);
-                GuideImage.GetComponent<Image>().sprite = dialogueDatabase.GetDialogue(StartIndex).image;
-            }
-            /*
-            if (DialogueID == 0)
-            {
-                if (dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text) != null)
-                {
-                    DialogueText.text = dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text);
-                }
-                else
-                {
-                    DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
-                }
-            }
-            */
-            //Time.timeScale = 0;
-        }
-    }
-
-
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
         
         if (col.gameObject.tag == "Wizard")
         {
-            DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
-            setText();
-           
+            if(dialogueDatabase.GetDialogue(DialogueID) != null)
+            {
+                DialoguePanel.SetActive(true);
+                //Debug.Log(dialogueDatabase.GetDialogue().text);
+                if(dialogueDatabase.GetDialogue(DialogueID).bold != null)
+                {
+                    string test = dialogueDatabase.GetDialogue(DialogueID).bold;
+                    if (dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text) != null)
+                    {
+                        DialogueText.text = dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text);
+                    }
+                }
+                else
+                {
+                    DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                }
+                if(DialogueID == 0)
+                {
+                    if(dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text) != null)
+                    {
+                        DialogueText.text = dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text);
+                    }
+                    else
+                    {
+                        DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                    }
+                }
+                Time.timeScale = 0;
+            }
+            Destroy(this.gameObject);
         }
     }
 }

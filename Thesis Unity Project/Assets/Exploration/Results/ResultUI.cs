@@ -39,7 +39,6 @@ public class ResultUI : MonoBehaviour
                 materialResults[material.name] = 1;
             }
         }
-        resultField.text = "";
         foreach (KeyValuePair<string, int> materialResult in materialResults)
         {
             resultField.text = resultField.text + materialResult.Value + " " + materialResult.Key + "\n";

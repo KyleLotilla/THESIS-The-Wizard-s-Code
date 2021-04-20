@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70016a779507a3349b8bf39d844fb3b8, type: 3}
   m_Name: MaterialDatabaseInstance
   m_EditorClassIdentifier: 
-  pathToXMLDatabase: Database/MaterialDatabase
+  xmlDocumentReader:
+    xmlTextAsset: {fileID: 4900000, guid: 1c69d53957a0e3847875081789882ddd, type: 3}

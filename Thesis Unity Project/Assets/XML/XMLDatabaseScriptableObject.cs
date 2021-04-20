@@ -12,7 +12,6 @@ public class XMLDatabaseScriptableObject : ScriptableObject
         MemoryStream stream = new MemoryStream(xml.bytes);
         XDocument document = XDocument.Load(stream);
         stream.Close();
-
         return document;
     }
 }

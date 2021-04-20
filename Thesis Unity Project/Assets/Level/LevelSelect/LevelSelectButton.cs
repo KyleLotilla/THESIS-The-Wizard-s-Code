@@ -13,6 +13,10 @@ public class LevelSelectButton : MonoBehaviour
     private Text text;
     [SerializeField]
     private Image levelOverviewIcon;
+    [SerializeField]
+    private GameObject lockIcon;
+    [SerializeField]
+    private Button button;
 
     private Level _level;
     public Level level
@@ -26,6 +30,14 @@ public class LevelSelectButton : MonoBehaviour
             _level = value;
             text.text = _level.worldNum + "-" + _level.levelNum;
             levelOverviewIcon.sprite = _level.levelOverview;
+            if (!_level.levelProgression.isUnlocked)
+            {
+                Color iconColor = levelOverviewIcon.color;
+                iconColor.a = 50;
+                levelOverviewIcon.color = iconColor;
+                lockIcon.SetActive(true);
+                button.interactable = false;
+            }
         }
     }
     // Start is called before the first frame update

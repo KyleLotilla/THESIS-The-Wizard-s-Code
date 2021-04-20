@@ -3933,7 +3933,6 @@ GameObject:
   m_Component:
   - component: {fileID: 997810922}
   - component: {fileID: 997810923}
-  - component: {fileID: 997810921}
   m_Layer: 0
   m_Name: CraftingDatabase
   m_TagString: Untagged
@@ -3941,23 +3940,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &997810921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997810920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45d7c5ec5bd8d854898f53c72c8cf1e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialDatabase: {fileID: 11400000, guid: 4ca17e556644813458889aae2086214b, type: 2}
-  materialInventory: {fileID: 11400000, guid: 7af02d802e4e7ab48957f354c9fe2fd0, type: 2}
-  spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}
-  spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
-  spellCodeInventory: {fileID: 11400000, guid: 6ddd5b4445676ff459e50133917c2fa8, type: 2}
 --- !u!4 &997810922
 Transform:
   m_ObjectHideFlags: 0
@@ -3984,7 +3966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bfb4d1aed0779439829e048d3a607f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToXMLDatabase: Database/CraftingDatabase
+  xmlDocumentReader:
+    xmlTextAsset: {fileID: 4900000, guid: 7470f06a3c9955a488456e9c8e0a960e, type: 3}
 --- !u!224 &1000541021 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8254365832573925144, guid: bce903bbc64dce34992521046c57456d,

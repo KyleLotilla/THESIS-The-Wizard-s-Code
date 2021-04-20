@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 54011737}
   - component: {fileID: 54011735}
   - component: {fileID: 54011736}
+  - component: {fileID: 4393175517962712848}
   m_Layer: 0
   m_Name: robot_0
   m_TagString: Untagged
@@ -181,5 +182,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0f08da75dafb14aaa169f6f7c49ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreGiver: {fileID: 4393175517962712848}
   flyingSpeed: 2
   animator: {fileID: 54011737}
+--- !u!114 &4393175517962712848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204686937824286065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28e8fade30c4b94f896e7e096858ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explorationScore: {fileID: 0}
+  scoreVisualPrefab: {fileID: 2785553359774306212, guid: 6d1a6ab79343cc140901cee395d8064a,
+    type: 3}
+  _penalty: 20
+  _amount: 100
+  offset: {x: -1, y: 4}

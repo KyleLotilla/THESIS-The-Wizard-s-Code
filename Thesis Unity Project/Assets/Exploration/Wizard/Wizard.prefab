@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1028035904}
   - component: {fileID: 729566037}
   - component: {fileID: 3342673824492242820}
+  - component: {fileID: 7158135020152608435}
   m_Layer: 8
   m_Name: Wizard
   m_TagString: Wizard
@@ -161,6 +162,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.125, y: 2}
   m_Direction: 0
+--- !u!114 &7158135020152608435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5945597138941657265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068a61c2374d00f4aa7b1812c347d1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5945597138941657264}
+  playerProfile: {fileID: 11400000, guid: 6782d752983911d4287d2683a358fb73, type: 2}
+  femaleAnimatorController: {fileID: 9100000, guid: df0f5e596b00177448e170a9a5ee0d42,
+    type: 2}
 --- !u!1001 &9185739399636347441
 PrefabInstance:
   m_ObjectHideFlags: 0

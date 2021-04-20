@@ -11,6 +11,8 @@ public class LevelTabUI : MonoBehaviour
     [SerializeField]
     private GameObject levelInfoUI;
     [SerializeField]
+    private GameObject spellCodeUI;
+    [SerializeField]
     private GameObject equipmentUI;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class LevelTabUI : MonoBehaviour
         {
             equipmentUI.SetActive(false);
             levelInfoUI.SetActive(true);
+            spellCodeUI.SetActive(false);
         }
     }
 
@@ -38,6 +41,17 @@ public class LevelTabUI : MonoBehaviour
         {
             equipmentUI.SetActive(true);
             levelInfoUI.SetActive(false);
+            spellCodeUI.SetActive(false);
+        }
+    }
+
+    public void SwitchToSpellCodes()
+    {
+        if (!spellCodeUI.activeSelf)
+        {
+            equipmentUI.SetActive(false);
+            levelInfoUI.SetActive(false);
+            spellCodeUI.SetActive(true);
         }
     }
 
