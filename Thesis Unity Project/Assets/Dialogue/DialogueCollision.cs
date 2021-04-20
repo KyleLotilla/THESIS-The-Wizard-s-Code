@@ -19,10 +19,16 @@ public class DialogueCollision : MonoBehaviour
     private string pathToXMLDatabase;
 
     [SerializeField]
-    private int DialogueID;
+    private int StartIndex;
+
+    [SerializeField]
+    private int EndIndex;
 
     [SerializeField]
     private Text username;
+
+    [SerializeField]
+    private GameObject guideImage;
 
     void Start()
     {
@@ -35,42 +41,76 @@ public class DialogueCollision : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    public void NextText()
     {
-        dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
-        
-        if (col.gameObject.tag == "Wizard")
+        StartIndex = StartIndex + 1;
+    }
+
+    public int getStartIndex()
+    {
+        return StartIndex;
+    }
+
+    public int getEndIndex()
+    {
+        return EndIndex;
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(this);
+    }
+
+    public void setText()
+    {
+        if (dialogueDatabase.GetDialogue(StartIndex) != null)
         {
-            if(dialogueDatabase.GetDialogue(DialogueID) != null)
+            DialoguePanel.SetActive(true);
+            guideImage.SetActive(false);
+            //Debug.Log(dialogueDatabase.GetDialogue().text);
+            if (dialogueDatabase.GetDialogue(StartIndex).image != null)
             {
-                DialoguePanel.SetActive(true);
-                //Debug.Log(dialogueDatabase.GetDialogue().text);
-                if(dialogueDatabase.GetDialogue(DialogueID).bold != null)
+                guideImage.SetActive(true);
+                guideImage.GetComponent<Image>().sprite = dialogueDatabase.GetDialogue(StartIndex).image;
+            }
+            if (dialogueDatabase.GetDialogue(StartIndex).bold != null)
+            {
+                string test = dialogueDatabase.GetDialogue(StartIndex).bold;
+                if (dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(StartIndex).text) != null)
                 {
-                    string test = dialogueDatabase.GetDialogue(DialogueID).bold;
-                    if (dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text) != null)
-                    {
-                        DialogueText.text = dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text);
-                    }
+                    DialogueText.text = dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(StartIndex).text);
+                }
+            }
+            else
+            {
+                DialogueText.text = dialogueDatabase.GetDialogue(StartIndex).text;
+            }
+            
+
+            if (StartIndex == 0)
+            {
+                if (dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(StartIndex).text) != null)
+                {
+                    DialogueText.text = dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(StartIndex).text);
                 }
                 else
                 {
-                    DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                    DialogueText.text = dialogueDatabase.GetDialogue(StartIndex).text;
                 }
-                if(DialogueID == 0)
-                {
-                    if(dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text) != null)
-                    {
-                        DialogueText.text = dialogueDatabase.setPlayerName(username.text, dialogueDatabase.GetDialogue(DialogueID).text);
-                    }
-                    else
-                    {
-                        DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
-                    }
-                }
-                Time.timeScale = 0;
             }
-            Destroy(this.gameObject);
+            Time.timeScale = 0;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
+        DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
+
+
+        if (col.gameObject.tag == "Wizard")
+        {
+            setText();
         }
     }
 }

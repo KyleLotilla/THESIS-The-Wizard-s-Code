@@ -29,6 +29,7 @@ public class DialoguePanelScript : MonoBehaviour
         {
             this.dialogueCollision.DestroyObject();
             DialoguePanel.SetActive(false);
+            Time.timeScale = 1;
         }
         buttonSFX.Play();
     }
