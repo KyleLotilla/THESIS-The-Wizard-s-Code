@@ -2,28 +2,46 @@
 	<FirstTimeaftertutorial>
 		<ID>0</ID>
 		<Text>Let’s take a look at the materials we have gathered from our expedition!
-		</Text>
+    </Text>
 	</FirstTimeaftertutorial>
 	<FirstTimeaftertutorial>
 		<ID>1</ID>
 		<Text>We can use these materials to craft some new gear or weapons. Let’s try it out!
 		</Text>
 	</FirstTimeaftertutorial>
+  <FirstTimeaftertutorial>
+    <ID>2</ID>
+    <Text>PAUSE</Text>
+  </FirstTimeaftertutorial>
 	<Aftersuccessfullycrafting>
-		<ID>2</ID>
+		<ID>3</ID>
 		<Text>Crafting new gear and weapons allow you to unlock more spells to use on your adventures!</Text>
 	</Aftersuccessfullycrafting>
 	<Aftersuccessfullycrafting>
-		<ID>3</ID>
+		<ID>4</ID>
 		<Text>These will help you overcome the obstacles that you may encounter!</Text>
 	</Aftersuccessfullycrafting>
 	<Aftersuccessfullycrafting>
-		<ID>4</ID>
-		<Bold>associate specific materials to corresponding equipment!</Bold>
-		<Text>Remember different types of equipment require different materials. Try to associate specific materials to corresponding equipment!</Text>
-	</Aftersuccessfullycrafting>
-	<Aftersuccessfullycrafting>
 		<ID>5</ID>
-		<Text>I think we’re done here. Let’s take a look at where we could go next.</Text>
+		<Text>Remember different types of equipment require different materials.</Text>
 	</Aftersuccessfullycrafting>
+  <Aftersuccessfullycrafting>
+    <ID>6</ID>
+    <Bold>abstract</Bold>
+    <Text>Try to abstract the materials that you think are not related to the gear you are crafting.</Text>
+  </Aftersuccessfullycrafting>
+	<Aftersuccessfullycrafting>
+		<ID>7</ID>
+		<Text>That way you can focus on a smaller pool of materials to choose from when you are crafting!</Text>
+	</Aftersuccessfullycrafting>
+  <Aftersuccessfullycrafting>
+    <ID>8</ID>
+    <Text>I think we’re done here. Let’s take a look at where we could go next.
+    </Text>
+  </Aftersuccessfullycrafting>
+  <Aftersuccessfullycrafting>
+    <ID>9</ID>
+    <Text>Head to the level select screen once you are ready.
+    </Text>
+  </Aftersuccessfullycrafting>
 </CraftingMode>

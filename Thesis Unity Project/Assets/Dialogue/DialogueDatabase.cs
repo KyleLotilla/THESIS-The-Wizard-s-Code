@@ -36,6 +36,11 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
                 {
                     dialogue.text = element.Element("Text").Value;
                 }
+                if (element.Elements("Image").Any())
+                {
+                    dialogue.imagepath = element.Element("Image").Value;
+                    dialogue.image = Resources.Load<Sprite>(dialogue.imagepath);
+                }
                 if (element.Elements("Bold").Any())
                 {
                     dialogue.bold = element.Element("Bold").Value;
@@ -109,6 +114,11 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
             if(dialogue.bold != null)
             {
                 copydialogue.bold = dialogue.bold;
+            }
+            if(dialogue.imagepath != null)
+            {
+                copydialogue.imagepath = dialogue.imagepath;
+                copydialogue.image = dialogue.image;
             }
             
             return copydialogue;

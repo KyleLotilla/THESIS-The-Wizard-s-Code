@@ -31,6 +31,9 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     [SerializeField]
     private AudioSource buttonSFX;
 
+    private bool textDisplay = true;
+
+    /*
     [SerializeField]
     private AudioSource displaySFX;
 
@@ -38,6 +41,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     private string currentText = "";
     public float timer = 0.0f;
     public int characterindex = 0;
+    */
 
     void Start()
     {
@@ -56,6 +60,15 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (textDisplay)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        /*
         buttonSFX.Stop();   
         timer -= Time.deltaTime;
         if (timer <= 0.0f)
@@ -73,7 +86,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
             }
 
         }
-       
+       */
         
 
     }
@@ -82,47 +95,11 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     {
         DialogueID = DialogueID + 1;
         setText();
+        buttonSFX.Play();
+        /*
         characterindex = 0;
         timer = 0.0f;
-    }
-
-    public void untilCraft()
-    {
-        displaySFX.Stop();
-        if (DialogueID < 1 || DialogueID > 1 && DialogueID < 5)
-        {
-            nextText();
-        }
-        else if (DialogueID >= 5)
-        {
-            //SceneManager.LoadScene(1);
-            DialoguePanel.SetActive(false);
-        }
-        else
-        {
-            DialoguePanel.SetActive(false);
-        }
-        buttonSFX.Play();
-    
-
-
-    }
-
-    public void Aftercraft()
-    {
-        displaySFX.Stop();
-        DialoguePanel.SetActive(true);
-        nextText();
-        buttonSFX.Play();
-    }
-
-    IEnumerator ShowText()
-    {
-
-        for (int i = 0; i < fullText.ToCharArray().Length; i++){
-            DialogueText.text += fullText.ToCharArray()[i]; 
-        }
-        yield return new WaitForSeconds(1f);
+        */
     }
 
     void setText()
@@ -130,29 +107,36 @@ public class CraftingModeDialoguePanel : MonoBehaviour
         
         if (dialogueDatabase.GetDialogue(DialogueID) != null)
         {
-            if (dialogueDatabase.GetDialogue(DialogueID).bold != null)
+            if(string.Compare(dialogueDatabase.GetDialogue(DialogueID).text, "PAUSE") == 0)
             {
-                string test = dialogueDatabase.GetDialogue(DialogueID).bold;
-                if (dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text) != null)
-                {
-                     fullText = dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text);
-                }
+                DialoguePanel.SetActive(false);
+                textDisplay = false;
             }
             else
             {
-
-                fullText = dialogueDatabase.GetDialogue(DialogueID).text;
-                
+                DialoguePanel.SetActive(true);
+                textDisplay = true;
+                if (dialogueDatabase.GetDialogue(DialogueID).bold != null)
+                {
+                    string test = dialogueDatabase.GetDialogue(DialogueID).bold;
+                    if (dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text) != null)
+                    {
+                        DialogueText.text = dialogueDatabase.setBold(test, dialogueDatabase.GetDialogue(DialogueID).text);
+                    }
+                }
+                else
+                {
+                    DialogueText.text = dialogueDatabase.GetDialogue(DialogueID).text;
+                }
             }
-            Time.timeScale = 0;
-            
-
         }
         else
         {
             DialoguePanel.SetActive(false);
+            textDisplay = false;
         }
         
+
     }
 
 }
