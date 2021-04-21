@@ -33,4 +33,11 @@ public class DialoguePanelScript : MonoBehaviour
         }
         buttonSFX.Play();
     }
+
+    public void SkipDialogue()
+    {
+        this.dialogueCollision.DestroyObject();
+        DialoguePanel.SetActive(false);
+        Time.timeScale = 1;
+    }
 }

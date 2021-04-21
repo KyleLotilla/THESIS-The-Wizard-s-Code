@@ -18,7 +18,7 @@
 	<Enteringthetutorial>
 		<ID>3</ID>
     <Image>Dialogue/VisualGuide/Right</Image>
-		<Text>Let’s use movement spells first. Drag the icons for moving left and right from the actions tab down to your action queue.</Text>
+		<Text>Let’s use movement spells first. Drag the move left and          move right spells from the actions tab down to your action queue.</Text>
 	</Enteringthetutorial>
 
 	<Enteringthetutorial>
@@ -81,7 +81,7 @@
 
 	<pickingupamaterial>
 		<ID>15</ID>
-		<Text>Maybe this is something we could use to our advantage!</Text>
+		<Text>Maybe this is something we could use later!</Text>
 	</pickingupamaterial>
 
 	
