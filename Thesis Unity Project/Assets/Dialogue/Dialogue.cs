@@ -6,5 +6,7 @@ public class Dialogue
 {
     public int ID;
     public string bold;
+    public string imagepath;
+    public Sprite image;
     public string text;
 }
