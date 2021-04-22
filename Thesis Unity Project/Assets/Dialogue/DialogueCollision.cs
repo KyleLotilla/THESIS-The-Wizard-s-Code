@@ -72,6 +72,7 @@ public class DialogueCollision : MonoBehaviour
             {
                 guideImage.SetActive(true);
                 guideImage.GetComponent<Image>().sprite = dialogueDatabase.GetDialogue(StartIndex).image;
+                guideImage.transform.position = new Vector2(110, 18);
             }
             if (dialogueDatabase.GetDialogue(StartIndex).bold != null)
             {
