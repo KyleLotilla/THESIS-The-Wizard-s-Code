@@ -12,6 +12,10 @@ public class LevelSelectMenu : MonoBehaviour
     private GameObject levelSelectButtonPrefab;
     [SerializeField]
     private LevelDatabase levelDatabase;
+    [SerializeField]
+    private TabsPanel tabsPanel;
+    [SerializeField]
+    private int levelUIPage;
     void Start()
     {
         foreach (Level level in levelDatabase)
@@ -37,7 +41,7 @@ public class LevelSelectMenu : MonoBehaviour
 
     void OnLevelSelected(Level level)
     {
-        levelSelectUI.SetActive(false);
         levelUI.ShowLevelUI(level);
+        tabsPanel.SwitchPage(levelUIPage);
     }
 }

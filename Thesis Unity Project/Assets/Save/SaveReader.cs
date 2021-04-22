@@ -29,7 +29,7 @@ public class SaveReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ReadSaveFile();
+        //ReadSaveFile();
         /*
         Spell spell = spellDatabase.GetSpell(4);
         spellInventory.EquipSpell(spell);
@@ -54,7 +54,7 @@ public class SaveReader : MonoBehaviour
         //playerProfile.playerName = "Yes";
         //playerProfile.gender = Gender.MALE;
         //saveWriter.SavePlayerProfile();
-        saveWriter.SaveFile();
+        //saveWriter.SaveFile();
     }
 
     // Update is called once per frame
@@ -63,9 +63,19 @@ public class SaveReader : MonoBehaviour
         
     }
 
-    public void ReadSaveFile()
+    public bool ReadSaveFile()
     {
         XDocument document = xmlDocumentReader.ReadXMLDocument(Application.persistentDataPath + "/" + Application.version + "/" + "save.xml");
+        if (document != null)
+        {
+            ReadXML(document);
+            return true;
+        }
+        return false;
+    }
+
+    private void ReadXML(XDocument document)
+    {
         if (document != null)
         {
             saveWriter.document = document;
@@ -75,13 +85,6 @@ public class SaveReader : MonoBehaviour
             ReadSpellCodeInventory(root);
             ReadMaterialInventory(root);
             ReadPlayerLevelProgression(root);
-        }
-        else
-        {
-            if (!ImportPreviousFile())
-            {
-                saveWriter.CreateFile();
-            }
         }
     }
 
@@ -262,8 +265,9 @@ public class SaveReader : MonoBehaviour
         }
     }
 
-    public bool ImportPreviousFile()
+    public string ImportPreviousFile()
     {
+        string previousVersion = "0.0";
         List<string> directories = new List<string>(Directory.GetDirectories(Application.persistentDataPath));
         directories.Sort();
         bool foundPreviousFile = false;
@@ -274,11 +278,17 @@ public class SaveReader : MonoBehaviour
             XDocument document = xmlDocumentReader.ReadXMLDocument(directories[i] + "/" + "save.xml");
             if (document !=  null)
             {
+                XElement root = document.Root;
+                if (root.Elements("Version").Any())
+                {
+                    previousVersion = root.Element("Version").Value;
+                }
                 saveWriter.ImportPreviousFile(document);
+                ReadXML(document);
                 foundPreviousFile = true;
             }
         }
 
-        return foundPreviousFile;
+        return previousVersion;
     }
 }

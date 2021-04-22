@@ -11,6 +11,10 @@ public class SpellCodeInventoryPanel : MonoBehaviour
     public SpellCode spellCode { get; set; }
     [SerializeField]
     private Image image;
+    [SerializeField]
+    private Color normalColor;
+    [SerializeField]
+    private Color selectedColor;
 
     void Start()
     {
@@ -25,17 +29,13 @@ public class SpellCodeInventoryPanel : MonoBehaviour
 
     public void SelectSpellCode()
     {
-        Color color = image.color;
-        color.a = 1.0f;
-        image.color = color;
+        image.color = selectedColor;
         OnSpellCodePanelSelected?.Invoke(this, spellCode);
     }
 
     public void UnselectSpellCode()
     {
-        Color color = image.color;
-        color.a = 0.5f;
-        image.color = color;
+        image.color = normalColor;
     }
 
     private void OnDestroy()
