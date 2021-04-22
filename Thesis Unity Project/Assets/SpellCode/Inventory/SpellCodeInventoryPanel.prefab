@@ -67,6 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 323761348304448247}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 1, g: 0.89918447, b: 0, a: 1}
 --- !u!1001 &7776286229874997272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 8778078803499139853, guid: f9cfe1f31c1f59d45be0f0ddb2fef29d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 410.60583
+      value: 473.87372
       objectReference: {fileID: 0}
     - target: {fileID: 8778078803499139853, guid: f9cfe1f31c1f59d45be0f0ddb2fef29d,
         type: 3}

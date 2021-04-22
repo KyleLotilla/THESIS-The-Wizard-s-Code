@@ -47,23 +47,25 @@ public class DatabaseTestScript : MonoBehaviour
         spellCodeInventory.EquipSpellCode(spellCode2);
 
         playerProfile.gender = Gender.FEMALE;
-        /*
+        
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
 
         materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
-        materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
-        */
 
-        /*
+        for (int i = 0; i < 100; i++)
+        materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
+        
+
+        
         LevelProgression levelProgression = new LevelProgression();
         levelProgression.levelID = 1;
         levelProgression.isUnlocked = true;
         levelProgression.highScore = 69;
         playerLevelProgression.AddProgression(levelProgression);
-        */
+        
     }
 
     // Update is called once per frame

@@ -4,18 +4,18 @@ using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
 
-public class ObstacleDatabase : XMLDatabaseComponent
+public class ObstacleDatabase : MonoBehaviour
 {
     private Dictionary<int, Obstacle> obstacles;
     [SerializeField]
-    private string pathToXMLDatabase;
+    private XMLDocumentReader xmlDocumentReader;
     // Start is called before the first frame update
     void Awake()
     {
         if (obstacles == null)
         {
             obstacles = new Dictionary<int, Obstacle>();
-            LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
+            LoadXml(xmlDocumentReader.ReadXMLDocument());
         }
     }
 

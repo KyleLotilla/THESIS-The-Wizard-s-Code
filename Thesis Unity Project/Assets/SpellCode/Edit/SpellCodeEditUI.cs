@@ -106,4 +106,9 @@ public class SpellCodeEditUI : MonoBehaviour
             }
         }
     }
+
+    public void DiscardSpellCode()
+    {
+        tabsPanel.SwitchPage(spellCodeInventoryPage);
+    }
 }
