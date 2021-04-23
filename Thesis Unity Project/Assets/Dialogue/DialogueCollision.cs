@@ -58,7 +58,7 @@ public class DialogueCollision : MonoBehaviour
 
     public void DestroyObject()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public void setText()
@@ -72,7 +72,7 @@ public class DialogueCollision : MonoBehaviour
             {
                 guideImage.SetActive(true);
                 guideImage.GetComponent<Image>().sprite = dialogueDatabase.GetDialogue(StartIndex).image;
-                guideImage.transform.position = new Vector2(110, 18);
+                
             }
             if (dialogueDatabase.GetDialogue(StartIndex).bold != null)
             {
@@ -105,14 +105,14 @@ public class DialogueCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
-        DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
-
-
         if (col.gameObject.tag == "Wizard")
         {
+            dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
+            DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
             setText();
+            
         }
+        
     }
 }
 
