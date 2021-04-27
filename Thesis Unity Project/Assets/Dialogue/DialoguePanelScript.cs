@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialoguePanelScript : MonoBehaviour
 {
@@ -17,10 +18,14 @@ public class DialoguePanelScript : MonoBehaviour
     [SerializeField]
     private int currentTutorialPanel;
 
+    [SerializeField]
+    private Button ZoomOut;
+
     public void setCurrentDialogueEvent(GameObject dialogueEvent)
     {
         this.dialogueCollision = dialogueEvent.GetComponent<DialogueCollision>();
         Time.timeScale = 0;
+        ZoomOut.interactable = false;
     }
 
     public void CloseDialoguePanel()
@@ -41,6 +46,7 @@ public class DialoguePanelScript : MonoBehaviour
                     TutorialPanel[currentTutorialPanel].SetActive(false);
                 }
             }
+            
         }
         else
         {
@@ -52,6 +58,7 @@ public class DialoguePanelScript : MonoBehaviour
             this.dialogueCollision.DestroyObject();
             DialoguePanel.SetActive(false);
             Time.timeScale = 1;
+            ZoomOut.interactable = true;
         }
         buttonSFX.Play();
     }
