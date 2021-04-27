@@ -11,6 +11,12 @@ public class DialoguePanelScript : MonoBehaviour
 
     private DialogueCollision dialogueCollision;
 
+    [SerializeField]
+    private List<GameObject> TutorialPanel;
+
+    [SerializeField]
+    private int currentTutorialPanel;
+
     public void setCurrentDialogueEvent(GameObject dialogueEvent)
     {
         this.dialogueCollision = dialogueEvent.GetComponent<DialogueCollision>();
@@ -24,9 +30,25 @@ public class DialoguePanelScript : MonoBehaviour
         {
             this.dialogueCollision.NextText();
             this.dialogueCollision.setText();
+            if(currentTutorialPanel < TutorialPanel.Count)
+            {
+                if (this.dialogueCollision.DisplayImage())
+                {
+                    TutorialPanel[currentTutorialPanel].SetActive(true);
+                }
+                else
+                {
+                    TutorialPanel[currentTutorialPanel].SetActive(false);
+                }
+            }
         }
         else
         {
+            if (this.dialogueCollision.DisplayImage())
+            {
+                TutorialPanel[currentTutorialPanel].SetActive(false);
+                currentTutorialPanel = currentTutorialPanel + 1;
+            }
             this.dialogueCollision.DestroyObject();
             DialoguePanel.SetActive(false);
             Time.timeScale = 1;

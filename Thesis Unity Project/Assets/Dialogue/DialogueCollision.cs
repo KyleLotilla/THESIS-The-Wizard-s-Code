@@ -30,6 +30,13 @@ public class DialogueCollision : MonoBehaviour
     [SerializeField]
     private GameObject guideImage;
 
+    [SerializeField]
+    private GameObject rightArrow;
+
+    [SerializeField]
+    private GameObject leftArrow;
+
+
     void Start()
     {
        
@@ -61,19 +68,49 @@ public class DialogueCollision : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public void displayArrow()
+    {
+        if(StartIndex == 3 || StartIndex == 4)
+        {
+            rightArrow.SetActive(true);
+            leftArrow.SetActive(false);
+        }
+
+        else if(StartIndex == 5 || StartIndex == 6)
+        {
+            rightArrow.SetActive(false);
+            leftArrow.SetActive(true);
+        }
+
+        else
+        {
+            rightArrow.SetActive(false);
+            leftArrow.SetActive(false);
+        }
+        
+    }
+
+    public bool DisplayImage()
+    {
+        if (dialogueDatabase.GetDialogue(StartIndex).image != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void setText()
     {
+        displayArrow();
         if (dialogueDatabase.GetDialogue(StartIndex) != null)
         {
             DialoguePanel.SetActive(true);
             guideImage.SetActive(false);
+            
             //Debug.Log(dialogueDatabase.GetDialogue().text);
-            if (dialogueDatabase.GetDialogue(StartIndex).image != null)
-            {
-                guideImage.SetActive(true);
-                guideImage.GetComponent<Image>().sprite = dialogueDatabase.GetDialogue(StartIndex).image;
-                
-            }
             if (dialogueDatabase.GetDialogue(StartIndex).bold != null)
             {
                 string test = dialogueDatabase.GetDialogue(StartIndex).bold;

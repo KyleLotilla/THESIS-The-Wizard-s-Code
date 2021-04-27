@@ -7,7 +7,7 @@ public class TabButton : MonoBehaviour
     [SerializeField]
     private TabsPanel tabsPanel;
     [SerializeField]
-    private int page;
+    public int page;
     // Start is called before the first frame update
     void Start()
     {

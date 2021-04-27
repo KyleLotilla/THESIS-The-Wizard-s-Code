@@ -22,6 +22,11 @@ public class TabsPanel : MonoBehaviour
     {
     }
 
+    public int getSize()
+    {
+        return pages.Count;
+    }
+
     public void SwitchPage(int page)
     {
         if (page >= 0 && page < pages.Count && page != currentPage)

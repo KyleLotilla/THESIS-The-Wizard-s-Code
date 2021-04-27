@@ -18,26 +18,22 @@
 	<Enteringthetutorialstage>
 		<ID>3</ID>
 		<Bold>action stack</Bold>
-		<Image>Dialogue/VisualGuide/right</Image>
 		<Text>This is the action stack. </Text>
 	</Enteringthetutorialstage>
 
 	<Enteringthetutorialstage>
 		<ID>4</ID>
-		<Image>Dialogue/VisualGuide/right</Image>
 		<Text>Random spells you currently own will spawn periodically in here. </Text>
 	</Enteringthetutorialstage>
 
 	<Enteringthetutorialstage>
 		<ID>5</ID>
 		<Bold>action queue</Bold>
-		<Image>Dialogue/VisualGuide/down</Image>
 		<Text>This is the action queue. </Text>
 	</Enteringthetutorialstage>
 
 	<Enteringthetutorialstage>
 		<ID>6</ID>
-		<Image>Dialogue/VisualGuide/down</Image>
 		<Text>You can drag your spells from the action stack down here and execute them by pressing run. </Text>
 	</Enteringthetutorialstage>
 
