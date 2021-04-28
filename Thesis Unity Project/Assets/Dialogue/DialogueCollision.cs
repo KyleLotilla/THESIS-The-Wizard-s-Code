@@ -42,6 +42,8 @@ public class DialogueCollision : MonoBehaviour
     [SerializeField]
     private float fairyTalkLifetime;
 
+    private bool collided;
+
 
     void Start()
     {
@@ -51,23 +53,19 @@ public class DialogueCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fairyTalk.activeSelf)
+        if (fairyTalk.activeSelf && this.collided)
         {
             Debug.Log(this.gameObject.ToString());
-            fairyTalkLifetime -= Time.deltaTime;
-            Debug.Log(fairyTalkLifetime);
+            this.fairyTalkLifetime -= Time.deltaTime;
+            Debug.Log(this.fairyTalkLifetime);
             
-            if (fairyTalkLifetime < 0.0f)
+            if (this.fairyTalkLifetime < 0.0f)
             {
                 fairyTalk.SetActive(false);
                 dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
                 DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
                 setText();
             }
-        }
-        else
-        {
-            fairyTalkLifetime = 1.5f;
         }
     }
 
@@ -170,6 +168,7 @@ public class DialogueCollision : MonoBehaviour
             /*dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
             DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
             setText();*/
+            this.collided = true;
             Debug.Log("Collided with " + this.gameObject.ToString());
             fairyTalk.SetActive(true);
         }
