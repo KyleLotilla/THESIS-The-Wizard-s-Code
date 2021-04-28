@@ -21,6 +21,9 @@ public class DialoguePanelScript : MonoBehaviour
     [SerializeField]
     private Button ZoomOut;
 
+    [SerializeField]
+    private GameObject FairyTalk;
+
     public void setCurrentDialogueEvent(GameObject dialogueEvent)
     {
         this.dialogueCollision = dialogueEvent.GetComponent<DialogueCollision>();
@@ -30,8 +33,7 @@ public class DialoguePanelScript : MonoBehaviour
 
     public void CloseDialoguePanel()
     {
-
-        if(this.dialogueCollision.getStartIndex() < this.dialogueCollision.getEndIndex())
+        if (this.dialogueCollision.getStartIndex() < this.dialogueCollision.getEndIndex())
         {
             this.dialogueCollision.NextText();
             this.dialogueCollision.setText();
@@ -46,7 +48,6 @@ public class DialoguePanelScript : MonoBehaviour
                     TutorialPanel[currentTutorialPanel].SetActive(false);
                 }
             }
-            
         }
         else
         {
@@ -59,14 +60,18 @@ public class DialoguePanelScript : MonoBehaviour
             DialoguePanel.SetActive(false);
             Time.timeScale = 1;
             ZoomOut.interactable = true;
+            FairyTalk.SetActive(false);
         }
         buttonSFX.Play();
     }
 
     public void SkipDialogue()
     {
+        buttonSFX.Play();
         this.dialogueCollision.DestroyObject();
         DialoguePanel.SetActive(false);
         Time.timeScale = 1;
+        ZoomOut.interactable = true;
+        FairyTalk.SetActive(false);
     }
 }

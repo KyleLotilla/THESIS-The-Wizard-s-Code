@@ -4473,6 +4473,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 765592388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &418668716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5441441043504973533, guid: 78ba33f2799d37542b85570e14d87b8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5945597139835213197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &430090505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4917,6 +4923,7 @@ MonoBehaviour:
   - {fileID: 399393796}
   currentTutorialPanel: 0
   ZoomOut: {fileID: 39673260}
+  FairyTalk: {fileID: 418668716}
 --- !u!1 &600293592
 GameObject:
   m_ObjectHideFlags: 0
@@ -5456,6 +5463,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
+      propertyPath: fairyTalk
+      value: 
+      objectReference: {fileID: 418668716}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
       propertyPath: leftArrow
       value: 
       objectReference: {fileID: 326938952}
@@ -5495,6 +5507,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6616fb80053ab4143b8a8de0e861bf33,
         type: 2}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
+      propertyPath: fairyTalkLifetime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: pathToXMLDatabase
@@ -5648,6 +5665,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
+      propertyPath: fairyTalk
+      value: 
+      objectReference: {fileID: 418668716}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
       propertyPath: leftArrow
       value: 
       objectReference: {fileID: 326938952}
@@ -5687,6 +5709,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6616fb80053ab4143b8a8de0e861bf33,
         type: 2}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
+      propertyPath: fairyTalkLifetime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: pathToXMLDatabase
@@ -6714,6 +6741,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
+      propertyPath: fairyTalk
+      value: 
+      objectReference: {fileID: 418668716}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
       propertyPath: leftArrow
       value: 
       objectReference: {fileID: 326938952}
@@ -6753,6 +6785,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6616fb80053ab4143b8a8de0e861bf33,
         type: 2}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
+      propertyPath: fairyTalkLifetime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: pathToXMLDatabase
@@ -7119,6 +7156,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
+      propertyPath: fairyTalk
+      value: 
+      objectReference: {fileID: 418668716}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
       propertyPath: leftArrow
       value: 
       objectReference: {fileID: 326938952}
@@ -7153,6 +7195,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6616fb80053ab4143b8a8de0e861bf33,
         type: 2}
+    - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
+        type: 3}
+      propertyPath: fairyTalkLifetime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: -4837046847873324330, guid: cbaabbb83d24e1d41b3ddc845029a1fb,
         type: 3}
       propertyPath: pathToXMLDatabase
@@ -7352,7 +7399,7 @@ PrefabInstance:
     - target: {fileID: 720498117128078781, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 763583907828951479, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -7716,7 +7763,12 @@ PrefabInstance:
     - target: {fileID: 5718408869868149318, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 150
+      value: -123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718408869868149318, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 5874784595049480588, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
