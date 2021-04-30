@@ -35,7 +35,6 @@ public class RobotCollision : MonoBehaviour
             {
                 scoreGiver.GiveScore();
                 animator.SetBool("On", true);
-                Destroy(col.gameObject);
             }
             else
             {

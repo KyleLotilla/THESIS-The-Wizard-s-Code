@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public delegate void OnActionSlotDestroyed();
+public delegate void OnActionSlotDestroyed(Action action);
 
 public class ActionSlot : MonoBehaviour
 {
@@ -76,7 +76,7 @@ public class ActionSlot : MonoBehaviour
 
     private void OnDestroy()
     {
-        OnActionSlotDestroyed?.Invoke();
+        OnActionSlotDestroyed?.Invoke(action);
         OnActionSlotDestroyed = null;
     }
 }

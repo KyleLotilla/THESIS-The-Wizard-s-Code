@@ -21,7 +21,7 @@ public class DatabaseTestScript : MonoBehaviour
         Spell fireBall = spellDatabase.GetSpell(2);
         spellInventory.EquipSpell(fireBall);
 
-        Spell electro = spellDatabase.GetSpell(3);
+        Spell electro = spellDatabase.GetSpell(5);
         spellInventory.EquipSpell(electro);
         
         
@@ -46,7 +46,8 @@ public class DatabaseTestScript : MonoBehaviour
         spellCode2.actionIcon = spellCodeIcon2;
         spellCodeInventory.EquipSpellCode(spellCode2);
 
-        playerProfile.gender = Gender.FEMALE;
+        //playerProfile.gender = Gender.FEMALE;
+        playerProfile.gender = Gender.MALE;
         
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));

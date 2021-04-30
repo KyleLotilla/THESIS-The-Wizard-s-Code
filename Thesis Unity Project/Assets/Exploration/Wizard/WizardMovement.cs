@@ -23,7 +23,6 @@ public class WizardMovement : MonoBehaviour
     [SerializeField]
     private float currentDisplacement;
     public bool isWalking { get; private set; } = false;
-    public bool isCasting { get; private set; } = false;
 
 
     // Start is called before the first frame update
@@ -50,13 +49,6 @@ public class WizardMovement : MonoBehaviour
                 Walk(-2.0f);
             }
         }
-    }
-
-    public void Cast()
-    {
-        animator.SetBool("casting", true);
-        isCasting = true;
-
     }
 
     public int checkDirection()
@@ -131,13 +123,5 @@ public class WizardMovement : MonoBehaviour
         }
     }
 
-    public void StopCasting()
-    {
-        if (isCasting)
-        {
-            isCasting = false;
-            animator.SetBool("casting", false);
-            Debug.Log("Setting casting to false");
-        }
-    }
+    
 }

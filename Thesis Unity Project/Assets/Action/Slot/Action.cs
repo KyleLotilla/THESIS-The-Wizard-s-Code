@@ -11,6 +11,19 @@ public class Action : MonoBehaviour
     public event OnExecutionStart OnExecutionStart;
     public event OnExecutionEnd OnExecutionEnd;
     public bool isExecuting { get; set; } = false;
+    [SerializeField]
+    private bool _isMovement = false;
+    public bool isMovement
+    {
+        get
+        {
+            return _isMovement;
+        }
+        set
+        {
+            _isMovement = value;
+        }
+    }
     public GameObject wizard { get; set; }
     protected virtual void Execute()
     {
