@@ -36,6 +36,14 @@ public class DialogueCollision : MonoBehaviour
     [SerializeField]
     private GameObject leftArrow;
 
+    [SerializeField]
+    private GameObject fairyTalk;
+
+    [SerializeField]
+    private float fairyTalkLifetime;
+
+    private bool collided;
+
 
     void Start()
     {
@@ -45,7 +53,20 @@ public class DialogueCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (fairyTalk.activeSelf && this.collided)
+        {
+            Debug.Log(this.gameObject.ToString());
+            this.fairyTalkLifetime -= Time.deltaTime;
+            Debug.Log(this.fairyTalkLifetime);
+            
+            if (this.fairyTalkLifetime < 0.0f)
+            {
+                fairyTalk.SetActive(false);
+                dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
+                DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
+                setText();
+            }
+        }
     }
 
     public void NextText()
@@ -144,12 +165,20 @@ public class DialogueCollision : MonoBehaviour
     {
         if (col.gameObject.tag == "Wizard")
         {
-            dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
+            /*dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
             DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
-            setText();
-            
+            setText();*/
+            this.collided = true;
+            Debug.Log("Collided with " + this.gameObject.ToString());
+            fairyTalk.SetActive(true);
         }
-        
+    }
+
+    void DisplayDialogue() 
+    {
+        dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
+        DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
+        setText();
     }
 }
 
