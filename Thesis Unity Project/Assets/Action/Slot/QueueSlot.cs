@@ -4,31 +4,7 @@ using UnityEngine;
 
 public class QueueSlot : MonoBehaviour
 {
-    private ActionSlot _stackSlot;
-    public ActionSlot stackSlot
-    {
-        get
-        {
-            return _stackSlot;
-        }
-        set
-        {
-            _stackSlot = value;
-            DestroyHandler destoryHandler = _stackSlot.GetComponent<DestroyHandler>();
-            if (destoryHandler != null)
-            {
-                destoryHandler.OnGameObjectDestroy += OnStackSlotDestroy;
-            }
-        }
-    }
-
-    private void OnStackSlotDestroy()
-    {
-        if (this.gameObject != null)
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    public ActionSlot stackSlot { get; set; }
 
     // Start is called before the first frame update
     void Start()

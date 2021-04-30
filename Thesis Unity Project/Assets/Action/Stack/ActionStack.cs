@@ -108,6 +108,7 @@ public class ActionStack : MonoBehaviour
         {
             Destroy(actionObject);
         }
+        delta = 0.0f;
         spawnedActions.Clear();
         isReset = true;
         resetActionCount = 0;
