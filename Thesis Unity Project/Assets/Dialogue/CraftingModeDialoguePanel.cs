@@ -33,6 +33,25 @@ public class CraftingModeDialoguePanel : MonoBehaviour
 
     private bool textDisplay = true;
 
+    [SerializeField]
+    private Button Craft;
+
+    [SerializeField]
+    private Button Crafting;
+
+    [SerializeField]
+    private Button levelSelect;
+
+    [SerializeField]
+    private Button recipes;
+
+    [SerializeField]
+    private Button spellcode;
+
+    [SerializeField]
+    private Button spell;
+
+
     /*
     [SerializeField]
     private AudioSource displaySFX;
@@ -107,15 +126,23 @@ public class CraftingModeDialoguePanel : MonoBehaviour
         
         if (dialogueDatabase.GetDialogue(DialogueID) != null)
         {
-            if(string.Compare(dialogueDatabase.GetDialogue(DialogueID).text, "PAUSE") == 0)
+
+            spell.interactable = false;
+            spellcode.interactable = false;
+            recipes.interactable = false;
+            levelSelect.interactable = false;
+            Crafting.interactable = false; ;
+            if (string.Compare(dialogueDatabase.GetDialogue(DialogueID).text, "PAUSE") == 0)
             {
                 DialoguePanel.SetActive(false);
                 textDisplay = false;
+                Craft.interactable = true;
             }
             else
             {
                 DialoguePanel.SetActive(true);
                 textDisplay = true;
+                Craft.interactable = false;
                 if (dialogueDatabase.GetDialogue(DialogueID).bold != null)
                 {
                     string test = dialogueDatabase.GetDialogue(DialogueID).bold;
@@ -134,6 +161,13 @@ public class CraftingModeDialoguePanel : MonoBehaviour
         {
             DialoguePanel.SetActive(false);
             textDisplay = false;
+
+            spell.interactable = true;
+            spellcode.interactable = true;
+            recipes.interactable = true;
+            levelSelect.interactable = true;
+            Crafting.interactable = true;
+            Craft.interactable = true;
         }
         
 

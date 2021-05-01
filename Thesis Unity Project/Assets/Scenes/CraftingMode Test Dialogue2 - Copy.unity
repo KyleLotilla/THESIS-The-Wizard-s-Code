@@ -913,18 +913,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 398834001}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &237995701 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3317804152254882220, guid: 4a4fb685d7cd7e34e863da05f215a208,
-    type: 3}
-  m_PrefabInstance: {fileID: 398834001}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce26e8b16ea71994ebc7a970d2efc768, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &276405304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1821,7 +1809,7 @@ MonoBehaviour:
   innerPage: 0
   outerTabsPanel: {fileID: 562276339}
   innerTabsPanel: {fileID: 1950896197}
-  spellCodeInventoryUI: {fileID: 237995701}
+  spellCodeInventoryUI: {fileID: 0}
 --- !u!114 &412336234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2081,7 +2069,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 5dd66db8155518242ae1e7127250f63f, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3879,14 +3867,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 08b6e5dbe265caa45bbf49eeb10e6a5b, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -4358,6 +4346,8 @@ MonoBehaviour:
   spellCodeInventory: {fileID: 11400000, guid: 6ddd5b4445676ff459e50133917c2fa8, type: 2}
   spellCodeIcon1: {fileID: 0}
   spellCodeIcon2: {fileID: 0}
+  playerLevelProgression: {fileID: 0}
+  playerProfile: {fileID: 0}
 --- !u!4 &997810922
 Transform:
   m_ObjectHideFlags: 0
@@ -4384,7 +4374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bfb4d1aed0779439829e048d3a607f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToXMLDatabase: Database/CraftingDatabase
+  xmlDocumentReader:
+    xmlTextAsset: {fileID: 0}
 --- !u!224 &1000541021 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8254365832573925144, guid: bce903bbc64dce34992521046c57456d,
@@ -6466,13 +6457,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9bf55ff61b6c8d74a8ba16215767e6d1, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

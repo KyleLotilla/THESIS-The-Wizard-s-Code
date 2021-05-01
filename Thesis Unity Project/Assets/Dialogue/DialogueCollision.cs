@@ -44,6 +44,10 @@ public class DialogueCollision : MonoBehaviour
 
     private bool collided;
 
+   
+    private GameObject Wizard;
+    
+
 
     void Start()
     {
@@ -58,7 +62,10 @@ public class DialogueCollision : MonoBehaviour
             Debug.Log(this.gameObject.ToString());
             this.fairyTalkLifetime -= Time.deltaTime;
             Debug.Log(this.fairyTalkLifetime);
-            
+            Destroy(this.gameObject.GetComponent<SpriteRenderer>());
+            this.Wizard.GetComponent<WizardMovement>().StopWalking();
+
+
             if (this.fairyTalkLifetime < 0.0f)
             {
                 fairyTalk.SetActive(false);
@@ -165,6 +172,8 @@ public class DialogueCollision : MonoBehaviour
     {
         if (col.gameObject.tag == "Wizard")
         {
+            this.Wizard = col.gameObject;
+            col.gameObject.GetComponent<WizardMovement>().StopWalking();
             /*dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
             DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
             setText();*/
