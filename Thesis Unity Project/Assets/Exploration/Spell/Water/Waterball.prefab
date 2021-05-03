@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 7683178487814484448}
   - component: {fileID: 5549544182248006548}
   - component: {fileID: 4493403521531388974}
-  - component: {fileID: 7770134768810201377}
   - component: {fileID: 301400394669245225}
   - component: {fileID: 5363435859410764389}
+  - component: {fileID: 7792895857032359751}
+  - component: {fileID: 3097554968634673849}
+  - component: {fileID: 6731341175764445973}
+  - component: {fileID: 3130158957387809177}
   m_Layer: 9
   m_Name: Waterball
   m_TagString: Water
@@ -105,19 +108,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7770134768810201377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8029989075416608700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d744627133109da4e8aff218ac19019b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 2
 --- !u!50 &301400394669245225
 Rigidbody2D:
   serializedVersion: 4
@@ -165,3 +155,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 0.9375}
   m_EdgeRadius: 0
+--- !u!114 &7792895857032359751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029989075416608700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5588563178b74004fb926b32f67a2e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3097554968634673849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029989075416608700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d597b03e3affb43be980d0b973ae51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileSpeed: {x: 1.5, y: 0}
+--- !u!114 &6731341175764445973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029989075416608700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee1ef4cbf34f1c4fbe7e842296deeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 1.5
+--- !u!114 &3130158957387809177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029989075416608700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406e9592e131315448208270217ab24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

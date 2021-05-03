@@ -19,22 +19,26 @@
 		<ID>3</ID>
 		<Bold>action stack</Bold>
 		<Text>This is the action stack. </Text>
+    <Arrow>Right1</Arrow>
 	</Enteringthetutorialstage>
 
 	<Enteringthetutorialstage>
 		<ID>4</ID>
 		<Text>Random spells you currently own will spawn periodically in here. </Text>
+    <Arrow>Right1</Arrow>
 	</Enteringthetutorialstage>
 
 	<Enteringthetutorialstage>
 		<ID>5</ID>
 		<Bold>action queue</Bold>
 		<Text>This is the action queue. </Text>
+    <Arrow>Left1</Arrow>
 	</Enteringthetutorialstage>
 
 	<Enteringthetutorialstage>
 		<ID>6</ID>
 		<Text>You can drag your spells from the action stack down here and execute them by pressing run. </Text>
+    <Arrow>Left1</Arrow>
 	</Enteringthetutorialstage>
 
 	<Enteringthetutorial>
@@ -44,13 +48,13 @@
   
   <Enteringthetutorial>
 		<ID>8</ID>
-    <Image>Spell/Icons/MoveRight</Image>
+    <Page>1</Page>
 		<Text>Drag the move left and move right spells from the action stack down to your action queue.</Text>
 	</Enteringthetutorial>
 
 	<Enteringthetutorial>
 		<ID>9</ID>
-		<Image>Dialogue/VisualGuide/light</Image>
+    <Page>1</Page>
 		<Text>Try to go to the exclamation point in front of you using your movement spells. </Text>
 	</Enteringthetutorial>
 
@@ -76,7 +80,7 @@
 
 	<Onceneartheiceblock>
 		<ID>14</ID>
-    <Image>Spell/Icons/Fireball</Image>
+    <Page>2</Page>
 		<Text>If I remember correctly, I think fire can get rid of ice. </Text>
 	</Onceneartheiceblock>
 

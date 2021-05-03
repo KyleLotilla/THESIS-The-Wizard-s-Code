@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5367611216836464155}
-  - component: {fileID: 4772501655352094190}
+  - component: {fileID: 4277336492411289906}
   m_Layer: 5
   m_Name: ShootWaterBall
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4772501655352094190
+--- !u!114 &4277336492411289906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,10 +40,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3115427723548475876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265337e56c7bc7441bf2116eddf0116f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1272204886188da40aa83a503e51e2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 1.5, y: 0, z: 0}
-  WaterBallPrefab: {fileID: 8029989075416608700, guid: eff607baa275f23439692f5705963706,
+  projectilePrefab: {fileID: 8029989075416608700, guid: eff607baa275f23439692f5705963706,
     type: 3}
-  WaterBallSpeed: 1.5

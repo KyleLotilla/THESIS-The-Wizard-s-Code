@@ -7,6 +7,11 @@ public class TPRight : Action
     // Start is called before the first frame update
     WizardMovement wizardmovement;
 
+    private void Awake()
+    {
+        this.isMovement = true;
+    }
+
     protected override void Execute()
     {
         this.wizardmovement = this.wizard.GetComponent<WizardMovement>();

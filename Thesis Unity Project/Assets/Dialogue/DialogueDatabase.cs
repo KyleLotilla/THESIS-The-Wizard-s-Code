@@ -36,10 +36,13 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
                 {
                     dialogue.text = element.Element("Text").Value;
                 }
-                if (element.Elements("Image").Any())
+                if (element.Elements("Page").Any())
                 {
-                    dialogue.imagepath = element.Element("Image").Value;
-                    dialogue.image = Resources.Load<Sprite>(dialogue.imagepath);
+                    dialogue.page = int.Parse(element.Element("Page").Value);
+                }
+                if (element.Elements("Arrow").Any())
+                {
+                    dialogue.Arrow = element.Element("Arrow").Value;
                 }
                 if (element.Elements("Bold").Any())
                 {
@@ -115,10 +118,13 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
             {
                 copydialogue.bold = dialogue.bold;
             }
-            if(dialogue.imagepath != null)
+            if(dialogue.page != null)
             {
-                copydialogue.imagepath = dialogue.imagepath;
-                copydialogue.image = dialogue.image;
+                copydialogue.page = dialogue.page;
+            }
+            if(dialogue.Arrow != null)
+            {
+                copydialogue.Arrow = dialogue.Arrow;
             }
             
             return copydialogue;

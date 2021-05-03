@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class QueueSlot : MonoBehaviour
 {
-    public ActionSlot stackSlot;
+    public ActionSlot stackSlot { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {

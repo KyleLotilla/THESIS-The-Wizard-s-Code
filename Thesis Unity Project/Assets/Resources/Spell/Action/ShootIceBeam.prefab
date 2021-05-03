@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6839287129938884268}
-  - component: {fileID: 1641207268255596899}
+  - component: {fileID: 7880011804171515723}
   m_Layer: 5
   m_Name: ShootIceBeam
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1641207268255596899
+--- !u!114 &7880011804171515723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,10 +40,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8586002385571052428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e7d28845c65bbb47967788162cedb1f, type: 3}
+  m_Script: {fileID: 11500000, guid: c953eaf696a96e141b28441cf83b41f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 2, y: 0, z: 0}
-  IceShardPrefab: {fileID: 1203172976080195828, guid: ca5c9947e1438b0459ddd0f3e6448962,
+  offset: {x: 2.5, y: 0, z: 0}
+  spellPrefab: {fileID: 1203172976080195828, guid: ca5c9947e1438b0459ddd0f3e6448962,
     type: 3}
-  IceShardSpeed: 1.5

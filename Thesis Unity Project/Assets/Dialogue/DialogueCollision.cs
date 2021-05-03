@@ -31,12 +31,6 @@ public class DialogueCollision : MonoBehaviour
     private GameObject guideImage;
 
     [SerializeField]
-    private GameObject rightArrow;
-
-    [SerializeField]
-    private GameObject leftArrow;
-
-    [SerializeField]
     private GameObject fairyTalk;
 
     [SerializeField]
@@ -59,9 +53,9 @@ public class DialogueCollision : MonoBehaviour
     {
         if (fairyTalk.activeSelf && this.collided)
         {
-            Debug.Log(this.gameObject.ToString());
+            //Debug.Log(this.gameObject.ToString());
             this.fairyTalkLifetime -= Time.deltaTime;
-            Debug.Log(this.fairyTalkLifetime);
+            //Debug.Log(this.fairyTalkLifetime);
             Destroy(this.gameObject.GetComponent<SpriteRenderer>());
             this.Wizard.GetComponent<WizardMovement>().StopWalking();
 
@@ -96,43 +90,33 @@ public class DialogueCollision : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void displayArrow()
+    public string displayArrow()
     {
-        if(StartIndex == 3 || StartIndex == 4)
+        if(dialogueDatabase.GetDialogue(StartIndex).Arrow != null)
         {
-            rightArrow.SetActive(true);
-            leftArrow.SetActive(false);
+            return dialogueDatabase.GetDialogue(StartIndex).Arrow;
         }
-
-        else if(StartIndex == 5 || StartIndex == 6)
-        {
-            rightArrow.SetActive(false);
-            leftArrow.SetActive(true);
-        }
-
         else
         {
-            rightArrow.SetActive(false);
-            leftArrow.SetActive(false);
+            return null;
         }
         
     }
 
-    public bool DisplayImage()
+    public int DisplayPage()
     {
-        if (dialogueDatabase.GetDialogue(StartIndex).image != null)
+        if(dialogueDatabase.GetDialogue(StartIndex).page != 0)
         {
-            return true;
+            return dialogueDatabase.GetDialogue(StartIndex).page - 1;
         }
         else
         {
-            return false;
+            return -1;
         }
     }
 
     public void setText()
     {
-        displayArrow();
         if (dialogueDatabase.GetDialogue(StartIndex) != null)
         {
             DialoguePanel.SetActive(true);
@@ -178,7 +162,7 @@ public class DialogueCollision : MonoBehaviour
             DialoguePanel.GetComponent<DialoguePanelScript>().setCurrentDialogueEvent(this.gameObject);
             setText();*/
             this.collided = true;
-            Debug.Log("Collided with " + this.gameObject.ToString());
+            //Debug.Log("Collided with " + this.gameObject.ToString());
             fairyTalk.SetActive(true);
         }
     }

@@ -48,9 +48,20 @@ public class QueueSpace : MonoBehaviour
                     {
                         queueSlot.stackSlot = droppedActionSlot;
                     }
+                    DestroyHandler destroyHandler = droppedActionSlot.GetComponent<DestroyHandler>();
+                    if (destroyHandler != null)
+                    {
+                        destroyHandler.OnGameObjectDestroy += OnStackSlotDestroy;
+                    }
                 }
             }
         }
+    }
+
+    private void OnStackSlotDestroy()
+    {
+        DestroyImmediate(space.slot);
+        space.slot = null;
     }
 
     public void RemoveSlot()
