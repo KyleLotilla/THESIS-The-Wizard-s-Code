@@ -64,8 +64,10 @@ public class CraftingModeDialoguePanel : MonoBehaviour
 
     void Start()
     {
+        
         if (setXMLDatabase)
         {
+            
             dialogueDatabase.setPath("Dialogue/" + pathToXMLDatabase);
             setXMLDatabase = false;
             setText();
