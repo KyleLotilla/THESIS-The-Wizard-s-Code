@@ -15,14 +15,19 @@ public class DialoguePanelScript : MonoBehaviour
     [SerializeField]
     private List<GameObject> TutorialPanel;
 
-    [SerializeField]
-    private int currentTutorialPanel;
+    private int currentTutorialPanel = 0;
 
     [SerializeField]
     private Button ZoomOut;
 
     [SerializeField]
     private GameObject FairyTalk;
+
+    [SerializeField]
+    private GameObject rightArrow1;
+
+    [SerializeField]
+    private GameObject leftArrow1;
 
     public void setCurrentDialogueEvent(GameObject dialogueEvent)
     {
@@ -39,28 +44,49 @@ public class DialoguePanelScript : MonoBehaviour
             this.dialogueCollision.setText();
             if(currentTutorialPanel < TutorialPanel.Count)
             {
-                if (this.dialogueCollision.DisplayImage())
+                if (this.dialogueCollision.DisplayPage() != -1)
                 {
-                    TutorialPanel[currentTutorialPanel].SetActive(true);
+                    this.currentTutorialPanel = this.dialogueCollision.DisplayPage();
+                    TutorialPanel[this.currentTutorialPanel].SetActive(true);
                 }
                 else
                 {
-                    TutorialPanel[currentTutorialPanel].SetActive(false);
+                    TutorialPanel[this.currentTutorialPanel].SetActive(false);
                 }
             }
+            if(this.dialogueCollision.displayArrow() != null)
+            {
+                if (this.dialogueCollision.displayArrow().Contains("Right1"))
+                {
+                    rightArrow1.SetActive(true);
+                    leftArrow1.SetActive(false);
+                }
+                else if (this.dialogueCollision.displayArrow().Contains("Left1"))
+                {
+                    rightArrow1.SetActive(false);
+                    leftArrow1.SetActive(true);
+                }
+            }
+            else
+            {
+                rightArrow1.SetActive(false);
+                leftArrow1.SetActive(false);
+            }
+
         }
         else
         {
-            if (this.dialogueCollision.DisplayImage())
+            if (this.dialogueCollision.DisplayPage() != -1)
             {
-                TutorialPanel[currentTutorialPanel].SetActive(false);
-                currentTutorialPanel = currentTutorialPanel + 1;
+                TutorialPanel[this.currentTutorialPanel].SetActive(false);
             }
             this.dialogueCollision.DestroyObject();
             DialoguePanel.SetActive(false);
             Time.timeScale = 1;
             ZoomOut.interactable = true;
             FairyTalk.SetActive(false);
+            rightArrow1.SetActive(false);
+            leftArrow1.SetActive(false);
         }
         buttonSFX.Play();
     }
@@ -73,5 +99,8 @@ public class DialoguePanelScript : MonoBehaviour
         Time.timeScale = 1;
         ZoomOut.interactable = true;
         FairyTalk.SetActive(false);
+        TutorialPanel[currentTutorialPanel].SetActive(false);
+        rightArrow1.SetActive(false);
+        leftArrow1.SetActive(false);
     }
 }
