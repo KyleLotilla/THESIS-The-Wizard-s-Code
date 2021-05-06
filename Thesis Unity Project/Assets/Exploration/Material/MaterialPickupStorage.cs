@@ -7,6 +7,7 @@ public class MaterialPickupStorage : MonoBehaviour, IEnumerable
     [SerializeField]
     private List<Material> materials;
 
+
     // Start is called before the first frame update
     void Start()
     {

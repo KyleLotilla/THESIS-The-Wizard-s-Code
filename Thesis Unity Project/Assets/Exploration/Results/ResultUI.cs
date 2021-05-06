@@ -7,11 +7,25 @@ using UnityEngine.UI;
 public class ResultUI : MonoBehaviour
 {
     [SerializeField]
-    private GameObject explorationUI;
+    private int levelID;
     [SerializeField]
-    private GameObject resultsUI;
+    private PlayerLevelProgression playerLevelProgression;
     [SerializeField]
-    private Text resultField;
+    private GameObject gamePanel;
+    [SerializeField]
+    private GameObject optionsPanel;
+    [SerializeField]
+    private ExplorationScore explorationScore;
+    [SerializeField]
+    private Text scoreText;
+    [SerializeField]
+    private Text highScoreText;
+    [SerializeField]
+    private GameObject newHighScoreText;
+    [SerializeField]
+    private MaterialPickupStorage materialPickupStorage;
+    [SerializeField]
+    private MaterialsPanel materialsPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,26 +39,43 @@ public class ResultUI : MonoBehaviour
     }
 
 
-    public void ShowResults(ResultStats resultStats, MaterialPickupStorage materialPickupStorage)
+    public void ShowResults()
     {
-        Dictionary<string, int> materialResults = new Dictionary<string, int>();
+        Dictionary<int, int> materialIndices = new Dictionary<int, int>();
+        List<int> materialIDs = new List<int>();
+        List<int> numMaterials = new List<int>();
+
         foreach (Material material in materialPickupStorage)
         {
-            if (materialResults.ContainsKey(material.name))
+            if (materialIndices.ContainsKey(material.materialID))
             {
-                materialResults[material.name]++;
+                numMaterials[materialIndices[material.materialID]]++;
             }
             else
             {
-                materialResults[material.name] = 1;
+                materialIDs.Add(material.materialID);
+                materialIndices[material.materialID] = materialIDs.Count - 1;
+                numMaterials.Add(1);
             }
         }
-        foreach (KeyValuePair<string, int> materialResult in materialResults)
+        materialsPanel.ShowMaterials(materialIDs, numMaterials);
+
+        int score = explorationScore.currentScore;
+        scoreText.text = score.ToString();
+
+        LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(levelID);
+        if (score > levelProgression.highScore)
         {
-            resultField.text = resultField.text + materialResult.Value + " " + materialResult.Key + "\n";
+            highScoreText.text = score.ToString();
+            newHighScoreText.SetActive(true);
         }
-        resultsUI.SetActive(true);
-        resultField.gameObject.SetActive(true);
-        explorationUI.SetActive(false);
+        else
+        {
+            highScoreText.text = levelProgression.highScore.ToString();
+        }
+
+        this.gameObject.SetActive(true);
+        gamePanel.SetActive(false);
+        optionsPanel.SetActive(false);
     }
 }

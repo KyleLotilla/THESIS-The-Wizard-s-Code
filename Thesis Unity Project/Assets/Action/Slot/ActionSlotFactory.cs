@@ -13,6 +13,8 @@ public class ActionSlotFactory : MonoBehaviour
     private GameObject spellActionSlotPrefab;
     [SerializeField]
     private GameObject spellCodeActionSlotPrefab;
+    [SerializeField]
+    private List<Sprite> spellCodeIcons;
 
     // Start is called before the first frame update
     void Start()
@@ -76,38 +78,28 @@ public class ActionSlotFactory : MonoBehaviour
                 spellCodeAction.actionPrefabs = actionPrefabs;
                 spellCodeAction.spellCode = spellCode;
             }
-            ActionSlot actionSlot = spellCodeActionSlotObject.GetComponent<ActionSlot>();
-            if (actionSlot != null)
-            {
-                actionSlot.icon.sprite = spellCode.actionIcon;
-            }
+            
         }
         return spellCodeActionSlotObject;
     }
 
-    public List<GameObject> GetActionSlots(List<SpellCode> spellCodes)
-    {
-        List<GameObject> actionSlots = new List<GameObject>();
-        foreach (SpellCode spellCode in spellCodes)
-        {
-            GameObject actionSlot = GetActionSlot(spellCode);
-            if (actionSlot != null)
-            {
-                actionSlots.Add(actionSlot);
-            }
-        }
-        return actionSlots;
-    }
 
     public List<GameObject> GetActionSlots(IEnumerable<SpellCode> spellCodes)
     {
+        int spellIndex = 0;
         List<GameObject> actionSlots = new List<GameObject>();
         foreach (SpellCode spellCode in spellCodes)
         {
-            GameObject actionSlot = GetActionSlot(spellCode);
-            if (actionSlot != null)
+            GameObject actionSlotObject = GetActionSlot(spellCode);
+            if (actionSlotObject != null)
             {
-                actionSlots.Add(actionSlot);
+                ActionSlot actionSlot = actionSlotObject.GetComponent<ActionSlot>();
+                if (actionSlot != null)
+                {
+                    actionSlot.icon.sprite = spellCodeIcons[spellIndex];
+                    spellIndex++;
+                }
+                actionSlots.Add(actionSlotObject);
             }
         }
         return actionSlots;

@@ -7,14 +7,20 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
 {
     [SerializeField]
     private List<SpellCode> spellCodes;
-    [SerializeField]
-    private Sprite spellCodeIcon;
     private List<SpellCode> _equipped;
     public IEnumerable<SpellCode> equipped
     {
         get
         {
             return _equipped;
+        }
+    }
+
+    public int equippedCount
+    {
+        get
+        {
+            return _equipped.Count;
         }
     }
 
@@ -45,6 +51,20 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
             _maxSpells = value;
         }
     }
+
+    [SerializeField]
+    private int _maxEquipped;
+    public int maxEquipped
+    {
+        get
+        {
+            return _maxEquipped;
+        }
+        set
+        {
+            _maxEquipped = value;
+        }
+    }
     void OnEnable()
     {
         if (spellCodes != null)
@@ -67,10 +87,6 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
     }
     public void AddSpellCode(SpellCode spellCode)
     {
-        if (spellCode.actionIcon == null)
-        {
-            spellCode.actionIcon = spellCodeIcon;
-        }
         spellCodes.Add(spellCode);
     }
 
@@ -109,9 +125,12 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
 
     public void EquipSpellCode(SpellCode spellCode)
     {
-        spellCodes.Remove(spellCode);
-        _equipped.Add(spellCode);
-        spellCode.isEquipped = true;
+        if (_equipped.Count < maxEquipped)
+        {
+            spellCodes.Remove(spellCode);
+            _equipped.Add(spellCode);
+            spellCode.isEquipped = true;
+        }
     }
 
     public void UnequipSpellCode(SpellCode spellCode)

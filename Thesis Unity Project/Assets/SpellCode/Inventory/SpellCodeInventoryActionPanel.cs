@@ -16,6 +16,8 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
     [SerializeField]
     private SpellCodeEquipmentMenu spellCodeEquipmentMenu;
     [SerializeField]
+    private SpellCodeEquippedCount spellCodeEquippedCount;
+    [SerializeField]
     private SpellCodeInventory spellCodeInventory;
     [SerializeField]
     private List<Button> buttons;
@@ -60,6 +62,7 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         spellCodeInventory.EquipSpellCode(spellCode);
         spellCodeInventoryMenu.RefreshMenu();
         spellCodeEquipmentMenu.RefreshMenu();
+        spellCodeEquippedCount.Refresh();
     }
 
     public void UnequipSpellCode()
@@ -68,6 +71,7 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         spellCodeInventory.AddSpellCode(spellCode);
         spellCodeInventoryMenu.RefreshMenu();
         spellCodeEquipmentMenu.RefreshMenu();
+        spellCodeEquippedCount.Refresh();
     }
 
     public void EditSpellCode()
@@ -81,5 +85,6 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         spellCodeInventory.RemoveSpellCode(spellCode);
         spellCodeInventoryMenu.RefreshMenu();
         spellCodeEquipmentMenu.RefreshMenu();
+        spellCodeEquippedCount.Refresh();
     }
 }

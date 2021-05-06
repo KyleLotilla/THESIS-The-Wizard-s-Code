@@ -9,8 +9,6 @@ public class DatabaseTestScript : MonoBehaviour
     public SpellDatabase spellDatabase;
     public SpellInventory spellInventory;
     public SpellCodeInventory spellCodeInventory;
-    public Sprite spellCodeIcon1;
-    public Sprite spellCodeIcon2;
     public PlayerLevelProgression playerLevelProgression;
     public PlayerProfile playerProfile;
 
@@ -34,7 +32,6 @@ public class DatabaseTestScript : MonoBehaviour
         spellCode1.AddSpell(spellDatabase.GetSpell(1));
         spellCode1.AddSpell(spellDatabase.GetSpell(1));
         spellCode1.name = "Fire n' Forget";
-        spellCode1.actionIcon = spellCodeIcon1;
         spellCodeInventory.EquipSpellCode(spellCode1);
 
         
@@ -43,7 +40,6 @@ public class DatabaseTestScript : MonoBehaviour
         spellCode2.AddSpell(fireBall);
         spellCode2.AddSpell(electro);
         spellCode2.name = "Overload";
-        spellCode2.actionIcon = spellCodeIcon2;
         spellCodeInventory.EquipSpellCode(spellCode2);
 
         //playerProfile.gender = Gender.FEMALE;
@@ -62,7 +58,7 @@ public class DatabaseTestScript : MonoBehaviour
 
         
         LevelProgression levelProgression = new LevelProgression();
-        levelProgression.levelID = 1;
+        levelProgression.levelID = 0;
         levelProgression.isUnlocked = true;
         levelProgression.highScore = 69;
         playerLevelProgression.AddProgression(levelProgression);

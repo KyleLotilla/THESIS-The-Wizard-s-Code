@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444affa146c8edf418cc1675a9a2875c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isMovement: 0
   actionSequence: {fileID: 4155028222604980195}
   _actionPrefabs: []
 --- !u!1001 &4495964364426268134
@@ -149,6 +150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014567767602374095, guid: 68614be7982a9274bb78c4b004da192c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 9101289673315616973, guid: 68614be7982a9274bb78c4b004da192c,
         type: 3}

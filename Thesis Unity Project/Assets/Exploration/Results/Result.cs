@@ -5,11 +5,15 @@ using UnityEngine;
 public class Result : MonoBehaviour
 {
     [SerializeField]
+    private int levelID;
+    [SerializeField]
+    private PlayerLevelProgression playerLevelProgression;
+    [SerializeField]
+    private ExplorationScore explorationScore;
+    [SerializeField]
     private MaterialInventory materialInventory;
     [SerializeField]
     private MaterialPickupStorage materialPickupStorage;
-    [SerializeField]
-    private ResultStats resultStats;
     [SerializeField]
     private ResultUI resultUI;
 
@@ -27,10 +31,16 @@ public class Result : MonoBehaviour
 
     public void WinGame()
     {
-        resultUI.ShowResults(resultStats, materialPickupStorage);
+        resultUI.ShowResults();
         foreach(Material material in materialPickupStorage)
         {
             materialInventory.AddMaterial(material);
+        }
+        LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(levelID);
+        levelProgression.isCompleted = true;
+        if (explorationScore.currentScore > levelProgression.highScore)
+        {
+            levelProgression.highScore = explorationScore.currentScore;
         }
     }
 }

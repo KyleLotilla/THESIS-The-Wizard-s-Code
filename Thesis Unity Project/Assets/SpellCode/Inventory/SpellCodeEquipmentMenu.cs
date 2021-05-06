@@ -9,11 +9,21 @@ public class SpellCodeEquipmentMenu : ItemSlotMenu<SpellCode>
     private SpellCodeInventory spellCodeInventory;
     [SerializeField]
     private SpellCodeInventoryPanel selected;
+    [SerializeField]
+    private List<Sprite> spellCodeIcons;
+    private int spellCodeIconIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         items = spellCodeInventory.equipped;
         RefreshMenu();
+    }
+
+    public override void RefreshMenu()
+    {
+        spellCodeIconIndex = 0;
+        base.RefreshMenu();
     }
 
     protected override void OnSlotSpawn(GameObject slot, GameObject space, SpellCode item)
@@ -28,6 +38,12 @@ public class SpellCodeEquipmentMenu : ItemSlotMenu<SpellCode>
         {
             spellCodeInventoryPanel.spellCode = item;
             spellCodeInventoryPanel.OnSpellCodePanelSelected += OnSpellCodePanelSelected;
+        }
+        SpellCodeEquippedPanel spellCodeEquippedPanel = slot.GetComponent<SpellCodeEquippedPanel>();
+        if (spellCodeEquippedPanel != null)
+        {
+            spellCodeEquippedPanel.icon = spellCodeIcons[spellCodeIconIndex];
+            spellCodeIconIndex++;
         }
     }
 
