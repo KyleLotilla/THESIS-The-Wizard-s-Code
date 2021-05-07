@@ -16,6 +16,10 @@ public class ActionQueue : MonoBehaviour
     private List<GameObject> spaceObjects;
     [SerializeField]
     private Button runButton;
+    [SerializeField]
+    private Button zoomOutButton;
+    [SerializeField]
+    private Button resetButton;
     private List<int> executingSpaceIndices;
     private List<Action> actions;
     public bool isExecuting { get; set; }
@@ -67,6 +71,8 @@ public class ActionQueue : MonoBehaviour
             }
         }
         runButton.interactable = false;
+        zoomOutButton.interactable = false;
+        resetButton.interactable = false;
         actionSequence.actions = actions;
         actionSequence.StartExecution();
     }
@@ -125,6 +131,8 @@ public class ActionQueue : MonoBehaviour
             }
         }
         runButton.interactable = true;
+        zoomOutButton.interactable = true;
+        resetButton.interactable = true;
         isExecuting = false;
         OnExecutionEnd?.Invoke();
     }

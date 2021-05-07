@@ -29,6 +29,8 @@ public class SpellCodeEditUI : MonoBehaviour
     [SerializeField]
     private SpellCodeSpellMenu spellMenu;
     [SerializeField]
+    private SpellCodeEditSaveUI spellCodeEditSaveUI;
+    [SerializeField]
     private SpellCodeInventory spellCodeInventory;
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,7 @@ public class SpellCodeEditUI : MonoBehaviour
         spellCode = new SpellCode();
         spellCode.name = "New SpellCode";
         spellCodePanel.spellCode = spellCode;
+        spellCodeEditSaveUI.spaces = spellMenu.spaces;
         inputField.text = spellCode.name;
         spellCodeEditMenu.RefreshMenu();
         spellCodeEditMode = SpellCodeEditMode.ADD;
@@ -56,7 +59,9 @@ public class SpellCodeEditUI : MonoBehaviour
     {
         this.spellCode = spellCode;
         spellCodePanel.spellCode = spellCode;
+        spellCodeEditSaveUI.spaces = spellMenu.spaces;
         inputField.text = spellCode.name;
+        spellCodeEditSaveUI.spaces = spellMenu.spaces;
         spellCodeEditMenu.RefreshMenu();
         spellCodeEditMode = SpellCodeEditMode.EDIT;
     }

@@ -1977,9 +1977,10 @@ MonoBehaviour:
   spellCodeInventory: {fileID: 11400000, guid: 6ddd5b4445676ff459e50133917c2fa8, type: 2}
   buttons:
   - {fileID: 5365249070305540868}
-  - {fileID: 7137000543410218162}
   - {fileID: 1355778073487937573}
   _interactable: 1
+  equipButton: {fileID: 7137000543410218162}
+  isEquipmentActions: 0
 --- !u!1 &5614494818979280247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2457,8 @@ MonoBehaviour:
   - {fileID: 844820019547867195}
   - {fileID: 786624224694635982}
   _interactable: 0
+  equipButton: {fileID: 7137000543410218162}
+  isEquipmentActions: 1
 --- !u!1 &6734529950037945613
 GameObject:
   m_ObjectHideFlags: 0

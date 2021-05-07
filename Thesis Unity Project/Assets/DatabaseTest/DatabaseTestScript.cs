@@ -35,15 +35,28 @@ public class DatabaseTestScript : MonoBehaviour
         spellCodeInventory.EquipSpellCode(spellCode1);
 
         
-        SpellCode spellCode2 = new SpellCode();
-        spellCode2.AddSpell(spellDatabase.GetSpell(1));
-        spellCode2.AddSpell(fireBall);
-        spellCode2.AddSpell(electro);
-        spellCode2.name = "Overload";
-        spellCodeInventory.EquipSpellCode(spellCode2);
+        for (int i = 0; i < 4; i++)
+        {
+            SpellCode spellCode2 = new SpellCode();
+            spellCode2.AddSpell(spellDatabase.GetSpell(1));
+            spellCode2.AddSpell(fireBall);
+            spellCode2.AddSpell(electro);
+            spellCode2.name = "Overload";
+            spellCodeInventory.EquipSpellCode(spellCode2);
+        }
 
-        //playerProfile.gender = Gender.FEMALE;
-        playerProfile.gender = Gender.MALE;
+        for (int i = 0; i < 3; i++)
+        {
+            SpellCode spellCode3 = new SpellCode();
+            spellCode3.AddSpell(fireBall);
+            spellCode3.AddSpell(spellDatabase.GetSpell(1));
+            spellCode3.AddSpell(spellDatabase.GetSpell(1));
+            spellCode3.name = "Fire n' Forget";
+            spellCodeInventory.AddSpellCode(spellCode3);
+        }
+
+        playerProfile.gender = Gender.FEMALE;
+        //playerProfile.gender = Gender.MALE;
         
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));

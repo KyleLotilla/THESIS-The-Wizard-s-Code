@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void OnZoomOutMove(Vector2 bottomLeftBoundary, Vector2 topRightBoundary, Vector2 currentPosition);
+
 public class ZoomOutMovement : MonoBehaviour
 {
+    public event OnZoomOutMove OnZoomOutMove;
+
     private Vector2 previousMousePosition;
     private bool isMouseHeld = false;
     [SerializeField]
@@ -52,16 +56,24 @@ public class ZoomOutMovement : MonoBehaviour
                 this.transform.position = cameraPosition;
 
                 previousMousePosition = currentMousePosition;
+
+                OnZoomOutMove?.Invoke(bottomLeftBoundary.position, topRightBoundary.position, new Vector2(cameraPosition.x, cameraPosition.y));
             }
             else
             {
                 isMouseHeld = true;
                 previousMousePosition = Input.mousePosition;
             }
+
         }
         else
         {
             isMouseHeld = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        OnZoomOutMove = null;
     }
 }

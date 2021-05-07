@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SpellCodeInventoryActionPanel : MonoBehaviour
 {
+
     [SerializeField]
     private TabsPanel tabsPanel;
     [SerializeField]
@@ -32,12 +33,26 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         set
         {
             _interactable = value;
+            if (spellCodeInventory.equippedCount >= spellCodeInventory.maxEquipped)
+            {
+                equipButton.interactable = false;
+            }
+            else if (!isEquipmentActions)
+            {
+                equipButton.interactable = value;
+            }
+
             foreach (Button button in buttons)
             {
                 button.interactable = _interactable;
             }
         }
     }
+    [SerializeField]
+    private Button equipButton;
+
+    [SerializeField]
+    private bool isEquipmentActions = false;
     public SpellCode spellCode { get; set; }
     // Start is called before the first frame update
     void Start()
@@ -63,6 +78,13 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         spellCodeInventoryMenu.RefreshMenu();
         spellCodeEquipmentMenu.RefreshMenu();
         spellCodeEquippedCount.Refresh();
+
+        if (spellCodeInventory.equippedCount >= spellCodeInventory.maxEquipped)
+        {
+            equipButton.interactable = false;
+        }
+
+        this.interactable = false;
     }
 
     public void UnequipSpellCode()
@@ -72,6 +94,7 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         spellCodeInventoryMenu.RefreshMenu();
         spellCodeEquipmentMenu.RefreshMenu();
         spellCodeEquippedCount.Refresh();
+        this.interactable = false;
     }
 
     public void EditSpellCode()
@@ -86,5 +109,6 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         spellCodeInventoryMenu.RefreshMenu();
         spellCodeEquipmentMenu.RefreshMenu();
         spellCodeEquippedCount.Refresh();
+        this.interactable = false;
     }
 }

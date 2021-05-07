@@ -1502,6 +1502,8 @@ MonoBehaviour:
   - {fileID: 9072917533765334366}
   - {fileID: 1462061179200123035}
   runButton: {fileID: 6889483868641447275}
+  zoomOutButton: {fileID: 0}
+  resetButton: {fileID: 3386845297067748546}
 --- !u!223 &5998272285320435239
 Canvas:
   m_ObjectHideFlags: 0

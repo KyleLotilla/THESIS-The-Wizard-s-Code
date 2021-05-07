@@ -70,4 +70,9 @@ public class SlotSpace : MonoBehaviour
         }
 
     }
+
+    private void OnDestroy()
+    {
+        OnSlotChange = null;
+    }
 }

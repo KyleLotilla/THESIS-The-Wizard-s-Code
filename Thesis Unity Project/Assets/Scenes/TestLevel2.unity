@@ -4793,10 +4793,6 @@ MonoBehaviour:
   spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}
   spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
   spellCodeInventory: {fileID: 11400000, guid: 6ddd5b4445676ff459e50133917c2fa8, type: 2}
-  spellCodeIcon1: {fileID: -2605623357494404420, guid: c529da40bbe24164888e33615ef92e51,
-    type: 3}
-  spellCodeIcon2: {fileID: 237251073105811763, guid: c529da40bbe24164888e33615ef92e51,
-    type: 3}
   playerLevelProgression: {fileID: 11400000, guid: f19662814661c2e47a353c1cfd24e68b,
     type: 2}
   playerProfile: {fileID: 11400000, guid: 6782d752983911d4287d2683a358fb73, type: 2}
@@ -5061,7 +5057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247684267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.51, y: -0.4, z: 0}
+  m_LocalPosition: {x: 33.51, y: 13.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5470,6 +5466,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5850584876957321939, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: zoomOutMovement
+      value: 
+      objectReference: {fileID: 1195790394}
     - target: {fileID: 5874784595049480588, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5524,6 +5525,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251061686468716225, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0025024414
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251061686468716225, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -16.813995
       objectReference: {fileID: 0}
     - target: {fileID: 6454601521833647419, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -5608,9 +5619,10 @@ MonoBehaviour:
   DialoguePanel: {fileID: 0}
   buttonSFX: {fileID: 0}
   TutorialPanel: []
-  currentTutorialPanel: 0
   ZoomOut: {fileID: 0}
   FairyTalk: {fileID: 0}
+  rightArrow1: {fileID: 0}
+  leftArrow1: {fileID: 0}
 --- !u!114 &1403843025 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8218275116696289186, guid: d9b5433f38caceb40b2baac38781d4f1,
@@ -5851,7 +5863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758338673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.13, y: -0.4, z: -11.414844}
+  m_LocalPosition: {x: -9.13, y: -8, z: -11.414844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
