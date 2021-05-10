@@ -28,9 +28,6 @@ public class DialogueCollision : MonoBehaviour
     private Text username;
 
     [SerializeField]
-    private GameObject guideImage;
-
-    [SerializeField]
     private GameObject fairyTalk;
 
     [SerializeField]
@@ -120,7 +117,7 @@ public class DialogueCollision : MonoBehaviour
         if (dialogueDatabase.GetDialogue(StartIndex) != null)
         {
             DialoguePanel.SetActive(true);
-            guideImage.SetActive(false);
+            
             
             //Debug.Log(dialogueDatabase.GetDialogue().text);
             if (dialogueDatabase.GetDialogue(StartIndex).bold != null)

@@ -81,6 +81,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (textDisplay)
         {
             Time.timeScale = 0;
@@ -89,6 +90,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+        */
         /*
         buttonSFX.Stop();   
         timer -= Time.deltaTime;

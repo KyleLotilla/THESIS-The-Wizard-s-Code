@@ -6,7 +6,7 @@
 	</FirstTimeaftertutorial>
 	<FirstTimeaftertutorial>
 		<ID>1</ID>
-		<Text>We can use these materials to craft some new gear or weapons. Let’s try it out!
+		<Text>We can use these materials to craft some new spells. Let’s try it out!
 		</Text>
 	</FirstTimeaftertutorial>
   <FirstTimeaftertutorial>
@@ -15,7 +15,7 @@
   </FirstTimeaftertutorial>
 	<Aftersuccessfullycrafting>
 		<ID>3</ID>
-		<Text>Crafting new gear and weapons allow you to unlock more spells to use on your adventures!</Text>
+		<Text>Crafting new spells allow you to unlock more spells to use on your adventures!</Text>
 	</Aftersuccessfullycrafting>
 	<Aftersuccessfullycrafting>
 		<ID>4</ID>
