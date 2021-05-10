@@ -19,7 +19,11 @@ public class DatabaseTestScript : MonoBehaviour
         Spell fireBall = spellDatabase.GetSpell(2);
         spellInventory.EquipSpell(fireBall);
 
-        Spell electro = spellDatabase.GetSpell(5);
+        materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
+        materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
+
+        /*
+        Spell electro = spellDatabase.GetSpell(3);
         spellInventory.EquipSpell(electro);
         
         
@@ -54,9 +58,10 @@ public class DatabaseTestScript : MonoBehaviour
             spellCode3.name = "Fire n' Forget";
             spellCodeInventory.AddSpellCode(spellCode3);
         }
+        
 
-        playerProfile.gender = Gender.FEMALE;
-        //playerProfile.gender = Gender.MALE;
+        //playerProfile.gender = Gender.FEMALE;
+        playerProfile.gender = Gender.MALE;
         
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
@@ -75,7 +80,8 @@ public class DatabaseTestScript : MonoBehaviour
         levelProgression.isUnlocked = true;
         levelProgression.highScore = 69;
         playerLevelProgression.AddProgression(levelProgression);
-        
+        */
+
     }
 
     // Update is called once per frame

@@ -6,21 +6,18 @@ using System.Linq;
 using System.Xml.Linq;
 using System.IO;
 
-
-[CreateAssetMenu(menuName = "Database/Dialogue Database")]
-public class DialogueDatabase : XMLDatabaseScriptableObject
+public class DialogueDatabase : MonoBehaviour
 {
     [SerializeField]
-    private Dictionary<int, Dialogue> dialogues;
+    private XMLDocumentReader xmlDocumentReader;
+    [SerializeField]
+    private List<Dialogue> dialogues;
 
-    private string pathToXMLDatabase;
-
-    // Start is called before the first frame update
-    void OnEnable()
+    private void Awake()
     {
-       
+        dialogues = new List<Dialogue>();
+        LoadXml(xmlDocumentReader.ReadXMLDocument());
     }
-
 
     void LoadXml(XDocument document)
     {
@@ -30,104 +27,25 @@ public class DialogueDatabase : XMLDatabaseScriptableObject
             if (element.Elements("ID").Any())
             {
                 Dialogue dialogue = new Dialogue();
-                dialogue.ID = int.Parse(element.Element("ID").Value);
-
-                if (element.Elements("Text").Any())
+                dialogue.id = int.Parse(element.Element("ID").Value);
+                if (element.Elements("Lines").Any())
                 {
-                    dialogue.text = element.Element("Text").Value;
+                    XElement lines = element.Element("Lines");
+                    foreach (XElement line in lines.Elements())
+                    {
+                        dialogue.AddLine(line.Value);
+                    }
                 }
-                if (element.Elements("Page").Any())
-                {
-                    dialogue.page = int.Parse(element.Element("Page").Value);
-                }
-                if (element.Elements("Arrow").Any())
-                {
-                    dialogue.Arrow = element.Element("Arrow").Value;
-                }
-                if (element.Elements("Bold").Any())
-                {
-                    dialogue.bold = element.Element("Bold").Value;
-                }
-                dialogues.Add(dialogue.ID, dialogue);
+                dialogues.Add(dialogue);
             }
-                
         }
     }
 
-    public string setBold(string bold, string text)
+    public Dialogue GetDialogue(int dialogueID)
     {
-        if(text.Contains(bold) != null)
+        if (dialogueID >= 0 && dialogueID < dialogues.Count)
         {
-            text = text.Replace(bold, "<b>" + bold + "</b>");
-            return text;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    public string setFairyName(string fairy, string text)
-    {
-        if(text.Contains("Fairie") != null)
-        {
-            text.Replace("Fairie", fairy);
-            return text;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    public string setPlayerName(string player, string text)
-    {
-        if(text.Contains("Player") != null)
-        {
-            text = text.Replace("Player", player);
-            return text;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    public void setPath(string path)
-    {
-        if (dialogues != null)
-        {
-            dialogues.Clear();
-        }
-        else
-        {
-            dialogues = new Dictionary<int, Dialogue>();
-        }
-        pathToXMLDatabase = path;
-        LoadXml(LoadLocalXmlDocument(pathToXMLDatabase));
-    }
-
-    public Dialogue GetDialogue(int DialogueID)
-    {
-        if (dialogues.ContainsKey(DialogueID))
-        {
-            Dialogue dialogue = dialogues[DialogueID];
-            Dialogue copydialogue = new Dialogue();
-            copydialogue.text = dialogue.text;
-            if(dialogue.bold != null)
-            {
-                copydialogue.bold = dialogue.bold;
-            }
-            if(dialogue.page != null)
-            {
-                copydialogue.page = dialogue.page;
-            }
-            if(dialogue.Arrow != null)
-            {
-                copydialogue.Arrow = dialogue.Arrow;
-            }
-            
-            return copydialogue;
+            return dialogues[dialogueID];
         }
         else
         {

@@ -44,6 +44,7 @@ public class ActionStack : MonoBehaviour
     private float spawnRate;
     [SerializeField]
     private float resetSpawnRate;
+    public bool isTutorialMovementOnly;
 
     private int movementActionCount = 0;
     private int actionCount = 0;
@@ -79,7 +80,19 @@ public class ActionStack : MonoBehaviour
     {
         if (isRunning)
         {
-            if (actionCount < maxActions)
+            if (isTutorialMovementOnly)
+            {
+                if (movementActionCount < maxMovementActions)
+                {
+                    delta += Time.deltaTime;
+                    if (delta >= spawnRate)
+                    {
+                        delta = 0.0f;
+                        SpawnRandomMovementAction();
+                    }
+                }
+            }
+            else if (actionCount < maxActions)
             {
                 delta += Time.deltaTime;
                 if (isReset && delta >= resetSpawnRate)

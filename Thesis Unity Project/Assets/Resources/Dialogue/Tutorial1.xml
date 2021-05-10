@@ -1,0 +1,42 @@
+<DialogueDatabase>
+	<Dialogue>
+		<ID>0</ID>
+		<Lines>
+			<Line>Nice to meet you Player! I am Fairie! Are you ready to go on an adventure?</Line>
+			<Line>Don’t worry I will be here to assist you whenever we come across something worth noting!</Line>
+			<Line>Let’s start with the basics. You can use &lt;b&gt;spells&lt;/b&gt; to perform actions on the stage!</Line>
+			<Line>This is the &lt;b&gt;action stack&lt;/b&gt;</Line>
+			<Line>Random spells you currently own will spawn periodically in here.</Line>
+			<Line>This is the action queue.</Line>
+			<Line>You can drag your spells from the action stack down here and execute them by pressing run.</Line>
+			<Line>Let’s try to use movement spells first.</Line>
+			<Line>Drag the move left and move right spells from the action stack down to your action queue.</Line>
+			<Line>Try to go to the exclamation point in front of you using your movement spells.</Line>
+		</Lines>
+	</Dialogue>
+	<Dialogue>
+		<ID>1</ID>
+		<Lines>
+			<Line>Note that you can perform up to three spells at a time!</Line>
+			<Line>The sequence in which your spells take effect is from left to right in your action queue!</Line>
+			<Line>Plan your spells accordingly and make sure they are on the correct sequence before you execute them.</Line>
+			<Line>Now… looks like this ice block is obstructing us from getting out of here.</Line>
+			<Line>If I remember correctly, I think fire can get rid of ice.</Line>
+		</Lines>
+	</Dialogue>
+	<Dialogue>
+		<ID>2</ID>
+		<Lines>
+			<Line>Great job! You managed to melt down the ice cube with a fireball attack.</Line>
+			<Line>Remember, different elemental attacks affect different obstacles in different ways!</Line>
+			<Line>Try to &lt;b&gt;evaluate&lt;/b&gt; the stage before you plan your strategy!</Line>
+			<Line>Maybe you could &lt;b&gt;recognize a pattern&lt;/b&gt; in how elemental attacks affect certain obstacles.</Line>
+		</Lines>
+	</Dialogue>
+  <Dialogue>
+    <ID>3</ID>
+    <Lines>
+      <Line>Wow look at that! You obtained a blue crystal! Maybe this is something we could use later!</Line>
+    </Lines>
+  </Dialogue>
+</DialogueDatabase>

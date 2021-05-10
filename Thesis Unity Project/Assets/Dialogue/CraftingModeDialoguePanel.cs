@@ -7,6 +7,7 @@ using System.Collections;
 
 public class CraftingModeDialoguePanel : MonoBehaviour
 {
+    /*
     // Start is called before the first frame update\
     private bool setXMLDatabase = true;
 
@@ -52,7 +53,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     private Button spell;
 
 
-    /*
+    
     [SerializeField]
     private AudioSource displaySFX;
 
@@ -60,8 +61,8 @@ public class CraftingModeDialoguePanel : MonoBehaviour
     private string currentText = "";
     public float timer = 0.0f;
     public int characterindex = 0;
-    */
-
+    
+    
     void Start()
     {
         
@@ -89,7 +90,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        /*
+        
         buttonSFX.Stop();   
         timer -= Time.deltaTime;
         if (timer <= 0.0f)
@@ -107,7 +108,7 @@ public class CraftingModeDialoguePanel : MonoBehaviour
             }
 
         }
-       */
+       
         
 
     }
@@ -117,10 +118,9 @@ public class CraftingModeDialoguePanel : MonoBehaviour
         DialogueID = DialogueID + 1;
         setText();
         buttonSFX.Play();
-        /*
         characterindex = 0;
         timer = 0.0f;
-        */
+        
     }
 
     void setText()
@@ -174,5 +174,5 @@ public class CraftingModeDialoguePanel : MonoBehaviour
         
 
     }
-
+    */
 }
