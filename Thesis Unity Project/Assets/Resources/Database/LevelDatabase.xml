@@ -4,7 +4,7 @@
       <LevelNum>1</LevelNum>
 		  <WorldNum>1</WorldNum>
 		  <LevelPath>Scenes/TestLevel2</LevelPath>
-      <LevelOverview>Level/Overviews/TestLevel2</LevelOverview>
+      <LevelOverview>Level/Overviews/ExplorationModeLevel1</LevelOverview>
         <Obstacles>
             <Obstacle>
                 <ID>1</ID>
@@ -13,16 +13,8 @@
         </Obstacles>
         <Materials>
             <Material>
-                <ID>4</ID>
-                <Num>4</Num>
-            </Material>
-            <Material>
                 <ID>5</ID>
                 <Num>2</Num>
-            </Material>
-            <Material>
-                <ID>6</ID>
-                <Num>1</Num>
             </Material>
         </Materials>
     </Level>
@@ -45,7 +37,7 @@
         <Materials>
             <Material>
                 <ID>4</ID>
-                <Num>4</Num>
+                <Num>2</Num>
             </Material>
             <Material>
                 <ID>5</ID>
