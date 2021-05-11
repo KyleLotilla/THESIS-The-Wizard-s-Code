@@ -1,0 +1,43 @@
+<DialogueDatabase>
+  <Dialogue>
+    <ID>0</ID>
+    <Lines>
+      <Line>Looks like you have familiarized yourself with using spells to navigate and perform actions of the stage!</Line>
+      <Line>I think it's time you learned about using spellcodes! Head over to the &lt;b&gt;Spellcodes&lt;/b&gt; tab</Line>
+    </Lines>
+  </Dialogue>
+  <Dialogue>
+    <ID>1</ID>
+    <Lines>
+      <Line>&lt;b&gt;Spellcodes&lt;/b&gt; are a predefined sequence of spells that you can immediately use to perform certain actions much more efficiently on your action queue!</Line>
+      <Line>You can view your created spellcodes in the spellcode inventory and equip them for use in your expeditions.</Line>
+      <Line>You can add spellcodes to your inventory by pressing the create button.</Line>
+      <Line>Let’s try to make a basic spellcode that will allow us to shoot a fireball and move forward in succession.</Line>
+    </Lines>
+  </Dialogue>
+  <Dialogue>
+    <ID>2</ID>
+    <Lines>
+      <Line>You can create and edit your spellcode in this tab.</Line>
+      <Line>You can edit the contents of the spellcode and the spellcode’s name.</Line>
+      <Line>To start off, you give the spellcode any name that you like.</Line>
+      <Line>Then drag the fireball spell and the move right spell into the spellcode.</Line>
+      <Line>Take note that the order the spells are executed in the spellcode are from left to right.</Line>
+      <Line>Once you’re done creating the spellcode, click on the Save button.</Line>
+    </Lines>
+  </Dialogue>
+  <Dialogue>
+    <ID>3</ID>
+    <Lines>
+      <Line>Always remember to apply the concept of &lt;b&gt;abstraction&lt;/b&gt; when performing spells on the stage.</Line>
+      <Line>Focus on using the spells that you think are relevant in completing the stage!</Line>
+      <Line>You can also use this concept when creating your spellcodes!</Line>
+      <Line>Your created spellcodes will be displayed in your inventory below.</Line>
+      <Line>You can choose to edit them again if you feel like doing so by pressing the edit button.</Line>
+      <Line>Or you could rather delete the spellcode instead by pressing the delete button.</Line>
+      <Line>Let’s add the created spellcode to our equipped spellcodes by pressing the equip button.</Line>
+      <Line>You can also unequip your spellcodes and return them to your inventory by pressing the unequip button.</Line>
+      <Line>Looks like we’re ready to put our spellcode to use! Let’s head to the next stage.</Line>
+    </Lines>
+  </Dialogue>
+ </DialogueDatabase>
