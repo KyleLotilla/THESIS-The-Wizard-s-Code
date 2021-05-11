@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xmlDocumentReader:
-    xmlTextAsset: {fileID: 4900000, guid: 1870d62d5960623439847b90c91bead0, type: 3}
+    xmlTextAsset: {fileID: 4900000, guid: 43a2788abddd2c646bdffb76c69bd471, type: 3}
 --- !u!1 &748280379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1091784649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   tabsPanel: {fileID: 1091784650}
   dialogueLinePagePairs:
   - lineNum: 0
-    visualPage: 1
+    visualPage: 0
   - lineNum: 1
     visualPage: 1
   - lineNum: 2
@@ -2737,8 +2737,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 121.91}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 584, y: 318}
+  m_SizeDelta: {x: 86.036896, y: 58.233032}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237602483
 MonoBehaviour:
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb02cc6238a25ef4386ac5b70061ecaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baef90033b5ea1a478d4ba5d28d2967c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

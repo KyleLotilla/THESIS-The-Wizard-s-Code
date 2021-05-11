@@ -8,12 +8,8 @@
         <Obstacles>
             <Obstacle>
                 <ID>1</ID>
-                <Num>2</Num>
+                <Num>1</Num>
             </Obstacle>
-          <Obstacle>
-            <ID>3</ID>
-            <Num>1</Num>
-          </Obstacle>
         </Obstacles>
         <Materials>
             <Material>
@@ -35,30 +31,30 @@
         <LevelNum>2</LevelNum>
 		<WorldNum>1</WorldNum>
 		<LevelPath>Scenes/TestLevel3</LevelPath>
-    <LevelOverview>Level/Overviews/TestLevel3</LevelOverview>
+    <LevelOverview>Level/Overviews/ExplorationModeLevel2</LevelOverview>
     <Obstacles>
             <Obstacle>
-                <ID>0</ID>
-                <Num>1</Num>
-            </Obstacle>
-            <Obstacle>
                 <ID>1</ID>
-                <Num>1</Num>
+                <Num>3</Num>
             </Obstacle>
             <Obstacle>
-                <ID>2</ID>
-                <Num>1</Num>
+                <ID>3</ID>
+                <Num>2</Num>
             </Obstacle>
         </Obstacles>
         <Materials>
             <Material>
-                <ID>0</ID>
-                <Num>1</Num>
+                <ID>4</ID>
+                <Num>4</Num>
             </Material>
             <Material>
-                <ID>1</ID>
+                <ID>5</ID>
                 <Num>2</Num>
             </Material>
+          <Material>
+            <ID>6</ID>
+            <Num>1</Num>
+          </Material>
         </Materials>
     </Level>
 </LevelDatabase>

@@ -5311,7 +5311,7 @@ PrefabInstance:
         type: 3}
       propertyPath: xmlDocumentReader.xmlTextAsset
       value: 
-      objectReference: {fileID: 4900000, guid: bb1fe53f471712444a8bf5f1ece69f97, type: 3}
+      objectReference: {fileID: 4900000, guid: 163fbd0f77f2a0f4a86f0a97b02384cf, type: 3}
     - target: {fileID: 5374978133980180168, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_RootOrder
