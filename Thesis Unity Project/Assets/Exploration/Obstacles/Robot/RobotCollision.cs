@@ -6,9 +6,6 @@ public class RobotCollision : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private ScoreGiver scoreGiver;
-
-    [SerializeField]
     private float flyingSpeed;
 
     [SerializeField]
@@ -33,12 +30,7 @@ public class RobotCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Lightning")
             {
-                scoreGiver.GiveScore();
                 animator.SetBool("On", true);
-            }
-            else
-            {
-                scoreGiver.PenalizeScore();
             }
         }
     }

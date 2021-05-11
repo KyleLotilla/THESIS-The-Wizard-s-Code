@@ -26,7 +26,6 @@ public class WaterBubbleCollision : MonoBehaviour
             {
                 animator.SetBool("Disappear", true);
             }
-            //Destroy(col.gameObject);
         }  
     }
 

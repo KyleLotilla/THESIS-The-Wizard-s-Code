@@ -12,6 +12,12 @@ public class MaterialPickup : MonoBehaviour
     private int id;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private AudioClip audioClip;
+    [SerializeField]
+    private GameObject oneShotAudioPrefab;
+    [SerializeField]
+    private ScoreGiver scoreGiver;
     private Material material;
     // Start is called before the first frame update
     void Start()
@@ -34,6 +40,16 @@ public class MaterialPickup : MonoBehaviour
         if (collision.gameObject.tag == "Wizard")
         {
             materialPickupStorage.AddMaterial(material);
+            scoreGiver.GiveScore();
+            GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
+            if (oneShotAudioObject != null)
+            {
+                OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
+                if (oneShotAudioClip != null)
+                {
+                    oneShotAudioClip.PlayClip(audioClip);
+                }
+            }
             Destroy(this.gameObject);
         }
     }

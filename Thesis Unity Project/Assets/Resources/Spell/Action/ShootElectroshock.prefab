@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c953eaf696a96e141b28441cf83b41f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isMovement: 0
   offset: {x: 2, y: 0, z: 0}
   spellPrefab: {fileID: 2876813394944768396, guid: 26fd41740f7617649bfe6e3b36c14b5b,
+    type: 3}
+  audioClip: {fileID: 8300000, guid: e116330adb1869a40ba2a5ac083bca63, type: 3}
+  oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
     type: 3}

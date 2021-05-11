@@ -8,6 +8,10 @@ public class ShootProjectile : Action
     private Vector3 offset;
     [SerializeField]
     private GameObject projectilePrefab;
+    [SerializeField]
+    private AudioClip audioClip;
+    [SerializeField]
+    private GameObject oneShotAudioPrefab;
 
     private DestroyHandler projectileDestroyHandler;
     private WizardCasting wizardCasting;
@@ -38,6 +42,15 @@ public class ShootProjectile : Action
     {
         wizardCasting.OnCastingEnd -= OnCastingEnd;
         SpawnProjectile();
+        GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
+        if (oneShotAudioObject != null)
+        {
+            OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
+            if (oneShotAudioClip != null)
+            {
+                oneShotAudioClip.PlayClip(audioClip);
+            }
+        }
     }
 
     public void SpawnProjectile()

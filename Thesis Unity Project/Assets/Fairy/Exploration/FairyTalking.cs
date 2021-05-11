@@ -10,6 +10,8 @@ public class FairyTalking : MonoBehaviour
 
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class FairyTalking : MonoBehaviour
 
     public void StartTalking()
     {
+        audioSource.Play();
         animator.SetBool("talk", true);
     }
 

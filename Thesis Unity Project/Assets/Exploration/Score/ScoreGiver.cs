@@ -13,8 +13,13 @@ public class ScoreGiver : MonoBehaviour
     [SerializeField]
     private int _amount;
     [SerializeField]
+    private int minAmount;
+    [SerializeField]
+    private bool giveOneTime = true;
+    [SerializeField]
     private Vector2 offset;
-
+    private bool giveScore = true;
+    
     public int amount
     {
         get
@@ -52,14 +57,24 @@ public class ScoreGiver : MonoBehaviour
 
     public void GiveScore()
     {
-        explorationScore.AddScore(amount);
-        ShowScoreVisual(amount);
+        if (giveScore)
+        {
+            explorationScore.AddScore(amount);
+            ShowScoreVisual(amount);
+            if (giveOneTime)
+            {
+                giveScore = false;
+            }
+        }
     }
 
     public void PenalizeScore()
     {
-        amount -= penalty;
-        ShowScoreVisual(-penalty);
+        if (amount > minAmount)
+        {
+            amount -= penalty;
+            ShowScoreVisual(-penalty);
+        }
     }
 
     private void ShowScoreVisual(int score)
@@ -67,14 +82,10 @@ public class ScoreGiver : MonoBehaviour
         GameObject scoreVisualObject = Instantiate(scoreVisualPrefab, this.transform.position + (Vector3)offset, Quaternion.identity);
         if (scoreVisualObject != null)
         {
-            TextMesh textMesh = scoreVisualObject.GetComponent<TextMesh>();
-            if (textMesh != null)
+            ScoreVisual scoreVisual = scoreVisualObject.GetComponent<ScoreVisual>();
+            if (scoreVisual != null)
             {
-                textMesh.text = score.ToString();
-                if (score < 0)
-                {
-                    textMesh.color = new Color(0.75f, 0, 0, 1.0f);
-                }
+                scoreVisual.ShowScore(score);
             }
         }
     }

@@ -72,15 +72,14 @@ public class DatabaseTestScript : MonoBehaviour
 
         for (int i = 0; i < 100; i++)
         materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
-        
+        */
 
         
         LevelProgression levelProgression = new LevelProgression();
         levelProgression.levelID = 0;
         levelProgression.isUnlocked = true;
-        levelProgression.highScore = 69;
+        levelProgression.highScore = 0;
         playerLevelProgression.AddProgression(levelProgression);
-        */
 
     }
 

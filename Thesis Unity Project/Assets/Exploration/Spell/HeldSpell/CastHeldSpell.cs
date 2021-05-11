@@ -9,6 +9,11 @@ public class CastHeldSpell : Action
     private Vector3 offset;
     [SerializeField]
     private GameObject spellPrefab;
+    [SerializeField]
+    private AudioClip audioClip;
+    [SerializeField]
+    private GameObject oneShotAudioPrefab;
+
 
     private DestroyHandler spellDestroyHandler;
     private WizardCasting wizardCasting;
@@ -27,6 +32,15 @@ public class CastHeldSpell : Action
     {
         wizardCasting.OnCastingEnd -= OnCastingEnd;
         SpawnSpell();
+        GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
+        if (oneShotAudioObject != null)
+        {
+            OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
+            if (oneShotAudioClip != null)
+            {
+                oneShotAudioClip.PlayClip(audioClip);
+            }
+        }
     }
 
     public void SpawnSpell()
