@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelProgression
 {
     public int levelID;
-    public bool isUnlocked = false;
-    public bool isCompleted = false;
+    public bool isUnlocked = true;
+    public bool isCompleted = true;
     public int highScore = 0;
 }
