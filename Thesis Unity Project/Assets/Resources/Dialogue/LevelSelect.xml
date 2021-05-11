@@ -1,18 +1,14 @@
-<LevelSelect>
-	<LevelSelect>
-		<ID>0</ID>
-		<Text>Let’s take a look at the places we can explore!</Text>
-	</LevelSelect>
-	<LevelSelect>
-		<ID>1</ID>
-		<Text>Different levels yield different materials we can use for crafting!</Text>
-	</LevelSelect>
-	<LevelSelect>
-		<ID>2</ID>
-		<Text>Also, we can revisit certain places we have been to if we need to gather more resources there.</Text>
-	</LevelSelect>
-	<LevelSelect>
-		<ID>3</ID>
-		<Text>Whenever you're ready, just choose the place you want to go to!</Text>
-	</LevelSelect>
-</LevelSelect>
+<DialogueDatabase>
+  <Dialogue>
+    <ID>0</ID>
+    <Lines>
+      <Line>Let’s take a look at the places we can explore!</Line>
+      <Line>Prior to entering a stage, we can take a look at the obstacles and materials that we will encounter in this tab.</Line>
+      <Line>This allows us to plan our approach before heading out!</Line>
+      <Line>Remember to practice &lt;b&gt;problem decomposition.&lt;/b&gt; Break down the stage into smaller problems and identify the proper spells to bring you in order to accomplish the stage. </Line>
+      <Line>Note that different stages also yield different materials we can use for crafting!</Line>
+      <Line>We can choose to revisit certain places we have been to if we need to gather more resources there.</Line>
+      <Line>Enough talk for now. I’m raring to go on our next expedition! Whenever you're ready, let’s head on to the next stage!</Line>
+    </Lines>
+   </Dialogue>
+</DialogueDatabase>

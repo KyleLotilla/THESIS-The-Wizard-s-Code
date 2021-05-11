@@ -29,10 +29,17 @@ public class TabsPanel : MonoBehaviour
 
     public void SwitchPage(int page)
     {
-        if (page >= 0 && page < pages.Count && page != currentPage)
+        if (page < pages.Count && page != currentPage)
         {
-            pages[currentPage].SetActive(false);
-            pages[page].SetActive(true);
+            if (currentPage >= 0)
+            {
+                pages[currentPage].SetActive(false);
+            }
+
+            if (page >= 0)
+            {
+                pages[page].SetActive(true);
+            }
             currentPage = page;
             OnTabPageSwitch?.Invoke(page);
         }

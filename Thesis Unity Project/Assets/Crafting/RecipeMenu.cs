@@ -10,6 +10,7 @@ public class RecipeMenu : ItemSlotMenu<CraftingRecipe>
     private SpellDatabase spellDatabase;
     [SerializeField]
     private RecipePanel recipePanel;
+    private bool isDisplaying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,11 @@ public class RecipeMenu : ItemSlotMenu<CraftingRecipe>
             {
                 recipeSlot.recipe = item;
                 recipeSlot.recipePanel = recipePanel;
+                if (!isDisplaying)
+                {
+                    recipeSlot.ShowRecipe();
+                    isDisplaying = true;
+                }
             }
         }
     }

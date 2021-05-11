@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CraftingPanel : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class CraftingPanel : MonoBehaviour
     [SerializeField]
     private GameObject resultSlotPrefab;
     private List<Material> ingredients;
+
+    [SerializeField]
+    private Button craftButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +74,24 @@ public class CraftingPanel : MonoBehaviour
                         resultSpellSlot.spell = resultSpell;
                     }
                 }
+                if (craftButton != null)
+                {
+                    craftButton.interactable = true;
+                }
+            }
+            else
+            {
+                if (craftButton != null)
+                {
+                    craftButton.interactable = false;
+                }
+            }
+        }
+        else
+        {
+            if (craftButton != null)
+            {
+                craftButton.interactable = false;
             }
         }
     }
@@ -96,6 +118,6 @@ public class CraftingPanel : MonoBehaviour
         {
             materialInventory.RemoveMaterial(material);
         }
-
+        craftButton.interactable = false;
     }
 }
