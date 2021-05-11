@@ -781,7 +781,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 64, y: 64}
-  m_Spacing: {x: 54, y: 0}
+  m_Spacing: {x: 64, y: 64}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &8606681978959579974
@@ -802,7 +802,7 @@ MonoBehaviour:
     type: 3}
   fillExtraSlots: 1
   slotCount: 0
-  _maxSpaces: 30
+  _maxSpaces: 27
   _spaces: []
   spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
 --- !u!1 &8606681979078159617

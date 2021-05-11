@@ -6,6 +6,8 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
 {
     [SerializeField]
     private SpellInventory spellInventory;
+    [SerializeField]
+    private bool isTutorial = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,10 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
 
     override protected void OnSlotSpawn(GameObject slot, GameObject space, Spell item)
     {
-        SpellSlot spellSpell = slot.GetComponent<SpellSlot>();
-        if (spellSpell != null)
+        SpellSlot spellSlot = slot.GetComponent<SpellSlot>();
+        if (spellSlot != null)
         {
-            spellSpell.spell = item;
+            spellSlot.spell = item;
         }
         if (space != null)
         {
@@ -34,6 +36,15 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
             {
                 slotSpace.slot = slot;
             }
+            if (isTutorial)
+            {
+                Draggable draggable = space.GetComponent<Draggable>();
+                if (draggable != null)
+                {
+                    draggable.isDraggable = false;
+                }
+            }
         }
+        
     }
 }

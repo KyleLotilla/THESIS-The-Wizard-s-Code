@@ -31,4 +31,20 @@
       <Line>I think we’re done here. Let’s now head next to the Spells tab.</Line>
     </Lines>
   </Dialogue>
+  <Dialogue>
+    <ID>3</ID>
+    <Lines>
+      <Line>In this tab, you can see the spells that you currently have crafted and unlocked.</Line>
+      <Line>You can view and change your equipped spells in this tab before heading out to your next expedition.</Line>
+      <Line>Simply drag the spell you would like to equip from your spell inventory to your equipped spells.</Line>
+      <Line>Go on, equip the electroshock spell that we have crafted earlier.</Line>
+    </Lines>
+  </Dialogue>
+  <Dialogue>
+    <ID>4</ID>
+    <Lines>
+      <Line>If you want to remove a spell from your equipped spells, you can unequip it by dragging it back to your spell inventory.</Line>
+      <Line>Looks like we’re now ready to head to our next expedition. Head over to the Level Select tab once you are ready.</Line>
+    </Lines>
+  </Dialogue>
 </DialogueDatabase>

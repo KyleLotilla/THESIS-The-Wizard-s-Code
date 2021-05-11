@@ -467,15 +467,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 64
+    m_Left: 48
     m_Right: 0
-    m_Top: 16
+    m_Top: 24
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 64, y: 64}
-  m_Spacing: {x: 64, y: 10}
+  m_Spacing: {x: 64, y: 64}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &6732173488568432927
@@ -717,15 +717,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 64
+    m_Left: 48
     m_Right: 0
-    m_Top: 16
+    m_Top: 24
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 64, y: 64}
-  m_Spacing: {x: 64, y: 10}
+  m_Spacing: {x: 64, y: 64}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &6732173488629652657
@@ -746,7 +746,7 @@ MonoBehaviour:
     type: 3}
   fillExtraSlots: 1
   slotCount: 0
-  _maxSpaces: 0
+  _maxSpaces: 27
   _spaces: []
   materialInventory: {fileID: 11400000, guid: 7af02d802e4e7ab48957f354c9fe2fd0, type: 2}
 --- !u!114 &6732173488629652658
