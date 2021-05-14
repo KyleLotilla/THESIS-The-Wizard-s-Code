@@ -3,8 +3,9 @@
 		<ID>0</ID>
 		<Lines>
 			<Line>Now that you have equipped a spellcode, it will spawn in your action stack along with your equipped spells.</Line>
-			<Line>Spellcodes are denoted in your action stack by the following icons.</Line>
-			<Line>Try to clear this ice block and move forward to the next objective by only using your spellcode.</Line>
+			<Line>Spellcodes that spawn in the action stack are denoted by number icons.</Line>
+			<Line>These numbers correspond to the order your spellcodes have been equipped in your spellcode inventory.</Line>
+			<Line>Let's try to clear this ice block and move forward to the next objective by only using your spellcode.</Line>
 		</Lines>
 	</Dialogue>
 	<Dialogue>
