@@ -16,6 +16,10 @@ public class LevelSelectMenu : MonoBehaviour
     private TabsPanel tabsPanel;
     [SerializeField]
     private int levelUIPage;
+    [SerializeField]
+    private bool isTutorial = false;
+    [SerializeField]
+    private int nextTutorialLevel = 1;
     void Start()
     {
         foreach (Level level in levelDatabase)
@@ -28,6 +32,10 @@ public class LevelSelectMenu : MonoBehaviour
                 {
                     levelSelectButton.level = level;
                     levelSelectButton.OnLevelSelected += OnLevelSelected;
+                    if (isTutorial && level.levelID != nextTutorialLevel)
+                    {
+                        levelSelectButton.LockForTutorial();
+                    }
                 }
             }
         }

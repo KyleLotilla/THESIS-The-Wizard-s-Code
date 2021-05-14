@@ -149,4 +149,4 @@ MonoBehaviour:
   _amount: 50
   minAmount: 0
   giveOneTime: 1
-  offset: {x: -0.5, y: 2}
+  offset: {x: -1.7, y: 2}

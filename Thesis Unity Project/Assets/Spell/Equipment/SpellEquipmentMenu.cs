@@ -45,6 +45,20 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
                 }
             }
         }
-        
+    }
+
+    protected override void OnEmptySpaceSpawn(GameObject space)
+    {
+        if (space != null)
+        {
+            if (isTutorial)
+            {
+                Draggable draggable = space.GetComponent<Draggable>();
+                if (draggable != null)
+                {
+                    draggable.isDraggable = false;
+                }
+            }
+        }
     }
 }

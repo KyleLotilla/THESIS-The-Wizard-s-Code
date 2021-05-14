@@ -56,4 +56,12 @@ public class LevelSelectButton : MonoBehaviour
     {
         OnLevelSelected?.Invoke(level);
     }
+
+    public void LockForTutorial()
+    {
+        Color iconColor = levelOverviewIcon.color;
+        iconColor.a = 50;
+        levelOverviewIcon.color = iconColor;
+        button.interactable = false;
+    }
 }

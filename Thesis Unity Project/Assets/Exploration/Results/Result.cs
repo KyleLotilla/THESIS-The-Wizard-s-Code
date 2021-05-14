@@ -31,16 +31,22 @@ public class Result : MonoBehaviour
 
     public void WinGame()
     {
-        resultUI.ShowResults();
         foreach(Material material in materialPickupStorage)
         {
             materialInventory.AddMaterial(material);
         }
         LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(levelID);
+        if (levelProgression == null)
+        {
+            levelProgression = new LevelProgression();
+            levelProgression.highScore = 0;
+            playerLevelProgression.AddProgression(levelProgression);
+        }
         levelProgression.isCompleted = true;
         if (explorationScore.currentScore > levelProgression.highScore)
         {
             levelProgression.highScore = explorationScore.currentScore;
         }
+        resultUI.ShowResults();
     }
 }

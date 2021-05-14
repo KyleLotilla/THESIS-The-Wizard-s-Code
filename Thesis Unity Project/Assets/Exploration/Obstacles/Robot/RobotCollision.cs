@@ -5,11 +5,24 @@ using UnityEngine;
 public class RobotCollision : MonoBehaviour
 {
     // Start is called before the first frame update
+
     [SerializeField]
     private float flyingSpeed;
 
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private ScoreGiver scoreGiver;
+
+    [SerializeField]
+    private GameObject oneShotAudioPrefab;
+
+    [SerializeField]
+    private AudioClip powerOnClip;
+
+    [SerializeField]
+    private AudioClip flyingClip;
 
     RobotMovement robotmovement;
 
@@ -30,7 +43,21 @@ public class RobotCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Lightning")
             {
+                scoreGiver.GiveScore();
                 animator.SetBool("On", true);
+                GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
+                if (oneShotAudioObject != null)
+                {
+                    OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
+                    if (oneShotAudioClip != null)
+                    {
+                        oneShotAudioClip.PlayClip(powerOnClip);
+                    }
+                }
+            }
+            else
+            {
+                scoreGiver.PenalizeScore();
             }
         }
     }
@@ -42,6 +69,15 @@ public class RobotCollision : MonoBehaviour
         if (animator.GetBool("activate"))
         {
             this.robotmovement.Fly(flyingSpeed);
+            GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
+            if (oneShotAudioObject != null)
+            {
+                OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
+                if (oneShotAudioClip != null)
+                {
+                    oneShotAudioClip.PlayClip(powerOnClip);
+                }
+            }
         }
     }
 }

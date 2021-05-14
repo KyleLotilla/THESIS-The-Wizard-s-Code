@@ -26,10 +26,15 @@ public class ResultUI : MonoBehaviour
     private MaterialPickupStorage materialPickupStorage;
     [SerializeField]
     private MaterialsPanel materialsPanel;
+    private int oldHighScore = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(levelID);
+        if (levelProgression != null)
+        {
+            oldHighScore = levelProgression.highScore;
+        }
     }
 
     // Update is called once per frame
@@ -63,15 +68,14 @@ public class ResultUI : MonoBehaviour
         int score = explorationScore.currentScore;
         scoreText.text = score.ToString();
 
-        LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(levelID);
-        if (score > levelProgression.highScore)
+        if (score > oldHighScore)
         {
             highScoreText.text = score.ToString();
             newHighScoreText.SetActive(true);
         }
         else
         {
-            highScoreText.text = levelProgression.highScore.ToString();
+            highScoreText.text = oldHighScore.ToString();
         }
 
         this.gameObject.SetActive(true);

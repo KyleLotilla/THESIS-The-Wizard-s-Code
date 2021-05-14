@@ -19,8 +19,10 @@ public class DatabaseTestScript : MonoBehaviour
         Spell fireBall = spellDatabase.GetSpell(2);
         spellInventory.EquipSpell(fireBall);
 
+        /*
         materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
+        */
 
         /*
         Spell electro = spellDatabase.GetSpell(3);
@@ -74,13 +76,13 @@ public class DatabaseTestScript : MonoBehaviour
         materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
         */
 
-        
+        /*
         LevelProgression levelProgression = new LevelProgression();
         levelProgression.levelID = 0;
         levelProgression.isUnlocked = true;
         levelProgression.highScore = 0;
         playerLevelProgression.AddProgression(levelProgression);
-
+        */
     }
 
     // Update is called once per frame

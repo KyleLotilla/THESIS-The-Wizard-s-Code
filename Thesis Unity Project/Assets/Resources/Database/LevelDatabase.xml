@@ -4,7 +4,7 @@
       <LevelNum>1</LevelNum>
 		  <WorldNum>1</WorldNum>
 		  <LevelPath>Scenes/TestLevel2</LevelPath>
-      <LevelOverview>Level/Overviews/ExplorationModeLevel1</LevelOverview>
+      <LevelOverview>Level/Overviews/level1</LevelOverview>
         <Obstacles>
             <Obstacle>
                 <ID>1</ID>
@@ -23,7 +23,7 @@
         <LevelNum>2</LevelNum>
 		<WorldNum>1</WorldNum>
 		<LevelPath>Scenes/TestLevel3</LevelPath>
-    <LevelOverview>Level/Overviews/ExplorationModeLevel2</LevelOverview>
+    <LevelOverview>Level/Overviews/level2</LevelOverview>
     <Obstacles>
             <Obstacle>
                 <ID>1</ID>
