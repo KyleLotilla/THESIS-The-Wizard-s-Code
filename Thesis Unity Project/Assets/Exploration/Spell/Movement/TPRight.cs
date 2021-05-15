@@ -13,7 +13,7 @@ public class TPRight : Action
 
         if (this.wizardmovement)
         {
-            this.wizardmovement.Walk(2.0f);
+            this.wizardmovement.Walk(3.0f);
         }
         else
         {

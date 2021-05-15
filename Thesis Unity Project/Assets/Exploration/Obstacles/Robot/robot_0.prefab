@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 54011734}
-  flyingSpeed: 2
+  flyingSpeed: 4
   destDisplacement: 0
   currentDisplacement: 0
 --- !u!114 &54011736

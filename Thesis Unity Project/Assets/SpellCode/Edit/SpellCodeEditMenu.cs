@@ -13,6 +13,8 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
     private int moveLeftID;
     [SerializeField]
     private int moveRightID;
+    [SerializeField]
+    private bool isTutorial = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,18 +23,36 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
 
     public override void RefreshMenu()
     {
-        List<Spell> spells = spellInventory.fullInventory.ToList();
-        Spell moveLeftSpell = spellDatabase.GetSpell(moveLeftID);
-        if (moveLeftSpell != null)
+        if (!isTutorial)
         {
-            spells.Insert(0, moveLeftSpell);
+            List<Spell> spells = spellInventory.fullInventory.ToList();
+            Spell moveLeftSpell = spellDatabase.GetSpell(moveLeftID);
+            if (moveLeftSpell != null)
+            {
+                spells.Insert(0, moveLeftSpell);
+            }
+            Spell moveRightSpell = spellDatabase.GetSpell(moveRightID);
+            if (moveRightSpell != null)
+            {
+                spells.Insert(1, moveRightSpell);
+            }
+            items = spells;
         }
-        Spell moveRightSpell = spellDatabase.GetSpell(moveRightID);
-        if (moveRightSpell != null)
+        else
         {
-            spells.Insert(1, moveRightSpell);
+            List<Spell> spells = new List<Spell>();
+            Spell moveRightSpell = spellDatabase.GetSpell(moveRightID);
+            if (moveRightSpell != null)
+            {
+                spells.Add(moveRightSpell);
+            }
+            Spell fireballSpell = spellInventory.equipped.First();
+            if (fireballSpell != null)
+            {
+                spells.Add(fireballSpell);
+            }
+            items = spells;
         }
-        items = spells;
         base.RefreshMenu();
     }
 

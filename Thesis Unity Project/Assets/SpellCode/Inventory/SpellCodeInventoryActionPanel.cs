@@ -42,9 +42,19 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
                 equipButton.interactable = value;
             }
 
-            foreach (Button button in buttons)
+            if (isTutorial)
             {
-                button.interactable = _interactable;
+                foreach (Button button in buttons)
+                {
+                    button.interactable = false;
+                }
+            }
+            else
+            {
+                foreach (Button button in buttons)
+                {
+                    button.interactable = _interactable;
+                }
             }
         }
     }
@@ -53,6 +63,9 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
 
     [SerializeField]
     private bool isEquipmentActions = false;
+
+    [SerializeField]
+    private bool isTutorial = false;
     public SpellCode spellCode { get; set; }
     // Start is called before the first frame update
     void Start()

@@ -45,6 +45,7 @@ public class ActionStack : MonoBehaviour
     [SerializeField]
     private float resetSpawnRate;
     public bool isTutorialMovementOnly;
+    public bool isTutorialSpellCode;
 
     private int movementActionCount = 0;
     private int actionCount = 0;
@@ -89,6 +90,18 @@ public class ActionStack : MonoBehaviour
                     {
                         delta = 0.0f;
                         SpawnRandomMovementAction();
+                    }
+                }
+            }
+            else if (isTutorialSpellCode)
+            {
+                if (actionCount < 1)
+                {
+                    delta += Time.deltaTime;
+                    if (delta >= spawnRate)
+                    {
+                        delta = 0.0f;
+                        SpawnSpellCodeAction(0);
                     }
                 }
             }

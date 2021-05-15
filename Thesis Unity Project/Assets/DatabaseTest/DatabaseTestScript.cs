@@ -27,20 +27,31 @@ public class DatabaseTestScript : MonoBehaviour
         /*
         Spell electro = spellDatabase.GetSpell(3);
         spellInventory.EquipSpell(electro);
+        */
         
-        
+        /*
         spellInventory.AddSpell(spellDatabase.GetSpell(4));
         spellInventory.AddSpell(spellDatabase.GetSpell(5));
         spellInventory.AddSpell(spellDatabase.GetSpell(2));
 
+        SpellCode spellCode2 = new SpellCode();
+        spellCode2.AddSpell(spellDatabase.GetSpell(1));
+        spellCode2.AddSpell(fireBall);
+        spellCode2.AddSpell(electro);
+        spellCode2.name = "Overload";
+        spellCodeInventory.EquipSpellCode(spellCode2);
+        */
+        
+        /*
         SpellCode spellCode1 = new SpellCode();
         spellCode1.AddSpell(fireBall);
         spellCode1.AddSpell(spellDatabase.GetSpell(1));
         spellCode1.AddSpell(spellDatabase.GetSpell(1));
         spellCode1.name = "Fire n' Forget";
         spellCodeInventory.EquipSpellCode(spellCode1);
+        */
 
-        
+        /*
         for (int i = 0; i < 4; i++)
         {
             SpellCode spellCode2 = new SpellCode();
@@ -60,11 +71,13 @@ public class DatabaseTestScript : MonoBehaviour
             spellCode3.name = "Fire n' Forget";
             spellCodeInventory.AddSpellCode(spellCode3);
         }
+        */
         
 
         //playerProfile.gender = Gender.FEMALE;
         playerProfile.gender = Gender.MALE;
         
+        /*
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));

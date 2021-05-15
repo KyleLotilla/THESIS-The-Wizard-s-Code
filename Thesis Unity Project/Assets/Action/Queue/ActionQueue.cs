@@ -22,6 +22,8 @@ public class ActionQueue : MonoBehaviour
     private Button resetButton;
     private List<int> executingSpaceIndices;
     private List<Action> actions;
+    [SerializeField]
+    private bool isTutorial = false;
     public bool isExecuting { get; set; }
     // Start is called before the first frame update
     void Start()
@@ -131,8 +133,11 @@ public class ActionQueue : MonoBehaviour
             }
         }
         runButton.interactable = true;
-        zoomOutButton.interactable = true;
-        resetButton.interactable = true;
+        if (!isTutorial)
+        {
+            zoomOutButton.interactable = true;
+            resetButton.interactable = true;
+        }
         isExecuting = false;
         OnExecutionEnd?.Invoke();
     }

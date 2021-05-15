@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8599220074ec23e408c2475b5b4c2614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 3033642671592210625}
   animator: {fileID: -3368515681234201635}
   audioClip: {fileID: 8300000, guid: 1c7e0993ca1bc5347be922863ea9d3d5, type: 3}
   oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,

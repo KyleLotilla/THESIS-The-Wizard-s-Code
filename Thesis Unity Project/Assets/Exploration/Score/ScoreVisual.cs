@@ -46,6 +46,7 @@ public class ScoreVisual : MonoBehaviour
                     }
                     else
                     {
+                        textMesh.color = penaltyColor;
                         oneShotAudioClip.PlayClip(penaltyAudio);
                     }
                 }

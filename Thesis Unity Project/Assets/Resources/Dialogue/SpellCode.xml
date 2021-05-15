@@ -36,7 +36,12 @@
       <Line>You can choose to edit them again if you feel like doing so by pressing the edit button.</Line>
       <Line>Or you could rather delete the spellcode instead by pressing the delete button.</Line>
       <Line>Let’s add the created spellcode to our equipped spellcodes by pressing the equip button.</Line>
-      <Line>You can also unequip your spellcodes and return them to your inventory by pressing the unequip button.</Line>
+    </Lines>
+  </Dialogue>
+  <Dialogue>
+    <ID>4</ID>
+    <Lines>
+      <Line>Also note that you can also unequip your spellcodes and return them to your inventory by pressing the unequip button.</Line>
       <Line>Looks like we’re ready to put our spellcode to use! Let’s head to the next stage.</Line>
     </Lines>
   </Dialogue>

@@ -35,6 +35,12 @@ public class SpellCodeEditSaveUI : MonoBehaviour
             }
         }
     }
+    [SerializeField]
+    private bool isTutorial = false;
+    [SerializeField]
+    private int moveRightID;
+    [SerializeField]
+    private int fireballID;
 
     // Start is called before the first frame update
     void Start()
@@ -55,8 +61,12 @@ public class SpellCodeEditSaveUI : MonoBehaviour
     {
         bool hasMinSpells = false;
         bool hasName = false;
+        bool hasTutorialSpells = false;
 
         int spellCount = 0;
+        int moveRightCount = 0;
+        int fireballCount = 0;
+
         foreach (GameObject spaceObject in spaces)
         {
             SlotSpace space = spaceObject.GetComponent<SlotSpace>();
@@ -66,6 +76,21 @@ public class SpellCodeEditSaveUI : MonoBehaviour
                 if (slot != null)
                 {
                     spellCount++;
+                    if (isTutorial)
+                    {
+                        SpellSlot spellSlot = slot.GetComponent<SpellSlot>();
+                        if (spellSlot != null)
+                        {
+                            if (moveRightID == spellSlot.spell.spellID)
+                            {
+                                moveRightCount++;
+                            }
+                            else if (fireballID == spellSlot.spell.spellID)
+                            {
+                                fireballCount++;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -73,6 +98,24 @@ public class SpellCodeEditSaveUI : MonoBehaviour
         if (spellCount < spellCodeInventory.minSpells)
         {
             spellLimitText.gameObject.SetActive(true);
+            if (isTutorial)
+            {
+                spellLimitText.text = "SpellCode needs at least 2 Spells";
+            }
+        }
+        else if (isTutorial)
+        {
+            hasMinSpells = true;
+            if (moveRightCount < 1 || fireballCount < 1)
+            {
+                spellLimitText.text = "SpellCode needs 1 fireball spell and 1 forward movement";
+                spellLimitText.gameObject.SetActive(true);
+            }
+            else
+            {
+                spellLimitText.gameObject.SetActive(false);
+                hasTutorialSpells = true;
+            }
         }
         else
         {
@@ -92,7 +135,21 @@ public class SpellCodeEditSaveUI : MonoBehaviour
 
         if (hasMinSpells && hasName)
         {
-            button.interactable = true;
+            if (!isTutorial)
+            {
+                button.interactable = true;
+            }
+            else
+            {
+                if (hasTutorialSpells)
+                {
+                    button.interactable = true;
+                }
+                else
+                {
+                    button.interactable = false;
+                }
+            }
         }
         else
         {

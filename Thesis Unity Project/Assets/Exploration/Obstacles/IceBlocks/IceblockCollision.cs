@@ -5,6 +5,8 @@ using UnityEngine;
 public class IceblockCollision : MonoBehaviour
 {
     [SerializeField]
+    private Collider2D collider;
+    [SerializeField]
     private Animator animator;
     [SerializeField]
     private AudioClip audioClip;
@@ -42,6 +44,7 @@ public class IceblockCollision : MonoBehaviour
                         oneShotAudioClip.PlayClip(audioClip);
                     }
                 }
+                collider.enabled = false;
             }
             else
             {

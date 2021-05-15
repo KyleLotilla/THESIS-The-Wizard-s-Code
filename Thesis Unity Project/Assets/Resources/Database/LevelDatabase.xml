@@ -20,7 +20,7 @@
     </Level>
 	<Level>
     <ID>1</ID>
-        <LevelNum>2</LevelNum>
+    <LevelNum>2</LevelNum>
 		<WorldNum>1</WorldNum>
 		<LevelPath>Scenes/TestLevel3</LevelPath>
     <LevelOverview>Level/Overviews/level2</LevelOverview>
@@ -49,4 +49,35 @@
           </Material>
         </Materials>
     </Level>
+  <Level>
+    <ID>2</ID>
+    <LevelNum>3</LevelNum>
+    <WorldNum>1</WorldNum>
+    <LevelPath>Scenes/TestLevel3</LevelPath>
+    <LevelOverview>Level/Overviews/level3</LevelOverview>
+    <Obstacles>
+      <Obstacle>
+        <ID>1</ID>
+        <Num>4</Num>
+      </Obstacle>
+      <Obstacle>
+        <ID>3</ID>
+        <Num>1</Num>
+      </Obstacle>
+    </Obstacles>
+    <Materials>
+      <Material>
+        <ID>0</ID>
+        <Num>2</Num>
+      </Material>
+      <Material>
+        <ID>1</ID>
+        <Num>1</Num>
+      </Material>
+      <Material>
+        <ID>4</ID>
+        <Num>2</Num>
+      </Material>
+    </Materials>
+  </Level>
 </LevelDatabase>
