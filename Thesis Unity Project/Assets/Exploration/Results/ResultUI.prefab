@@ -528,8 +528,7 @@ MonoBehaviour:
   scoreText: {fileID: 7760527819799636260}
   highScoreText: {fileID: 5451294267412711769}
   newHighScoreText: {fileID: 4286773247473280597}
-  materialPickupStorage: {fileID: 0}
-  materialsPanel: {fileID: 6490251655283157222}
+  spellsInfoPanel: {fileID: 5766386699991455570}
 --- !u!114 &6696739907924527456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,12 +541,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1ab3ba57e201a4385b013cd2ad3b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}
+  spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
   levelID: 0
+  levelDatabase: {fileID: 11400000, guid: ef8a46295ed920c4db8a50bf1b5137ba, type: 2}
   playerLevelProgression: {fileID: 11400000, guid: f19662814661c2e47a353c1cfd24e68b,
     type: 2}
   explorationScore: {fileID: 0}
-  materialInventory: {fileID: 11400000, guid: 7af02d802e4e7ab48957f354c9fe2fd0, type: 2}
-  materialPickupStorage: {fileID: 0}
   resultUI: {fileID: 2873815669290447580}
 --- !u!1 &1965660495967754968
 GameObject:
@@ -1190,7 +1190,7 @@ GameObject:
   - component: {fileID: 6764505172052027595}
   - component: {fileID: 7116375049688066486}
   m_Layer: 5
-  m_Name: Materials Panel
+  m_Name: Spells Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1438,9 +1438,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7963178133534204355}
-  - component: {fileID: 6490251655283157222}
   - component: {fileID: 1824785512683102929}
   - component: {fileID: 7398887359438931205}
+  - component: {fileID: 5766386699991455570}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1467,21 +1467,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &6490251655283157222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6353410546576509259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38371731a2590034da71685e7026c84c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoIconPanelPrefab: {fileID: 2737493939562280745, guid: bcb8c54b067632749967c460f17285d7,
-    type: 3}
-  materialDatabase: {fileID: 11400000, guid: 4ca17e556644813458889aae2086214b, type: 2}
 --- !u!114 &1824785512683102929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,6 +1506,26 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &5766386699991455570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353410546576509259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7cc8b147be39349bf6d9e150fac685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPrefab: {fileID: 2737493939562280745, guid: bcb8c54b067632749967c460f17285d7,
+    type: 3}
+  spacePrefab: {fileID: 0}
+  fillExtraSlots: 1
+  slotCount: 0
+  _maxSpaces: 0
+  _spaces: []
+  spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}
 --- !u!1 &6552736728182899261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1850,7 @@ GameObject:
   - component: {fileID: 6267884871344945146}
   - component: {fileID: 8720650714689024071}
   m_Layer: 5
-  m_Name: Materials Text
+  m_Name: Spells Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1910,4 +1915,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Found Materials:'
+  m_Text: 'Unlocked Spells:'

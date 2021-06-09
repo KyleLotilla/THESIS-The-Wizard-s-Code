@@ -1,17 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Material
 {
     [SerializeField]
-    public int materialID { get; set; }
+    public int materialID;
     [SerializeField]
-    public string name { get; set; }
+    public string name;
     [SerializeField]
-    public string description { get; set; }
+    public string description;
     [SerializeField]
-    public Sprite icon { get; set; }
+    public Sprite icon;
     [SerializeField]
-    public string iconPath { get; set; }
+    public string iconPath;
+    public Guid instanceID;
 }

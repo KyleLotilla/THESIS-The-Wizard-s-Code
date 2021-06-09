@@ -30,10 +30,12 @@ public class SaveWriter : MonoBehaviour
     private SpellInventory spellInventory;
     [SerializeField]
     private SpellCodeInventory spellCodeInventory;
+    /*
     [SerializeField]
     private MaterialDatabase materialDatabase;
     [SerializeField]
     private MaterialInventory materialInventory;
+    */
     [SerializeField]
     private PlayerLevelProgression playerLevelProgression;
 
@@ -69,6 +71,10 @@ public class SaveWriter : MonoBehaviour
                     root.Element("Gender").SetValue("FEMALE");
                 }
             }
+            if (root.Elements("TutorialProgression").Any())
+            {
+                root.Element("TutorialProgression").SetValue(playerProfile.tutorialProgression.ToString());
+            }
         }
     }
 
@@ -95,7 +101,7 @@ public class SaveWriter : MonoBehaviour
             {
                 XElement spellElement = new XElement("Spell");
                 spellElement.Add(new XElement("ID", spell.spellID.ToString()));
-                spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
+                //spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                 equippedElement.Add(spellElement);
             }
             newSpellInventory.Add(equippedElement);
@@ -105,7 +111,7 @@ public class SaveWriter : MonoBehaviour
             {
                 XElement spellElement = new XElement("Spell");
                 spellElement.Add(new XElement("ID", spell.spellID.ToString()));
-                spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
+                //spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                 inventoryElement.Add(spellElement);
             }
             newSpellInventory.Add(inventoryElement);
@@ -135,7 +141,7 @@ public class SaveWriter : MonoBehaviour
                 {
                     XElement spellElement = new XElement("Spell");
                     spellElement.Add(new XElement("ID", spell.spellID.ToString()));
-                    spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
+                   // spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                     spellsElement.Add(spellElement);
                 }
                 spellCodeElement.Add(spellsElement);
@@ -153,7 +159,7 @@ public class SaveWriter : MonoBehaviour
                 {
                     XElement spellElement = new XElement("Spell");
                     spellElement.Add(new XElement("ID", spell.spellID.ToString()));
-                    spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
+                    //spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                     spellsElement.Add(spellElement);
                 }
                 spellCodeElement.Add(spellsElement);
@@ -169,7 +175,7 @@ public class SaveWriter : MonoBehaviour
             }
         }
     }
-
+    /*
     public void SaveMaterialInventory()
     {
         if (document != null)
@@ -191,6 +197,7 @@ public class SaveWriter : MonoBehaviour
             }
         }
     }
+    */
 
     public void SavePlayerLevelProgression()
     {
@@ -202,8 +209,8 @@ public class SaveWriter : MonoBehaviour
             {
                 XElement levelProgressionElement = new XElement("LevelProgression");
                 levelProgressionElement.Add(new XElement("LevelID", levelProgression.levelID.ToString()));
-                levelProgressionElement.Add(new XElement("Unlocked", levelProgression.isUnlocked.ToString()));
-                levelProgressionElement.Add(new XElement("Completed", levelProgression.isCompleted.ToString()));
+                //levelProgressionElement.Add(new XElement("Unlocked", levelProgression.isUnlocked.ToString()));
+                //levelProgressionElement.Add(new XElement("Completed", levelProgression.isCompleted.ToString()));
                 levelProgressionElement.Add(new XElement("HighScore", levelProgression.highScore.ToString()));
                 newPlayerLevelProgression.Add(levelProgressionElement);
             }
@@ -217,7 +224,7 @@ public class SaveWriter : MonoBehaviour
         }
     }
 
-    public void SaveFile()
+    public void SaveXMLFile()
     {
         XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
         xmlWriterSettings.Indent = true;
@@ -229,12 +236,27 @@ public class SaveWriter : MonoBehaviour
         }
     }
 
+    public void SaveFile()
+    {
+        if (document == null)
+        {
+            CreateFile();
+        }
+
+        SavePlayerProfile();
+        SaveVersion();
+        SaveSpellInventory();
+        SaveSpellCodeInventory();
+        SavePlayerLevelProgression();
+        SaveXMLFile();
+    }
+
     public void CreateFile()
     {
         document = xmlDocumentReader.ReadXMLDocument();
         SaveVersion();
         Directory.CreateDirectory(Application.persistentDataPath + "/" + Application.version);
-        SaveFile();
+        SaveXMLFile();
     }
 
     public void ImportPreviousFile(XDocument document)
@@ -242,6 +264,6 @@ public class SaveWriter : MonoBehaviour
         this.document = document;
         SaveVersion();
         Directory.CreateDirectory(Application.persistentDataPath + "/" + Application.version);
-        SaveFile();
+        SaveXMLFile();
     }
 }

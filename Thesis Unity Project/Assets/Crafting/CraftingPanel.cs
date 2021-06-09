@@ -110,14 +110,28 @@ public class CraftingPanel : MonoBehaviour
 
         foreach (SlotSpace space in craftingSpaces)
         {
+            GameObject spaceSlot = space.slot;
+            if (spaceSlot != null)
+            {
+                MaterialSlot materialSlot = spaceSlot.GetComponent<MaterialSlot>();
+                if (materialSlot != null)
+                {
+                    if (materialSlot.material != null)
+                    {
+                        materialInventory.RemoveMaterial(materialSlot.material);
+                    }
+                }
+            }
             DestroyImmediate(space.slot);
             space.slot = null;
         }
-
+        ingredients.Clear();
+        /*
         foreach (Material material in ingredients)
         {
             materialInventory.RemoveMaterial(material);
         }
+        */
         craftButton.interactable = false;
     }
 }

@@ -19,10 +19,12 @@ public class SaveReader : MonoBehaviour
     private SpellInventory spellInventory;
     [SerializeField]
     private SpellCodeInventory spellCodeInventory;
+    /*
     [SerializeField]
     private MaterialDatabase materialDatabase;
     [SerializeField]
     private MaterialInventory materialInventory;
+    */
     [SerializeField]
     private PlayerLevelProgression playerLevelProgression;
 
@@ -78,13 +80,13 @@ public class SaveReader : MonoBehaviour
     {
         if (document != null)
         {
-            saveWriter.document = document;
             XElement root = document.Root;
             ReadPlayerProfile(root);
             ReadSpellInventory(root);
             ReadSpellCodeInventory(root);
-            ReadMaterialInventory(root);
+            //ReadMaterialInventory(root);
             ReadPlayerLevelProgression(root);
+            saveWriter.document = document;
         }
     }
 
@@ -106,6 +108,10 @@ public class SaveReader : MonoBehaviour
                 playerProfile.gender = Gender.FEMALE;
             }
         }
+        if (root.Elements("TutorialProgression").Any())
+        {
+            playerProfile.tutorialProgression = int.Parse(root.Element("TutorialProgression").Value);
+        }
     }
 
     private void ReadSpellInventory(XElement root)
@@ -118,11 +124,23 @@ public class SaveReader : MonoBehaviour
             {
                 foreach (XElement spellElement in spellInventoryElement.Element("Equipped").Elements())
                 {
+                    /*
                     if (spellElement.Elements("ID").Any() && spellElement.Elements("InstanceID").Any())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
                         Guid instanceID = Guid.Parse(spellElement.Element("InstanceID").Value);
                         Spell spell = spellDatabase.GetSpell(spellID, instanceID);
+                        if (spell != null)
+                        {
+                            spellInventory.EquipSpell(spell);
+                        }
+                    }
+                    */
+
+                    if (spellElement.Elements("ID").Any())
+                    {
+                        int spellID = int.Parse(spellElement.Element("ID").Value);
+                        Spell spell = spellDatabase.GetSpell(spellID);
                         if (spell != null)
                         {
                             spellInventory.EquipSpell(spell);
@@ -135,11 +153,22 @@ public class SaveReader : MonoBehaviour
             {
                 foreach (XElement spellElement in spellInventoryElement.Element("Inventory").Elements())
                 {
+                    /*
                     if (spellElement.Elements("ID").Any() && spellElement.Elements("InstanceID").Any())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
                         Guid instanceID = Guid.Parse(spellElement.Element("InstanceID").Value);
                         Spell spell = spellDatabase.GetSpell(spellID, instanceID);
+                        if (spell != null)
+                        {
+                            spellInventory.AddSpell(spell);
+                        }
+                    }
+                    */
+                    if (spellElement.Elements("ID").Any())
+                    {
+                        int spellID = int.Parse(spellElement.Element("ID").Value);
+                        Spell spell = spellDatabase.GetSpell(spellID);
                         if (spell != null)
                         {
                             spellInventory.AddSpell(spell);
@@ -165,7 +194,7 @@ public class SaveReader : MonoBehaviour
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
-
+                        /*
                         if (spellID == spellDatabase.moveLeftID || spellID == spellDatabase.moveRightID)
                         {
                             Spell spell = spellDatabase.GetSpell(spellID, Guid.Empty);
@@ -180,6 +209,8 @@ public class SaveReader : MonoBehaviour
                                 spellCode.AddSpell(spell);
                             }
                         }
+                        */
+                        spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                     }
                     spellCodeInventory.EquipSpellCode(spellCode);
                 }
@@ -194,7 +225,7 @@ public class SaveReader : MonoBehaviour
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
-
+                        /*
                         if (spellID == spellDatabase.moveLeftID || spellID == spellDatabase.moveRightID)
                         {
                             Spell spell = spellDatabase.GetSpell(spellID, Guid.Empty);
@@ -209,13 +240,15 @@ public class SaveReader : MonoBehaviour
                                 spellCode.AddSpell(spell);
                             }
                         }
+                        */
+                        spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                     }
                     spellCodeInventory.AddSpellCode(spellCode);
                 }
             }
         }
     }
-
+    /*
     private void ReadMaterialInventory(XElement root)
     {
         if (root.Elements("MaterialInventory").Any())
@@ -235,6 +268,7 @@ public class SaveReader : MonoBehaviour
             }
         }
     }
+    */
 
     private void ReadPlayerLevelProgression(XElement root)
     {
@@ -247,6 +281,7 @@ public class SaveReader : MonoBehaviour
                 {
                     LevelProgression levelProgression = new LevelProgression();
                     levelProgression.levelID = int.Parse(levelProgressionElement.Element("LevelID").Value);
+                    /*
                     if (levelProgressionElement.Elements("Unlocked").Any())
                     {
                         levelProgression.isUnlocked = bool.Parse(levelProgressionElement.Element("Unlocked").Value);
@@ -255,6 +290,7 @@ public class SaveReader : MonoBehaviour
                     {
                         levelProgression.isCompleted = bool.Parse(levelProgressionElement.Element("Completed").Value);
                     }
+                    */
                     if (levelProgressionElement.Elements("HighScore").Any())
                     {
                         levelProgression.highScore = int.Parse(levelProgressionElement.Element("HighScore").Value);

@@ -375,3 +375,5 @@ MonoBehaviour:
   levelOverviewIcon: {fileID: 2751999798778279898}
   lockIcon: {fileID: 411820316346827}
   button: {fileID: 936801097505683934}
+  playerLevelProgression: {fileID: 11400000, guid: f19662814661c2e47a353c1cfd24e68b,
+    type: 2}

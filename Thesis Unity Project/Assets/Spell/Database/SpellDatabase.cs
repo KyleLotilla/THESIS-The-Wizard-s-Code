@@ -89,7 +89,7 @@ public class SpellDatabase : ScriptableObject
             Spell spell = spells[id];
             Spell spellCopy = new Spell();
             spellCopy.spellID = spell.spellID;
-            spellCopy.instanceID = Guid.NewGuid();
+            //spellCopy.instanceID = Guid.NewGuid();
             spellCopy.name = spell.name;
             spellCopy.description = spell.description;
             spellCopy.icon = spell.icon;
@@ -103,6 +103,7 @@ public class SpellDatabase : ScriptableObject
         }
     }
 
+    /*
     public Spell GetSpell(int id, Guid instanceID)
     {
         if (spells.ContainsKey(id))
@@ -123,4 +124,5 @@ public class SpellDatabase : ScriptableObject
             return null;
         }
     }
+    */
 }

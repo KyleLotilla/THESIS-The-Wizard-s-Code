@@ -2,14 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclesPanel : MonoBehaviour
+public class ObstaclesPanel : ItemSlotMenu<ObstacleLevelInfo>
 {
-    [SerializeField]
-    private GameObject infoIconPanelPrefab;
-    private List<GameObject> currentPanels;
     [SerializeField]
     private ObstacleDatabase obstacleDatabase;
 
+    public void ShowObstacles(List<ObstacleLevelInfo> obstacleLevelInfos)
+    {
+        items = obstacleLevelInfos;
+        RefreshMenu();
+    }
+
+    protected override void OnSlotSpawn(GameObject slot, GameObject space, ObstacleLevelInfo item)
+    {
+        Obstacle obstacle = obstacleDatabase.GetObstacle(item.obstacleID);
+        if (obstacle != null)
+        {
+            InfoIconPanel infoIconPanel = slot.GetComponent<InfoIconPanel>();
+            if (infoIconPanel != null)
+            {
+                infoIconPanel.icon.sprite = obstacle.icon;
+                infoIconPanel.text.text = obstacle.name + " x " + item.numObstacles;
+            }
+        }
+    }
+
+    /*
     private void Awake()
     {   
         if (currentPanels == null)
@@ -40,7 +58,7 @@ public class ObstaclesPanel : MonoBehaviour
             }
         }
     }
-
+    
     public void Clear()
     {
         foreach(GameObject panel in currentPanels)
@@ -49,4 +67,5 @@ public class ObstaclesPanel : MonoBehaviour
         }
         currentPanels.Clear();
     }
+    */
 }

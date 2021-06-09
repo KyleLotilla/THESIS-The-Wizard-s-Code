@@ -28,10 +28,12 @@ public class SpellCode : IEnumerable<Spell>
         return spells.Count - 1;
     }
 
+    /*
     public void RemoveSpellInstance(Spell spell)
     {
         spells.RemoveAll(x => x == spell);
     }
+    */
 
     public void RemoveSpellAt(int index)
     {
