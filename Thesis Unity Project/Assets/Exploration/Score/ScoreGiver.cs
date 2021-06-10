@@ -20,6 +20,7 @@ public class ScoreGiver : MonoBehaviour
     private Vector2 offset;
     private bool giveScore = true;
     
+
     public int amount
     {
         get
@@ -61,6 +62,7 @@ public class ScoreGiver : MonoBehaviour
         {
             explorationScore.AddScore(amount);
             ShowScoreVisual(amount);
+            
             if (giveOneTime)
             {
                 giveScore = false;

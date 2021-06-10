@@ -134,6 +134,8 @@ MonoBehaviour:
   scoreAudio: {fileID: 8300000, guid: b3b8a30117adacf41a55a9b55de58fdd, type: 3}
   penaltyAudio: {fileID: 8300000, guid: b4b62a6a835f3b648927cd1b61f59c85, type: 3}
   textMesh: {fileID: 6546454460182431934}
+  StarGaige: {fileID: 7511466352871759151, guid: e3b96c2583964654d893b1e359467524,
+    type: 3}
 --- !u!114 &7441987768156938299
 MonoBehaviour:
   m_ObjectHideFlags: 0

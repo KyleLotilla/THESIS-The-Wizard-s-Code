@@ -17,6 +17,8 @@ public class ScoreVisual : MonoBehaviour
     private AudioClip penaltyAudio;
     [SerializeField]
     private TextMesh textMesh;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class ScoreVisual : MonoBehaviour
         if (score != 0)
         {
             textMesh.text = score.ToString();
+           
             GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
             if (oneShotAudioObject != null)
             {

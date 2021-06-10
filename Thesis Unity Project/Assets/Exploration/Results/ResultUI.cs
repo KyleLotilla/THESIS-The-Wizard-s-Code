@@ -27,6 +27,9 @@ public class ResultUI : MonoBehaviour
     [SerializeField]
     private MaterialsPanel materialsPanel;
     private int oldHighScore = 0;
+
+    [SerializeField]
+    private FillStar starFill;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,12 +73,14 @@ public class ResultUI : MonoBehaviour
 
         if (score > oldHighScore)
         {
-            highScoreText.text = score.ToString();
-            newHighScoreText.SetActive(true);
+            //highScoreText.text = score.ToString();
+            //newHighScoreText.SetActive(true);
+            starFill.FillUpStar(score);
         }
         else
         {
-            highScoreText.text = oldHighScore.ToString();
+            //highScoreText.text = oldHighScore.ToString();
+            starFill.FillUpStar(oldHighScore);
         }
 
         this.gameObject.SetActive(true);
