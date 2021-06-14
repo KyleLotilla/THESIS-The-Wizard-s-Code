@@ -5,8 +5,8 @@
 			<Line>Nice to meet you Player! I am Fairie! Are you ready to go on an adventure?</Line>
 			<Line>Don’t worry I will be here to assist you whenever we come across something worth noting!</Line>
 			<Line>Let’s start with the basics. You can use &lt;b&gt;spells&lt;/b&gt; to perform actions on the stage!</Line>
-			<Line>This is the &lt;b&gt;action stack&lt;/b&gt;</Line>
-			<Line>Random spells you currently own will spawn periodically in here.</Line>
+			<Line>This is the &lt;b&gt;actions tab&lt;/b&gt;</Line>
+			<Line>Spells that you have currently equipped will spawn randomly in intervals here.</Line>
 			<Line>This is the action queue.</Line>
 			<Line>You can drag your spells from the action stack down here and execute them by pressing run.</Line>
 			<Line>Let’s try to use movement spells first.</Line>
