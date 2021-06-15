@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f1628ac672f1345862aa329303d290, type: 3}
   m_Name: MaterialInventoryInstance
   m_EditorClassIdentifier: 
-  testDatabase: {fileID: 11400000, guid: 4ca17e556644813458889aae2086214b, type: 2}

@@ -22,10 +22,15 @@ public class ResultUI : MonoBehaviour
     private Text highScoreText;
     [SerializeField]
     private GameObject newHighScoreText;
+    /*
     [SerializeField]
     private MaterialPickupStorage materialPickupStorage;
     [SerializeField]
     private MaterialsPanel materialsPanel;
+    */
+    [SerializeField]
+    private SpellsInfoPanel spellsInfoPanel;
+
     private int oldHighScore = 0;
     // Start is called before the first frame update
     void Start()
@@ -44,8 +49,9 @@ public class ResultUI : MonoBehaviour
     }
 
 
-    public void ShowResults()
+    public void ShowResults(List<int> unlockedSpellsIDs)
     {
+        /*
         Dictionary<int, int> materialIndices = new Dictionary<int, int>();
         List<int> materialIDs = new List<int>();
         List<int> numMaterials = new List<int>();
@@ -64,6 +70,12 @@ public class ResultUI : MonoBehaviour
             }
         }
         materialsPanel.ShowMaterials(materialIDs, numMaterials);
+        */
+
+        if (unlockedSpellsIDs != null)
+        {
+            spellsInfoPanel.ShowSpells(unlockedSpellsIDs);
+        }
 
         int score = explorationScore.currentScore;
         scoreText.text = score.ToString();

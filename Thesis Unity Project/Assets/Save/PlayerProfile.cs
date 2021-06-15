@@ -7,4 +7,5 @@ public class PlayerProfile : ScriptableObject
 {
     public string playerName;
     public Gender gender;
+    public int tutorialProgression;
 }

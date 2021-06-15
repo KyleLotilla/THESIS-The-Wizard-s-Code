@@ -19,7 +19,6 @@ public class InitializeGame : MonoBehaviour
     {
         if (saveReader.ReadSaveFile())
         {
-            Debug.Log("Save File Read");
             SceneManager.LoadScene(1);
         }
         else
@@ -32,6 +31,7 @@ public class InitializeGame : MonoBehaviour
             else
             {
                 saveWriter.CreateFile();
+                saveReader.ReadSaveFile();
                 ShowMessage("Created New Save File");
             }
         }

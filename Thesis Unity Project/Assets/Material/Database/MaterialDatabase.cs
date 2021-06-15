@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 
 [CreateAssetMenu(menuName = "Database/Material Database")]
-public class MaterialDatabase : XMLDatabaseScriptableObject
+public class MaterialDatabase : ScriptableObject
 {
     [SerializeField]
     private Dictionary<int, Material> materials;

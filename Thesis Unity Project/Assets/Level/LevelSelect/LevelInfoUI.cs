@@ -9,12 +9,21 @@ public class LevelInfoUI : MonoBehaviour
     private Text levelTitle; 
     [SerializeField]
     private ObstaclesPanel obstaclesPanel;
+    /*
     [SerializeField]
     private MaterialsPanel materialsPanel;
+    */
+    [SerializeField]
+    private SpellsInfoPanel spellsInfoPanel;
     [SerializeField]
     private Image levelOverview;
     [SerializeField]
     private Text highScore;
+    [SerializeField]
+    private LoadScene loadScene;
+    [SerializeField]
+    private PlayerLevelProgression playerlevelProgression;
+
     void Start()
     {
         
@@ -23,9 +32,20 @@ public class LevelInfoUI : MonoBehaviour
     public void ShowLevelInfo(Level level)
     {
         levelTitle.text = "Level " + level.worldNum + "-" + level.levelNum;
-        obstaclesPanel.ShowObstacles(level.obstacles, level.numObstacles);
-        materialsPanel.ShowMaterials(level.materials, level.numMaterials);
+        obstaclesPanel.ShowObstacles(level.obstacleLevelInfos);
+        spellsInfoPanel.ShowSpells(level.unlockableSpellsIDs);
+        //materialsPanel.ShowMaterials(level.materials, level.numMaterials);
         levelOverview.sprite = level.levelOverview;
-        highScore.text = level.levelProgression.highScore.ToString();
+        //highScore.text = level.levelProgression.highScore.ToString();
+        LevelProgression levelProgression = playerlevelProgression.GetLevelProgression(level.levelID);
+        if (levelProgression != null)
+        {
+            highScore.text = levelProgression.highScore.ToString();
+        }
+        else
+        {
+            highScore.text = "0";
+        }
+        loadScene.index = level.sceneIndex;
     }
 }

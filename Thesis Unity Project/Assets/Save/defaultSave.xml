@@ -3,14 +3,25 @@
   <Name/>
   <Gender>MALE</Gender>
   <Version>1.0</Version>
+  <TutorialProgression>0</TutorialProgression>
   <SpellInventory>
     <Equipped/>
     <Inventory/>
   </SpellInventory>
   <SpellCodeInventory>
-    <Equipped/>
+    <Equipped>
+      <Spell>
+        <ID>2</ID>
+      </Spell>
+    </Equipped>
     <Inventory/>
   </SpellCodeInventory>
-  <MaterialInventory/>
-  <PlayerLevelProgression/>
+  <PlayerLevelProgression>
+    <LevelProgression>
+      <LevelID>0</LevelID>
+      <Unlocked>true</Unlocked>
+      <Completed>false</Completed>
+      <HighScore>0</HighScore>
+    </LevelProgression>
+  </PlayerLevelProgression>
 </Save>
