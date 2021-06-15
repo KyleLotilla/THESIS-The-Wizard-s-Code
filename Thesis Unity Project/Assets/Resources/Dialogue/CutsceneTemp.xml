@@ -1,0 +1,17 @@
+<DialogueDatabase>
+	<Dialogue>
+		<ID>0</ID>
+		<Lines>
+			<Line>Greetings!</Line>
+			<Line>Welcome to the magical world of</Line>
+			<Line>This world is full of powerful wizards.</Line>
+			<Line>These wizards are able to wield various elemental spells.</Line>
+			<Line>This world is also home to many obstacles that will block your path.</Line>
+			<Line>Good thing the wizards are able to use their magical abilities to get rid of these obstacles!</Line>
+			<Line>Wait, are you a wizard in training? Well why didn't you say so!</Line>
+			<Line>So you're looking to improve your skills and learn more spells?</Line>
+			<Line>Lucky for you I know my way around this world! I'll follow you around and tell you what I know.</Line>
+			<Line>Well, are you ready to begin your adventure? Lets go!</Line>
+		</Lines>
+	</Dialogue>
+</DialogueDatabase>
