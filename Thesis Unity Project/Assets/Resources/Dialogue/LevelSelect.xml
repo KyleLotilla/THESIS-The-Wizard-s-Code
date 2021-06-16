@@ -2,13 +2,34 @@
   <Dialogue>
     <ID>0</ID>
     <Lines>
-      <Line>Let’s take a look at the places we can explore!</Line>
-      <Line>Prior to entering a stage, we can take a look at the obstacles and materials that we will encounter in this tab.</Line>
-      <Line>This allows us to plan our approach before heading out!</Line>
-      <Line>Remember to practice &lt;b&gt;problem decomposition.&lt;/b&gt; Break down the stage into smaller problems and identify the proper spells to bring you in order to accomplish the stage. </Line>
-      <Line>Note that different stages also yield different materials we can use for crafting!</Line>
-      <Line>We can choose to revisit certain places we have been to if we need to gather more resources there.</Line>
-      <Line>Enough talk for now. I’m raring to go on our next expedition! Whenever you're ready, let’s head on to the next stage!</Line>
+	  <Line>Great job at completing the stage!</Line>
+      <Line>We have just unlocked a new spell from the previous stage. Let's check it out!</Line>
+	  <Line>Go to the &lt;b&gt;Spells&lt;/b&gt; tab and I'll explain more there.</Line>
     </Lines>
+   </Dialogue>
+   <Dialogue>
+	<ID>1</ID>
+	<Lines>
+		<Line>In this tab, you can see the spells that you currently have unlocked.</Line>
+		<Line>You can view and change your equipped spells in this tab before heading out to your next expedition.</Line>
+		<Line>Simply drag the spell you would like to equip from your spell inventory to your equipped spells.</Line>
+		<Line>We have unlocked an electroshock spell from the previous stage.</Line>
+		<Line>Go and equip the electroshock spell to your equipped spells.</Line>
+		<Line>Press the back button once you are done.</Line>
+	</Lines>
+   </Dialogue>
+	<Dialogue>
+	<ID>2</ID>
+	<Lines>
+		<Line>Let’s take a look at the places we can explore!</Line>
+		<Line>Prior to entering a stage, we can take a look at the obstacles that we will encounter.</Line>
+		<Line>This allows us to plan our approach before heading out!</Line>
+		<Line>Remember to practice &lt;b&gt;problem decomposition.&lt;/b&gt;</Line>
+		<Line>Break down the stage into smaller problems and identify the proper spells to bring you in order to accomplish the stage.</Line>
+		<Line>You can also choose to revisit previous stages to earn more stars and unlock new spells.</Line>
+		<Line>You can view how many stars you have earned on the stages you have played.</Line>
+		<Line>On some stages, earning 3 stars will reward you with a new spell that you can use.</Line>
+		<Line>Enough talk for now. I’m raring to go on our next expedition! Whenever you're ready, let’s head on to the next stage!</Line>
+	</Lines>
    </Dialogue>
 </DialogueDatabase>
