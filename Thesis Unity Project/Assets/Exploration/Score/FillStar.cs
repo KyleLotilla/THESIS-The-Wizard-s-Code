@@ -8,9 +8,6 @@ public class FillStar : MonoBehaviour
     private RectTransform rectTransform;
 
     [SerializeField]
-    private int TotalScore;
-
-    [SerializeField]
     private RectTransform Maximum;
 
     [SerializeField]
@@ -28,11 +25,10 @@ public class FillStar : MonoBehaviour
         
     }
 
-    public void FillUpStar(int score)
+    public void FillUpStar(int score, int MaximumScore)
     {
-        if (score != 0)
-        {
-            float percentage = 1.0f / ((float)TotalScore / score);
+        
+            float percentage = 1.0f / ((float)MaximumScore / score);
             float starPosition = Mathf.Lerp(this.Minimum.position.x, this.Maximum.position.x, percentage);
             float Width = Mathf.Lerp(this.Minimum.sizeDelta.x, this.Maximum.sizeDelta.x, percentage);
 
@@ -41,6 +37,6 @@ public class FillStar : MonoBehaviour
             this.rectTransform.sizeDelta = scaleChange;
             Vector3 newStarPosition = new Vector3(starPosition, this.rectTransform.position.y, this.rectTransform.position.z);
             this.rectTransform.position = newStarPosition;
-        }
+        
     }
 }

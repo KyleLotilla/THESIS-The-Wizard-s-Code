@@ -101,7 +101,7 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
             spellCodes.Remove(spellCode);
         }
     }
-
+    /*
     public void RemoveSpellInstance(Spell spell)
     {
         for (int i = spellCodes.Count - 1; i >= 0; i--)
@@ -122,6 +122,7 @@ public class SpellCodeInventory : ScriptableObject, IEnumerable<SpellCode>
             }
         }
     }
+    */
 
     public void EquipSpellCode(SpellCode spellCode)
     {

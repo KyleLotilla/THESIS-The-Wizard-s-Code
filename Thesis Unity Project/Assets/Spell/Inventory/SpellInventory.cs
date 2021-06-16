@@ -10,8 +10,10 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
     private List<Spell> spells;
     [SerializeField]
     private List<Spell> _equipped;
+    /*
     [SerializeField]
     private Dictionary<Guid, Spell> instanceDictionary;
+    */
 
     [SerializeField]
     public IEnumerable<Spell> equipped
@@ -73,7 +75,7 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         {
             _equipped = new List<Spell>(maxEquipped);
         }
-
+        /*
         if (instanceDictionary != null)
         {
             instanceDictionary.Clear();
@@ -82,17 +84,21 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         {
             instanceDictionary = new Dictionary<Guid, Spell>();
         }
+        */
     }
 
     public void AddSpell(Spell spell)
     {
+        /*
         if (!instanceDictionary.ContainsKey(spell.instanceID))
         {
-            spells.Add(spell);
             instanceDictionary[spell.instanceID] = spell;
         }
-    }
+        */
+        spells.Add(spell);
 
+    }
+    /*
     public Spell GetSpell(Guid instanceID)
     {
         if (instanceDictionary.ContainsKey(instanceID))
@@ -104,6 +110,7 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
             return null;
         }
     }
+    */
 
     public Spell GetSpellAt(int index)
     {
@@ -125,7 +132,7 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
             {
                 _equipped.Add(spell);
                 spell.isEquipped = true;
-                instanceDictionary[spell.instanceID] = spell;
+                //instanceDictionary[spell.instanceID] = spell;
             }
         }
     }
@@ -136,7 +143,7 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         {
             _equipped.Remove(spell);
             spell.isEquipped = false;
-            instanceDictionary[spell.instanceID] = null;
+            //instanceDictionary[spell.instanceID] = null;
         }
     }
 
@@ -145,14 +152,14 @@ public class SpellInventory : ScriptableObject, IEnumerable<Spell>
         foreach (Spell spell in spells)
         {
             spell.isEquipped = false;
-            instanceDictionary[spell.instanceID] = null;
+            //instanceDictionary[spell.instanceID] = null;
         }
         spells.Clear();
     }
 
     public void RemoveSpell(Spell spell)
     {
-        instanceDictionary[spell.instanceID] = null;
+        //instanceDictionary[spell.instanceID] = null;
         spells.Remove(spell);
     }
 

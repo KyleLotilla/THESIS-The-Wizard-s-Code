@@ -22,14 +22,27 @@ public class ResultUI : MonoBehaviour
     private Text highScoreText;
     [SerializeField]
     private GameObject newHighScoreText;
+    /*
     [SerializeField]
     private MaterialPickupStorage materialPickupStorage;
     [SerializeField]
     private MaterialsPanel materialsPanel;
+    */
+    [SerializeField]
+    private SpellsInfoPanel spellsInfoPanel;
+
     private int oldHighScore = 0;
 
     [SerializeField]
-    private FillStar starFill;
+    private FillStar ScoreFillStar;
+
+    [SerializeField]
+    private FillStar HighScoreFillStar;
+
+    [SerializeField]
+    private int TotalScore;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,8 +60,9 @@ public class ResultUI : MonoBehaviour
     }
 
 
-    public void ShowResults()
+    public void ShowResults(List<int> unlockedSpellsIDs)
     {
+        /*
         Dictionary<int, int> materialIndices = new Dictionary<int, int>();
         List<int> materialIDs = new List<int>();
         List<int> numMaterials = new List<int>();
@@ -67,20 +81,26 @@ public class ResultUI : MonoBehaviour
             }
         }
         materialsPanel.ShowMaterials(materialIDs, numMaterials);
+        */
+
+        if (unlockedSpellsIDs != null)
+        {
+            spellsInfoPanel.ShowSpells(unlockedSpellsIDs);
+        }
 
         int score = explorationScore.currentScore;
         scoreText.text = score.ToString();
-
+        ScoreFillStar.FillUpStar(score, 200);
         if (score > oldHighScore)
         {
             //highScoreText.text = score.ToString();
-            //newHighScoreText.SetActive(true);
-            starFill.FillUpStar(score);
+            newHighScoreText.SetActive(true);
+            HighScoreFillStar.FillUpStar(score, TotalScore);
         }
         else
         {
             //highScoreText.text = oldHighScore.ToString();
-            starFill.FillUpStar(oldHighScore);
+            HighScoreFillStar.FillUpStar(oldHighScore, TotalScore);
         }
 
         this.gameObject.SetActive(true);

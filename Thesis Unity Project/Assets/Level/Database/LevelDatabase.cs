@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 
-public class LevelDatabase : MonoBehaviour, IEnumerable
+[CreateAssetMenu(menuName = "LevelDatabase")]
+public class LevelDatabase : ScriptableObject, IEnumerable<Level>
 {
+    [SerializeField]
+    private Dictionary<int, int> levelIndices;
+
     [SerializeField]
     private List<Level> levels;
 
     [SerializeField]
     private XMLDocumentReader xmlDocumentReader;
-
-    [SerializeField]
-    private PlayerLevelProgression playerLevelProgression;
 
     public IEnumerator GetEnumerator()
     {
@@ -21,7 +22,7 @@ public class LevelDatabase : MonoBehaviour, IEnumerable
     }
 
     // Start is called before the first frame update
-    private void Awake()
+    private void OnEnable()
     {
         LoadXml(xmlDocumentReader.ReadXMLDocument());
     }
@@ -29,6 +30,7 @@ public class LevelDatabase : MonoBehaviour, IEnumerable
     void LoadXml(XDocument document)
     {
         levels = new List<Level>();
+        levelIndices = new Dictionary<int, int>();
         XElement root = document.Root;
         foreach (XElement element in root.Elements())
         {
@@ -46,16 +48,16 @@ public class LevelDatabase : MonoBehaviour, IEnumerable
             {
                 level.worldNum = int.Parse(element.Element("WorldNum").Value);
             }
-            if (element.Elements("LevelPath").Any())
+            if (element.Elements("SceneIndex").Any())
             {
-                level.pathToLevel = element.Element("LevelPath").Value;
+                level.sceneIndex = int.Parse(element.Element("SceneIndex").Value);
             }
             if (element.Elements("LevelOverview").Any())
             {
                 level.pathToLevelOverview = element.Element("LevelOverview").Value;
                 level.levelOverview = Resources.Load<Sprite>(level.pathToLevelOverview);
             }
-
+            /*
             level.materials = new List<int>();
             level.numMaterials = new List<int>();
             if (element.Elements("Materials").Any())
@@ -70,7 +72,8 @@ public class LevelDatabase : MonoBehaviour, IEnumerable
                     }
                 }
             }
-
+            */
+            /*
             level.obstacles = new List<int>();
             level.numObstacles = new List<int>();
             if (element.Elements("Obstacles").Any())
@@ -85,18 +88,64 @@ public class LevelDatabase : MonoBehaviour, IEnumerable
                     }
                 }
             }
+            */
 
-            LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(level.levelID);
-            if (levelProgression != null)
+            level.obstacleLevelInfos = new List<ObstacleLevelInfo>();
+            if (element.Elements("Obstacles").Any())
             {
-                level.levelProgression = levelProgression;
+                XElement obstacles = element.Element("Obstacles");
+                foreach (XElement obstacle in obstacles.Elements())
+                {
+                    if (obstacle.Elements("ID").Any() && obstacle.Elements("Num").Any())
+                    {
+                        ObstacleLevelInfo obstacleLevelInfo = new ObstacleLevelInfo();
+                        obstacleLevelInfo.obstacleID = int.Parse(obstacle.Element("ID").Value);
+                        obstacleLevelInfo.numObstacles = int.Parse(obstacle.Element("Num").Value);
+                        level.obstacleLevelInfos.Add(obstacleLevelInfo);
+                    }
+                }
             }
-            else
+
+            level.unlockableSpellsIDs = new List<int>();
+
+            if (element.Elements("UnlockableSpells").Any())
             {
-                level.levelProgression = new LevelProgression();
-                level.levelProgression.levelID = level.levelID;
+                XElement spellIDs = element.Element("UnlockableSpells");
+                foreach (XElement spellID in spellIDs.Elements())
+                {
+                    level.unlockableSpellsIDs.Add(int.Parse(spellID.Value));
+                }
             }
+
+            if (element.Elements("MaximumScore").Any())
+            {
+                level.maximumScore = int.Parse(element.Element("MaximumScore").Value);
+            }
+
+            if (element.Elements("StarRequirement").Any())
+            {
+                level.starRequirement = int.Parse(element.Element("StarRequirement").Value);
+            }
+
             levels.Add(level);
+            levelIndices[level.levelID] = levels.Count - 1;
         }
+    }
+
+    public Level GetLevel(int levelID)
+    {
+        if (levelIndices.ContainsKey(levelID))
+        {
+            return levels[levelIndices[levelID]];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    IEnumerator<Level> IEnumerable<Level>.GetEnumerator()
+    {
+        return ((IEnumerable<Level>)levels).GetEnumerator();
     }
 }

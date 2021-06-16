@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Inventory/Material Inventory")]
 public class MaterialInventory : ScriptableObject, IEnumerable<Material>
 {
-    [SerializeField]
     private List<Material> materials;
     public int Count
     {
@@ -14,10 +13,10 @@ public class MaterialInventory : ScriptableObject, IEnumerable<Material>
             return materials.Count;
         }
     }
-
     // Start is called before the first frame update
     void OnEnable()
     {
+        
         if (materials != null)
         {
             materials.Clear();
@@ -26,6 +25,17 @@ public class MaterialInventory : ScriptableObject, IEnumerable<Material>
         {
             materials = new List<Material>();
         }
+        
+        
+        /*
+        if (materials == null)
+        {
+            materials = new List<Material>();
+        }
+        */
+        
+        
+        //materials.Clear();
     }
 
     public void AddMaterial(Material material)
@@ -49,7 +59,6 @@ public class MaterialInventory : ScriptableObject, IEnumerable<Material>
     {
         materials.Remove(material);
     }
-
 
     public IEnumerator GetEnumerator()
     {

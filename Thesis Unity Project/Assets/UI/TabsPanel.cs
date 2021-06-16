@@ -12,6 +12,8 @@ public class TabsPanel : MonoBehaviour
     private List<GameObject> pages;
     [SerializeField]
     private int currentPage;
+    [SerializeField]
+    private int previousPage = -1;
 
     void Start()
     {
@@ -40,9 +42,15 @@ public class TabsPanel : MonoBehaviour
             {
                 pages[page].SetActive(true);
             }
+            previousPage = currentPage;
             currentPage = page;
             OnTabPageSwitch?.Invoke(page);
         }
+    }
+
+    public void SwitchToPreviousPage()
+    {
+        SwitchPage(previousPage);
     }
 
     public void OnDestroy()

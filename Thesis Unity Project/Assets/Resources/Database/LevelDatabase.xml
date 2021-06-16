@@ -3,7 +3,7 @@
       <ID>0</ID>
       <LevelNum>1</LevelNum>
 		  <WorldNum>1</WorldNum>
-		  <LevelPath>Scenes/TestLevel2</LevelPath>
+		  <SceneIndex>3</SceneIndex>
       <LevelOverview>Level/Overviews/level1</LevelOverview>
         <Obstacles>
             <Obstacle>
@@ -11,49 +11,39 @@
                 <Num>1</Num>
             </Obstacle>
         </Obstacles>
-        <Materials>
-            <Material>
-                <ID>5</ID>
-                <Num>2</Num>
-            </Material>
-        </Materials>
+        <UnlockableSpells>
+          <ID>3</ID>
+        </UnlockableSpells>
+      <MaximumScore>1000</MaximumScore>
+      <StarRequirement>0</StarRequirement>
     </Level>
 	<Level>
     <ID>1</ID>
     <LevelNum>2</LevelNum>
 		<WorldNum>1</WorldNum>
-		<LevelPath>Scenes/TestLevel3</LevelPath>
+		<SceneIndex>4</SceneIndex>
     <LevelOverview>Level/Overviews/level2</LevelOverview>
     <Obstacles>
-            <Obstacle>
-                <ID>1</ID>
-                <Num>3</Num>
-            </Obstacle>
-            <Obstacle>
-                <ID>3</ID>
-                <Num>2</Num>
-            </Obstacle>
-        </Obstacles>
-        <Materials>
-            <Material>
-                <ID>4</ID>
-                <Num>2</Num>
-            </Material>
-            <Material>
-                <ID>5</ID>
-                <Num>2</Num>
-            </Material>
-          <Material>
-            <ID>6</ID>
-            <Num>1</Num>
-          </Material>
-        </Materials>
+      <Obstacle>
+        <ID>1</ID>
+        <Num>3</Num>
+      </Obstacle>
+      <Obstacle>
+        <ID>3</ID>
+        <Num>2</Num>
+      </Obstacle>
+    </Obstacles>
+      <UnlockableSpells>
+        <ID>4</ID>
+      </UnlockableSpells>
+    <MaximumScore>1000</MaximumScore>
+    <StarRequirement>2</StarRequirement>
     </Level>
   <Level>
     <ID>2</ID>
     <LevelNum>3</LevelNum>
     <WorldNum>1</WorldNum>
-    <LevelPath>Scenes/TestLevel3</LevelPath>
+    <SceneIndex>5</SceneIndex>
     <LevelOverview>Level/Overviews/level3</LevelOverview>
     <Obstacles>
       <Obstacle>
@@ -65,19 +55,10 @@
         <Num>1</Num>
       </Obstacle>
     </Obstacles>
-    <Materials>
-      <Material>
-        <ID>0</ID>
-        <Num>2</Num>
-      </Material>
-      <Material>
-        <ID>1</ID>
-        <Num>1</Num>
-      </Material>
-      <Material>
-        <ID>4</ID>
-        <Num>2</Num>
-      </Material>
-    </Materials>
+    <UnlockableSpells>
+      <ID>5</ID>
+    </UnlockableSpells>
+    <MaximumScore>1000</MaximumScore>
+    <StarRequirement>3</StarRequirement>
   </Level>
 </LevelDatabase>
