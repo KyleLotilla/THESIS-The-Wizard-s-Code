@@ -90,7 +90,7 @@ public class ResultUI : MonoBehaviour
 
         int score = explorationScore.currentScore;
         scoreText.text = score.ToString();
-        ScoreFillStar.FillUpStar(score, 200);
+        ScoreFillStar.FillUpStar(score, TotalScore);
         if (score > oldHighScore)
         {
             //highScoreText.text = score.ToString();

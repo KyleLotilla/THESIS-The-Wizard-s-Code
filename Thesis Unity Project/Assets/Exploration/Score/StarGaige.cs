@@ -36,10 +36,9 @@ public class StarGaige : MonoBehaviour
 
     private void OnExplorationScoreChanged(int score)
     {
-        
-        if(score != 0)
+        float percentage = 1.0f / ((float)TotalScore / score);
+        if(percentage >= 0.0f)
         {
-            float percentage = 1.0f / ((float)TotalScore / score);
             float starPosition = Mathf.Lerp(this.Minimum.position.x, this.Maximum.position.x, percentage);
             float Width = Mathf.Lerp(this.Minimum.sizeDelta.x, this.Maximum.sizeDelta.x, percentage);
             
@@ -48,7 +47,9 @@ public class StarGaige : MonoBehaviour
             this.rectTransform.sizeDelta = scaleChange;
             Vector3 newStarPosition = new Vector3(starPosition, this.rectTransform.position.y, this.rectTransform.position.z);
             this.rectTransform.position = newStarPosition;
+
         }
-       
+
+
     }
 }

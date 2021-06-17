@@ -797,7 +797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b036d604e6ab674a941ea2e825e5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FillStar: {fileID: 0}
   rectTransform: {fileID: 0}
   explorationScore: {fileID: 0}
   TotalScore: 0

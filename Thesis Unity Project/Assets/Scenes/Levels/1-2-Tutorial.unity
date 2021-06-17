@@ -8999,6 +8999,11 @@ PrefabInstance:
       propertyPath: levelID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 649482592371409950, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: TotalScore
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 720498117128078781, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_IsActive
@@ -9288,6 +9293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765341544707531121, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: TotalScore
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2987695906164155360, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}

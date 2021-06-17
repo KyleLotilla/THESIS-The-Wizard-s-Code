@@ -72,11 +72,14 @@ public class ScoreGiver : MonoBehaviour
 
     public void PenalizeScore()
     {
-        if (amount > minAmount)
+        /*if (amount > minAmount)
         {
             amount -= penalty;
-            ShowScoreVisual(-penalty);
-        }
+            
+        }*/
+
+        explorationScore.AddScore(-penalty);
+        ShowScoreVisual(-penalty);
     }
 
     private void ShowScoreVisual(int score)
