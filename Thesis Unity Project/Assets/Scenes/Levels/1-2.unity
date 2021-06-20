@@ -7447,6 +7447,12 @@ PrefabInstance:
       propertyPath: explorationScore
       value: 
       objectReference: {fileID: 896679553}
+    - target: {fileID: 2249152899631419178, guid: 2b94276e9441cce47b5b0918a076cc18,
+        type: 3}
+      propertyPath: ScoreVisualStarPrefab
+      value: 
+      objectReference: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
+        type: 3}
     - target: {fileID: 3033642671592210624, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
       propertyPath: m_Name
@@ -7568,6 +7574,12 @@ PrefabInstance:
       propertyPath: explorationScore
       value: 
       objectReference: {fileID: 896679553}
+    - target: {fileID: 2249152899631419178, guid: 2b94276e9441cce47b5b0918a076cc18,
+        type: 3}
+      propertyPath: ScoreVisualStarPrefab
+      value: 
+      objectReference: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
+        type: 3}
     - target: {fileID: 3033642671592210624, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
       propertyPath: m_Name
@@ -7760,6 +7772,12 @@ PrefabInstance:
       propertyPath: explorationScore
       value: 
       objectReference: {fileID: 896679553}
+    - target: {fileID: 2249152899631419178, guid: 2b94276e9441cce47b5b0918a076cc18,
+        type: 3}
+      propertyPath: ScoreVisualStarPrefab
+      value: 
+      objectReference: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
+        type: 3}
     - target: {fileID: 3033642671592210624, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
       propertyPath: m_Name
@@ -8893,6 +8911,12 @@ PrefabInstance:
       propertyPath: explorationScore
       value: 
       objectReference: {fileID: 896679553}
+    - target: {fileID: 4393175517962712848, guid: 5bf1e61bf8c0d71459dfdc4f6b571613,
+        type: 3}
+      propertyPath: ScoreVisualStarPrefab
+      value: 
+      objectReference: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
+        type: 3}
     - target: {fileID: 5292295973228261795, guid: 5bf1e61bf8c0d71459dfdc4f6b571613,
         type: 3}
       propertyPath: m_RootOrder
@@ -9056,6 +9080,12 @@ PrefabInstance:
       propertyPath: explorationScore
       value: 
       objectReference: {fileID: 896679553}
+    - target: {fileID: 4393175517962712848, guid: 5bf1e61bf8c0d71459dfdc4f6b571613,
+        type: 3}
+      propertyPath: ScoreVisualStarPrefab
+      value: 
+      objectReference: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
+        type: 3}
     - target: {fileID: 5292295973228261795, guid: 5bf1e61bf8c0d71459dfdc4f6b571613,
         type: 3}
       propertyPath: m_RootOrder

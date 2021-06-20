@@ -1,26 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ScoreVisual : MonoBehaviour
+public class ScoreVisualStar : MonoBehaviour
 {
     [SerializeField]
     private Vector2 speed;
     [SerializeField]
     private Color penaltyColor;
+    
     [SerializeField]
     private GameObject oneShotAudioPrefab;
     [SerializeField]
     private AudioClip scoreAudio;
     [SerializeField]
     private AudioClip penaltyAudio;
-   [SerializeField]
-    private TextMesh textMesh;
     [SerializeField]
-    private FillStar starFill;
-    
-    
+    private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private SpriteRenderer equation;
+    [SerializeField]
+    private Sprite minus;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +34,13 @@ public class ScoreVisual : MonoBehaviour
     void Update()
     {
         this.transform.position += (Vector3)(speed * Time.deltaTime);
+        
     }
-    
-    public void ShowScore(int score, int Total)
+
+    public void ShowScore(int score)
     {
         if (score != 0)
         {
-            textMesh.text = score.ToString();
-            //starFill.FillUpStar(score, Total);
-
             GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
             if (oneShotAudioObject != null)
             {
@@ -49,10 +50,13 @@ public class ScoreVisual : MonoBehaviour
                     if (score > 0)
                     {
                         oneShotAudioClip.PlayClip(scoreAudio);
+                        
                     }
                     else
                     {
-                        textMesh.color = penaltyColor;
+                        this.equation.sprite = minus;
+                        this.equation.color = penaltyColor;
+                        this.spriteRenderer.color = penaltyColor;
                         oneShotAudioClip.PlayClip(penaltyAudio);
                     }
                 }

@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7342851206365889042}
+  - component: {fileID: 8146824923893168408}
   - component: {fileID: 4972009475901821997}
   - component: {fileID: 6546454460182431934}
   - component: {fileID: 7694750926329957308}
@@ -21,20 +21,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7342851206365889042
-Transform:
+--- !u!224 &8146824923893168408
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2785553359774306212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.129542, y: -3.0211697, z: -19.892578}
+  m_LocalPosition: {x: 0, y: 0, z: -19.892578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -11.129542, y: -3.0211697}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4972009475901821997
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -134,8 +139,7 @@ MonoBehaviour:
   scoreAudio: {fileID: 8300000, guid: b3b8a30117adacf41a55a9b55de58fdd, type: 3}
   penaltyAudio: {fileID: 8300000, guid: b4b62a6a835f3b648927cd1b61f59c85, type: 3}
   textMesh: {fileID: 6546454460182431934}
-  StarGaige: {fileID: 7511466352871759151, guid: e3b96c2583964654d893b1e359467524,
-    type: 3}
+  starFill: {fileID: 0}
 --- !u!114 &7441987768156938299
 MonoBehaviour:
   m_ObjectHideFlags: 0

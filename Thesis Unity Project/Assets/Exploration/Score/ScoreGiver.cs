@@ -19,6 +19,8 @@ public class ScoreGiver : MonoBehaviour
     [SerializeField]
     private Vector2 offset;
     private bool giveScore = true;
+    [SerializeField]
+    private GameObject ScoreVisualStarPrefab;
     
 
     public int amount
@@ -84,13 +86,15 @@ public class ScoreGiver : MonoBehaviour
 
     private void ShowScoreVisual(int score)
     {
-        GameObject scoreVisualObject = Instantiate(scoreVisualPrefab, this.transform.position + (Vector3)offset, Quaternion.identity);
+        GameObject scoreVisualObject = Instantiate(ScoreVisualStarPrefab, this.transform.position + (Vector3)offset, Quaternion.identity);
+        
         if (scoreVisualObject != null)
         {
-            ScoreVisual scoreVisual = scoreVisualObject.GetComponent<ScoreVisual>();
-            if (scoreVisual != null)
+            ScoreVisualStar scoreVisualstar = scoreVisualObject.GetComponent<ScoreVisualStar>();
+            
+            if (scoreVisualstar != null)
             {
-                scoreVisual.ShowScore(score);
+                scoreVisualstar.ShowScore(score);
             }
         }
     }

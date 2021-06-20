@@ -31,7 +31,7 @@ public class FillStar : MonoBehaviour
             float percentage = 1.0f / ((float)MaximumScore / score);
             float starPosition = Mathf.Lerp(this.Minimum.position.x, this.Maximum.position.x, percentage);
             float Width = Mathf.Lerp(this.Minimum.sizeDelta.x, this.Maximum.sizeDelta.x, percentage);
-
+               
 
             Vector2 scaleChange = new Vector2(Width, this.rectTransform.sizeDelta.y);
             this.rectTransform.sizeDelta = scaleChange;
