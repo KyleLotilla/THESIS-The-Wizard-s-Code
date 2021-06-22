@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4113609667345424190}
   - component: {fileID: 2922625892362158455}
   - component: {fileID: 2586532627283012414}
+  - component: {fileID: 6464535818993556888}
   m_Layer: 0
   m_Name: geyser_0
   m_TagString: Untagged
@@ -123,7 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337f3c2028e256e4ab31fb6698bc6e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: -4113609667345424190}
   animator: {fileID: 2586532627283012414}
+  audioClip: {fileID: 8300000, guid: 4e0f1a1cefa49504484d1796296ad11a, type: 3}
+  oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
+    type: 3}
+  scoreGiver: {fileID: 6464535818993556888}
 --- !u!95 &2586532627283012414
 Animator:
   serializedVersion: 3
@@ -143,3 +149,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6464535818993556888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145711320261481979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28e8fade30c4b94f896e7e096858ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explorationScore: {fileID: 0}
+  _penalty: 20
+  _amount: 100
+  giveOneTime: 1
+  offset: {x: 0, y: 0}
+  ScoreVisualStarPrefab: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
+    type: 3}

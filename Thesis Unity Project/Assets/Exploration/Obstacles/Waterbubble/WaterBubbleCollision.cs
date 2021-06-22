@@ -6,7 +6,16 @@ public class WaterBubbleCollision : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
+    private Collider2D collider;
+    [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private AudioClip audioClip;
+    [SerializeField]
+    private GameObject oneShotAudioPrefab;
+    [SerializeField]
+    private ScoreGiver scoreGiver;
+
     void Start()
     {
         
@@ -18,13 +27,28 @@ public class WaterBubbleCollision : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag != "Wizard")
         {
             if (col.gameObject.tag == "Ice")
             {
                 animator.SetBool("Disappear", true);
+                scoreGiver.GiveScore();
+                GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
+                if (oneShotAudioObject != null)
+                {
+                    OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
+                    if (oneShotAudioClip != null)
+                    {
+                        oneShotAudioClip.PlayClip(audioClip);
+                    }
+                }
+                collider.enabled = false;
+            }
+            else
+            {
+                scoreGiver.PenalizeScore();
             }
         }  
     }

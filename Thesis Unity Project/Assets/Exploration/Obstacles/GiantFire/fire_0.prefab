@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3361173649227034692}
   - component: {fileID: 3361173649227034693}
   - component: {fileID: 2552912189691782800}
+  - component: {fileID: 1176674923767718987}
   m_Layer: 0
   m_Name: fire_0
   m_TagString: Untagged
@@ -123,7 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f1a98f495bbf246873b4899f6fce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 3361173649227034692}
   animator: {fileID: 2552912189691782800}
+  audioClip: {fileID: 8300000, guid: 59b7d5a8a62ccee4faa02e8bc75e6465, type: 3}
+  oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
+    type: 3}
+  scoreGiver: {fileID: 1176674923767718987}
 --- !u!95 &2552912189691782800
 Animator:
   serializedVersion: 3
@@ -143,3 +149,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1176674923767718987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3361173649227034694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28e8fade30c4b94f896e7e096858ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explorationScore: {fileID: 0}
+  _penalty: 20
+  _amount: 100
+  giveOneTime: 1
+  offset: {x: 0, y: 0}
+  ScoreVisualStarPrefab: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
+    type: 3}

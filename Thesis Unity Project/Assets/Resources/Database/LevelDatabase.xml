@@ -80,4 +80,23 @@
     <MaximumScore>1200</MaximumScore>
     <StarRequirement>4</StarRequirement>
   </Level>
+  <Level>
+    <ID>4</ID>
+    <LevelNum>6</LevelNum>
+    <WorldNum>1</WorldNum>
+    <SceneIndex>7</SceneIndex>
+    <LevelOverview>Level/Overviews/Level6</LevelOverview>
+    <Obstacles>
+      <Obstacle>
+        <ID>2</ID>
+        <Num>2</Num>
+      </Obstacle>
+      <Obstacle>
+        <ID>3</ID>
+        <Num>2</Num>
+      </Obstacle>
+    </Obstacles>
+    <MaximumScore>1100</MaximumScore>
+    <StarRequirement>5</StarRequirement>
+  </Level>
 </LevelDatabase>

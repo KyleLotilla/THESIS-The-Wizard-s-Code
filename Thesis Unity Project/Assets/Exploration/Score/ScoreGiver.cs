@@ -7,13 +7,9 @@ public class ScoreGiver : MonoBehaviour
     [SerializeField]
     private ExplorationScore explorationScore;
     [SerializeField]
-    private GameObject scoreVisualPrefab;
-    [SerializeField]
     private int _penalty;
     [SerializeField]
     private int _amount;
-    [SerializeField]
-    private int minAmount;
     [SerializeField]
     private bool giveOneTime = true;
     [SerializeField]
@@ -74,12 +70,6 @@ public class ScoreGiver : MonoBehaviour
 
     public void PenalizeScore()
     {
-        /*if (amount > minAmount)
-        {
-            amount -= penalty;
-            
-        }*/
-
         explorationScore.AddScore(-penalty);
         ShowScoreVisual(-penalty);
     }
