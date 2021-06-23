@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -189,6 +189,7 @@ MonoBehaviour:
     type: 3}
   powerOnClip: {fileID: 8300000, guid: 9b5ce997ef74c4645b8f6b63830fb4ba, type: 3}
   flyingClip: {fileID: 0}
+  collider2D: {fileID: 54011733}
 --- !u!114 &4393175517962712848
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,16 +16,14 @@ public class Result : MonoBehaviour
     private PlayerLevelProgression playerLevelProgression;
     [SerializeField]
     private ExplorationScore explorationScore;
-    /*
-    [SerializeField]
-    private MaterialInventory materialInventory;
-    [SerializeField]
-    private MaterialPickupStorage materialPickupStorage;
-    */
     [SerializeField]
     private ResultUI resultUI;
     [SerializeField]
     private SaveWriter saveWriter;
+    [SerializeField]
+    private PlayerProfile playerProfile;
+    [SerializeField]
+    private int tutorialProgression = -1;
 
 
     void Start()
@@ -41,12 +39,6 @@ public class Result : MonoBehaviour
 
     public void WinGame()
     {
-        /*
-        foreach(Material material in materialPickupStorage)
-        {
-            materialInventory.AddMaterial(material);
-        }
-        */
         bool isNewlyCompleted = false;
         Level level = levelDatabase.GetLevel(levelID);
         LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(levelID);
@@ -65,6 +57,11 @@ public class Result : MonoBehaviour
         if (explorationScore.currentScore > levelProgression.highScore)
         {
             levelProgression.highScore = explorationScore.currentScore;
+        }
+
+        if (tutorialProgression > -1)
+        {
+            playerProfile.tutorialProgression = tutorialProgression;
         }
 
         saveWriter.SaveFile();

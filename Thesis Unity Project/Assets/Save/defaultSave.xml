@@ -5,23 +5,16 @@
   <Version>1.0</Version>
   <TutorialProgression>0</TutorialProgression>
   <SpellInventory>
-    <Equipped/>
-    <Inventory/>
-  </SpellInventory>
-  <SpellCodeInventory>
     <Equipped>
       <Spell>
         <ID>2</ID>
       </Spell>
     </Equipped>
     <Inventory/>
+  </SpellInventory>
+  <SpellCodeInventory>
+    <Equipped/>
+    <Inventory/>
   </SpellCodeInventory>
-  <PlayerLevelProgression>
-    <LevelProgression>
-      <LevelID>0</LevelID>
-      <Unlocked>true</Unlocked>
-      <Completed>false</Completed>
-      <HighScore>0</HighScore>
-    </LevelProgression>
-  </PlayerLevelProgression>
+  <PlayerLevelProgression/>
 </Save>

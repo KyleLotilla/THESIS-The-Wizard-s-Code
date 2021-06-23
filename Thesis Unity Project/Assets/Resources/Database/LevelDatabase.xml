@@ -3,7 +3,7 @@
       <ID>0</ID>
       <LevelNum>1</LevelNum>
 		  <WorldNum>1</WorldNum>
-		  <SceneIndex>3</SceneIndex>
+		  <SceneIndex>9</SceneIndex>
       <LevelOverview>Level/Overviews/level1</LevelOverview>
         <Obstacles>
             <Obstacle>
@@ -21,7 +21,7 @@
     <ID>1</ID>
     <LevelNum>2</LevelNum>
 		<WorldNum>1</WorldNum>
-		<SceneIndex>4</SceneIndex>
+		<SceneIndex>10</SceneIndex>
     <LevelOverview>Level/Overviews/level2</LevelOverview>
     <Obstacles>
       <Obstacle>
@@ -43,7 +43,7 @@
     <ID>2</ID>
     <LevelNum>3</LevelNum>
     <WorldNum>1</WorldNum>
-    <SceneIndex>5</SceneIndex>
+    <SceneIndex>11</SceneIndex>
     <LevelOverview>Level/Overviews/level3</LevelOverview>
     <Obstacles>
       <Obstacle>
@@ -65,7 +65,7 @@
     <ID>3</ID>
     <LevelNum>4</LevelNum>
     <WorldNum>1</WorldNum>
-    <SceneIndex>6</SceneIndex>
+    <SceneIndex>12</SceneIndex>
     <LevelOverview>Level/Overviews/Level4</LevelOverview>
     <Obstacles>
       <Obstacle>
@@ -84,7 +84,7 @@
     <ID>4</ID>
     <LevelNum>6</LevelNum>
     <WorldNum>1</WorldNum>
-    <SceneIndex>7</SceneIndex>
+    <SceneIndex>13</SceneIndex>
     <LevelOverview>Level/Overviews/Level6</LevelOverview>
     <Obstacles>
       <Obstacle>

@@ -34,18 +34,6 @@ public class LevelSelectButton : MonoBehaviour
             _level = value;
             text.text = _level.worldNum + "-" + _level.levelNum;
             levelOverviewIcon.sprite = _level.levelOverview;
-            
-            /*
-            LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(_level.levelID);
-            if (levelProgression == null)
-            {
-                LockLevel();
-            }
-            else if (!levelProgression.isUnlocked)
-            {
-                LockLevel();
-            }
-            */
         }
     }
     // Start is called before the first frame update
@@ -82,5 +70,13 @@ public class LevelSelectButton : MonoBehaviour
         iconColor.a = 50;
         levelOverviewIcon.color = iconColor;
         button.interactable = false;
+    }
+
+    public void UnlockForTutorial()
+    {
+        Color iconColor = levelOverviewIcon.color;
+        iconColor.a = 255;
+        levelOverviewIcon.color = iconColor;
+        button.interactable = true;
     }
 }

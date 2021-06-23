@@ -24,6 +24,9 @@ public class RobotCollision : MonoBehaviour
     [SerializeField]
     private AudioClip flyingClip;
 
+    [SerializeField]
+    private Collider2D collider2D;
+
     RobotMovement robotmovement;
 
     void Start()
@@ -54,6 +57,7 @@ public class RobotCollision : MonoBehaviour
                         oneShotAudioClip.PlayClip(powerOnClip);
                     }
                 }
+                collider2D.enabled = false;
             }
             else
             {

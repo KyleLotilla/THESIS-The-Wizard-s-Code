@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class SpellTutorial : MonoBehaviour
 {
+    /*
     [SerializeField]
     private ShowDialogue showDialogue;
+    */
     [SerializeField]
-    private Button levelSelectButton;
+    private LevelSelectMenu levelSelectMenu;
     [SerializeField]
-    private Button spellButton;
+    private Button backButton;
     [SerializeField]
     private SpellEquipmentMenu spellEquipmentMenu;
     private List<SlotSpace> spaces;
@@ -36,9 +38,9 @@ public class SpellTutorial : MonoBehaviour
         {
             space.OnSlotChange -= OnSlotChange;
         }
-        showDialogue.Show();
-        spellButton.interactable = false;
-        levelSelectButton.interactable = true;
+        //showDialogue.Show();
+        levelSelectMenu.UnlockTutorialLevel();
+        backButton.interactable = true;
     }
 
     // Update is called once per frame

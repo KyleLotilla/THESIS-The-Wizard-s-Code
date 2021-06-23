@@ -21,30 +21,13 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
     [SerializeField]
     private bool isTutorial = false;
     [SerializeField]
-    private int nextTutorialLevel = 1;
+    private int nextTutorialLevelID = 1;
+    [SerializeField]
+    private LevelSelectButton nextTutorialLevelButton;
     [SerializeField]
     private int totalStars = 0;
     void Start()
     {
-        /*
-        foreach (Level level in levelDatabase)
-        {
-            GameObject levelSelectButtonObject = Instantiate(levelSelectButtonPrefab, this.transform);
-            if (levelSelectButtonObject != null)
-            {
-                LevelSelectButton levelSelectButton = levelSelectButtonObject.GetComponent<LevelSelectButton>();
-                if (levelSelectButton != null)
-                {
-                    levelSelectButton.level = level;
-                    levelSelectButton.OnLevelSelected += OnLevelSelected;
-                    if (isTutorial && level.levelID != nextTutorialLevel)
-                    {
-                        levelSelectButton.LockForTutorial();
-                    }
-                }
-            }
-        }
-        */
         CalculateTotalStars();
         items = levelDatabase;
         RefreshMenu();
@@ -63,9 +46,13 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
         {
             levelSelectButton.level = item;
             levelSelectButton.OnLevelSelected += OnLevelSelected;
-            if (isTutorial && item.levelID != nextTutorialLevel)
+            if (isTutorial)
             {
                 levelSelectButton.LockForTutorial();
+                if (item.levelID == nextTutorialLevelID)
+                {
+                    nextTutorialLevelButton = levelSelectButton;
+                }
             }
             else if (totalStars < item.starRequirement)
             {
@@ -91,5 +78,10 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
                 totalStars += (int) (Mathf.Lerp(0, 3, (float) levelProgression.highScore / (float) level.maximumScore));
             }
         }
+    }
+
+    public void UnlockTutorialLevel()
+    {
+        nextTutorialLevelButton.UnlockForTutorial();
     }
 }

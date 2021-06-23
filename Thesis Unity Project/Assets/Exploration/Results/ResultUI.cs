@@ -22,12 +22,7 @@ public class ResultUI : MonoBehaviour
     private Text highScoreText;
     [SerializeField]
     private GameObject newHighScoreText;
-    /*
-    [SerializeField]
-    private MaterialPickupStorage materialPickupStorage;
-    [SerializeField]
-    private MaterialsPanel materialsPanel;
-    */
+
     [SerializeField]
     private SpellsInfoPanel spellsInfoPanel;
 
@@ -62,26 +57,6 @@ public class ResultUI : MonoBehaviour
 
     public void ShowResults(List<int> unlockedSpellsIDs)
     {
-        /*
-        Dictionary<int, int> materialIndices = new Dictionary<int, int>();
-        List<int> materialIDs = new List<int>();
-        List<int> numMaterials = new List<int>();
-
-        foreach (Material material in materialPickupStorage)
-        {
-            if (materialIndices.ContainsKey(material.materialID))
-            {
-                numMaterials[materialIndices[material.materialID]]++;
-            }
-            else
-            {
-                materialIDs.Add(material.materialID);
-                materialIndices[material.materialID] = materialIDs.Count - 1;
-                numMaterials.Add(1);
-            }
-        }
-        materialsPanel.ShowMaterials(materialIDs, numMaterials);
-        */
 
         if (unlockedSpellsIDs != null)
         {
@@ -93,13 +68,11 @@ public class ResultUI : MonoBehaviour
         ScoreFillStar.FillUpStar(score, TotalScore);
         if (score > oldHighScore)
         {
-            //highScoreText.text = score.ToString();
             newHighScoreText.SetActive(true);
             HighScoreFillStar.FillUpStar(score, TotalScore);
         }
         else
         {
-            //highScoreText.text = oldHighScore.ToString();
             HighScoreFillStar.FillUpStar(oldHighScore, TotalScore);
         }
 

@@ -10,10 +10,6 @@ public class Level
     public int sceneIndex { get; set; }
     public List<int> materials { get; set; }
     public List<int> numMaterials { get; set; }
-    /*
-    public List<int> obstacles { get; set; }
-    public List<int> numObstacles { get; set; }
-    */
     public List<ObstacleLevelInfo> obstacleLevelInfos;
     public List<int> unlockableSpellsIDs;
     public string pathToLevelOverview { get; set; }

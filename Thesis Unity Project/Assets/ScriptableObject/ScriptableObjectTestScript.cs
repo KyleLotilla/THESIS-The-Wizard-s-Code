@@ -41,7 +41,7 @@ public class ScriptableObjectTestScript : MonoBehaviour
        
         Spell electro = spellDatabase.GetSpell(3);
         spellInventory.AddSpell(electro);
-
+        /*
         SpellCode spellCode2 = new SpellCode();
         spellCode2.AddSpell(spellDatabase.GetSpell(1));
         spellCode2.AddSpell(fireBall);
@@ -55,7 +55,7 @@ public class ScriptableObjectTestScript : MonoBehaviour
         spellCode1.AddSpell(spellDatabase.GetSpell(1));
         spellCode1.name = "Fire n' Forget";
         spellCodeInventory.EquipSpellCode(spellCode1);
-
+        */
         /*
         for (int i = 0; i < 4; i++)
         {
@@ -101,12 +101,13 @@ public class ScriptableObjectTestScript : MonoBehaviour
         levelProgression.highScore = 69;
         playerLevelProgression.AddProgression(levelProgression);
         */
-
+        /*
         LevelProgression levelProgression1 = new LevelProgression();
         levelProgression1.levelID = 0;
        // levelProgression1.isUnlocked = true;
         levelProgression1.highScore = 700;
         playerLevelProgression.AddProgression(levelProgression1);
+        */
     }
 
     private void Start()

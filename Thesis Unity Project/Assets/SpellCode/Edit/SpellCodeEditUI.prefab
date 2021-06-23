@@ -327,7 +327,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8925259955459653303}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99967825
+  m_Size: 0.99997115
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -697,7 +697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00002050642}
+  m_AnchoredPosition: {x: 0, y: -0.000016698095}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8642246119043689526
@@ -723,6 +723,7 @@ MonoBehaviour:
   spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}
   moveLeftID: 0
   moveRightID: 1
+  isTutorial: 0
 --- !u!114 &8023241612526883300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +825,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.5
   m_Text: SpellCode needs at least 2 Spells
 --- !u!114 &5057120444356226984
 MonoBehaviour:
@@ -1814,6 +1815,9 @@ MonoBehaviour:
   spellLimitText: {fileID: 6057068430943176130}
   nameField: {fileID: 9175242747079352064}
   button: {fileID: 3797151000442734956}
+  isTutorial: 0
+  moveRightID: 0
+  fireballID: 0
 --- !u!1 &8512018360644381283
 GameObject:
   m_ObjectHideFlags: 0
