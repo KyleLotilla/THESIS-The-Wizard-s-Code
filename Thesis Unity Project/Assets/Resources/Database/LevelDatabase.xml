@@ -81,6 +81,29 @@
     <StarRequirement>4</StarRequirement>
   </Level>
   <Level>
+    <ID>5</ID>
+    <LevelNum>5</LevelNum>
+    <WorldNum>1</WorldNum>
+    <SceneIndex>14</SceneIndex>
+    <LevelOverview>Level/Overviews/Level5</LevelOverview>
+    <Obstacles>
+      <Obstacle>
+        <ID>2</ID>
+        <Num>2</Num>
+      </Obstacle>
+      <Obstacle>
+        <ID>1</ID>
+        <Num>2</Num>
+      </Obstacle>
+      <Obstacle>
+        <ID>3</ID>
+        <Num>1</Num>
+      </Obstacle>
+    </Obstacles>
+    <MaximumScore>1200</MaximumScore>
+    <StarRequirement>5</StarRequirement>
+  </Level>
+  <Level>
     <ID>4</ID>
     <LevelNum>6</LevelNum>
     <WorldNum>1</WorldNum>
@@ -97,6 +120,7 @@
       </Obstacle>
     </Obstacles>
     <MaximumScore>1100</MaximumScore>
-    <StarRequirement>5</StarRequirement>
+    <StarRequirement>6</StarRequirement>
   </Level>
+  
 </LevelDatabase>
