@@ -8,9 +8,9 @@
 			<Line>This is the &lt;b&gt;actions tab&lt;/b&gt;</Line>
 			<Line>Spells that you have currently equipped will spawn randomly in intervals here.</Line>
 			<Line>This is the action queue.</Line>
-			<Line>You can drag your spells from the action stack down here and execute them by pressing run.</Line>
+			<Line>You can drag your spells from the actions tab down here and execute them by pressing run.</Line>
 			<Line>Let’s try to use movement spells first.</Line>
-			<Line>Drag the move left and move right spells from the action stack down to your action queue.</Line>
+			<Line>Drag the move right spells from the action stack down to your action queue.</Line>
 			<Line>Try to go to the exclamation point in front of you using your movement spells.</Line>
 		</Lines>
 	</Dialogue>
