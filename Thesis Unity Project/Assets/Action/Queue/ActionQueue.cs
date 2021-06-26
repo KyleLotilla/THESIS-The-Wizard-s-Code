@@ -25,6 +25,9 @@ public class ActionQueue : MonoBehaviour
     [SerializeField]
     private bool isTutorial = false;
     public bool isExecuting { get; set; }
+
+    [SerializeField]
+    private Moves moves;
     // Start is called before the first frame update
     void Start()
     {
@@ -115,6 +118,7 @@ public class ActionQueue : MonoBehaviour
         {
             spellCodeQueue.gameObject.SetActive(false);
         }
+        this.moves.MoveUsed();
     }
 
     void OnSequenceExecutionEnd()

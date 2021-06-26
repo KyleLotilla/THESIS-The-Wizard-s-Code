@@ -24,6 +24,8 @@ public class Result : MonoBehaviour
     private PlayerProfile playerProfile;
     [SerializeField]
     private int tutorialProgression = -1;
+    [SerializeField]
+    private Moves moves;
 
 
     void Start()
@@ -54,9 +56,9 @@ public class Result : MonoBehaviour
             }
         }
 
-        if (explorationScore.currentScore > levelProgression.highScore)
+        if (moves.getStars() > levelProgression.highScore)
         {
-            levelProgression.highScore = explorationScore.currentScore;
+            levelProgression.highScore = moves.getStars();
         }
 
         if (tutorialProgression > -1)

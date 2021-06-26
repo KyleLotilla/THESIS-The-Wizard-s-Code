@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3361173649227034692}
   - component: {fileID: 3361173649227034693}
   - component: {fileID: 2552912189691782800}
-  - component: {fileID: 1176674923767718987}
+  - component: {fileID: -2572122397363840315}
   m_Layer: 0
   m_Name: fire_0
   m_TagString: Untagged
@@ -129,7 +129,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 59b7d5a8a62ccee4faa02e8bc75e6465, type: 3}
   oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
     type: 3}
-  scoreGiver: {fileID: 1176674923767718987}
+  scoreGiver: {fileID: 0}
 --- !u!95 &2552912189691782800
 Animator:
   serializedVersion: 3
@@ -149,7 +149,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1176674923767718987
+--- !u!114 &-2572122397363840315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explorationScore: {fileID: 0}
-  _penalty: 20
-  _amount: 100
+  _penalty: 0
+  _amount: 0
   giveOneTime: 1
   offset: {x: 0, y: 0}
   ScoreVisualStarPrefab: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,

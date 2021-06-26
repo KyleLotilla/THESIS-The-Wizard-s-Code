@@ -36,11 +36,11 @@ public class LevelInfoUI : MonoBehaviour
         LevelProgression levelProgression = playerlevelProgression.GetLevelProgression(level.levelID);
         if (levelProgression != null)
         {
-            starFill.FillUpStar(levelProgression.highScore, level.maximumScore);
+            starFill.FillUpStar(levelProgression.highScore);
         }
         else
         {
-            starFill.FillUpStar(0, level.maximumScore);
+            starFill.FillUpStar(0);
         }
         if (!isTutorial)
         {

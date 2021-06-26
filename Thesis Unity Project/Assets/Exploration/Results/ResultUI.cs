@@ -37,6 +37,9 @@ public class ResultUI : MonoBehaviour
     [SerializeField]
     private int TotalScore;
 
+    [SerializeField]
+    private Moves moves;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,17 +66,17 @@ public class ResultUI : MonoBehaviour
             spellsInfoPanel.ShowSpells(unlockedSpellsIDs);
         }
 
-        int score = explorationScore.currentScore;
+        int score = moves.getStars();
         scoreText.text = score.ToString();
-        ScoreFillStar.FillUpStar(score, TotalScore);
+        ScoreFillStar.FillUpStar(score);
         if (score > oldHighScore)
         {
             newHighScoreText.SetActive(true);
-            HighScoreFillStar.FillUpStar(score, TotalScore);
+            HighScoreFillStar.FillUpStar(score);
         }
         else
         {
-            HighScoreFillStar.FillUpStar(oldHighScore, TotalScore);
+            HighScoreFillStar.FillUpStar(oldHighScore);
         }
 
         this.gameObject.SetActive(true);
