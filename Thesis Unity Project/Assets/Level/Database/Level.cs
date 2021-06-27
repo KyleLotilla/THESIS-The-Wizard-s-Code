@@ -16,4 +16,6 @@ public class Level
     public Sprite levelOverview { get; set; }
     public int maximumScore { get; set; }
     public int starRequirement { get; set; }
+    public int twoStarRequirement { get; set; }
+    public int threeStarRequirement { get; set; }
 }

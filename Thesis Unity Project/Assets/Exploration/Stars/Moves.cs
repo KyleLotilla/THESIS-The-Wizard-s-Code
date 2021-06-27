@@ -7,9 +7,9 @@ public class Moves : MonoBehaviour
 {
     private int numMoves = 0;
     [SerializeField]
-    private int twoStarReq;
+    public int twoStarReq;
     [SerializeField]
-    private int threeStarReq;
+    public int threeStarReq;
     [SerializeField]
     private Text moveText;
 

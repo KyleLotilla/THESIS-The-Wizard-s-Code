@@ -127,6 +127,17 @@ public class LevelDatabase : ScriptableObject, IEnumerable<Level>
                 level.starRequirement = int.Parse(element.Element("StarRequirement").Value);
             }
 
+            if (element.Elements("twoStarRequirement").Any())
+            {
+                level.twoStarRequirement = int.Parse(element.Element("twoStarRequirement").Value);
+            }
+
+            if (element.Elements("threeStarRequirement").Any())
+            {
+                level.threeStarRequirement = int.Parse(element.Element("threeStarRequirement").Value);
+            }
+      
+
             levels.Add(level);
             levelIndices[level.levelID] = levels.Count - 1;
         }
