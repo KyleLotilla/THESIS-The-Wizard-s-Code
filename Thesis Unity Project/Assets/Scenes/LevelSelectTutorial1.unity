@@ -380,6 +380,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1542262089687852260, guid: 7fbd83b478251864c813f24305cecf69,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2035333617992326975, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -523,7 +528,7 @@ PrefabInstance:
     - target: {fileID: 3789381552762425933, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4245052104784488442, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}
@@ -559,6 +564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184929754941684292, guid: 7fbd83b478251864c813f24305cecf69,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -95
       objectReference: {fileID: 0}
     - target: {fileID: 5523224525779060823, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}
@@ -956,6 +966,11 @@ PrefabInstance:
       value: 'Quit
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772901917778455298, guid: 7fbd83b478251864c813f24305cecf69,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 7543210387636415603, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}
