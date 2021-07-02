@@ -58,7 +58,7 @@ public class ScoreGiver : MonoBehaviour
     {
         if (giveScore)
         {
-            explorationScore.AddScore(amount);
+            //explorationScore.AddScore(amount);
             ShowScoreVisual(amount);
             
             if (giveOneTime)

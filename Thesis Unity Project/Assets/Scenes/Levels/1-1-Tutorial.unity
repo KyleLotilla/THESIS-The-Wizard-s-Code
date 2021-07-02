@@ -10168,6 +10168,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 646204042354671141, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 11400000, guid: ef8a46295ed920c4db8a50bf1b5137ba,
+        type: 2}
+    - target: {fileID: 646204042354671141, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
       propertyPath: twoStarReq
       value: 20
       objectReference: {fileID: 0}
@@ -10186,6 +10192,12 @@ PrefabInstance:
       propertyPath: ThreeStarText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 646204042354671141, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: leveldatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: ef8a46295ed920c4db8a50bf1b5137ba,
+        type: 2}
     - target: {fileID: 648751954258744594, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_Color.b

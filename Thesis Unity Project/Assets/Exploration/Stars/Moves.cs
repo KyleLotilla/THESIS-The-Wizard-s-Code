@@ -7,16 +7,18 @@ public class Moves : MonoBehaviour
 {
     private int numMoves = 0;
     [SerializeField]
-    public int twoStarReq;
-    [SerializeField]
-    public int threeStarReq;
+    private int LevelID;
     [SerializeField]
     private Text moveText;
+    [SerializeField]
+    private LevelDatabase leveldatabase;
+    private Level level;
 
     // Start is called before the first frame update
     void Start()
     {
         this.moveText.text = this.numMoves.ToString();
+        this.level = this.leveldatabase.GetLevel(LevelID);
     }
 
     // Update is called once per frame
@@ -33,11 +35,11 @@ public class Moves : MonoBehaviour
 
     public int getStars()
     {
-        if(this.numMoves <= this.threeStarReq)
+        if(this.numMoves <= this.level.threeStarRequirement)
         {
             return 3;
         }
-        else if(this.numMoves > this.threeStarReq && this.numMoves <= this.twoStarReq)
+        else if(this.numMoves > this.level.threeStarRequirement && this.numMoves <= this.level.twoStarRequirement)
         {
             return 2;
         }
