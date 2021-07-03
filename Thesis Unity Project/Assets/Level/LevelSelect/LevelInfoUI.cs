@@ -21,6 +21,8 @@ public class LevelInfoUI : MonoBehaviour
     private PlayerLevelProgression playerlevelProgression;
     [SerializeField]
     private FillStar starFill;
+    [SerializeField]
+    private StarRequirement starRequirement;
 
     void Start()
     {
@@ -34,13 +36,14 @@ public class LevelInfoUI : MonoBehaviour
         spellsInfoPanel.ShowSpells(level.unlockableSpellsIDs);
         levelOverview.sprite = level.levelOverview;
         LevelProgression levelProgression = playerlevelProgression.GetLevelProgression(level.levelID);
+        starRequirement.Stars(level.twoStarRequirement, level.threeStarRequirement);
         if (levelProgression != null)
         {
-            starFill.FillUpStar(levelProgression.highScore, level.maximumScore);
+            starFill.FillUpStar(levelProgression.highScore);
         }
         else
         {
-            starFill.FillUpStar(0, level.maximumScore);
+            starFill.FillUpStar(0);
         }
         if (!isTutorial)
         {

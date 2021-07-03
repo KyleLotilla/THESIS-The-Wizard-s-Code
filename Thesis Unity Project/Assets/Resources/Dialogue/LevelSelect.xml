@@ -26,10 +26,11 @@
 		<Line>This allows us to plan our approach before heading out!</Line>
 		<Line>Remember to practice &lt;b&gt;problem decomposition.&lt;/b&gt;</Line>
 		<Line>Break down the stage into smaller problems and identify which spells to bring in order to accomplish the stage.</Line>
-		<Line>Your performance in a stage is denoted by stars, up to a maximum of 3 stars.</Line>
-		<Line>On some stages, earning a certain amount of stars will reward you with a new spell.</Line>
-		<Line>You can choose to revisit previous stages to earn more stars and unlock new spells.</Line>
-		<Line>You can also view how many stars you have earned on the stages you have played.</Line>
+		<Line>Your performance in a stage is denoted by stars.</Line>
+		<Line>The number of stars that you receive depends on the number of moves that you perform in the stage.</Line>
+		<Line>To earn the maximum number of stars, use your spells effectively throughout the stage!</Line>
+		<Line>You can also choose to revisit previous stages to earn more stars.</Line>
+		<Line>Lastly, you can view how many stars you have earned on the stages you have played.</Line>
 		<Line>Take note that unlocking stages also require attaining a certain amount of stars on the previous stage.</Line>
 		<Line>The number of stars needed to unlock the next stage will be displayed here as well.</Line>
 		<Line>Enough talk for now. I’m raring to go on our next expedition! Whenever you're ready, let’s head on to the next stage!</Line>

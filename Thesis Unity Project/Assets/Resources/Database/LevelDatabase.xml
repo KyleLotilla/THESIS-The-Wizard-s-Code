@@ -16,6 +16,8 @@
         </UnlockableSpells>
       <MaximumScore>1000</MaximumScore>
       <StarRequirement>0</StarRequirement>
+      <twoStarRequirement>10</twoStarRequirement>
+      <threeStarRequirement>9</threeStarRequirement>
     </Level>
 	<Level>
     <ID>1</ID>
@@ -38,6 +40,8 @@
       </UnlockableSpells>
     <MaximumScore>1000</MaximumScore>
     <StarRequirement>2</StarRequirement>
+    <twoStarRequirement>20</twoStarRequirement>
+    <threeStarRequirement>9</threeStarRequirement>
     </Level>
   <Level>
     <ID>2</ID>
@@ -60,6 +64,8 @@
     </UnlockableSpells>
     <MaximumScore>1000</MaximumScore>
     <StarRequirement>3</StarRequirement>
+    <twoStarRequirement>20</twoStarRequirement>
+    <threeStarRequirement>9</threeStarRequirement>
   </Level>
   <Level>
     <ID>3</ID>
@@ -79,6 +85,8 @@
     </Obstacles>
     <MaximumScore>1200</MaximumScore>
     <StarRequirement>4</StarRequirement>
+    <twoStarRequirement>20</twoStarRequirement>
+    <threeStarRequirement>9</threeStarRequirement>
   </Level>
   <Level>
     <ID>4</ID>
@@ -102,6 +110,8 @@
     </Obstacles>
     <MaximumScore>1200</MaximumScore>
     <StarRequirement>5</StarRequirement>
+    <twoStarRequirement>20</twoStarRequirement>
+    <threeStarRequirement>9</threeStarRequirement>
   </Level>
   <Level>
     <ID>5</ID>
@@ -121,6 +131,8 @@
     </Obstacles>
     <MaximumScore>1100</MaximumScore>
     <StarRequirement>6</StarRequirement>
+    <twoStarRequirement>20</twoStarRequirement>
+    <threeStarRequirement>9</threeStarRequirement>
   </Level>
 	<Level>
 		<ID>6</ID>
@@ -140,6 +152,8 @@
 		</Obstacles>
 		<MaximumScore>1100</MaximumScore>
 		<StarRequirement>6</StarRequirement>
+    <twoStarRequirement>20</twoStarRequirement>
+    <threeStarRequirement>9</threeStarRequirement>
 	</Level>
   
 </LevelDatabase>
