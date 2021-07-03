@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1272204886188da40aa83a503e51e2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isMovement: 0
   offset: {x: 1.5, y: 0, z: 0}
   projectilePrefab: {fileID: 8029989075416608700, guid: eff607baa275f23439692f5705963706,
+    type: 3}
+  audioClip: {fileID: 8300000, guid: 9a1de8bdd0b09344cb8ab6a52579bebe, type: 3}
+  oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
     type: 3}

@@ -46,6 +46,7 @@ public class Result : MonoBehaviour
         {
             isNewlyCompleted = true;
             levelProgression = new LevelProgression();
+            levelProgression.levelID = levelID;
             levelProgression.highScore = 0;
             playerLevelProgression.AddProgression(levelProgression);
             foreach (int spellID in level.unlockableSpellsIDs)

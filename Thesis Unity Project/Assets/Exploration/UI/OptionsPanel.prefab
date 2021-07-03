@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.39}
+  m_AnchoredPosition: {x: 0, y: -1.3875}
   m_SizeDelta: {x: 0, y: -2.7749634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1813278187821773832
@@ -77,7 +77,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: 'Level Select
+
+'
 --- !u!1 &1813278189159031087
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,8 +229,9 @@ GameObject:
   - component: {fileID: 1813278189291907130}
   - component: {fileID: 1813278189291907131}
   - component: {fileID: 1813278189291907124}
+  - component: {fileID: 282676907593444357}
   m_Layer: 5
-  m_Name: Main Menu Button
+  m_Name: Level Select Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,8 +254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 64.2, y: -15}
-  m_SizeDelta: {x: 114.56735, y: 24.949951}
+  m_AnchoredPosition: {x: 88, y: -15}
+  m_SizeDelta: {x: 162.20737, y: 24.949951}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1813278189291907130
 CanvasRenderer:
@@ -333,7 +336,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1813278189291907131}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 282676907593444357}
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &282676907593444357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813278189291907126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4a5538a4d009042bd67ca2aea1c616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 2
 --- !u!1 &2668669168308414263
 GameObject:
   m_ObjectHideFlags: 0
