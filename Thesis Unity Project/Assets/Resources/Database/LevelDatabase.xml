@@ -16,8 +16,8 @@
         </UnlockableSpells>
       <MaximumScore>1000</MaximumScore>
       <StarRequirement>0</StarRequirement>
-      <twoStarRequirement>10</twoStarRequirement>
-      <threeStarRequirement>9</threeStarRequirement>
+      <twoStarRequirement>18</twoStarRequirement>
+      <threeStarRequirement>16</threeStarRequirement>
     </Level>
 	<Level>
     <ID>1</ID>
@@ -40,8 +40,8 @@
       </UnlockableSpells>
     <MaximumScore>1000</MaximumScore>
     <StarRequirement>2</StarRequirement>
-    <twoStarRequirement>20</twoStarRequirement>
-    <threeStarRequirement>9</threeStarRequirement>
+    <twoStarRequirement>22</twoStarRequirement>
+    <threeStarRequirement>20</threeStarRequirement>
     </Level>
   <Level>
     <ID>2</ID>

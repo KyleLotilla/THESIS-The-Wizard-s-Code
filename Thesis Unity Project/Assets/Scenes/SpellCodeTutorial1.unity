@@ -1995,6 +1995,7 @@ MonoBehaviour:
   - {fileID: 1311213901}
   - {fileID: 1380061796}
   currentPage: 0
+  previousPage: -1
 --- !u!1 &842513392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2678,7 @@ MonoBehaviour:
   - {fileID: 296431443}
   - {fileID: 1335301665}
   currentPage: 0
+  previousPage: -1
 --- !u!114 &1011562139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3493,6 +3495,7 @@ MonoBehaviour:
   - {fileID: 1564343619}
   - {fileID: 1001020822}
   currentPage: 0
+  previousPage: -1
 --- !u!114 &1383463149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3832,6 +3835,7 @@ MonoBehaviour:
   - {fileID: 1696471270}
   - {fileID: 1519751321}
   currentPage: 1
+  previousPage: -1
 --- !u!114 &1516189485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5803,6 +5807,7 @@ MonoBehaviour:
   - {fileID: 934965334}
   - {fileID: 1078208711}
   currentPage: 2
+  previousPage: -1
 --- !u!1 &2112476122
 GameObject:
   m_ObjectHideFlags: 0
@@ -5958,6 +5963,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 244224677967585601, guid: 51c9c68d8ccd149498c919cda607194c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 385835985877339409, guid: 51c9c68d8ccd149498c919cda607194c,
         type: 3}
       propertyPath: isTutorial
