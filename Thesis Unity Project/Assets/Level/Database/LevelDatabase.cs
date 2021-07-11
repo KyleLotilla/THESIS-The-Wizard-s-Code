@@ -57,38 +57,6 @@ public class LevelDatabase : ScriptableObject, IEnumerable<Level>
                 level.pathToLevelOverview = element.Element("LevelOverview").Value;
                 level.levelOverview = Resources.Load<Sprite>(level.pathToLevelOverview);
             }
-            /*
-            level.materials = new List<int>();
-            level.numMaterials = new List<int>();
-            if (element.Elements("Materials").Any())
-            {
-                XElement materials = element.Element("Materials");
-                foreach (XElement material in materials.Elements())
-                {
-                    if (material.Elements("ID").Any() && material.Elements("Num").Any())
-                    {
-                        level.materials.Add(int.Parse(material.Element("ID").Value));
-                        level.numMaterials.Add(int.Parse(material.Element("Num").Value));
-                    }
-                }
-            }
-            */
-            /*
-            level.obstacles = new List<int>();
-            level.numObstacles = new List<int>();
-            if (element.Elements("Obstacles").Any())
-            {
-                XElement obstacles = element.Element("Obstacles");
-                foreach (XElement obstacle in obstacles.Elements())
-                {
-                    if (obstacle.Elements("ID").Any() && obstacle.Elements("Num").Any())
-                    {
-                        level.obstacles.Add(int.Parse(obstacle.Element("ID").Value));
-                        level.numObstacles.Add(int.Parse(obstacle.Element("Num").Value));
-                    }
-                }
-            }
-            */
 
             level.obstacleLevelInfos = new List<ObstacleLevelInfo>();
             if (element.Elements("Obstacles").Any())
@@ -122,19 +90,19 @@ public class LevelDatabase : ScriptableObject, IEnumerable<Level>
                 level.maximumScore = int.Parse(element.Element("MaximumScore").Value);
             }
 
-            if (element.Elements("StarRequirement").Any())
+            if (element.Elements("StarUnlockRequirement").Any())
             {
-                level.starRequirement = int.Parse(element.Element("StarRequirement").Value);
+                level.starUnlockRequirement = int.Parse(element.Element("StarUnlockRequirement").Value);
             }
 
-            if (element.Elements("twoStarRequirement").Any())
+            if (element.Elements("TwoStarRequirement").Any())
             {
-                level.twoStarRequirement = int.Parse(element.Element("twoStarRequirement").Value);
+                level.twoStarRequirement = int.Parse(element.Element("TwoStarRequirement").Value);
             }
 
-            if (element.Elements("threeStarRequirement").Any())
+            if (element.Elements("ThreeStarRequirement").Any())
             {
-                level.threeStarRequirement = int.Parse(element.Element("threeStarRequirement").Value);
+                level.threeStarRequirement = int.Parse(element.Element("ThreeStarRequirement").Value);
             }
       
 

@@ -13,8 +13,10 @@ public class GiantFireCollision : MonoBehaviour
     private AudioClip audioClip;
     [SerializeField]
     private GameObject oneShotAudioPrefab;
+    /*
     [SerializeField]
     private ScoreGiver scoreGiver;
+    */
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class GiantFireCollision : MonoBehaviour
             if (col.gameObject.tag == "Water")
             {
                 animator.SetBool("Fading", true);
-                scoreGiver.GiveScore();
+                //scoreGiver.GiveScore();
                 GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
                 if (oneShotAudioObject != null)
                 {
@@ -46,10 +48,12 @@ public class GiantFireCollision : MonoBehaviour
                 }
                 collider.enabled = false;
             }
+            /*
             else
             {
                 scoreGiver.PenalizeScore();
             }
+            */
 
         }
     }

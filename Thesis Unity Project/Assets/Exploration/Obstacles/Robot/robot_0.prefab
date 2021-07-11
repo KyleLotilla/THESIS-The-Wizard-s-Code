@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 54011737}
   - component: {fileID: 54011735}
   - component: {fileID: 54011736}
-  - component: {fileID: 4393175517962712848}
   m_Layer: 0
   m_Name: robot_0
   m_TagString: Untagged
@@ -184,28 +183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flyingSpeed: 2
   animator: {fileID: 54011737}
-  scoreGiver: {fileID: 4393175517962712848}
   oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
     type: 3}
   powerOnClip: {fileID: 8300000, guid: 9b5ce997ef74c4645b8f6b63830fb4ba, type: 3}
   flyingClip: {fileID: 0}
   collider2D: {fileID: 54011733}
---- !u!114 &4393175517962712848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8204686937824286065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28e8fade30c4b94f896e7e096858ba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explorationScore: {fileID: 0}
-  _penalty: 20
-  _amount: 100
-  giveOneTime: 1
-  offset: {x: -1.7, y: 4}
-  ScoreVisualStarPrefab: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
-    type: 3}

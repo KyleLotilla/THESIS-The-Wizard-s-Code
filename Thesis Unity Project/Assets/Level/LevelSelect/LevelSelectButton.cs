@@ -60,7 +60,7 @@ public class LevelSelectButton : MonoBehaviour
         levelOverviewIcon.color = iconColor;
         //lockIcon.SetActive(true);
         //minimumReq.SetActive(true);
-        minimumReq.text = "Stars Required:" + _level.starRequirement;
+        minimumReq.text = "Stars Required:" + _level.starUnlockRequirement;
         button.interactable = false;
     }
 

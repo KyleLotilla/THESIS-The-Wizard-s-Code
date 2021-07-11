@@ -12,8 +12,10 @@ public class RobotCollision : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    /*
     [SerializeField]
     private ScoreGiver scoreGiver;
+    */
 
     [SerializeField]
     private GameObject oneShotAudioPrefab;
@@ -46,7 +48,7 @@ public class RobotCollision : MonoBehaviour
         {
             if (col.gameObject.tag == "Lightning")
             {
-                scoreGiver.GiveScore();
+                //scoreGiver.GiveScore();
                 animator.SetBool("On", true);
                 GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
                 if (oneShotAudioObject != null)
@@ -59,10 +61,12 @@ public class RobotCollision : MonoBehaviour
                 }
                 collider2D.enabled = false;
             }
+            /*
             else
             {
                 scoreGiver.PenalizeScore();
             }
+            */
         }
     }
 

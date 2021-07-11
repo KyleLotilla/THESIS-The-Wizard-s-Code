@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3033642671592210626}
   - component: {fileID: 3033642671592210625}
   - component: {fileID: -3368515681234201635}
-  - component: {fileID: 2249152899631419178}
   m_Layer: 0
   m_Name: ice
   m_TagString: Untagged
@@ -102,7 +101,6 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 1c7e0993ca1bc5347be922863ea9d3d5, type: 3}
   oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
     type: 3}
-  scoreGiver: {fileID: 2249152899631419178}
 --- !u!61 &3033642671592210625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,25 +146,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2249152899631419178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3033642671592210624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28e8fade30c4b94f896e7e096858ba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explorationScore: {fileID: 0}
-  scoreVisualPrefab: {fileID: 2785553359774306212, guid: 6d1a6ab79343cc140901cee395d8064a,
-    type: 3}
-  _penalty: 10
-  _amount: 100
-  minAmount: 50
-  giveOneTime: 1
-  offset: {x: -1.5, y: 2.5}
-  ScoreVisualStarPrefab: {fileID: 2785553359774306212, guid: 3b3685d314a76d04683390de58cc2471,
-    type: 3}

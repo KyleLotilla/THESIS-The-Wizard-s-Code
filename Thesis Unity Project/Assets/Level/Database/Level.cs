@@ -15,7 +15,7 @@ public class Level
     public string pathToLevelOverview { get; set; }
     public Sprite levelOverview { get; set; }
     public int maximumScore { get; set; }
-    public int starRequirement { get; set; }
+    public int starUnlockRequirement { get; set; }
     public int twoStarRequirement { get; set; }
     public int threeStarRequirement { get; set; }
 }

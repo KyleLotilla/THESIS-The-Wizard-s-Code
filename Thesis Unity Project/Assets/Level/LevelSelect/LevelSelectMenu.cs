@@ -54,7 +54,7 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
                     nextTutorialLevelButton = levelSelectButton;
                 }
             }
-            else if (totalStars < item.starRequirement)
+            else if (totalStars < item.starUnlockRequirement)
             {
                 levelSelectButton.LockLevel();
             }
@@ -72,11 +72,15 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
         totalStars = 0;
         foreach (LevelProgression levelProgression in playerLevelProgression)
         {
+            /*
             Level level = levelDatabase.GetLevel(levelProgression.levelID);
             if (level != null)
             {
+                
                 totalStars += (int) (Mathf.Lerp(0, 3, (float) levelProgression.highScore / (float) level.maximumScore));
             }
+            */
+            totalStars += levelProgression.highScore;
         }
     }
 

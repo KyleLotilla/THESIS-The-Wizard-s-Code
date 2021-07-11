@@ -8167,6 +8167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 646204042354671141, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
+      propertyPath: LevelID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 646204042354671141, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
       propertyPath: twoStarReq
       value: 22
       objectReference: {fileID: 0}
@@ -8178,7 +8183,7 @@ PrefabInstance:
     - target: {fileID: 649482592371409950, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: levelID
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 649482592371409950, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -8199,36 +8204,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910424002522922241, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 910424002522922241, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 910424002522922241, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2041011819}
-    - target: {fileID: 910424002522922241, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 910424002522922241, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Load
-      objectReference: {fileID: 0}
-    - target: {fileID: 910424002522922241, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 910424002522922243, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -8735,11 +8710,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crafting
       objectReference: {fileID: 0}
-    - target: {fileID: 7451575449323162071, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: index
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7722217054673991784, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: moveLeftID
@@ -8763,7 +8733,7 @@ PrefabInstance:
     - target: {fileID: 8218275116696289186, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: levelID
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8625086611296472807, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -8778,25 +8748,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5029262596966184209, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9b5433f38caceb40b2baac38781d4f1, type: 3}
---- !u!1 &2041011818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 910424002522922243, guid: d9b5433f38caceb40b2baac38781d4f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2041011817}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2041011819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041011818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf4a5538a4d009042bd67ca2aea1c616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 1
 --- !u!114 &2041011824 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2964722321430044897, guid: d9b5433f38caceb40b2baac38781d4f1,

@@ -12,8 +12,10 @@ public class IceblockCollision : MonoBehaviour
     private AudioClip audioClip;
     [SerializeField]
     private GameObject oneShotAudioPrefab;
+    /*
     [SerializeField]
     private ScoreGiver scoreGiver;
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public class IceblockCollision : MonoBehaviour
             if (col.gameObject.tag == "Fire")
             {
                 animator.SetBool("melting", true);
-                scoreGiver.GiveScore();
+                //scoreGiver.GiveScore();
                 GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
                 if (oneShotAudioObject != null)
                 {
@@ -46,10 +48,12 @@ public class IceblockCollision : MonoBehaviour
                 }
                 collider.enabled = false;
             }
+            /*
             else
             {
                 scoreGiver.PenalizeScore();
             }
+            */
             
         }  
     }
