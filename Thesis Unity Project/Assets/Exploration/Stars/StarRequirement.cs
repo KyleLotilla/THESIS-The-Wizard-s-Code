@@ -24,7 +24,7 @@ public class StarRequirement : MonoBehaviour
 
     public void Stars(int twoStars, int threeStars)
     {
-        this.TwoStarText.text = "Completed in less than " + (twoStars + 1).ToString() + " moves";
-        this.ThreeStarText.text = "Completed in less than " + (threeStars + 1).ToString() + " moves";
+        this.TwoStarText.text = "Completed the stage in " + (twoStars).ToString() + " moves or less";
+        this.ThreeStarText.text = "Completed the stage in " + (threeStars).ToString() + " moves or less";
     }
 }
