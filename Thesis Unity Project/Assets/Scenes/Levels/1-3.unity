@@ -8627,21 +8627,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7722217054673991784, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: moveLeftID
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722217054673991784, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: isTutorialSpellCode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722217054673991784, guid: d9b5433f38caceb40b2baac38781d4f1,
-        type: 3}
-      propertyPath: isTutorialMovementOnly
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8017375450853250939, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,9 +10,7 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
     [SerializeField]
     private SpellDatabase spellDatabase;
     [SerializeField]
-    private int moveLeftID;
-    [SerializeField]
-    private int moveRightID;
+    private bool canAddMoveLeft;
     [SerializeField]
     private bool isTutorial = false;
     // Start is called before the first frame update
@@ -26,12 +24,15 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
         if (!isTutorial)
         {
             List<Spell> spells = spellInventory.fullInventory.ToList();
-            Spell moveLeftSpell = spellDatabase.GetSpell(moveLeftID);
-            if (moveLeftSpell != null)
+            if (canAddMoveLeft)
             {
-                spells.Insert(0, moveLeftSpell);
+                Spell moveLeftSpell = spellDatabase.GetMoveLeft();
+                if (moveLeftSpell != null)
+                {
+                    spells.Insert(0, moveLeftSpell);
+                }
             }
-            Spell moveRightSpell = spellDatabase.GetSpell(moveRightID);
+            Spell moveRightSpell = spellDatabase.GetMoveRight();
             if (moveRightSpell != null)
             {
                 spells.Insert(1, moveRightSpell);
@@ -41,7 +42,7 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
         else
         {
             List<Spell> spells = new List<Spell>();
-            Spell moveRightSpell = spellDatabase.GetSpell(moveRightID);
+            Spell moveRightSpell = spellDatabase.GetMoveRight();
             if (moveRightSpell != null)
             {
                 spells.Add(moveRightSpell);

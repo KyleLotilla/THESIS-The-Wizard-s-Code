@@ -32,6 +32,15 @@ public class SpellDatabase : ScriptableObject
         }
     }
 
+    [SerializeField]
+    private PlayerProfile playerProfile;
+
+    [SerializeField]
+    private Sprite moveLeftFemaleIcon;
+
+    [SerializeField]
+    private Sprite moveRightFemaleIcon;
+
     void OnEnable()
     {
         if (spells != null)
@@ -89,7 +98,6 @@ public class SpellDatabase : ScriptableObject
             Spell spell = spells[id];
             Spell spellCopy = new Spell();
             spellCopy.spellID = spell.spellID;
-            //spellCopy.instanceID = Guid.NewGuid();
             spellCopy.name = spell.name;
             spellCopy.description = spell.description;
             spellCopy.icon = spell.icon;
@@ -103,26 +111,37 @@ public class SpellDatabase : ScriptableObject
         }
     }
 
-    /*
-    public Spell GetSpell(int id, Guid instanceID)
+    public Spell GetMoveLeft()
     {
-        if (spells.ContainsKey(id))
+        Spell spell = GetSpell(moveLeftID);
+        if (spell != null)
         {
-            Spell spell = spells[id];
-            Spell spellCopy = new Spell();
-            spellCopy.spellID = spell.spellID;
-            spellCopy.instanceID = instanceID;
-            spellCopy.name = spell.name;
-            spellCopy.description = spell.description;
-            spellCopy.icon = spell.icon;
-            spellCopy.iconPath = spell.iconPath;
-            spellCopy.actionPath = spell.actionPath;
-            return spellCopy;
+            if (playerProfile.gender == Gender.FEMALE)
+            {
+                spell.icon = moveLeftFemaleIcon;
+            }
+            return spell;
         }
         else
         {
             return null;
         }
     }
-    */
+
+    public Spell GetMoveRight()
+    {
+        Spell spell = GetSpell(moveRightID);
+        if (spell != null)
+        {
+            if (playerProfile.gender == Gender.FEMALE)
+            {
+                spell.icon = moveRightFemaleIcon;
+            }
+            return spell;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

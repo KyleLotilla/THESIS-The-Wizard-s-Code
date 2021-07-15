@@ -27,9 +27,7 @@ public class ActionStack : MonoBehaviour
     [SerializeField]
     private ActionSlotFactory actionSlotFactory;
     [SerializeField]
-    private int moveLeftID;
-    [SerializeField]
-    private int moveRightID;
+    private bool canSpawnMoveLeft;
     [SerializeField]
     private int maxActions;
     [SerializeField]
@@ -64,12 +62,15 @@ public class ActionStack : MonoBehaviour
         spawnedActions = new List<GameObject>();
 
         movementActions = new List<GameObject>();
-        GameObject moveLeftPrefab = actionSlotFactory.GetActionSlot(spellDatabase.GetSpell(moveLeftID));
-        if (moveLeftPrefab != null)
+        if (canSpawnMoveLeft)
         {
-            movementActions.Add(moveLeftPrefab);
+            GameObject moveLeftPrefab = actionSlotFactory.GetActionSlot(spellDatabase.GetMoveLeft());
+            if (moveLeftPrefab != null)
+            {
+                movementActions.Add(moveLeftPrefab);
+            }
         }
-        GameObject moveRightPrefab = actionSlotFactory.GetActionSlot(spellDatabase.GetSpell(moveRightID));
+        GameObject moveRightPrefab = actionSlotFactory.GetActionSlot(spellDatabase.GetMoveRight());
         if (moveRightPrefab != null)
         {
             movementActions.Add(moveRightPrefab);

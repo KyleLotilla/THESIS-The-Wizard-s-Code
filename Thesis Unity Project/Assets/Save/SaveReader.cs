@@ -84,7 +84,6 @@ public class SaveReader : MonoBehaviour
             ReadPlayerProfile(root);
             ReadSpellInventory(root);
             ReadSpellCodeInventory(root);
-            //ReadMaterialInventory(root);
             ReadPlayerLevelProgression(root);
             saveWriter.document = document;
         }
@@ -124,19 +123,6 @@ public class SaveReader : MonoBehaviour
             {
                 foreach (XElement spellElement in spellInventoryElement.Element("Equipped").Elements())
                 {
-                    /*
-                    if (spellElement.Elements("ID").Any() && spellElement.Elements("InstanceID").Any())
-                    {
-                        int spellID = int.Parse(spellElement.Element("ID").Value);
-                        Guid instanceID = Guid.Parse(spellElement.Element("InstanceID").Value);
-                        Spell spell = spellDatabase.GetSpell(spellID, instanceID);
-                        if (spell != null)
-                        {
-                            spellInventory.EquipSpell(spell);
-                        }
-                    }
-                    */
-
                     if (spellElement.Elements("ID").Any())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
@@ -153,18 +139,6 @@ public class SaveReader : MonoBehaviour
             {
                 foreach (XElement spellElement in spellInventoryElement.Element("Inventory").Elements())
                 {
-                    /*
-                    if (spellElement.Elements("ID").Any() && spellElement.Elements("InstanceID").Any())
-                    {
-                        int spellID = int.Parse(spellElement.Element("ID").Value);
-                        Guid instanceID = Guid.Parse(spellElement.Element("InstanceID").Value);
-                        Spell spell = spellDatabase.GetSpell(spellID, instanceID);
-                        if (spell != null)
-                        {
-                            spellInventory.AddSpell(spell);
-                        }
-                    }
-                    */
                     if (spellElement.Elements("ID").Any())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
@@ -194,23 +168,18 @@ public class SaveReader : MonoBehaviour
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
-                        /*
-                        if (spellID == spellDatabase.moveLeftID || spellID == spellDatabase.moveRightID)
+                        if (spellID == spellDatabase.moveLeftID)
                         {
-                            Spell spell = spellDatabase.GetSpell(spellID, Guid.Empty);
-                            spellCode.AddSpell(spell);
+                            spellCode.AddSpell(spellDatabase.GetMoveLeft());
+                        }
+                        else if (spellID == spellDatabase.moveRightID)
+                        {
+                            spellCode.AddSpell(spellDatabase.GetMoveRight());
                         }
                         else
                         {
-                            Guid instanceID = Guid.Parse(spellElement.Element("InstanceID").Value);
-                            Spell spell = spellInventory.GetSpell(instanceID);
-                            if (spell != null)
-                            {
-                                spellCode.AddSpell(spell);
-                            }
+                            spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                         }
-                        */
-                        spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                     }
                     spellCodeInventory.EquipSpellCode(spellCode);
                 }
@@ -225,22 +194,6 @@ public class SaveReader : MonoBehaviour
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
-                        /*
-                        if (spellID == spellDatabase.moveLeftID || spellID == spellDatabase.moveRightID)
-                        {
-                            Spell spell = spellDatabase.GetSpell(spellID, Guid.Empty);
-                            spellCode.AddSpell(spell);
-                        }
-                        else
-                        {
-                            Guid instanceID = Guid.Parse(spellElement.Element("InstanceID").Value);
-                            Spell spell = spellInventory.GetSpell(instanceID);
-                            if (spell != null)
-                            {
-                                spellCode.AddSpell(spell);
-                            }
-                        }
-                        */
                         spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                     }
                     spellCodeInventory.AddSpellCode(spellCode);
@@ -248,27 +201,6 @@ public class SaveReader : MonoBehaviour
             }
         }
     }
-    /*
-    private void ReadMaterialInventory(XElement root)
-    {
-        if (root.Elements("MaterialInventory").Any())
-        {
-            XElement materialInventoryElement = root.Element("MaterialInventory");
-            foreach (XElement materialElement in materialInventoryElement.Elements())
-            {
-                if (materialElement.Elements("ID").Any())
-                {
-                    int materialID = int.Parse(materialElement.Element("ID").Value);
-                    Material material = materialDatabase.GetMaterial(materialID);
-                    if (material != null)
-                    {
-                        materialInventory.AddMaterial(material);
-                    }
-                }
-            }
-        }
-    }
-    */
 
     private void ReadPlayerLevelProgression(XElement root)
     {
@@ -281,16 +213,6 @@ public class SaveReader : MonoBehaviour
                 {
                     LevelProgression levelProgression = new LevelProgression();
                     levelProgression.levelID = int.Parse(levelProgressionElement.Element("LevelID").Value);
-                    /*
-                    if (levelProgressionElement.Elements("Unlocked").Any())
-                    {
-                        levelProgression.isUnlocked = bool.Parse(levelProgressionElement.Element("Unlocked").Value);
-                    }
-                    if (levelProgressionElement.Elements("Completed").Any())
-                    {
-                        levelProgression.isCompleted = bool.Parse(levelProgressionElement.Element("Completed").Value);
-                    }
-                    */
                     if (levelProgressionElement.Elements("HighScore").Any())
                     {
                         levelProgression.highScore = int.Parse(levelProgressionElement.Element("HighScore").Value);
