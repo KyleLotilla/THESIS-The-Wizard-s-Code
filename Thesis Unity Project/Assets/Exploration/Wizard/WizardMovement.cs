@@ -38,6 +38,7 @@ public class WizardMovement : MonoBehaviour
         {
             this.UpdateMovement();
         }
+        /*
         else
         {
             if (Input.GetKey(KeyCode.D))
@@ -49,6 +50,7 @@ public class WizardMovement : MonoBehaviour
                 Walk(-2.0f);
             }
         }
+        */
     }
 
     public int checkDirection()

@@ -7,6 +7,7 @@ public delegate void OnSlotChange(GameObject newSlot);
 public class SlotSpace : MonoBehaviour
 {
     public event OnSlotChange OnSlotChange;
+    [SerializeField]
     private GameObject _slot;
     public GameObject slot
     {

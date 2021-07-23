@@ -6,6 +6,8 @@ public class SpellInventoryMenu : ItemSlotMenu<Spell>
 {
     [SerializeField]
     private SpellInventory spellInventory;
+    [SerializeField]
+    private bool isSpellCodeTutorial = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,14 @@ public class SpellInventoryMenu : ItemSlotMenu<Spell>
         if (slotSpace != null)
         {
             slotSpace.slot = slot;
+        }
+        if (isSpellCodeTutorial)
+        {
+            Draggable draggable = space.GetComponent<Draggable>();
+            if (draggable != null)
+            {
+                draggable.isDraggable = false;
+            }
         }
     }
 }

@@ -11,6 +11,8 @@ public class QueueSpace : MonoBehaviour
     private Droppable droppable;
     [SerializeField]
     private GameObject queueSlotPrefab;
+
+    private DestroyHandler stackSlotDestroyHandler;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class QueueSpace : MonoBehaviour
                     if (destroyHandler != null)
                     {
                         destroyHandler.OnGameObjectDestroy += OnStackSlotDestroy;
+                        stackSlotDestroyHandler = destroyHandler;
                     }
                 }
             }
@@ -62,11 +65,16 @@ public class QueueSpace : MonoBehaviour
     {
         DestroyImmediate(space.slot);
         space.slot = null;
+        stackSlotDestroyHandler = null;
     }
 
     public void RemoveSlot()
     {
         QueueSlot queueSlot = space.slot.GetComponent<QueueSlot>();
+        if (stackSlotDestroyHandler != null)
+        {
+            stackSlotDestroyHandler.OnGameObjectDestroy -= OnStackSlotDestroy;
+        }
         if (queueSlot != null)
         {
             queueSlot.stackSlot.EnableSlot();
@@ -78,6 +86,10 @@ public class QueueSpace : MonoBehaviour
     public void ConsumeSlot()
     {
         QueueSlot queueSlot = space.slot.GetComponent<QueueSlot>();
+        if (stackSlotDestroyHandler != null)
+        {
+            stackSlotDestroyHandler.OnGameObjectDestroy -= OnStackSlotDestroy;
+        }
         if (queueSlot != null)
         {
             DestroyImmediate(queueSlot.stackSlot.gameObject);

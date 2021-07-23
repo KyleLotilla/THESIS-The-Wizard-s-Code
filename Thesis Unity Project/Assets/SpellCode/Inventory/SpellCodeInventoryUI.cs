@@ -15,8 +15,8 @@ public class SpellCodeInventoryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spellCodeInventoryMenu.OnSpellCodeSelected += OnInventorySelected;
         spellCodeEquipmentMenu.OnSpellCodeSelected += OnEqiupmentSelected;
+        spellCodeInventoryMenu.OnSpellCodeSelected += OnInventorySelected;
     }
 
     // Update is called once per frame

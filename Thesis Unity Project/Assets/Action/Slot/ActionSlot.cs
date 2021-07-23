@@ -48,7 +48,7 @@ public class ActionSlot : MonoBehaviour
         }
         set
         {
-            _isInQueue = true;
+            _isInQueue = value;
         }
     }
     [SerializeField]
