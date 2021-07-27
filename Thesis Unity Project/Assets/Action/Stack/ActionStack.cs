@@ -35,8 +35,6 @@ public class ActionStack : MonoBehaviour
     [SerializeField]
     private int movementSpawnRate;
     [SerializeField]
-    private Vector2 slotSize;
-    [SerializeField]
     private Vector2 offset;
     [SerializeField]
     private float spawnRate;
@@ -288,7 +286,7 @@ public class ActionStack : MonoBehaviour
             }
             if (rectTransform != null)
             {
-                rectTransform.sizeDelta = slotSize;
+                //rectTransform.sizeDelta = slotSize;
                 rectTransform.anchorMin = new Vector2(0.5f, 1.0f);
                 rectTransform.anchorMax = new Vector2(0.5f, 1.0f);
                 rectTransform.anchoredPosition = offset;
