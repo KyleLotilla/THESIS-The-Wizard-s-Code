@@ -7375,6 +7375,16 @@ PrefabInstance:
       propertyPath: m_UseWorldSpace
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 582808057443558351, guid: 78ba33f2799d37542b85570e14d87b8f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ab9183ff4a756b4282b1cc4b96000f1, type: 2}
+    - target: {fileID: 582808057443558351, guid: 78ba33f2799d37542b85570e14d87b8f,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.978475
+      objectReference: {fileID: 0}
     - target: {fileID: 5945597138941657264, guid: 78ba33f2799d37542b85570e14d87b8f,
         type: 3}
       propertyPath: m_Controller
