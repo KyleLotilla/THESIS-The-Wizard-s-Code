@@ -2916,11 +2916,11 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1026957576}
   tabsPanel: {fileID: 1416054259}
   dialogueLinePagePairs:
-  - lineNum: 3
+  - lineNum: 6
     visualPage: 1
-  - lineNum: 4
+  - lineNum: 7
     visualPage: 2
-  - lineNum: 5
+  - lineNum: 8
     visualPage: 3
   defaultVisual: 0
 --- !u!114 &1416054261
@@ -3585,7 +3585,7 @@ GameObject:
   - component: {fileID: 1957697592}
   - component: {fileID: 1957697591}
   m_Layer: 5
-  m_Name: Visual4
+  m_Name: Visual7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3887,7 +3887,7 @@ GameObject:
   - component: {fileID: 2132887404}
   - component: {fileID: 2132887403}
   m_Layer: 5
-  m_Name: Visual1
+  m_Name: Visual6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

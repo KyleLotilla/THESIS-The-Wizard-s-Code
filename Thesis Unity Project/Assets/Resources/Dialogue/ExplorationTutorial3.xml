@@ -2,7 +2,7 @@
 	<Dialogue>
 		<ID>0</ID>
 		<Lines>
-			<Line>Now that you have equipped a spellcode, it will spawn in your action stack along with your equipped spells.</Line>
+			<Line>Now that you have equipped a spellcode, it will spawn in the actions tab along with your equipped spells.</Line>
 			<Line>Spellcodes that spawn in the action stack are denoted by number icons.</Line>
 			<Line>These numbers correspond to the order your spellcodes have been equipped in your spellcode inventory.</Line>
 			<Line>Let's try to clear this ice block and move forward to the next objective by only using your spellcode.</Line>
@@ -13,9 +13,11 @@
 		<Lines>
 			<Line>As you notice, using spellcodes allow us to be more efficient in performing spells.</Line>
 			<Line>Compared to dragging spells one by one, we can perform more spells in one execution!</Line>
-			<Line>That’s everything you need to know to go about performing spellcodes.</Line>
+			<Line>Spellcodes also count as performing one move in a stage!</Line>
+			<Line>You can use this fact to your advantage especially when you're aiming to get all stars in a stage!</Line>
+			<Line>And... that’s everything you need to know about performing spellcodes and going about in this world.</Line>
 			<Line>Now try to use all that you have learned to complete this stage and the future stages!</Line>
-			<Line>I believe in you!</Line>
+			<Line>Our tutorial is finished. I believe in you!</Line>
 		</Lines>
 	</Dialogue>
 </DialogueDatabase>
