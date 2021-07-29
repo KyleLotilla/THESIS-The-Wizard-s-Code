@@ -45,6 +45,20 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   highlightedColor: {r: 1, g: 0.889333, b: 0, a: 1}
   image: {fileID: 7239730452923029589}
+--- !u!114 &2397050195962200230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811174478043550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff826981536a85a40b74f9e44fa77ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotSpace: {fileID: 6764422643495387051}
+  explorationHoverHandler: {fileID: 0}
 --- !u!1001 &8942739674658312422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +175,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757052735225792691, guid: 1a6c6d8d7627be9428497bea3c43ac0c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b306dcc0ed222549a80581c097881dc,
+        type: 3}
+    - target: {fileID: 1757052735225792691, guid: 1a6c6d8d7627be9428497bea3c43ac0c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a6c6d8d7627be9428497bea3c43ac0c, type: 3}

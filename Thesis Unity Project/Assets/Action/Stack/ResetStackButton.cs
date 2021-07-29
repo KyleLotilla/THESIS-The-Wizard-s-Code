@@ -42,7 +42,7 @@ public class ResetStackButton : MonoBehaviour
         {
             actionStack.ResetStack();
             resetCount++;
-            text.text = "Reset - " + (maxReset - resetCount);
+            text.text = (maxReset - resetCount).ToString();
             if (resetCount >= maxReset)
             {
                 button.interactable = false;

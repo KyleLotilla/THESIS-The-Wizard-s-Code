@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 9152037022567439763}
   - component: {fileID: 6758149586572486253}
   - component: {fileID: 1518095227867631947}
+  - component: {fileID: 5286832418014846578}
   m_Layer: 5
   m_Name: BaseActionSlot
   m_TagString: Untagged
@@ -353,5 +354,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 406e9592e131315448208270217ab24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5286832418014846578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394697629223760116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15968dbd4c298d24c9197be21a6f71eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

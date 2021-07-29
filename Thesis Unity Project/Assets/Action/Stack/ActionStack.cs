@@ -35,13 +35,13 @@ public class ActionStack : MonoBehaviour
     [SerializeField]
     private int movementSpawnRate;
     [SerializeField]
-    private Vector2 slotSize;
-    [SerializeField]
     private Vector2 offset;
     [SerializeField]
     private float spawnRate;
     [SerializeField]
     private float resetSpawnRate;
+    [SerializeField]
+    private ExplorationHoverHandler explorationHoverHandler;
     public bool isTutorialMovementOnly;
     public bool isTutorialSpellCode;
 
@@ -281,6 +281,7 @@ public class ActionStack : MonoBehaviour
             }
             ActionSlot actionSlot = actionSlotObject.GetComponent<ActionSlot>();
             RectTransform rectTransform = actionSlotObject.GetComponent<RectTransform>();
+            ActionSlotHover actionSlotHover = actionSlotObject.GetComponent<ActionSlotHover>();
             if (actionSlot != null)
             {
                 actionSlot.OnActionSlotDestroyed += DeleteAction;
@@ -288,10 +289,13 @@ public class ActionStack : MonoBehaviour
             }
             if (rectTransform != null)
             {
-                rectTransform.sizeDelta = slotSize;
                 rectTransform.anchorMin = new Vector2(0.5f, 1.0f);
                 rectTransform.anchorMax = new Vector2(0.5f, 1.0f);
                 rectTransform.anchoredPosition = offset;
+            }
+            if (actionSlotHover != null)
+            {
+                actionSlotHover.explorationHoverHandler = explorationHoverHandler;
             }
             spawnedActions.Add(actionSlotObject);
             return actionSlotObject;

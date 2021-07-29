@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5367611216836464155}
   - component: {fileID: 4277336492411289906}
+  - component: {fileID: 2573153817892073954}
   m_Layer: 5
   m_Name: ShootWaterBall
   m_TagString: Untagged
@@ -44,9 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isMovement: 0
-  offset: {x: 1.5, y: 0, z: 0}
+  actionRange: {fileID: 2573153817892073954}
   projectilePrefab: {fileID: 8029989075416608700, guid: eff607baa275f23439692f5705963706,
     type: 3}
   audioClip: {fileID: 8300000, guid: 9a1de8bdd0b09344cb8ab6a52579bebe, type: 3}
   oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
     type: 3}
+--- !u!114 &2573153817892073954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115427723548475876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92bda9792ca4e646bfcf3658b2e9271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offset: {x: 0, y: 0}
+  _velocity: {x: 8, y: 0}
+  _maxRange: {x: 3, y: 0}

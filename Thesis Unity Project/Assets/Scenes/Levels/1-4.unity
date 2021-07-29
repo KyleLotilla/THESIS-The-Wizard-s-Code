@@ -6530,7 +6530,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 53122a35577244e44947f506fb23e978, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7589,7 +7589,7 @@ PrefabInstance:
     - target: {fileID: 2072314419992437201, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 36.60956
+      value: 56.899567
       objectReference: {fileID: 0}
     - target: {fileID: 2072314419992437201, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -7626,6 +7626,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3824610781941058712, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: wizard
+      value: 
+      objectReference: {fileID: 729566036}
+    - target: {fileID: 3824610781941058712, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: lineRenderer
+      value: 
+      objectReference: {fileID: 5945597139835213198}
     - target: {fileID: 4077394170993065792, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -7759,7 +7769,7 @@ PrefabInstance:
     - target: {fileID: 6207046429041300574, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 237.18956
+      value: 216.89957
       objectReference: {fileID: 0}
     - target: {fileID: 6207046429041300574, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
@@ -7961,3 +7971,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78ba33f2799d37542b85570e14d87b8f, type: 3}
+--- !u!120 &5945597139835213198 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 582808057443558351, guid: 78ba33f2799d37542b85570e14d87b8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5945597139835213197}
+  m_PrefabAsset: {fileID: 0}

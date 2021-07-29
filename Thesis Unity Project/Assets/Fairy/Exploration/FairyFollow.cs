@@ -6,7 +6,7 @@ public class FairyFollow : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private GameObject Wizard;
+    private WizardMovement wizardMovement;
     [SerializeField]
     private float xOffset;
     [SerializeField]
@@ -15,7 +15,6 @@ public class FairyFollow : MonoBehaviour
     private float zOffset;
     void Start()
     {
-        FollowPlayer();
     }
 
     // Update is called once per frame
@@ -27,7 +26,7 @@ public class FairyFollow : MonoBehaviour
     void FollowPlayer()
     {
         Vector3 eulerAngles = this.transform.eulerAngles;
-        if (this.Wizard.GetComponent<WizardMovement>().checkDirection() == 1)
+        if (wizardMovement.direction == Direction.RIGHT)
         {
             if (eulerAngles.y != 0.0f)
             {
@@ -36,7 +35,7 @@ public class FairyFollow : MonoBehaviour
             }
         }
 
-        else if(this.Wizard.GetComponent<WizardMovement>().checkDirection() == 0)
+        else if(wizardMovement.direction == Direction.LEFT)
         {
             if (eulerAngles.y != 180.0f)
             {
@@ -45,8 +44,7 @@ public class FairyFollow : MonoBehaviour
             }
         }
 
-
-        Vector3 fairyPosition = this.Wizard.transform.position;
+        Vector3 fairyPosition = this.wizardMovement.gameObject.transform.position;
         fairyPosition.x += this.xOffset;
         fairyPosition.y += this.yOffset;
         fairyPosition.z = this.zOffset;

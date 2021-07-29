@@ -20,6 +20,8 @@ public class ActionQueue : MonoBehaviour
     private Button zoomOutButton;
     [SerializeField]
     private Button resetButton;
+    [SerializeField]
+    private ExplorationHoverHandler explorationHoverHandler;
     private List<int> executingSpaceIndices;
     private List<Action> actions;
     [SerializeField]
@@ -78,6 +80,8 @@ public class ActionQueue : MonoBehaviour
         runButton.interactable = false;
         zoomOutButton.interactable = false;
         resetButton.interactable = false;
+        explorationHoverHandler.ClearCurrentHover();
+        explorationHoverHandler.isHoverActive = false;
         actionSequence.actions = actions;
         actionSequence.StartExecution();
     }
@@ -137,6 +141,7 @@ public class ActionQueue : MonoBehaviour
             }
         }
         runButton.interactable = true;
+        explorationHoverHandler.isHoverActive = true;
         if (!isTutorial)
         {
             zoomOutButton.interactable = true;
