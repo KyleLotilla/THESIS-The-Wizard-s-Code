@@ -13,9 +13,9 @@
 			<Line>You may also feel like your desired spells don’t spawn quite often in the action stack.</Line>
 			<Line>If that happens, you can make use of the &lt;b&gt;reset&lt;/b&gt; button.</Line>
 			<Line>The reset button will remove all the spells in the action stack and spawn new ones!.</Line>
+			<Line>Don't worry, using the reset button will not affect the number of moves you make in the stage.</Line>
 			<Line>Use it wisely though, you can only reset for a limited number of times.</Line>
 			<Line>Now let’s try to clear out the obstacles ahead of us using our spells. </Line>
-			<Line>Be careful though, using an incorrect spell on an obstacle will deduct points from your score.</Line>
 			<Line>I know you can do it! Let's go!</Line>
 		</Lines>
 	</Dialogue>
