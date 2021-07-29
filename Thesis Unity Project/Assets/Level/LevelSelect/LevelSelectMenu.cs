@@ -26,6 +26,8 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
     private LevelSelectButton nextTutorialLevelButton;
     [SerializeField]
     private int totalStars = 0;
+   
+
     void Start()
     {
         CalculateTotalStars();
@@ -58,6 +60,7 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
             {
                 levelSelectButton.LockLevel();
             }
+            
         }
     }
 

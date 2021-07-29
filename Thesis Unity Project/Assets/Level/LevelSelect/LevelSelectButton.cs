@@ -21,6 +21,8 @@ public class LevelSelectButton : MonoBehaviour
     private PlayerLevelProgression playerLevelProgression;
     [SerializeField]
     private Text minimumReq;
+    [SerializeField]
+    private FillStar fillStar;
 
     private Level _level;
     public Level level
@@ -34,6 +36,15 @@ public class LevelSelectButton : MonoBehaviour
             _level = value;
             text.text = _level.worldNum + "-" + _level.levelNum;
             levelOverviewIcon.sprite = _level.levelOverview;
+            LevelProgression levelProgression = playerLevelProgression.GetLevelProgression(_level.levelID);
+            if (levelProgression != null)
+            {
+                fillStar.FillUpStar(levelProgression.highScore);
+            }
+            else
+            {
+                fillStar.FillUpStar(0);
+            }
         }
     }
     // Start is called before the first frame update

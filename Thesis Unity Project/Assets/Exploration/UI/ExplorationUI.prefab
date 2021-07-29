@@ -1176,6 +1176,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'Moves: '
       objectReference: {fileID: 0}
+    - target: {fileID: 4041127041802696635, guid: 402015392a0240e4e8357c0dcd557cb4,
+        type: 3}
+      propertyPath: spawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041127041802696635, guid: 402015392a0240e4e8357c0dcd557cb4,
+        type: 3}
+      propertyPath: resetSpawnRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4653591921021161255, guid: 402015392a0240e4e8357c0dcd557cb4,
         type: 3}
       propertyPath: m_Sprite
