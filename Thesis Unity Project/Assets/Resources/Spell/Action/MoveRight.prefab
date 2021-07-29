@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7143694170669675419}
-  - component: {fileID: 5153488978550001770}
+  - component: {fileID: 5939217553428145419}
+  - component: {fileID: 6153620254262352641}
   m_Layer: 5
   m_Name: MoveRight
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5153488978550001770
+--- !u!114 &5939217553428145419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +41,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 859615774787422495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880a0b3f22205b54da9f8010dbce17ef, type: 3}
+  m_Script: {fileID: 11500000, guid: a92bda9792ca4e646bfcf3658b2e9271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offset: {x: 0, y: 0}
+  _velocity: {x: 11, y: 0}
+  _maxRange: {x: 4, y: 0}
+--- !u!114 &6153620254262352641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859615774787422495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb33c5630ad56a429f414669b4f2961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isMovement: 1
+  actionRange: {fileID: 5939217553428145419}

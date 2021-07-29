@@ -45,6 +45,20 @@ MonoBehaviour:
   normalColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   highlightedColor: {r: 1, g: 0.889333, b: 0, a: 1}
   image: {fileID: 7239730452923029589}
+--- !u!114 &2397050195962200230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811174478043550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff826981536a85a40b74f9e44fa77ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotSpace: {fileID: 6764422643495387051}
+  explorationHoverHandler: {fileID: 0}
 --- !u!1001 &8942739674658312422
 PrefabInstance:
   m_ObjectHideFlags: 0

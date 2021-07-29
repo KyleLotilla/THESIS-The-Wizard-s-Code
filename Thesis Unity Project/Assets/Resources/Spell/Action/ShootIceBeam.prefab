@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6839287129938884268}
   - component: {fileID: 7880011804171515723}
+  - component: {fileID: 2948078778292840384}
   m_Layer: 5
   m_Name: ShootIceBeam
   m_TagString: Untagged
@@ -44,9 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isMovement: 0
-  offset: {x: 2.5, y: 0, z: 0}
+  actionRange: {fileID: 2948078778292840384}
   spellPrefab: {fileID: 1203172976080195828, guid: ca5c9947e1438b0459ddd0f3e6448962,
     type: 3}
   audioClip: {fileID: 8300000, guid: 5f3c057c97f6db34cb8aeba60e2d2db1, type: 3}
   oneShotAudioPrefab: {fileID: 7440731172125924018, guid: 912fa9d1d9d410e469d9d3e8e20c61c9,
     type: 3}
+--- !u!114 &2948078778292840384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586002385571052428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92bda9792ca4e646bfcf3658b2e9271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offset: {x: 0.5, y: 0}
+  _velocity: {x: 0, y: 0}
+  _maxRange: {x: 3.4, y: 0}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Direction
+public enum Direction
 {
     LEFT,
     RIGHT
@@ -14,14 +14,24 @@ public class WizardMovement : MonoBehaviour
     private Rigidbody2D rigidBody;
     [SerializeField]
     private Animator animator;
+    private float walkingVelocity;
     [SerializeField]
-    private float walkingSpeed;
+    private Direction _direction = Direction.RIGHT;
+    public Direction direction
+    {
+        get
+        {
+            return _direction;
+        }
+        private set
+        {
+            _direction = value;
+        }
+    }
     [SerializeField]
-    private Direction direction = Direction.RIGHT;
+    private float destDistance;
     [SerializeField]
-    private float destDisplacement;
-    [SerializeField]
-    private float currentDisplacement;
+    private float currentDistance;
     public bool isWalking { get; private set; } = false;
 
 
@@ -38,45 +48,31 @@ public class WizardMovement : MonoBehaviour
         {
             this.UpdateMovement();
         }
-        /*
         else
         {
             if (Input.GetKey(KeyCode.D))
             {
-                Walk(2.0f);
+                Walk(4.0f, 11.0f);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                Walk(-2.0f);
+                Walk(4.0f, -11.0f);
             }
         }
-        */
     }
 
-    public int checkDirection()
+    public void Walk(float distance, float walkingVelocity)
     {
-        if(direction == Direction.RIGHT)
+        if (distance != 0.0f)
         {
-            return 1;
-        }
-        else 
-        {
-            return 0;
-        }
-        
-    }
-
-    public void Walk(float displacement)
-    {
-        if (displacement != 0.0f)
-        {
-            destDisplacement = displacement;
-            currentDisplacement = 0.0f;
+            destDistance = distance;
+            currentDistance = 0.0f;
+            this.walkingVelocity = walkingVelocity;
             isWalking = true;
             animator.SetBool("walking", true);
             Vector3 eulerAngles = this.transform.eulerAngles;
 
-            if (displacement > 0)
+            if (walkingVelocity > 0)
             {
                 direction = Direction.RIGHT;
                 if (eulerAngles.y != 0.0f)
@@ -85,7 +81,7 @@ public class WizardMovement : MonoBehaviour
                     this.transform.Rotate(eulerAngles);
                 }
             }
-            else if (displacement < 0)
+            else if (walkingVelocity < 0)
             {
                 direction = Direction.LEFT;
                 if (eulerAngles.y != 180.0f)
@@ -99,16 +95,12 @@ public class WizardMovement : MonoBehaviour
 
     private void UpdateMovement()
     {
-        float deltaDisplacement = walkingSpeed * Time.fixedDeltaTime;
-        if (direction == Direction.LEFT)
-        {
-            deltaDisplacement = -deltaDisplacement;
-        }
+        float deltaDisplacement = walkingVelocity * Time.fixedDeltaTime;
         Vector2 deltaPosition = this.rigidBody.position;
         deltaPosition.x += deltaDisplacement;
         rigidBody.MovePosition(deltaPosition);
-        currentDisplacement += deltaDisplacement;
-        if ((direction == Direction.LEFT && currentDisplacement <= destDisplacement) || (direction == Direction.RIGHT && currentDisplacement >= destDisplacement))
+        currentDistance += Mathf.Abs(deltaDisplacement);
+        if (currentDistance >= destDistance)
         {
             StopWalking();
         }
@@ -120,8 +112,9 @@ public class WizardMovement : MonoBehaviour
         {
             isWalking = false;
             animator.SetBool("walking", false);
-            destDisplacement = 0.0f;
-            currentDisplacement = 0.0f;
+            destDistance = 0.0f;
+            currentDistance = 0.0f;
+            walkingVelocity = 0.0f;
         }
     }
 

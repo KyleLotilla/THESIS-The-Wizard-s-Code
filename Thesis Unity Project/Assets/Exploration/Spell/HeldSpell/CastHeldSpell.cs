@@ -6,7 +6,7 @@ using UnityEngine;
 public class CastHeldSpell : Action
 {
     [SerializeField]
-    private Vector3 offset;
+    private ActionRange actionRange;
     [SerializeField]
     private GameObject spellPrefab;
     [SerializeField]
@@ -47,11 +47,12 @@ public class CastHeldSpell : Action
     {
         Transform wizardtransform = wizard.transform;
         Vector3 wizardRotation = wizardtransform.rotation.eulerAngles;
+        Vector3 offset = actionRange.offset;
         if (wizardRotation.y == 180.0f)
         {
-            this.offset.x *= -1f;
+            offset.x *= -1f;
         }
-        Vector3 spellPosition = wizardtransform.position + this.offset;
+        Vector3 spellPosition = wizardtransform.position + offset;
         GameObject spellObject = Instantiate(spellPrefab, spellPosition, wizardtransform.rotation);
         if (spellObject != null)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootProjectile : Action
 {
     [SerializeField]
-    private Vector3 offset;
+    private ActionRange actionRange;
     [SerializeField]
     private GameObject projectilePrefab;
     [SerializeField]
@@ -57,11 +57,14 @@ public class ShootProjectile : Action
     {
         Transform wizardtransform = wizard.transform;
         Vector3 wizardRotation = wizardtransform.rotation.eulerAngles;
+        Vector3 offset = actionRange.offset;
+        Vector2 velocity = actionRange.velocity;
         if (wizardRotation.y == 180.0f)
         {
-            this.offset.x *= -1f;
+            offset.x *= -1f;
+            velocity.x *= -1.0f;
         }
-        Vector3 projectilePosition = wizardtransform.position + this.offset;
+        Vector3 projectilePosition = wizardtransform.position + offset;
         GameObject projectileObject = Instantiate(projectilePrefab, projectilePosition, wizardtransform.rotation);
         if (projectileObject != null)
         {
@@ -70,17 +73,13 @@ public class ShootProjectile : Action
             {
                 projectileDestroyHandler.OnGameObjectDestroy += OnProjectileDestroy;
             }
-
-            if (wizardRotation.y == 180.0f)
+            ProjectileMovement projectileMovement = projectileObject.GetComponent<ProjectileMovement>();
+            if (projectileMovement != null)
             {
-                ProjectileMovement projectileMovement = projectileObject.GetComponent<ProjectileMovement>();
-                if (projectileMovement != null)
-                {
-                    Vector2 projectileSpeed = projectileMovement.projectileSpeed;
-                    projectileSpeed.x *= -1.0f;
-                    projectileMovement.projectileSpeed = projectileSpeed;
-                }
+                projectileMovement.projectileSpeed = velocity;
+                projectileMovement.maxRange = actionRange.maxRange;
             }
+
         }
     }
 
