@@ -9561,7 +9561,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moves
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2041011822}
     - target: {fileID: 649482592371409950, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: starFill
@@ -10298,7 +10298,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moves
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2041011822}
     - target: {fileID: 8218275116696289186, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: tutorialProgression
@@ -10362,6 +10362,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 841874aa00486fb4b933a1ffcfdb8e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2041011822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5339551439021477509, guid: d9b5433f38caceb40b2baac38781d4f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2041011817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b80b76956bd045a6db89b701c46b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2075136818
