@@ -23,14 +23,14 @@ public class CastHeldSpell : Action
         wizardCasting = this.wizard.GetComponent<WizardCasting>();
         if (wizardCasting != null)
         {
-            wizardCasting.OnCastingEnd += OnCastingEnd;
+            wizardCasting.OnCastingHoldStartEnd += OnCastingHoldStartEnd;
             wizardCasting.CastHold();
         }
     }
 
-    private void OnCastingEnd()
+    private void OnCastingHoldStartEnd()
     {
-        wizardCasting.OnCastingEnd -= OnCastingEnd;
+        wizardCasting.OnCastingHoldStartEnd -= OnCastingHoldStartEnd;
         SpawnSpell();
         GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
         if (oneShotAudioObject != null)
@@ -66,7 +66,13 @@ public class CastHeldSpell : Action
 
     private void OnSpellDestroy()
     {
+        wizardCasting.OnCastingHoldEnd += OnCastingHoldEnd;
         wizardCasting.EndCastHold();
+    }
+
+    private void OnCastingHoldEnd()
+    {
+        wizardCasting.OnCastingHoldEnd -= OnCastingHoldEnd;
         EndExecution();
     }
 

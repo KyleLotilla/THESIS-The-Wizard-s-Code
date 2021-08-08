@@ -63,7 +63,7 @@ public class QueueSpace : MonoBehaviour
 
     private void OnStackSlotDestroy()
     {
-        DestroyImmediate(space.slot);
+        Destroy(space.slot);
         space.slot = null;
         stackSlotDestroyHandler = null;
     }
@@ -79,7 +79,7 @@ public class QueueSpace : MonoBehaviour
         {
             queueSlot.stackSlot.EnableSlot();
         }
-        DestroyImmediate(space.slot);
+        Destroy(space.slot);
         space.slot = null;
     }
 
@@ -92,9 +92,9 @@ public class QueueSpace : MonoBehaviour
         }
         if (queueSlot != null)
         {
-            DestroyImmediate(queueSlot.stackSlot.gameObject);
+            Destroy(queueSlot.stackSlot.gameObject);
         }
-        DestroyImmediate(space.slot);
+        Destroy(space.slot);
         space.slot = null;
     }
 }

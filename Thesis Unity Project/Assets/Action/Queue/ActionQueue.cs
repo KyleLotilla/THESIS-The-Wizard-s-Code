@@ -61,11 +61,13 @@ public class ActionQueue : MonoBehaviour
                     executingSpaceIndices.Add(i);
                 }
             }
+            /*
             Draggable draggable = spaceObjects[i].GetComponent<Draggable>();
             if (draggable != null)
             {
                 draggable.isDraggable = false;
             }
+            */
             Droppable droppable = spaceObjects[i].GetComponent<Droppable>();
             if (droppable != null)
             {
@@ -129,11 +131,13 @@ public class ActionQueue : MonoBehaviour
     {
         for (int i = 0; i < spaceObjects.Count; i++)
         {
+            /*
             Draggable draggable = spaceObjects[i].GetComponent<Draggable>();
             if (draggable != null)
             {
                 draggable.isDraggable = true;
             }
+            */
             Droppable droppable = spaceObjects[i].GetComponent<Droppable>();
             if (droppable != null)
             {
