@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4202867340184941868}
   - component: {fileID: 4202867340184941869}
   - component: {fileID: 4411856767962338169}
+  - component: {fileID: 1053667964280134290}
   m_Layer: 5
   m_Name: ArrowGuide
   m_TagString: Untagged
@@ -90,3 +91,22 @@ MonoBehaviour:
   Arrows: {fileID: 4202867340184941869}
   ArrowPrefab: {fileID: 4202867340184941867}
   dialoguePanel: {fileID: 0}
+--- !u!95 &1053667964280134290
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202867340184941867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5dadf7268f27c5d4f98a23d0b6c22329, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
