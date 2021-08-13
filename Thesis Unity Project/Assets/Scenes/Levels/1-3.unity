@@ -8547,6 +8547,11 @@ PrefabInstance:
       propertyPath: xmlDocumentReader.xmlTextAsset
       value: 
       objectReference: {fileID: 4900000, guid: 48e4aea459dde664f9fdaa0169229b9c, type: 3}
+    - target: {fileID: 5339551439021477509, guid: d9b5433f38caceb40b2baac38781d4f1,
+        type: 3}
+      propertyPath: LevelID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5374978133980180168, guid: d9b5433f38caceb40b2baac38781d4f1,
         type: 3}
       propertyPath: m_RootOrder

@@ -109,7 +109,7 @@
       </Obstacle>
     </Obstacles>
     <MaximumScore>1200</MaximumScore>
-    <StarUnlockRequirement>5</StarUnlockRequirement>
+    <StarUnlockRequirement>6</StarUnlockRequirement>
     <TwoStarRequirement>15</TwoStarRequirement>
     <ThreeStarRequirement>13</ThreeStarRequirement>
   </Level>
@@ -130,7 +130,7 @@
       </Obstacle>
     </Obstacles>
     <MaximumScore>1100</MaximumScore>
-    <StarUnlockRequirement>6</StarUnlockRequirement>
+    <StarUnlockRequirement>8</StarUnlockRequirement>
     <TwoStarRequirement>16</TwoStarRequirement>
     <ThreeStarRequirement>14</ThreeStarRequirement>
   </Level>
@@ -151,7 +151,7 @@
 			</Obstacle>
 		</Obstacles>
 		<MaximumScore>1100</MaximumScore>
-    <StarUnlockRequirement>6</StarUnlockRequirement>
+    <StarUnlockRequirement>10</StarUnlockRequirement>
     <TwoStarRequirement>15</TwoStarRequirement>
     <ThreeStarRequirement>9</ThreeStarRequirement>
 	</Level>
@@ -160,7 +160,7 @@
 		<LevelNum>8</LevelNum>
 		<WorldNum>1</WorldNum>
 		<SceneIndex>16</SceneIndex>
-		<LevelOverview>Level/Overviews/Level7</LevelOverview>
+		<LevelOverview>Level/Overviews/Level8</LevelOverview>
 		<Obstacles>
 			<Obstacle>
 				<ID>2</ID>
@@ -168,11 +168,15 @@
 			</Obstacle>
 			<Obstacle>
 				<ID>1</ID>
-				<Num>2</Num>
+				<Num>1</Num>
 			</Obstacle>
+      <Obstacle>
+        <ID>3</ID>
+        <Num>1</Num>
+      </Obstacle>
 		</Obstacles>
 		<MaximumScore>1100</MaximumScore>
-    <StarUnlockRequirement>8</StarUnlockRequirement>
+    <StarUnlockRequirement>12</StarUnlockRequirement>
     <TwoStarRequirement>13</TwoStarRequirement>
     <ThreeStarRequirement>7</ThreeStarRequirement>
 	</Level>
@@ -181,11 +185,11 @@
     <LevelNum>9</LevelNum>
     <WorldNum>1</WorldNum>
     <SceneIndex>17</SceneIndex>
-    <LevelOverview>Level/Overviews/Level7</LevelOverview>
+    <LevelOverview>Level/Overviews/Level9</LevelOverview>
     <Obstacles>
       <Obstacle>
         <ID>1</ID>
-        <Num>1</Num>
+        <Num>2</Num>
       </Obstacle>
       <Obstacle>
         <ID>0</ID>
@@ -193,11 +197,15 @@
       </Obstacle>
       <Obstacle>
         <ID>2</ID>
+        <Num>2</Num>
+      </Obstacle>
+      <Obstacle>
+        <ID>3</ID>
         <Num>1</Num>
       </Obstacle>
     </Obstacles>
     <MaximumScore>1100</MaximumScore>
-    <StarUnlockRequirement>10</StarUnlockRequirement>
+    <StarUnlockRequirement>15</StarUnlockRequirement>
     <TwoStarRequirement>14</TwoStarRequirement>
     <ThreeStarRequirement>8</ThreeStarRequirement>
   </Level>
@@ -205,8 +213,8 @@
     <ID>9</ID>
     <LevelNum>10</LevelNum>
     <WorldNum>1</WorldNum>
-    <SceneIndex>17</SceneIndex>
-    <LevelOverview>Level/Overviews/Level7</LevelOverview>
+    <SceneIndex>18</SceneIndex>
+    <LevelOverview>Level/Overviews/Level10</LevelOverview>
     <Obstacles>
       <Obstacle>
         <ID>3</ID>
@@ -216,9 +224,17 @@
         <ID>2</ID>
         <Num>2</Num>
       </Obstacle>
+      <Obstacle>
+        <ID>0</ID>
+        <Num>1</Num>
+      </Obstacle>
+      <Obstacle>
+        <ID>1</ID>
+        <Num>1</Num>
+      </Obstacle>
     </Obstacles>
     <MaximumScore>1100</MaximumScore>
-    <StarUnlockRequirement>10</StarUnlockRequirement>
+    <StarUnlockRequirement>18</StarUnlockRequirement>
     <TwoStarRequirement>15</TwoStarRequirement>
     <ThreeStarRequirement>6</ThreeStarRequirement>
   </Level>
