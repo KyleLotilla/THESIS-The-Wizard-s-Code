@@ -48,6 +48,7 @@ public class WizardMovement : MonoBehaviour
         {
             this.UpdateMovement();
         }
+        /*
         else
         {
             if (Input.GetKey(KeyCode.D))
@@ -59,6 +60,7 @@ public class WizardMovement : MonoBehaviour
                 Walk(4.0f, -11.0f);
             }
         }
+        */
     }
 
     public void Walk(float distance, float walkingVelocity)
