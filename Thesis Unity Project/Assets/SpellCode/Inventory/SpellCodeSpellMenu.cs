@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
 
 public class SpellCodeSpellMenu : ItemSlotMenu<Spell>
 {
@@ -31,10 +32,12 @@ public class SpellCodeSpellMenu : ItemSlotMenu<Spell>
         {
             spellSlot.spell = item;
         }
+        /*
         SlotSpace slotSpace = space.GetComponent<SlotSpace>();
         if (slotSpace != null)
         {
             slotSpace.slot = slot;
         }
+        */
     }
 }

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DestroySlotOnRemoveHandler : MonoBehaviour
 {
+    /*
     [SerializeField]
     private RemovableSlotSpace removableSlotSpace;
-
+    */
     // Start is called before the first frame update
     void Start()
     {
-        removableSlotSpace.OnSlotRemove += OnSlotRemove;
+        //removableSlotSpace.OnSlotRemove += OnSlotRemove;
     }
 
+    /*
     private void OnSlotRemove(GameObject slot)
     {
         if (slot != null)
@@ -20,6 +22,7 @@ public class DestroySlotOnRemoveHandler : MonoBehaviour
             Destroy(slot);
         }
     }
+    */
 
     // Update is called once per frame
     void Update()

@@ -21,11 +21,13 @@ public class DialogueCollision : MonoBehaviour
     {
         if (col.gameObject.tag == "Wizard")
         {
+            /*
             WizardMovement wizardMovement = col.gameObject.GetComponent<WizardMovement>();
             if (wizardMovement != null)
             {
                 wizardMovement.StopWalking();
             }
+            */
             spriteRenderer.enabled = false;
             fairyTalking.OnFairyTalkingEnd += OnFairyTalkingEnd;
             fairyTalking.StartTalking();

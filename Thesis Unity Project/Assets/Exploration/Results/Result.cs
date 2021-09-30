@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
 
 public class Result : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class Result : MonoBehaviour
             playerLevelProgression.AddProgression(levelProgression);
             foreach (int spellID in level.unlockableSpellsIDs)
             {
-                spellInventory.AddSpell(spellDatabase.GetSpell(spellID));
+                //spellInventory.AddSpell(spellDatabase.GetSpell(spellID));
             }
         }
 

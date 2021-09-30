@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DLSU.WizardCode.Spells;
 
 public class SpellSlot : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class SpellSlot : MonoBehaviour
             _spell = value;
             if (icon != null)
             {
-                icon.sprite = _spell.icon;
+                icon.sprite = _spell.MaleIcon;
             }
         }
     }

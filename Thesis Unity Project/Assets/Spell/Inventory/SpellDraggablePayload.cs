@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
 
 public class SpellDraggablePayload : MonoBehaviour
 {
+    /*
     [SerializeField]
     private DraggablePayload draggablePayload;
     public Spell spell { get; set; }
+    */
     // Start is called before the first frame update
     void Start()
     {
-        draggablePayload.OnDraggablePayloadSpawn += OnDraggablePayloadSpawn;
+        //draggablePayload.OnDraggablePayloadSpawn += OnDraggablePayloadSpawn;
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class SpellDraggablePayload : MonoBehaviour
         SpellSlot spellSlot = payload.GetComponent<SpellSlot>();
         if (spellSlot != null)
         {
-            spellSlot.spell = spell;
+            //spellSlot.spell = spell;
         }
     }
 }

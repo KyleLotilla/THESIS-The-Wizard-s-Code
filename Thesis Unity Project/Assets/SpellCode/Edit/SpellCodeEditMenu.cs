@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
 
 public class SpellCodeEditMenu : ItemSlotMenu<Spell>
 {
@@ -23,35 +24,43 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
     {
         if (!isTutorial)
         {
-            List<Spell> spells = spellInventory.fullInventory.ToList();
+            //List<Spell> spells = spellInventory.fullInventory.ToList();
             if (canAddMoveLeft)
             {
+                /*
                 Spell moveLeftSpell = spellDatabase.GetMoveLeft();
                 if (moveLeftSpell != null)
                 {
                     spells.Insert(0, moveLeftSpell);
                 }
+                */
             }
+            /*
             Spell moveRightSpell = spellDatabase.GetMoveRight();
             if (moveRightSpell != null)
             {
                 spells.Insert(1, moveRightSpell);
             }
-            items = spells;
+            */
+            //items = spells;
         }
         else
         {
             List<Spell> spells = new List<Spell>();
-            Spell moveRightSpell = spellDatabase.GetMoveRight();
+            //Spell moveRightSpell = spellDatabase.GetMoveRight();
+            /*
             if (moveRightSpell != null)
             {
                 spells.Add(moveRightSpell);
             }
-            Spell fireballSpell = spellInventory.equipped.First();
+            */
+            /*
+            Spell fireballSpell = spellInventory.EquippedSpells.First();
             if (fireballSpell != null)
             {
                 spells.Add(fireballSpell);
             }
+            */
             items = spells;
         }
         base.RefreshMenu();
@@ -73,7 +82,7 @@ public class SpellCodeEditMenu : ItemSlotMenu<Spell>
         SpellDraggablePayload spellDraggablePayload = slot.GetComponent<SpellDraggablePayload>();
         if (spellDraggablePayload != null)
         {
-            spellDraggablePayload.spell = item;
+            //spellDraggablePayload.spell = item;
         }
     }
 }

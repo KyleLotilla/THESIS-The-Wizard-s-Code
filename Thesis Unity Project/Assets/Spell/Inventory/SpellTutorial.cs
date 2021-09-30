@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DLSU.WizardCode.UI.Slots;
 
 public class SpellTutorial : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class SpellTutorial : MonoBehaviour
             if (space != null)
             {
                 spaces.Add(space);
-                space.OnSlotChange += OnSlotChange;
+                //space.OnSlotChange += OnSlotChange;
             }
         }
     }
@@ -36,7 +37,7 @@ public class SpellTutorial : MonoBehaviour
     {
         foreach (SlotSpace space in spaces)
         {
-            space.OnSlotChange -= OnSlotChange;
+            //space.OnSlotChange -= OnSlotChange;
         }
         //showDialogue.Show();
         levelSelectMenu.UnlockTutorialLevel();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
 
 public class SpellsInfoPanel : ItemSlotMenu<int>
 {
@@ -27,15 +28,17 @@ public class SpellsInfoPanel : ItemSlotMenu<int>
 
     protected override void OnSlotSpawn(GameObject slot, GameObject space, int item)
     {
+        /*
         Spell spell = spellDatabase.GetSpell(item);
         if (spell != null)
         {
             InfoIconPanel infoIconPanel = slot.GetComponent<InfoIconPanel>();
             if (infoIconPanel != null)
             {
-                infoIconPanel.icon.sprite = spell.icon;
-                infoIconPanel.text.text = spell.name;
+                infoIconPanel.icon.sprite = spell.maleIcon;
+                infoIconPanel.text.text = spell.spellName;
             }
         }
+        */
     }
 }

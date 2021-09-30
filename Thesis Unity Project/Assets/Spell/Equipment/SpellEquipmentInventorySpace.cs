@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.UI.Slots;
 
 public class SpellEquipmentInventorySpace : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class SpellEquipmentInventorySpace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        space.OnSlotChange += OnSlotChange;
+        //space.OnSlotChange += OnSlotChange;
     }
 
     // Update is called once per frame
@@ -29,10 +31,12 @@ public class SpellEquipmentInventorySpace : MonoBehaviour
             if (spellSlot != null)
             {
                 Spell spell = spellSlot.spell;
+                /*
                 if (spell.isEquipped)
                 {
                     UnequipSpell(spell);
                 }
+                */
             }
         }
     }
@@ -41,6 +45,7 @@ public class SpellEquipmentInventorySpace : MonoBehaviour
     {
         if (spell != null)
         {
+            /*
             spellInventory.UnequipSpell(spell);
             spellInventory.AddSpell(spell);
             /*

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
 
 public class SaveReader : MonoBehaviour
 {
@@ -126,11 +127,13 @@ public class SaveReader : MonoBehaviour
                     if (spellElement.Elements("ID").Any())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
+                        /*
                         Spell spell = spellDatabase.GetSpell(spellID);
                         if (spell != null)
                         {
-                            spellInventory.EquipSpell(spell);
+                            //spellInventory.EquipSpell(spell);
                         }
+                        */
                     }
                 }
             }
@@ -141,12 +144,14 @@ public class SaveReader : MonoBehaviour
                 {
                     if (spellElement.Elements("ID").Any())
                     {
+                        /*
                         int spellID = int.Parse(spellElement.Element("ID").Value);
                         Spell spell = spellDatabase.GetSpell(spellID);
                         if (spell != null)
                         {
-                            spellInventory.AddSpell(spell);
+                          //spellInventory.AddSpell(spell);
                         }
+                        */
                     }
                 }
             }
@@ -168,6 +173,7 @@ public class SaveReader : MonoBehaviour
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
+                        /*
                         if (spellID == spellDatabase.moveLeftID)
                         {
                             spellCode.AddSpell(spellDatabase.GetMoveLeft());
@@ -180,6 +186,7 @@ public class SaveReader : MonoBehaviour
                         {
                             spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                         }
+                        */
                     }
                     spellCodeInventory.EquipSpellCode(spellCode);
                 }
@@ -194,7 +201,7 @@ public class SaveReader : MonoBehaviour
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
-                        spellCode.AddSpell(spellDatabase.GetSpell(spellID));
+                        //spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                     }
                     spellCodeInventory.AddSpellCode(spellCode);
                 }

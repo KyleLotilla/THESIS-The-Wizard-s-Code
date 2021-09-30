@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class IceBlockSpellCodeTutorial : MonoBehaviour
 {
+    /*
     [SerializeField]
     private ActionStack actionStack;
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class IceBlockSpellCodeTutorial : MonoBehaviour
         {
             if (col.gameObject.tag == "Fire")
             {
-                actionStack.isTutorialSpellCode = false;
+                //actionStack.isTutorialSpellCode = false;
             }
         }
     }

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using DLSU.WizardCode.Spells;
 
 public class SaveWriter : MonoBehaviour
 {
@@ -97,16 +98,19 @@ public class SaveWriter : MonoBehaviour
             XElement newSpellInventory = new XElement("SpellInventory");
 
             XElement equippedElement = new XElement("Equipped");
-            foreach (Spell spell in spellInventory.equipped)
+            /*
+            foreach (Spell spell in spellInventory.EquippedSpells)
             {
                 XElement spellElement = new XElement("Spell");
                 spellElement.Add(new XElement("ID", spell.spellID.ToString()));
                 //spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                 equippedElement.Add(spellElement);
             }
+            */
             newSpellInventory.Add(equippedElement);
 
             XElement inventoryElement = new XElement("Inventory");
+            /*
             foreach (Spell spell in spellInventory)
             {
                 XElement spellElement = new XElement("Spell");
@@ -114,6 +118,7 @@ public class SaveWriter : MonoBehaviour
                 //spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                 inventoryElement.Add(spellElement);
             }
+            */
             newSpellInventory.Add(inventoryElement);
 
             XElement root = document.Root;
@@ -140,7 +145,7 @@ public class SaveWriter : MonoBehaviour
                 foreach (Spell spell in spellCode)
                 {
                     XElement spellElement = new XElement("Spell");
-                    spellElement.Add(new XElement("ID", spell.spellID.ToString()));
+                    spellElement.Add(new XElement("ID", spell.SpellID.ToString()));
                    // spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                     spellsElement.Add(spellElement);
                 }
@@ -158,7 +163,7 @@ public class SaveWriter : MonoBehaviour
                 foreach (Spell spell in spellCode)
                 {
                     XElement spellElement = new XElement("Spell");
-                    spellElement.Add(new XElement("ID", spell.spellID.ToString()));
+                    spellElement.Add(new XElement("ID", spell.SpellID.ToString()));
                     //spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                     spellsElement.Add(spellElement);
                 }
@@ -175,29 +180,6 @@ public class SaveWriter : MonoBehaviour
             }
         }
     }
-    /*
-    public void SaveMaterialInventory()
-    {
-        if (document != null)
-        {
-            XElement newMaterialInventory = new XElement("MaterialInventory");
-
-            foreach (Material material in materialInventory)
-            {
-                XElement materialElement = new XElement("Material");
-                materialElement.Add(new XElement("ID", material.materialID.ToString()));
-                newMaterialInventory.Add(materialElement);
-            }
-
-            XElement root = document.Root;
-            if (root.Elements("MaterialInventory").Any())
-            {
-                XElement materialInventoryElement = root.Element("MaterialInventory");
-                materialInventoryElement.ReplaceWith(newMaterialInventory);
-            }
-        }
-    }
-    */
 
     public void SavePlayerLevelProgression()
     {

@@ -3,86 +3,97 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CastHeldSpell : Action
+
+namespace DLSU.WizardCode.Actions
 {
-    [SerializeField]
-    private ActionRange actionRange;
-    [SerializeField]
-    private GameObject spellPrefab;
-    [SerializeField]
-    private AudioClip audioClip;
-    [SerializeField]
-    private GameObject oneShotAudioPrefab;
-
-
-    private DestroyHandler spellDestroyHandler;
-    private WizardCasting wizardCasting;
-
-    protected override void Execute()
+    public class CastHeldSpell : Action
     {
-        wizardCasting = this.wizard.GetComponent<WizardCasting>();
-        if (wizardCasting != null)
-        {
-            wizardCasting.OnCastingHoldStartEnd += OnCastingHoldStartEnd;
-            wizardCasting.CastHold();
-        }
-    }
+        [SerializeField]
+        private ActionRange actionRange;
+        [SerializeField]
+        private GameObject spellPrefab;
+        [SerializeField]
+        private AudioClip audioClip;
+        [SerializeField]
+        private GameObject oneShotAudioPrefab;
 
-    private void OnCastingHoldStartEnd()
-    {
-        wizardCasting.OnCastingHoldStartEnd -= OnCastingHoldStartEnd;
-        SpawnSpell();
-        GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
-        if (oneShotAudioObject != null)
+
+        private DestroyHandler spellDestroyHandler;
+        private WizardCasting wizardCasting;
+
+        protected override bool StartExecution()
         {
-            OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
-            if (oneShotAudioClip != null)
+            //wizardCasting = this.Wizard.GetComponent<WizardCasting>();
+            if (wizardCasting != null)
             {
-                oneShotAudioClip.PlayClip(audioClip);
+                wizardCasting.OnCastingHoldStartEnd += OnCastingHoldStartEnd;
+                wizardCasting.CastHold();
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-    }
 
-    public void SpawnSpell()
-    {
-        Transform wizardtransform = wizard.transform;
-        Vector3 wizardRotation = wizardtransform.rotation.eulerAngles;
-        Vector3 offset = actionRange.offset;
-        if (wizardRotation.y == 180.0f)
+        private void OnCastingHoldStartEnd()
         {
-            offset.x *= -1f;
-        }
-        Vector3 spellPosition = wizardtransform.position + offset;
-        GameObject spellObject = Instantiate(spellPrefab, spellPosition, wizardtransform.rotation);
-        if (spellObject != null)
-        {
-            spellDestroyHandler = spellObject.GetComponent<DestroyHandler>();
-            if (spellDestroyHandler != null)
+            wizardCasting.OnCastingHoldStartEnd -= OnCastingHoldStartEnd;
+            SpawnSpell();
+            GameObject oneShotAudioObject = Instantiate(oneShotAudioPrefab);
+            if (oneShotAudioObject != null)
             {
-                spellDestroyHandler.OnGameObjectDestroy += OnSpellDestroy;
+                OneShotAudioClip oneShotAudioClip = oneShotAudioObject.GetComponent<OneShotAudioClip>();
+                if (oneShotAudioClip != null)
+                {
+                    oneShotAudioClip.PlayClip(audioClip);
+                }
             }
         }
-    }
 
-    private void OnSpellDestroy()
-    {
-        wizardCasting.OnCastingHoldEnd += OnCastingHoldEnd;
-        wizardCasting.EndCastHold();
-    }
+        public void SpawnSpell()
+        {
+            /*
+            Transform wizardtransform = Wizard.transform;
+            Vector3 wizardRotation = wizardtransform.rotation.eulerAngles;
+            Vector3 offset = actionRange.offset;
+            if (wizardRotation.y == 180.0f)
+            {
+                offset.x *= -1f;
+            }
+            Vector3 spellPosition = wizardtransform.position + offset;
+            GameObject spellObject = Instantiate(spellPrefab, spellPosition, wizardtransform.rotation);
+            if (spellObject != null)
+            {
+                spellDestroyHandler = spellObject.GetComponent<DestroyHandler>();
+                if (spellDestroyHandler != null)
+                {
+                    spellDestroyHandler.OnGameObjectDestroy += OnSpellDestroy;
+                }
+            }
+            */
+        }
 
-    private void OnCastingHoldEnd()
-    {
-        wizardCasting.OnCastingHoldEnd -= OnCastingHoldEnd;
-        EndExecution();
-    }
+        private void OnSpellDestroy()
+        {
+            wizardCasting.OnCastingHoldEnd += OnCastingHoldEnd;
+            wizardCasting.EndCastHold();
+        }
 
-    void Start()
-    {
-        
-    }
+        private void OnCastingHoldEnd()
+        {
+            wizardCasting.OnCastingHoldEnd -= OnCastingHoldEnd;
+            EndExecution();
+        }
 
-    void Update()
-    {
-        
+        void Start()
+        {
+
+        }
+
+        void Update()
+        {
+
+        }
     }
 }

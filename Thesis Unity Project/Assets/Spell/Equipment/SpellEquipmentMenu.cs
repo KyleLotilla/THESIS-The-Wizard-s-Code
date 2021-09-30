@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.UI.DragNDrop;
 
 public class SpellEquipmentMenu : ItemSlotMenu<Spell>
 {
@@ -11,9 +13,11 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
     // Start is called before the first frame update
     void Start()
     {
-        items = spellInventory.equipped;
-        maxSpaces = spellInventory.maxEquipped;
+        /*
+        items = spellInventory.EquippedSpells;
+        maxSpaces = spellInventory.MaxEquipped;
         RefreshMenu();
+        */
     }
 
     // Update is called once per frame
@@ -31,17 +35,19 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
         }
         if (space != null)
         {
+            /*
             SlotSpace slotSpace = space.GetComponent<SlotSpace>();
             if (slotSpace != null)
             {
                 slotSpace.slot = slot;
             }
+            */
             if (isTutorial)
             {
                 Draggable draggable = space.GetComponent<Draggable>();
                 if (draggable != null)
                 {
-                    draggable.isDraggable = false;
+                    draggable.IsDraggable = false;
                 }
             }
         }
@@ -56,7 +62,7 @@ public class SpellEquipmentMenu : ItemSlotMenu<Spell>
                 Draggable draggable = space.GetComponent<Draggable>();
                 if (draggable != null)
                 {
-                    draggable.isDraggable = false;
+                    draggable.IsDraggable = false;
                 }
             }
         }

@@ -27,11 +27,13 @@ public class SpellCodeEditSaveUI : MonoBehaviour
             _spaces = value;
             foreach(GameObject spaceObject in _spaces)
             {
+                /*
                 SlotSpace space = spaceObject.GetComponent<SlotSpace>();
                 if (space != null)
                 {
                     space.OnSlotChange += OnSlotChange;
                 }
+                */
             }
         }
     }
@@ -69,6 +71,7 @@ public class SpellCodeEditSaveUI : MonoBehaviour
 
         foreach (GameObject spaceObject in spaces)
         {
+            /*
             SlotSpace space = spaceObject.GetComponent<SlotSpace>();
             if (space != null)
             {
@@ -93,6 +96,7 @@ public class SpellCodeEditSaveUI : MonoBehaviour
                     }
                 }
             }
+            */
         }
  
         if (spellCount < spellCodeInventory.minSpells)

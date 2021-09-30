@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DLSU.WizardCode.Spells;
 
 public class ScriptableObjectTestScript : MonoBehaviour
 {
-    public MaterialDatabase materialDatabase;
-    public MaterialInventory materialInventory;
     public SpellDatabase spellDatabase;
     public SpellInventory spellInventory;
     public SpellCodeInventory spellCodeInventory;
@@ -15,8 +14,8 @@ public class ScriptableObjectTestScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Spell fireBall = spellDatabase.GetSpell(2);
-        spellInventory.EquipSpell(fireBall);
+        spellInventory.EquipSpell(spellDatabase.GetSpellInstance(1));
+        //spellInventory.EquipSpell(fireBall);
         /*
             materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
             materialInventory.AddMaterial(materialDatabase.GetMaterial(3));
@@ -39,8 +38,7 @@ public class ScriptableObjectTestScript : MonoBehaviour
         
 
        
-        Spell electro = spellDatabase.GetSpell(3);
-        spellInventory.AddSpell(electro);
+        //spellInventory.AddSpell(electro);
         /*
         SpellCode spellCode2 = new SpellCode();
         spellCode2.AddSpell(spellDatabase.GetSpell(1));
@@ -80,7 +78,6 @@ public class ScriptableObjectTestScript : MonoBehaviour
         
 
         //playerProfile.gender = Gender.FEMALE;
-        playerProfile.gender = Gender.MALE;
         
         /*
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));

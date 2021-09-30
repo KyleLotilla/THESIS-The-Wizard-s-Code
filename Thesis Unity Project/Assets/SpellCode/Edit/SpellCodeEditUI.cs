@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DLSU.WizardCode.Spells;
 
 enum SpellCodeEditMode
 {
@@ -71,6 +72,7 @@ public class SpellCodeEditUI : MonoBehaviour
         List<Spell> spells = new List<Spell>();
         foreach (GameObject spaceObject in spellMenu.spaces)
         {
+            /*
             SlotSpace space = spaceObject.GetComponent<SlotSpace>();
             if (space != null)
             {
@@ -84,6 +86,7 @@ public class SpellCodeEditUI : MonoBehaviour
                     }
                 }
             }
+            */
         }
 
         if (spells.Count >= spellCodeInventory.minSpells && inputField.text.Length > 0)

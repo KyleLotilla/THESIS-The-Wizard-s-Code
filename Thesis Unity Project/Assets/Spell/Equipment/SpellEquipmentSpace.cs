@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.UI.Slots;
 
 public class SpellEquipmentSpace : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class SpellEquipmentSpace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        space.OnSlotChange += OnSlotChange;
+        //space.OnSlotChange += OnSlotChange;
     }
 
     // Update is called once per frame
@@ -27,10 +29,12 @@ public class SpellEquipmentSpace : MonoBehaviour
             if (spellSlot != null)
             {
                 Spell spell = spellSlot.spell;
+                /*
                 if (!spell.isEquipped)
                 {
                     EquipSpell(spell);
                 }
+                */
             }
         }
     }
@@ -39,6 +43,7 @@ public class SpellEquipmentSpace : MonoBehaviour
     {
         if (spell != null)
         {
+            /*
             if (!spell.isEquipped)
             {
                 spellInventory.RemoveSpell(spell);
@@ -48,8 +53,9 @@ public class SpellEquipmentSpace : MonoBehaviour
                 {
                     Debug.Log(spell1.name);
                 }
-                */
+                
             }
+            */
         }
     }
 }
