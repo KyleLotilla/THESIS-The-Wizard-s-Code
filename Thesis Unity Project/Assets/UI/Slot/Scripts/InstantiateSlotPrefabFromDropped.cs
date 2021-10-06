@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using DLSU.WizardCode.Util;
+using DLSU.WizardCode.Events;
 
 namespace DLSU.WizardCode.UI.Slots
 {

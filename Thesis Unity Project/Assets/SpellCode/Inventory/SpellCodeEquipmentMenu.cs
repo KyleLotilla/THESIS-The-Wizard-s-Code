@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DLSU.WizardCode.SpellCodes;
 
 public class SpellCodeEquipmentMenu : ItemSlotMenu<SpellCode>
 {
@@ -16,8 +17,10 @@ public class SpellCodeEquipmentMenu : ItemSlotMenu<SpellCode>
     // Start is called before the first frame update
     void Start()
     {
+        /*
         items = spellCodeInventory.equipped;
         RefreshMenu();
+        */
     }
 
     public override void RefreshMenu()

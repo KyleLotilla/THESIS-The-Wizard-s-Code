@@ -330,14 +330,18 @@ GameObject:
   - component: {fileID: 7239730452923029589}
   - component: {fileID: 6790609378434130513}
   - component: {fileID: 1706898046776334402}
+  - component: {fileID: 8252261981734864122}
+  - component: {fileID: 2313196934820924996}
+  - component: {fileID: 5281873218925439222}
   - component: {fileID: 5218943190997743104}
   - component: {fileID: 1070535773589412882}
   - component: {fileID: 761712243816256197}
+  - component: {fileID: 2674061629193781485}
+  - component: {fileID: 1702727739123344377}
   - component: {fileID: 6764422643495387051}
   - component: {fileID: 611884898532661198}
-  - component: {fileID: 1702727739123344377}
-  - component: {fileID: 2313196934820924996}
-  - component: {fileID: 5281873218925439222}
+  - component: {fileID: 8466477260464585677}
+  - component: {fileID: 4528490453566929392}
   m_Layer: 5
   m_Name: QueueSlotSpace
   m_TagString: Untagged
@@ -455,6 +459,140 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8252261981734864122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811174478043550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710d839689d6a10448756ec5d328d3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 0}
+  onActionChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onNoActionSet:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2313196934820924996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811174478043550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f048074eeb083304aa51cc0fa79b580d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionHolder: {fileID: 8252261981734864122}
+  currentExecutingActionObject: {fileID: 11400000, guid: ae35d8d4d1ec8604e891209591eca2e5,
+    type: 2}
+  previousExecutedActionObject: {fileID: 11400000, guid: 838231c6d2400ba419e53479cd1a1f26,
+    type: 2}
+  onActionExecutionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5281873218925439222}
+        m_MethodName: HighlightSpace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 3e76aa9c302012049a4771c1ebf67cba, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onActionExecutionEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5281873218925439222}
+        m_MethodName: UnhighlightSpace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2313196934820924996}
+        m_MethodName: RemoveAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 0493d5304c9c4b646a64b69d7f92c113, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2674061629193781485}
+        m_MethodName: OnExecutionEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6764422643495387051}
+        m_MethodName: RemoveSlot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5281873218925439222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811174478043550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6742995f164b99144bfc70ebd96096bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalColor: {r: 1, g: 1, b: 1, a: 0.78431374}
+  highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  spaceImage: {fileID: 7239730452923029589}
 --- !u!114 &5218943190997743104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +644,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2674061629193781485}
+        m_MethodName: OnPrefabInstantiated
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1070535773589412882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8a90ae72937524f87fbb84eb492e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionExecutor: {fileID: 2313196934820924996}
+  actionHolder: {fileID: 8252261981734864122}
 --- !u!114 &761712243816256197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +678,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e51884ca6a251874ea4fc7a8021e8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2674061629193781485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811174478043550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877e410e40884dd429fb08a43ccea699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionStackObject: {fileID: 11400000, guid: 33388e61e79366a489a0af222521eb59, type: 2}
+--- !u!114 &1702727739123344377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811174478043550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3c5b3f2b0a15f479726289c162bf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6764422643495387051
@@ -621,8 +795,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2313196934820924996}
-        m_MethodName: RemoveAction
+      - m_Target: {fileID: 2674061629193781485}
+        m_MethodName: SetDroppedActionSlotObjectToNull
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8252261981734864122}
+        m_MethodName: SetActionToNull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -645,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotSpace: {fileID: 6764422643495387051}
---- !u!114 &1702727739123344377
+--- !u!114 &8466477260464585677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -654,32 +839,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8811174478043550310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed3c5b3f2b0a15f479726289c162bf95, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ecfc230fe944ad489ad29871d63f078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2313196934820924996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811174478043550310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f048074eeb083304aa51cc0fa79b580d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionHolderObject: {fileID: 0}
-  currentExecutingActionHolderObject: {fileID: 11400000, guid: ae35d8d4d1ec8604e891209591eca2e5,
-    type: 2}
-  previousExecutedActionHolderObject: {fileID: 11400000, guid: 838231c6d2400ba419e53479cd1a1f26,
-    type: 2}
-  destroyActionHolderOnExecutionEnd: 1
-  onActionExecutionStart:
+  isHoverable: 1
+  onHoverEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5281873218925439222}
-        m_MethodName: HighlightSpace
+      - m_Target: {fileID: 4528490453566929392}
+        m_MethodName: OnHoverEnter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -689,7 +857,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 3e76aa9c302012049a4771c1ebf67cba, type: 2}
+      - m_Target: {fileID: 11400000, guid: 822ccf839646af34b93e6af783394375, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
@@ -700,43 +868,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onActionExecutionEnd:
+  onHoverExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5281873218925439222}
-        m_MethodName: UnhighlightSpace
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2313196934820924996}
-        m_MethodName: RemoveAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6764422643495387051}
-        m_MethodName: RemoveSlot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 0493d5304c9c4b646a64b69d7f92c113, type: 2}
+      - m_Target: {fileID: 11400000, guid: 136b71363c9b774409332036de74a111, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
@@ -747,7 +882,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5281873218925439222
+      - m_Target: {fileID: 4528490453566929392}
+        m_MethodName: OnHoverExited
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4528490453566929392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -756,9 +902,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8811174478043550310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6742995f164b99144bfc70ebd96096bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dddc39125e82954da2faae691ed5039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalColor: {r: 1, g: 1, b: 1, a: 0.78431374}
-  highlightedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  spaceImage: {fileID: 7239730452923029589}
+  actionHolder: {fileID: 8252261981734864122}
+  currentHoveredActionObject: {fileID: 11400000, guid: 8e5f0fe6d785c05428e5633366e355f9,
+    type: 2}

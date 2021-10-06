@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DLSU.WizardCode.Spells;
-using DLSU.WizardCode.Actions.Slots;
+using DLSU.WizardCode.Actions.UI;
 
 namespace DLSU.WizardCode.Actions.Stack
 {

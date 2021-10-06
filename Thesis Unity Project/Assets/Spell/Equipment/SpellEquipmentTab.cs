@@ -10,13 +10,15 @@ public class SpellEquipmentTab : MonoBehaviour
     private SpellInventoryMenu spellInventoryMenu;
     [SerializeField]
     private SpellEquipmentMenu spellEquippedMenu;
+    /*
     [SerializeField]
     private TabsPanel tabsPanel;
+    */
 
     // Start is called before the first frame update
     void Start()
     {
-        tabsPanel.OnTabPageSwitch += OnTabPageSwitch;
+        //tabsPanel.OnTabPageSwitch += OnTabPageSwitch;
     }
 
     // Update is called once per frame

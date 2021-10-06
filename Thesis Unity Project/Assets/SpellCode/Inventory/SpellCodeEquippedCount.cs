@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class SpellCodeEquippedCount : MonoBehaviour
 {
+    /*
     [SerializeField]
     private SpellCodeInventory spellCodeInventory;
-
+    */
     [SerializeField]
     private Text text;
 
@@ -25,6 +26,6 @@ public class SpellCodeEquippedCount : MonoBehaviour
 
     public void Refresh()
     {
-        text.text = spellCodeInventory.equippedCount.ToString() + " / " + spellCodeInventory.maxEquipped.ToString();
+        //text.text = spellCodeInventory.equippedCount.ToString() + " / " + spellCodeInventory.maxEquipped.ToString();
     }
 }

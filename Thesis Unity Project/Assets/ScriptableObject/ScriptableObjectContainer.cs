@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.SpellCodes;
 
 public class ScriptableObjectContainer : MonoBehaviour
 {

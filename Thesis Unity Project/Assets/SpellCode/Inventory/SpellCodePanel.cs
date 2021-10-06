@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DLSU.WizardCode.SpellCodes;
 
 public class SpellCodePanel : MonoBehaviour
 {
@@ -40,9 +41,12 @@ public class SpellCodePanel : MonoBehaviour
 
     public void RefreshPanel()
     {
+        /*
         spellMenu.maxSpaces = spellCodeInventory.maxSpells;
+        
         spellMenu.spells = spellCode;
-        nameText.text = spellCode.name;
+        nameText.text = spellCode.Name;
+        */
     }
 
 }

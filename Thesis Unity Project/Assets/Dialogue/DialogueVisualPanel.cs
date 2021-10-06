@@ -6,8 +6,10 @@ public class DialogueVisualPanel : MonoBehaviour
 {
     [SerializeField]
     private DialoguePanel dialoguePanel;
+    /*
     [SerializeField]
     private TabsPanel tabsPanel;
+    */
     [SerializeField]
     private List<DialogueLinePagePair> dialogueLinePagePairs;
     private Dictionary<int, int> dialogueLinePageMapping;
@@ -37,6 +39,7 @@ public class DialogueVisualPanel : MonoBehaviour
 
     private void OnDialogueLineChanged(int currentLine)
     {
+        /*
         if (dialogueLinePageMapping.ContainsKey(currentLine))
         {
             tabsPanel.SwitchPage(dialogueLinePageMapping[currentLine]);
@@ -45,6 +48,7 @@ public class DialogueVisualPanel : MonoBehaviour
         {
             tabsPanel.SwitchPage(defaultVisual);
         }
+        */
     }
 
 

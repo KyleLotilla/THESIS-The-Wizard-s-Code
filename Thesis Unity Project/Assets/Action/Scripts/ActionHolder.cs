@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using DLSU.WizardCode.UI.DragNDrop;
+using UnityEngine.Events;
+using DLSU.WizardCode.Events;
 
 namespace DLSU.WizardCode.Actions
 {
@@ -19,7 +19,24 @@ namespace DLSU.WizardCode.Actions
             set
             {
                 action = value;
+                if (action != null)
+                {
+                    onActionChanged?.Invoke(action);
+                }
+                else
+                {
+                    onNoActionSet?.Invoke();
+                }
             }
+        }
+        [SerializeField]
+        private UnityEventOneActionParam onActionChanged;
+        [SerializeField]
+        private UnityEvent onNoActionSet;
+
+        public void SetActionToNull()
+        {
+            Action = null;
         }
     }
 

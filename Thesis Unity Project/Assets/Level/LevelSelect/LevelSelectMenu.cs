@@ -14,8 +14,10 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
     private LevelDatabase levelDatabase;
     [SerializeField]
     private PlayerLevelProgression playerLevelProgression;
+    /*
     [SerializeField]
     private TabsPanel tabsPanel;
+    */
     [SerializeField]
     private int levelUIPage;
     [SerializeField]
@@ -67,7 +69,7 @@ public class LevelSelectMenu : ItemSlotMenu<Level>
     void OnLevelSelected(Level level)
     {
         levelUI.ShowLevelUI(level);
-        tabsPanel.SwitchPage(levelUIPage);
+        //tabsPanel.SwitchPage(levelUIPage);
     }
 
     private void CalculateTotalStars()

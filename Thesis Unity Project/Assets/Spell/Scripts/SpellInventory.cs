@@ -77,8 +77,8 @@ namespace DLSU.WizardCode.Spells
 
         public void AddSpell(SpellInstance spell)
         {
-            Debug.Assert(!spell.isEquipped, name + ": Adding Spell that is Equipped");
-            if (!spell.isEquipped)
+            Debug.Assert(!spell.IsEquipped, name + ": Adding Spell that is Equipped");
+            if (!spell.IsEquipped)
             {
                 unequippedSpells.Add(spell);
             }
@@ -88,29 +88,29 @@ namespace DLSU.WizardCode.Spells
         {
             if (equippedSpells.Count + 1 < MaxEquipped)
             {
-                Debug.Assert(!spell.isEquipped, name + ": Equipping Spell that is already equipped");
-                if (!spell.isEquipped)
+                Debug.Assert(!spell.IsEquipped, name + ": Equipping Spell that is already equipped");
+                if (!spell.IsEquipped)
                 {
                     equippedSpells.Add(spell);
-                    spell.isEquipped = true;
+                    spell.IsEquipped = true;
                 }
             }
         }
 
         public void UnequipSpell(SpellInstance spell)
         {
-            Debug.Assert(spell.isEquipped, name + ": Unequipping Spell that is not equipped");
-            if (spell.isEquipped)
+            Debug.Assert(spell.IsEquipped, name + ": Unequipping Spell that is not equipped");
+            if (spell.IsEquipped)
             {
                 equippedSpells.Remove(spell);
-                spell.isEquipped = false;
+                spell.IsEquipped = false;
             }
         }
 
         public void RemoveSpell(SpellInstance spell)
         {
-            Debug.Assert(!spell.isEquipped, name + ": Removing Spell that is Equipped");
-            if (!spell.isEquipped)
+            Debug.Assert(!spell.IsEquipped, name + ": Removing Spell that is Equipped");
+            if (!spell.IsEquipped)
             {
                 unequippedSpells.Remove(spell);
             }

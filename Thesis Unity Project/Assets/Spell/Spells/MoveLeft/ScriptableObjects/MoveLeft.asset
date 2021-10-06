@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e218ebaea4d4ba742a6d41ce5822dac9, type: 3}
+  m_Name: MoveLeft
+  m_EditorClassIdentifier: 
+  spellID: 0
+  spellName: Move Left
+  description: 
+  maleIcon: {fileID: 21300000, guid: 14960d3660eaf384992854195bc5d788, type: 3}
+  femaleIcon: {fileID: 21300000, guid: b141502313c236d4284b1cf87b48f858, type: 3}
+  actionPrefab: {fileID: 859615774787422495, guid: 296c8476d3355844bb54bb2db020f59c,
+    type: 3}

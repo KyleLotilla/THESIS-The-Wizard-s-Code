@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DLSU.WizardCode.Spells;
-using DLSU.WizardCode.Util;
+using DLSU.WizardCode.Collections;
+using DLSU.WizardCode.ScriptableObjectVariables;
 
 namespace DLSU.WizardCode.Actions.Stack
 {
@@ -37,8 +37,6 @@ namespace DLSU.WizardCode.Actions.Stack
         private float spawnRate;
         [SerializeField]
         private int nonCustomMaxSpawnedActions;
-        [SerializeField]
-        private GameObjectVariable previousExecutedQueueActionHolderObject;
         [SerializeField]
         private List<ActionSpawnOptions> initialSpawnOptions;
 
@@ -237,20 +235,19 @@ namespace DLSU.WizardCode.Actions.Stack
             }
         }
 
-        public void RemovePreviousExecutedQueueActionHolderObjectFromStack()
+        public void RemoveSpawnedActionFromStack(GameObject actionObject)
         {
-            Debug.Assert(previousExecutedQueueActionHolderObject.Value != null, name + ": Previous Executed Queue Action Holder Object is null");
-            if (previousExecutedQueueActionHolderObject.Value != null)
+            if (actionObject != null)
             {
-                ActionHolder actionHolderToRemove = previousExecutedQueueActionHolderObject.Value.GetComponent<ActionHolder>();
-                Debug.Assert(actionHolderToRemove != null, name + ": Previous Executed Queue Action Holder Object has no Action Holder");
+                ActionHolder actionHolderToRemove = actionObject.GetComponent<ActionHolder>();
+                Debug.Assert(actionHolderToRemove != null, name + ": Spawned Action has no Action Holder");
                 if (actionHolderToRemove != null)
                 {
                     Action actionToRemove = actionHolderToRemove.Action;
-                    Debug.Assert(actionToRemove != null, name + ": Previous Executed Queue Action Holder has no Action");
+                    Debug.Assert(actionToRemove != null, name + ": Spawned Action Holder has no Action");
                     ActionType actionTypeOfActionToRemove = actionToRemove.ActionType;
                     List<GameObject> spawnedActionsOfActionTypeToRemoveFrom = spawnedActions[actionTypeOfActionToRemove];
-                    spawnedActionsOfActionTypeToRemoveFrom.Remove(previousExecutedQueueActionHolderObject.Value);
+                    spawnedActionsOfActionTypeToRemoveFrom.Remove(actionObject);
 
                     ActionSpawnOptions spawnOption = spawnOptions[actionTypeOfActionToRemove];
                     if (!spawnOption.HasCustomMaxSpawnedActions)
@@ -263,7 +260,27 @@ namespace DLSU.WizardCode.Actions.Stack
                         AddToSpawnablesListIfSpawnable(actionTypeOfActionToRemove);
                     }                    
                 }
+                Destroy(actionObject);
             }
+        }
+
+        public bool HasGameObjectAsSpawnedAction(GameObject actionObject)
+        {
+            ActionHolder actionHolder = actionObject.GetComponent<ActionHolder>();
+            if (actionHolder != null)
+            {
+                Action action = actionHolder.Action;
+                if (action != null)
+                {
+                    ActionType actionType = action.ActionType;
+                    List<GameObject> spawnedActionsOfActionType = spawnedActions[actionType];
+                    if (spawnedActionsOfActionType != null)
+                    {
+                        return spawnedActionsOfActionType.Contains(actionObject);
+                    }
+                }
+            }
+            return false;
         }
     }
 }

@@ -111,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ice_beam0
+      name: IceBeam_0
       rect:
         serializedVersion: 2
         x: 27
@@ -132,7 +132,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_beam1
+      name: IceBeam_1
       rect:
         serializedVersion: 2
         x: 127
@@ -153,7 +153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_beam2
+      name: IceBeam_2
       rect:
         serializedVersion: 2
         x: 227
@@ -174,7 +174,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_beam3
+      name: IceBeam_3
       rect:
         serializedVersion: 2
         x: 327
@@ -195,7 +195,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_beam4
+      name: IceBeam_4
       rect:
         serializedVersion: 2
         x: 427
@@ -216,7 +216,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_beam5
+      name: IceBeam_5
       rect:
         serializedVersion: 2
         x: 527
@@ -237,7 +237,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_beam6
+      name: IceBeam_6
       rect:
         serializedVersion: 2
         x: 627
@@ -258,7 +258,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_beam7
+      name: IceBeam_7
       rect:
         serializedVersion: 2
         x: 727
@@ -279,7 +279,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_0
+      name: Fireball_0
       rect:
         serializedVersion: 2
         x: 31
@@ -300,7 +300,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_1
+      name: Fireball_1
       rect:
         serializedVersion: 2
         x: 130
@@ -321,7 +321,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_2
+      name: Fireball_2
       rect:
         serializedVersion: 2
         x: 231
@@ -342,7 +342,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_3
+      name: Fireball_3
       rect:
         serializedVersion: 2
         x: 333
@@ -363,7 +363,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_4
+      name: Fireball_4
       rect:
         serializedVersion: 2
         x: 431
@@ -384,7 +384,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_5
+      name: Fireball_5
       rect:
         serializedVersion: 2
         x: 530
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_6
+      name: Fireball_6
       rect:
         serializedVersion: 2
         x: 631
@@ -426,7 +426,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireball_7
+      name: Fireball_7
       rect:
         serializedVersion: 2
         x: 733
@@ -447,7 +447,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_0
+      name: ElectroShock_0
       rect:
         serializedVersion: 2
         x: 27
@@ -468,7 +468,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_1
+      name: ElectroShock_1
       rect:
         serializedVersion: 2
         x: 127
@@ -489,7 +489,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_2
+      name: ElectroShock_2
       rect:
         serializedVersion: 2
         x: 227
@@ -510,7 +510,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_3
+      name: ElectroShock_3
       rect:
         serializedVersion: 2
         x: 327
@@ -531,7 +531,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_4
+      name: ElectroShock_4
       rect:
         serializedVersion: 2
         x: 427
@@ -552,7 +552,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_5
+      name: ElectroShock_5
       rect:
         serializedVersion: 2
         x: 527
@@ -573,7 +573,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_6
+      name: ElectroShock_6
       rect:
         serializedVersion: 2
         x: 627
@@ -594,7 +594,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electroshock_7
+      name: ElectroShock_7
       rect:
         serializedVersion: 2
         x: 727
@@ -615,7 +615,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_0
+      name: Waterball_0
       rect:
         serializedVersion: 2
         x: 31
@@ -636,7 +636,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_1
+      name: Waterball_1
       rect:
         serializedVersion: 2
         x: 130
@@ -657,7 +657,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_2
+      name: Waterball_2
       rect:
         serializedVersion: 2
         x: 229
@@ -678,7 +678,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_3
+      name: Waterball_3
       rect:
         serializedVersion: 2
         x: 330
@@ -699,7 +699,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_4
+      name: Waterball_4
       rect:
         serializedVersion: 2
         x: 430
@@ -720,7 +720,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_5
+      name: Waterball_5
       rect:
         serializedVersion: 2
         x: 530
@@ -741,10 +741,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_6
+      name: Waterball_6
       rect:
         serializedVersion: 2
-        x: 628
+        x: 627
         y: 21
         width: 31
         height: 15
@@ -762,7 +762,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterball_7
+      name: Waterball_7
       rect:
         serializedVersion: 2
         x: 730

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.SpellCodes;
 
 enum SpellCodeEditMode
 {
@@ -13,8 +14,10 @@ enum SpellCodeEditMode
 
 public class SpellCodeEditUI : MonoBehaviour
 {
+    /*
     [SerializeField]
     private TabsPanel tabsPanel;
+    */
     [SerializeField]
     private int spellCodeInventoryPage;
     [SerializeField]
@@ -48,10 +51,10 @@ public class SpellCodeEditUI : MonoBehaviour
     public void EnterAddMode()
     {
         spellCode = new SpellCode();
-        spellCode.name = "New SpellCode";
+        spellCode.Name = "New SpellCode";
         spellCodePanel.spellCode = spellCode;
         spellCodeEditSaveUI.spaces = spellMenu.spaces;
-        inputField.text = spellCode.name;
+        inputField.text = spellCode.Name;
         spellCodeEditMenu.RefreshMenu();
         spellCodeEditMode = SpellCodeEditMode.ADD;
     }
@@ -61,7 +64,7 @@ public class SpellCodeEditUI : MonoBehaviour
         this.spellCode = spellCode;
         spellCodePanel.spellCode = spellCode;
         spellCodeEditSaveUI.spaces = spellMenu.spaces;
-        inputField.text = spellCode.name;
+        inputField.text = spellCode.Name;
         spellCodeEditSaveUI.spaces = spellMenu.spaces;
         spellCodeEditMenu.RefreshMenu();
         spellCodeEditMode = SpellCodeEditMode.EDIT;
@@ -88,35 +91,35 @@ public class SpellCodeEditUI : MonoBehaviour
             }
             */
         }
-
+        /*
         if (spells.Count >= spellCodeInventory.minSpells && inputField.text.Length > 0)
         {
             if (spellCodeEditMode == SpellCodeEditMode.ADD)
             {
                 SpellCode newSpellCode = new SpellCode();
-                newSpellCode.name = inputField.text;
+                newSpellCode.Name = inputField.text;
                 foreach (Spell spell in spells)
                 {
-                    newSpellCode.AddSpell(spell);
+                    //newSpellCode.AddSpell(spell);
                 }
                 spellCodeInventory.AddSpellCode(newSpellCode);
                 tabsPanel.SwitchPage(spellCodeInventoryPage);
             }
             else if (spellCodeEditMode == SpellCodeEditMode.EDIT)
             {
-                spellCode.name = inputField.text;
+                spellCode.Name = inputField.text;
                 spellCode.ClearSpells();
                 foreach (Spell spell in spells)
                 {
-                    spellCode.AddSpell(spell);
+                    //spellCode.AddSpell(spell);
                 }
                 tabsPanel.SwitchPage(spellCodeInventoryPage);
             }
-        }
+        }*/
     }
 
     public void DiscardSpellCode()
     {
-        tabsPanel.SwitchPage(spellCodeInventoryPage);
+        //tabsPanel.SwitchPage(spellCodeInventoryPage);
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.SpellCodes;
 
 public class SaveWriter : MonoBehaviour
 {
@@ -137,11 +138,13 @@ public class SaveWriter : MonoBehaviour
             XElement newSpellCodeInventory = new XElement("SpellCodeInventory");
 
             XElement equippedElement = new XElement("Equipped");
+            /*
             foreach (SpellCode spellCode in spellCodeInventory.equipped)
             {
                 XElement spellCodeElement = new XElement("SpellCode");
-                spellCodeElement.Add(new XElement("Name", spellCode.name));
+                spellCodeElement.Add(new XElement("Name", spellCode.Name));
                 XElement spellsElement = new XElement("Spells");
+                
                 foreach (Spell spell in spellCode)
                 {
                     XElement spellElement = new XElement("Spell");
@@ -149,6 +152,7 @@ public class SaveWriter : MonoBehaviour
                    // spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                     spellsElement.Add(spellElement);
                 }
+                
                 spellCodeElement.Add(spellsElement);
                 equippedElement.Add(spellCodeElement);
             }
@@ -158,8 +162,9 @@ public class SaveWriter : MonoBehaviour
             foreach (SpellCode spellCode in spellCodeInventory)
             {
                 XElement spellCodeElement = new XElement("SpellCode");
-                spellCodeElement.Add(new XElement("Name", spellCode.name));
+                spellCodeElement.Add(new XElement("Name", spellCode.Name));
                 XElement spellsElement = new XElement("Spells");
+                /*
                 foreach (Spell spell in spellCode)
                 {
                     XElement spellElement = new XElement("Spell");
@@ -167,11 +172,12 @@ public class SaveWriter : MonoBehaviour
                     //spellElement.Add(new XElement("InstanceID", spell.instanceID.ToString()));
                     spellsElement.Add(spellElement);
                 }
+                
                 spellCodeElement.Add(spellsElement);
                 inventoryElement.Add(spellCodeElement);
             }
             newSpellCodeInventory.Add(inventoryElement);
-
+            */
             XElement root = document.Root;
             if (root.Elements("SpellCodeInventory").Any())
             {

@@ -1,72 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using DLSU.WizardCode.ScriptableObjectVariables;
 using UnityEngine;
-using DLSU.WizardCode.Util;
 using UnityEngine.Events;
 namespace DLSU.WizardCode.Actions
 {
     public class ActionExecutor : MonoBehaviour
     {
         [SerializeField]
-        private GameObject actionHolderObject;
-        public GameObject ActionHolderObject
-        {
-            get
-            {
-                return actionHolderObject;
-            }
-            set
-            {
-                actionHolderObject = value;
-                if (actionHolderObject != null)
-                {
-                    ActionHolder actionHolder = actionHolderObject.GetComponent<ActionHolder>();
-                    Debug.Assert(actionHolder != null, name + ": Action Holder not found in Action Object");
-                    if (actionHolder != null)
-                    {
-                        action = actionHolder.Action;
-                        Debug.Assert(action != null, name + ": No Action found in Action Holder");
-                    }
-                }
-                else
-                {
-                    action = null;
-                }
-            }
-        }
-        private Action action;
+        private ActionHolder actionHolder;
         [SerializeField]
-        private GameObjectVariable currentExecutingActionHolderObject;
+        private GameObjectVariable currentExecutingActionObject;
         [SerializeField]
-        private GameObjectVariable previousExecutedActionHolderObject;
-        [SerializeField]
-        private bool destroyActionHolderOnExecutionEnd;
+        private GameObjectVariable previousExecutedActionObject;
         [SerializeField]
         private UnityEvent onActionExecutionStart;
         [SerializeField]
         private UnityEvent onActionExecutionEnd;
-        // Start is called before the first frame update
-        void Start()
+
+        public Action Action
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            get
+            {
+                return actionHolder.Action;
+            }
+            set
+            {
+                actionHolder.Action = value;
+            }
         }
 
         public bool Execute()
         {
             bool isExecuting = false;
-            if (actionHolderObject != null)
+            if (Action != null)
             {
-                isExecuting = action.Execute();
+                isExecuting = Action.Execute();
                 if (isExecuting)
                 {
-                    action.OnActionExecutionEnd.AddListener(OnActionExecutionEnd);
-                    currentExecutingActionHolderObject.Value = actionHolderObject;
+                    Action.OnActionExecutionEnd.AddListener(OnActionExecutionEnd);
+                    currentExecutingActionObject.Value = Action.gameObject;
                     onActionExecutionStart?.Invoke();
                 }
             }
@@ -75,21 +46,11 @@ namespace DLSU.WizardCode.Actions
 
         private void OnActionExecutionEnd()
         {
-            action.OnActionExecutionEnd.RemoveListener(OnActionExecutionEnd);
-            currentExecutingActionHolderObject.Value = null;
-            previousExecutedActionHolderObject.Value = actionHolderObject;
+            Action.OnActionExecutionEnd.RemoveListener(OnActionExecutionEnd);
+            currentExecutingActionObject.Value = null;
+            previousExecutedActionObject.Value = Action.gameObject;
             onActionExecutionEnd?.Invoke();
-            if (destroyActionHolderOnExecutionEnd)
-            {
-                Destroy(previousExecutedActionHolderObject.Value);
-                ActionHolderObject = null;
-            }
-            previousExecutedActionHolderObject.Value = null;
-        }
-
-        public void RemoveAction()
-        {
-            ActionHolderObject = null;
+            previousExecutedActionObject.Value = null;
         }
     }
 }

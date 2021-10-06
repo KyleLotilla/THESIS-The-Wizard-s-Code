@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DLSU.WizardCode.SpellCodes;
 
 public delegate void OnSpellCodePanelSelected(SpellCodeInventoryPanel source, SpellCode spellCode);
 

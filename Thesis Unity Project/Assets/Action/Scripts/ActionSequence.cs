@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DLSU.WizardCode.Util;
 using UnityEngine.Events;
 
 namespace DLSU.WizardCode.Actions
@@ -10,18 +9,6 @@ namespace DLSU.WizardCode.Actions
     {
         [SerializeField]
         private List<ActionExecutor> actionExecutors;
-        public List<ActionExecutor> ActionExecutors
-        {
-            get
-            {
-                return actionExecutors;
-            }
-            set
-            {
-                actionExecutors = value;
-            }
-        }
-
         [SerializeField]
         private UnityEvent onSequenceExecutionStart;
         [SerializeField]
@@ -29,11 +16,28 @@ namespace DLSU.WizardCode.Actions
 
         private int currentActionIndex = 0;
 
+        private void Awake()
+        {
+            if (actionExecutors != null)
+            {
+                actionExecutors = new List<ActionExecutor>();
+            }
+        }
+
         public void StartExecution()
         {
             currentActionIndex = -1;
             onSequenceExecutionStart?.Invoke();
             ExecuteNextAction();
+        }
+
+        public void StartExecution(List<Action> actions)
+        {
+            for (int i = 0; i < actions.Count && i < actionExecutors.Count; i++)
+            {
+                actionExecutors[i].Action = actions[i];
+            }
+            StartExecution();
         }
 
         public void ExecuteNextAction()
@@ -58,6 +62,16 @@ namespace DLSU.WizardCode.Actions
         public void EndExecution()
         {
             onSequenceExecutionEnd?.Invoke();
+        }
+
+        public void AddActionExecutor(ActionExecutor actionExecutor)
+        {
+            actionExecutors.Add(actionExecutor);
+        }
+
+        public void ClearActionExecutors()
+        {
+            actionExecutors.Clear();
         }
 
         void Start()

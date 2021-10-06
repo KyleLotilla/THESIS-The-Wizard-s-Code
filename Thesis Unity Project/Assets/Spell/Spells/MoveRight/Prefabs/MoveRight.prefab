@@ -78,10 +78,32 @@ MonoBehaviour:
   isExecuting: 0
   onActionExecutionStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4538855862291244029}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onActionExecutionEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4538855862291244029}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   wizard: {fileID: 11400000, guid: fabaa6131b088b040a2bd9103f783bc8, type: 2}
   actionRange: {fileID: 5939217553428145419}
   actionVelocity: {fileID: 2430151223134814388}
@@ -112,7 +134,7 @@ GameObject:
   - component: {fileID: 891128677021186923}
   - component: {fileID: 4538855862291244029}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: OnWalkingEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188347254565824784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3835c0f2698378b4a91fa048b7aa4e3a, type: 3}
   m_Name: 

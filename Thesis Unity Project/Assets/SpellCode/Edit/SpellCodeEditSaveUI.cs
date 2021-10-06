@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class SpellCodeEditSaveUI : MonoBehaviour
 {
+    /*
     [SerializeField]
     private SpellCodeInventory spellCodeInventory;
+    */
     [SerializeField]
     private Text missingNameText;
     [SerializeField]
@@ -98,7 +100,8 @@ public class SpellCodeEditSaveUI : MonoBehaviour
             }
             */
         }
- 
+
+        /*
         if (spellCount < spellCodeInventory.minSpells)
         {
             spellLimitText.gameObject.SetActive(true);
@@ -126,7 +129,7 @@ public class SpellCodeEditSaveUI : MonoBehaviour
             hasMinSpells = true;
             spellLimitText.gameObject.SetActive(false);
         }
-
+        */
         if (nameField.text.Length <= 0)
         {
             missingNameText.gameObject.SetActive(true);

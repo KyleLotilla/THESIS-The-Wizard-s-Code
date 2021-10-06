@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DLSU.WizardCode.SpellCodes;
 
 public class SpellCodeInventoryActionPanel : MonoBehaviour
 {
-
+    /*
     [SerializeField]
     private TabsPanel tabsPanel;
+    */
     [SerializeField]
     private int spellCodeEditUIPage;
     [SerializeField]
@@ -33,6 +35,7 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         set
         {
             _interactable = value;
+            /*
             if (spellCodeInventory.equippedCount >= spellCodeInventory.maxEquipped)
             {
                 equipButton.interactable = false;
@@ -56,6 +59,7 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
                     button.interactable = _interactable;
                 }
             }
+            */
         }
     }
     [SerializeField]
@@ -81,7 +85,7 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
     public void AddSpellCode()
     {
         spellCodeEditUI.EnterAddMode();
-        tabsPanel.SwitchPage(spellCodeEditUIPage);
+        //tabsPanel.SwitchPage(spellCodeEditUIPage);
     }
 
     public void EquipSpellCode()
@@ -92,11 +96,12 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
         spellCodeEquipmentMenu.RefreshMenu();
         spellCodeEquippedCount.Refresh();
 
+        /*
         if (spellCodeInventory.equippedCount >= spellCodeInventory.maxEquipped)
         {
             equipButton.interactable = false;
         }
-
+        */
         this.interactable = false;
     }
 
@@ -113,7 +118,7 @@ public class SpellCodeInventoryActionPanel : MonoBehaviour
     public void EditSpellCode()
     {
         spellCodeEditUI.EnterEditMode(spellCode);
-        tabsPanel.SwitchPage(spellCodeEditUIPage);
+        //tabsPanel.SwitchPage(spellCodeEditUIPage);
     }
 
     public void RemoveSpellCode()

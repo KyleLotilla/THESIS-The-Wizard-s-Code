@@ -35,14 +35,14 @@ namespace DLSU.WizardCode.Spells
             if (spell.SpellID >= 0 && spell.SpellID < spells.Count)
             {
                 SpellInstance spellInstance = new SpellInstance();
-                spellInstance.spell = spell;
+                spellInstance.Spell = spell;
                 if (playerProfile.gender == Gender.MALE)
                 {
-                    spellInstance.icon = spell.MaleIcon;
+                    spellInstance.Icon = spell.MaleIcon;
                 }
                 else
                 {
-                    spellInstance.icon = spell.FemaleIcon;
+                    spellInstance.Icon = spell.FemaleIcon;
                 }
                 return spellInstance;
             }

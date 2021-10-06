@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e218ebaea4d4ba742a6d41ce5822dac9, type: 3}
   m_Name: MoveRight
   m_EditorClassIdentifier: 
-  spellID: 0
+  spellID: 1
   spellName: Move Right
   description: 
   maleIcon: {fileID: 21300000, guid: 5975cdd5fe3e52a48b8113a5a568f19a, type: 3}

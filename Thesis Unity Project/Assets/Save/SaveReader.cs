@@ -5,6 +5,7 @@ using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
 using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.SpellCodes;
 
 public class SaveReader : MonoBehaviour
 {
@@ -169,7 +170,7 @@ public class SaveReader : MonoBehaviour
                 foreach (XElement spellCodeElement in spellCodeInventoryElement.Element("Equipped").Elements())
                 {
                     SpellCode spellCode = new SpellCode();
-                    spellCode.name = spellCodeElement.Element("Name").Value;
+                    spellCode.Name = spellCodeElement.Element("Name").Value;
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);
@@ -197,7 +198,7 @@ public class SaveReader : MonoBehaviour
                 foreach (XElement spellCodeElement in spellCodeInventoryElement.Element("Inventory").Elements())
                 {
                     SpellCode spellCode = new SpellCode();
-                    spellCode.name = spellCodeElement.Element("Name").Value;
+                    spellCode.Name = spellCodeElement.Element("Name").Value;
                     foreach (XElement spellElement in spellCodeElement.Element("Spells").Elements())
                     {
                         int spellID = int.Parse(spellElement.Element("ID").Value);

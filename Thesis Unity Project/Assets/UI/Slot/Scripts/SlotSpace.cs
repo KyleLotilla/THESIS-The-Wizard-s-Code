@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DLSU.WizardCode.Util;
+using DLSU.WizardCode.Events;
 using UnityEngine.Events;
 
 namespace DLSU.WizardCode.UI.Slots

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SpellCodeInventoryTab : MonoBehaviour
 {
+    /*
     [SerializeField]
     private TabsPanel tabsPanel;
+    */
     [SerializeField]
     private int page;
     [SerializeField]
@@ -15,7 +17,7 @@ public class SpellCodeInventoryTab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tabsPanel.OnTabPageSwitch += OnTabPageSwitch;
+        //tabsPanel.OnTabPageSwitch += OnTabPageSwitch;
     }
 
     // Update is called once per frame

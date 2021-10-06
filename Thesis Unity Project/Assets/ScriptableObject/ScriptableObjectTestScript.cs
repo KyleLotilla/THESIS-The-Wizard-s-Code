@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DLSU.WizardCode.Spells;
+using DLSU.WizardCode.SpellCodes;
 
 public class ScriptableObjectTestScript : MonoBehaviour
 {
@@ -14,7 +15,28 @@ public class ScriptableObjectTestScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        spellInventory.EquipSpell(spellDatabase.GetSpellInstance(1));
+        
+        SpellInstance moveRight = spellDatabase.GetSpellInstance(1);
+        SpellInstance fireball = spellDatabase.GetSpellInstance(2);
+        SpellInstance electro = spellDatabase.GetSpellInstance(3);
+        
+        spellInventory.EquipSpell(fireball);
+        //spellInventory.EquipSpell(electro);
+
+       
+        SpellCode spellCode = new SpellCode();
+        spellCode.Name = "Penny!";
+        spellCode.AddSpellInstance(moveRight);
+        spellCode.AddSpellInstance(fireball);
+        spellCodeInventory.EquipSpellCode(spellCode);
+
+        SpellCode spellCode2 = new SpellCode();
+        spellCode2.Name = "Not Penny!";
+        spellCode2.AddSpellInstance(electro);
+        spellCode2.AddSpellInstance(moveRight);
+        spellCode2.AddSpellInstance(fireball);
+        spellCodeInventory.EquipSpellCode(spellCode2);
+
         //spellInventory.EquipSpell(fireBall);
         /*
             materialInventory.AddMaterial(materialDatabase.GetMaterial(2));
@@ -35,9 +57,9 @@ public class ScriptableObjectTestScript : MonoBehaviour
         spellInventory.AddSpell(spellDatabase.GetSpell(5));
         spellInventory.AddSpell(spellDatabase.GetSpell(2));
         */
-        
 
-       
+
+
         //spellInventory.AddSpell(electro);
         /*
         SpellCode spellCode2 = new SpellCode();
@@ -75,10 +97,10 @@ public class ScriptableObjectTestScript : MonoBehaviour
             spellCodeInventory.AddSpellCode(spellCode3);
         }
         */
-        
+
 
         //playerProfile.gender = Gender.FEMALE;
-        
+
         /*
         materialInventory.AddMaterial(materialDatabase.GetMaterial(0));
         materialInventory.AddMaterial(materialDatabase.GetMaterial(1));

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e218ebaea4d4ba742a6d41ce5822dac9, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
-  spellID: 1
+  spellID: 2
   spellName: Fireball
   description: 
   maleIcon: {fileID: 21300000, guid: 466839950584ea94eb85b47eb732d5d9, type: 3}

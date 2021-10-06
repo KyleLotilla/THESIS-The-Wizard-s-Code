@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7232616395699365967}
   - component: {fileID: 3898183320009657101}
   - component: {fileID: 6699334022770572779}
-  - component: {fileID: 1191246749808167725}
-  - component: {fileID: 8340859063059457778}
-  - component: {fileID: 6918737305797333473}
+  - component: {fileID: 8348748550365668994}
+  - component: {fileID: 7805963028754903900}
+  - component: {fileID: 6061578865464565286}
   m_Layer: 9
   m_Name: Fireball
   m_TagString: Fire
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1191246749808167725
+--- !u!114 &8348748550365668994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,11 +162,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955495123168377924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33d597b03e3affb43be980d0b973ae51, type: 3}
+  m_Script: {fileID: 11500000, guid: 0371c59ffab1c954f907e02bd11cb72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileSpeed: {x: 2.2, y: 0}
---- !u!114 &8340859063059457778
+  rigidBody: {fileID: 6699334022770572779}
+  canChangeDirectionBasedOnVelocity: 0
+  destroyOnMoveEnd: 1
+  onMoveStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onMoveEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 08d8b92cdae206d418bb72864dbb2eec, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  canMoveWithKeyboardInEditor: 0
+  keyboardMoveDistance: 0
+  keyboardMoveSpeed: 0
+--- !u!114 &7805963028754903900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,10 +197,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955495123168377924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5588563178b74004fb926b32f67a2e4a, type: 3}
+  m_Script: {fileID: 11500000, guid: bde8c399b49838d4594fbf18fb0db972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6918737305797333473
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 08d8b92cdae206d418bb72864dbb2eec, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6061578865464565286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,6 +223,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955495123168377924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406e9592e131315448208270217ab24d, type: 3}
+  m_Script: {fileID: 11500000, guid: d0ba482e46b32d646bc47c70225853b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tags:
+  - {fileID: 11400000, guid: dc8bf27e33ab5764a8a60020eca30a7f, type: 2}
