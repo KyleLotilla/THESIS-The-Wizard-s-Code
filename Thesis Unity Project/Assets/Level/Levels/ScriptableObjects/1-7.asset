@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d88f8e8a8c24342a0d64ab90c5eee3, type: 3}
+  m_Name: 1-7
+  m_EditorClassIdentifier: 
+  levelID: 6
+  worldNumber: 1
+  levelNumber: 7
+  sceneName: 1-7
+  levelOverview: {fileID: 21300000, guid: 1bca58c61d4f7fc4e91c92f556a7bff2, type: 3}
+  overallStarsNeededToUnlock: 10
+  obstacles:
+  - obstacle: {fileID: 11400000, guid: d19e8cf48572f274e98259c3d340b38b, type: 2}
+    count: 2
+  - obstacle: {fileID: 11400000, guid: a1ee15a9a68cf904d805ea66af590c33, type: 2}
+    count: 2
+  unlockableSpells: []
+  movesRequirementsForStars: 0f00000009000000

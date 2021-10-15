@@ -44,7 +44,7 @@ namespace DLSU.WizardCode.Tags
             GameObject collided = gameObjectTags.gameObject;
             foreach (Tag tag in gameObjectTags)
             {
-                if (tagCollisionListeners.HasKey(tag))
+                if (tagCollisionListeners.ContainsKey(tag))
                 {
                     TagCollisionListener collisionListenerOfCurrentTag = tagCollisionListeners[tag];
                     collisionListenerOfCurrentTag.OnTagCollision(collided);

@@ -1,0 +1,37 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using DLSU.WizardCode.Events;
+using DLSU.WizardCode.UI.Slots;
+
+namespace DLSU.WizardCode.UI.Views
+{
+    public class CreateSlotForSlotSpaceListItemView : MonoBehaviour
+    {
+        [SerializeField]
+        private SlotSpace slotSpace;
+        [SerializeField]
+        private GameObject slotPrefab;
+        [SerializeField]
+        private UnityEventOneGameObjectOneNativeObjectParam onSlotWithDataCreated;
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void OnItemViewWithDataCreated(object data)
+        {
+            GameObject slot = Instantiate(slotPrefab);
+            onSlotWithDataCreated?.Invoke(slot, data);
+            slotSpace.Slot = slot;
+        }
+    }
+
+}

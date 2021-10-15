@@ -7,7 +7,7 @@ public class TutorialTurnOnSpells : MonoBehaviour
     /*
     [SerializeField]
     private ActionStack actionStack;
-    */
+    
     [SerializeField]
     private DialoguePanel dialoguePanel;
 
@@ -30,9 +30,9 @@ public class TutorialTurnOnSpells : MonoBehaviour
         /*
         actionStack.isTutorialMovementOnly = false;
         actionStack.SpawnSpellAction(0);
-        */
+       
     }
-
+    */
     // Update is called once per frame
     void Update()
     {

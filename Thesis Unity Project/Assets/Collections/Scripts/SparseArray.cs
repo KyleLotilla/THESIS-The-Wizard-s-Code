@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,13 @@ namespace DLSU.WizardCode.Collections
             keyIndexMap = new Dictionary<TKey, int>();
             values = new List<TValue>();
             keys = new List<TKey>();
+        }
+
+        public void Clear()
+        {
+            keyIndexMap.Clear();
+            keys.Clear();
+            values.Clear();
         }
 
         public TValue this[TKey key]
@@ -74,7 +82,7 @@ namespace DLSU.WizardCode.Collections
             }
         }
 
-        public bool HasKey(TKey key)
+        public bool ContainsKey(TKey key)
         {
             return keyIndexMap.ContainsKey(key);
         }

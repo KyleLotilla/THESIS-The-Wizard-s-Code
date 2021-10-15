@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f550adc36848a3744a2ba10a6a6eca35, type: 3}
+  m_Name: 1-1Tutorial
+  m_EditorClassIdentifier: 
+  dialogues:
+  - tag: {fileID: 11400000, guid: e048851bb4fedc342a82bb6e703578aa, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 4fd8c7385d905fd45a069e4aec479e71,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: 0f8e8fabb6670ac408eb23d0c1acbbe4,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: "Don\u2019t worry I will be here to assist you whenever we come across
+        something worth noting!"
+    - onDialogueReadEvent: {fileID: 11400000, guid: 17a5f00890bb56849a48af06bc0ed606,
+        type: 2}
+      lineText: "Let\u2019s start with the basics. You can use <b>Spells</b> to perform
+        actions on the stage!"
+    - onDialogueReadEvent: {fileID: 11400000, guid: 2619cf6f4867a1e44a9ae42fb015547d,
+        type: 2}
+      lineText: This is the <b>Actions Tab</b>
+    - onDialogueReadEvent: {fileID: 11400000, guid: 2619cf6f4867a1e44a9ae42fb015547d,
+        type: 2}
+      lineText: Spells that you have currently equipped will spawn randomly in intervals
+        here.
+    - onDialogueReadEvent: {fileID: 11400000, guid: c3a3b7069e39cd1429171eb791980d9f,
+        type: 2}
+      lineText: This is the <b>Action Queue</b>.
+    - onDialogueReadEvent: {fileID: 11400000, guid: c3a3b7069e39cd1429171eb791980d9f,
+        type: 2}
+      lineText: You can drag your spells from the actions tab down here and execute
+        them by pressing run.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 2752e4ac927c2224bb06a46ce61f8d50,
+        type: 2}
+      lineText: "Let\u2019s try to use movement spells first."
+    - onDialogueReadEvent: {fileID: 11400000, guid: 2752e4ac927c2224bb06a46ce61f8d50,
+        type: 2}
+      lineText: Drag the move right spells from the action stack down to your action
+        queue.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 2752e4ac927c2224bb06a46ce61f8d50,
+        type: 2}
+      lineText: Try to go to the exclamation point in front of you using your movement
+        spells.
+  - tag: {fileID: 11400000, guid: 2ec3372fbcd4c074496538494c3653a6, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: b05e8c40424a5ef49a9b002e94db98b8,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: a4bd50e6d982e2a4e960c63d4e770685,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: 9172ebff6e25bb04ba68b385ceb1860f,
+        type: 2}
+      lineText: Note that you can perform up to three spells at a time!
+    - onDialogueReadEvent: {fileID: 11400000, guid: 9172ebff6e25bb04ba68b385ceb1860f,
+        type: 2}
+      lineText: The sequence in which your spells take effect is from left to right
+        in your action queue!
+    - onDialogueReadEvent: {fileID: 11400000, guid: 9172ebff6e25bb04ba68b385ceb1860f,
+        type: 2}
+      lineText: Plan your spells accordingly and make sure they are on the correct
+        sequence before you execute them.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 0d0ca5830c99d3d4b88e239f16b76891,
+        type: 2}
+      lineText: "Now\u2026 looks like this ice block is obstructing us from getting
+        out of here."
+    - onDialogueReadEvent: {fileID: 11400000, guid: 0be72b9f989810840be82cf96efa6597,
+        type: 2}
+      lineText: If I remember correctly, I think fire can get rid of ice.
+  - tag: {fileID: 11400000, guid: 00fba6c4947f27345ae94217c2a50438, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: d9067f8101c70e842a21869f8cacd319,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: e069434594ae1414a9d5d6d41f7136f4,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Great job! You managed to melt down the ice cube with a fireball
+        attack.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Remember, different elemental attacks affect different obstacles
+        in different ways!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Try to <b>evaluate</b> the stage before you plan your strategy!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Maybe you could <b>recognize a pattern</b> in how elemental attacks
+        affect certain obstacles.

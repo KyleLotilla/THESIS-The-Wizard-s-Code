@@ -53,6 +53,10 @@ namespace DLSU.WizardCode.Wizard
         public void EndHoldingCast()
         {
             animator.SetBool("endHoldingCast", true);
+        }
+
+        public void OnWizardHoldingCastEnd()
+        {
             onWizardHoldingCastEnd?.Invoke();
         }
     }

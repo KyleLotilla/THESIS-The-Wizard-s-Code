@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e218ebaea4d4ba742a6d41ce5822dac9, type: 3}
+  m_Name: IceBeam
+  m_EditorClassIdentifier: 
+  spellID: 5
+  spellName: Ice Beam
+  description: Cast an Ice Beam
+  maleIcon: {fileID: 21300000, guid: e0e45acdb03e50d4bbe05e55034d03d5, type: 3}
+  femaleIcon: {fileID: 21300000, guid: e0e45acdb03e50d4bbe05e55034d03d5, type: 3}
+  actionPrefab: {fileID: 8586002385571052428, guid: 48fee17b331a9dd48ad99e7ec5277a9e,
+    type: 3}

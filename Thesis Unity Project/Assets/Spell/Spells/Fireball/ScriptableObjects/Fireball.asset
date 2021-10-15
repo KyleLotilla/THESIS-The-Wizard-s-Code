@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellID: 2
   spellName: Fireball
-  description: 
+  description: Shoot a Fireball
   maleIcon: {fileID: 21300000, guid: 466839950584ea94eb85b47eb732d5d9, type: 3}
   femaleIcon: {fileID: 21300000, guid: 466839950584ea94eb85b47eb732d5d9, type: 3}
   actionPrefab: {fileID: 7514426434428632656, guid: 01f5711d70cbce34899a319537604d05,

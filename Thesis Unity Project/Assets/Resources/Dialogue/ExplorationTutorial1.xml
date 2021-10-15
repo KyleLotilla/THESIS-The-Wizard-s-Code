@@ -2,7 +2,6 @@
 	<Dialogue>
 		<ID>0</ID>
 		<Lines>
-			<Line>Nice to meet you Player! I am Fairie! Are you ready to go on an adventure?</Line>
 			<Line>Don’t worry I will be here to assist you whenever we come across something worth noting!</Line>
 			<Line>Let’s start with the basics. You can use &lt;b&gt;spells&lt;/b&gt; to perform actions on the stage!</Line>
 			<Line>This is the &lt;b&gt;actions tab&lt;/b&gt;</Line>

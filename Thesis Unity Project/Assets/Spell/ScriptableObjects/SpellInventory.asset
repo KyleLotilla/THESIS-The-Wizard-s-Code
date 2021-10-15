@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4464d0237de99fd4eba94a315c5a3359, type: 3}
   m_Name: SpellInventory
   m_EditorClassIdentifier: 
-  unequippedSpells: []
-  equippedSpells: []
+  unequippedSpellInstances: []
+  equippedSpellInstances:
+  - spell: {fileID: 11400000, guid: c791ea0afc3cadf47bdfb938be4618bb, type: 2}
+    isEquipped: 1
+    icon: {fileID: 21300000, guid: 466839950584ea94eb85b47eb732d5d9, type: 3}
+  - spell: {fileID: 11400000, guid: 4151657c98eebf74d827600c955f77ad, type: 2}
+    isEquipped: 1
+    icon: {fileID: 21300000, guid: ffcaf3d6e2debbe4eb0b9e52a1902ca9, type: 3}
   maxEquipped: 5

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShowDialogue : MonoBehaviour
 {
+    /*
     [SerializeField]
     private int dialogueID;
     [SerializeField]
@@ -31,4 +32,5 @@ public class ShowDialogue : MonoBehaviour
             dialogueVisualPanel.gameObject.SetActive(true);
         }
     }
+    */
 }

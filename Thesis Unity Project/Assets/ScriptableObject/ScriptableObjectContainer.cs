@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DLSU.WizardCode.Spells;
 using DLSU.WizardCode.SpellCodes;
+using DLSU.WizardCode.Levels;
 
 public class ScriptableObjectContainer : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ScriptableObjectContainer : MonoBehaviour
     public SpellInventory spellInventory;
     public SpellCodeInventory spellCodeInventory;
     public LevelDatabase levelDatabase;
-    public PlayerLevelProgression playerLevelProgression;
+    public LevelProgressionDatabase playerLevelProgression;
     public PlayerProfile playerProfile;
     // Start is called before the first frame update
     void Start()

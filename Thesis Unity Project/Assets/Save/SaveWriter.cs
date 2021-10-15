@@ -37,9 +37,10 @@ public class SaveWriter : MonoBehaviour
     private MaterialDatabase materialDatabase;
     [SerializeField]
     private MaterialInventory materialInventory;
-    */
+    
     [SerializeField]
-    private PlayerLevelProgression playerLevelProgression;
+    private LevelProgressionDatabase playerLevelProgression;
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -192,7 +193,7 @@ public class SaveWriter : MonoBehaviour
         if (document != null)
         {
             XElement newPlayerLevelProgression = new XElement("PlayerLevelProgression");
-
+            /*
             foreach (LevelProgression levelProgression in playerLevelProgression)
             {
                 XElement levelProgressionElement = new XElement("LevelProgression");
@@ -202,7 +203,7 @@ public class SaveWriter : MonoBehaviour
                 levelProgressionElement.Add(new XElement("HighScore", levelProgression.highScore.ToString()));
                 newPlayerLevelProgression.Add(levelProgressionElement);
             }
-
+            */
             XElement root = document.Root;
             if (root.Elements("PlayerLevelProgression").Any())
             {

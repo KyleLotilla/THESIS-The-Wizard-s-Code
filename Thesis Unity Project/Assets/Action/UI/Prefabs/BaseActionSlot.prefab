@@ -241,14 +241,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8394697629223760116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c2b5a57e7311334e8d48a85a9d9110a, type: 3}
+  m_Script: {fileID: 11500000, guid: eed69d9b82c97c045947b4a14fd08901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 5929245010889285943}
   interactable: 1
   interactableIconColor: {r: 1, g: 1, b: 1, a: 1}
   nonInteractableIconColor: {r: 1, g: 1, b: 1, a: 0.5}
-  onSlotInteractable:
+  onIconInteractable:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8169702786917695545}
@@ -262,7 +262,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onSlotNonInteractable:
+  onIconNonInteractable:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8169702786917695545}
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb95b1a26b13a54e9e60338e5a1bc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconSlot: {fileID: 3640265278226758737}
+  iconView: {fileID: 3640265278226758737}
 --- !u!114 &6462201224769859058
 MonoBehaviour:
   m_ObjectHideFlags: 0

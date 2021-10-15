@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class ArrowGuide : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+    /*
     [SerializeField]
     private Image Arrows;
 
@@ -21,7 +20,6 @@ public class ArrowGuide : MonoBehaviour
         dialoguePanel.OnDialogueEnd += OnDialogueEnd;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -48,4 +46,5 @@ public class ArrowGuide : MonoBehaviour
         this.Arrows.enabled = false;
 
     }
+    */
 }

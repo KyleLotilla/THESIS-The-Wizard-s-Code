@@ -26,6 +26,11 @@ namespace DLSU.WizardCode.ScriptableObjectVariables
         {
             currentValue = defaultValue;
         }
+
+        public void Increment()
+        {
+            currentValue++;
+        }
     }
 
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellID: 0
   spellName: Move Left
-  description: 
+  description: Walk to the Left
   maleIcon: {fileID: 21300000, guid: 14960d3660eaf384992854195bc5d788, type: 3}
   femaleIcon: {fileID: 21300000, guid: b141502313c236d4284b1cf87b48f858, type: 3}
   actionPrefab: {fileID: 859615774787422495, guid: 296c8476d3355844bb54bb2db020f59c,

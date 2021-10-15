@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f550adc36848a3744a2ba10a6a6eca35, type: 3}
+  m_Name: 1-3Tutorial
+  m_EditorClassIdentifier: 
+  dialogues:
+  - tag: {fileID: 11400000, guid: c7e2eb280f249484fb6c2ff736eb8c5e, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 64170bd2185601a41b71c6cf3ce44ce6,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: 34f9d20faf6bf6042a3dc0e687f8a4f8,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Now that you have equipped a spellcode, it will spawn in the actions
+        tab along with your equipped spells.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 142b2118de774974e82fdd6cb522e184,
+        type: 2}
+      lineText: Spellcodes that spawn in the action stack are denoted by number icons.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: These numbers correspond to the order your spellcodes have been equipped
+        in your spellcode inventory.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Let's try to clear this ice block and move forward to the next objective
+        by only using your spellcode.
+  - tag: {fileID: 11400000, guid: 831c98fa062e1204780c9e56b1e0b81d, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 5a6a68919a6df50469bf8a3afd4e01e8,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: 083f51ef68a68574dac13106b0d1d0cf,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: As you notice, using spellcodes allow us to be more efficient in
+        performing spells
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Compared to dragging spells one by one, we can perform more spells
+        in one execution!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Spellcodes also count as performing one move in a stage!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: You can use this fact to your advantage especially when you're aiming
+        to get all stars in a stage!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: "And... that\u2019s everything you need to know about performing
+        spellcodes and going about in this world."
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Now try to use all that you have learned to complete this stage and
+        the future stages!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Our tutorial is finished. I believe in you!

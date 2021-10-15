@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f550adc36848a3744a2ba10a6a6eca35, type: 3}
+  m_Name: 1-2Tutorial
+  m_EditorClassIdentifier: 
+  dialogues:
+  - tag: {fileID: 11400000, guid: b1c26ca34460fad41a99d94f4e21d91b, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: c1c4e1a4050c34840b448d78dd9c0632,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: cf2b1a86facc38748a35ff7d3b587656,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Welcome back! I hope you have prepared yourself.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: "Remember the new spell you unlocked last time? Let\u2019s test it
+        out! Try to use it effectively to explore this stage."
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Always remember to <b>break down the area into smaller problems!</b>
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Associate the obstacles you come across with your spells!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Here's a few more tips before you begin.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 482eaece37928434fb56101a9f4e1c74,
+        type: 2}
+      lineText: You can view the entire stage by pressing the <b>Zoom Out</b> button
+        and dragging the screen.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 482eaece37928434fb56101a9f4e1c74,
+        type: 2}
+      lineText: That way you can already see the obstacles that you will run into.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 482eaece37928434fb56101a9f4e1c74,
+        type: 2}
+      lineText: Then you can plan the spells you need to use or save in advance accordingly!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: "You may also feel like your desired spells don\u2019t spawn quite
+        often in the action stack."
+    - onDialogueReadEvent: {fileID: 11400000, guid: c244b44fa7b1a0242a5279e263ee20db,
+        type: 2}
+      lineText: If that happens, you can make use of the <b>Reset</b> button.
+    - onDialogueReadEvent: {fileID: 11400000, guid: c244b44fa7b1a0242a5279e263ee20db,
+        type: 2}
+      lineText: The reset button will remove all the spells in the action stack and
+        spawn new ones!.
+    - onDialogueReadEvent: {fileID: 11400000, guid: c244b44fa7b1a0242a5279e263ee20db,
+        type: 2}
+      lineText: Don't worry, using the reset button will not affect the number of
+        moves you make in the stage.
+    - onDialogueReadEvent: {fileID: 11400000, guid: c244b44fa7b1a0242a5279e263ee20db,
+        type: 2}
+      lineText: Use it wisely though, you can only reset for a limited number of
+        times.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: "Now let\u2019s try to clear out the obstacles ahead of us using
+        our spells."
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: I know you can do it! Let's go!

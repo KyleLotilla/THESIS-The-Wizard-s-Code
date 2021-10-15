@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DLSU.WizardCode.SpellCodes;
 using DLSU.WizardCode.SpellCodes.UI;
+using DLSU.WizardCode.UI.Views;
 using DLSU.WizardCode.SpellCodes.Actions;
 
 namespace DLSU.WizardCode.Actions.UI
@@ -55,11 +56,11 @@ namespace DLSU.WizardCode.Actions.UI
             if (actionSlotPrefab != null && actionPrefab != null)
             {
                 ActionHolder actionHolderOfActionSlot = actionSlotPrefab.GetComponent<ActionHolder>();
-                IconSlot iconSlotOfActionSlot = actionSlotPrefab.GetComponent<IconSlot>();
+                IconView iconViewOfActionSlot = actionSlotPrefab.GetComponent<IconView>();
                 Action action = actionPrefab.GetComponent<Action>();
-                if (actionHolderOfActionSlot != null && iconSlotOfActionSlot && action != null)
+                if (actionHolderOfActionSlot != null && iconViewOfActionSlot && action != null)
                 {
-                    iconSlotOfActionSlot.Icon.sprite = spellInstance.Icon;
+                    iconViewOfActionSlot.Icon.sprite = spellInstance.Icon;
                     actionHolderOfActionSlot.Action = action;
                     actionPrefab.transform.SetParent(actionSlotPrefab.transform);
                     actionSlotPrefab.name = spell.SpellName;
@@ -88,6 +89,7 @@ namespace DLSU.WizardCode.Actions.UI
                         {
                             spellInstanceHolder.SpellInstance = spellInstance;
                         }
+                        actionObject.transform.SetParent(transform);
                         spellIDActionPrefabMap[spell.SpellID] = actionObject;
                         return actionObject;
                     }
@@ -136,7 +138,7 @@ namespace DLSU.WizardCode.Actions.UI
             if (spellCodeActionPrefab != null && spellCodeActionSlotPrefab != null)
             {
                 ActionHolder actionHolderOfActionSlot = spellCodeActionSlotPrefab.GetComponent<ActionHolder>();
-                IconSlot iconSlotOfActionSlot = spellCodeActionSlotPrefab.GetComponent<IconSlot>();
+                IconView iconSlotOfActionSlot = spellCodeActionSlotPrefab.GetComponent<IconView>();
                 Action action = spellCodeActionPrefab.GetComponent<Action>();
                 if (actionHolderOfActionSlot != null && iconSlotOfActionSlot && action != null)
                 {

@@ -6,9 +6,10 @@ public class ChooseCharacterUI : MonoBehaviour
 {
     [SerializeField]
     private PlayerProfile playerProfile;
+    /*
     [SerializeField]
     private DialoguePanel dialoguePanel;
-
+    */
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +35,7 @@ public class ChooseCharacterUI : MonoBehaviour
     private void ChooseGender(Gender gender)
     {
         playerProfile.gender = gender;
-        dialoguePanel.ShowDialogue(0);
+        //dialoguePanel.ShowDialogue(0);
         this.gameObject.SetActive(false);
     }
 }

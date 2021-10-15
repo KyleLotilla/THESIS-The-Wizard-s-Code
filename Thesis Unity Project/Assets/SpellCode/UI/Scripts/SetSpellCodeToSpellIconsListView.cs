@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DLSU.WizardCode.UI.ListViews;
+using DLSU.WizardCode.UI.Views;
 using DLSU.WizardCode.Spells;
 using DLSU.WizardCode.ScriptableObjectVariables;
 
@@ -31,8 +31,8 @@ namespace DLSU.WizardCode.SpellCodes.UI
         {
             if (spellCode != null)
             {
-                List<object> spellInstanceOfSpellCode = spellCode.Select(x => (object) x).ToList();
-                spellIconsListView.CreateList(spellInstanceOfSpellCode, maxSpellCodeSpells.Value);
+                List<object> spellInstancesOfSpellCode = spellCode.Select(x => (object) x).ToList();
+                spellIconsListView.CreateList(spellInstancesOfSpellCode, maxSpellCodeSpells.Value);
             }
             else
             {

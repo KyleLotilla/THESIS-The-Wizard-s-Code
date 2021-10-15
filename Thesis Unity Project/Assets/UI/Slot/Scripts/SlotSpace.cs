@@ -22,10 +22,13 @@ namespace DLSU.WizardCode.UI.Slots
                 slot = value;
                 if (slot == null)
                 {
-                    onSlotRemoved?.Invoke(oldSlot);
-                    if (destroySlotOnRemove)
+                    if (oldSlot != null)
                     {
-                        Destroy(oldSlot);
+                        onSlotRemoved?.Invoke(oldSlot);
+                        if (destroySlotOnRemove)
+                        {
+                            Destroy(oldSlot);
+                        }
                     }
                 }
                 else if (oldSlot != null)

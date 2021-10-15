@@ -14,7 +14,15 @@ namespace DLSU.WizardCode.Actions
         [SerializeField]
         private UnityEvent onSequenceExecutionEnd;
 
-        private int currentActionIndex = 0;
+        private bool isExecuting = false;
+        public bool IsExecuting
+        {
+            get
+            {
+                return isExecuting;
+            }
+        }
+        private int currentExecutingActionExecutorIndex = 0;
 
         private void Awake()
         {
@@ -26,42 +34,69 @@ namespace DLSU.WizardCode.Actions
 
         public void StartExecution()
         {
-            currentActionIndex = -1;
-            onSequenceExecutionStart?.Invoke();
-            ExecuteNextAction();
+            if (!isExecuting)
+            {
+                currentExecutingActionExecutorIndex = -1;
+                isExecuting = true;
+                onSequenceExecutionStart?.Invoke();
+                ExecuteNextAction();
+            }
         }
 
         public void StartExecution(List<Action> actions)
         {
-            for (int i = 0; i < actions.Count && i < actionExecutors.Count; i++)
+            if (!isExecuting)
             {
-                actionExecutors[i].Action = actions[i];
+                for (int i = 0; i < actions.Count && i < actionExecutors.Count; i++)
+                {
+                    actionExecutors[i].Action = actions[i];
+                }
+                StartExecution();
             }
-            StartExecution();
         }
 
         public void ExecuteNextAction()
         {
-            currentActionIndex++;
-            bool hasExecutedAction = false;
-            while (currentActionIndex < actionExecutors.Count && !hasExecutedAction)
+            if (isExecuting)
             {
-                hasExecutedAction = actionExecutors[currentActionIndex].Execute();
-                if (!hasExecutedAction)
+                if (currentExecutingActionExecutorIndex >= 0 && currentExecutingActionExecutorIndex < actionExecutors.Count)
                 {
-                    currentActionIndex++;
+                    actionExecutors[currentExecutingActionExecutorIndex].OnActionExecutionEnd.RemoveListener(ExecuteNextAction);
                 }
-            }
+                currentExecutingActionExecutorIndex++;
+                bool hasExecutedAction = false;
+                while (currentExecutingActionExecutorIndex < actionExecutors.Count && !hasExecutedAction)
+                {
+                    hasExecutedAction = actionExecutors[currentExecutingActionExecutorIndex].Execute();
+                    if (hasExecutedAction)
+                    {
+                        actionExecutors[currentExecutingActionExecutorIndex].OnActionExecutionEnd.AddListener(ExecuteNextAction);
+                    }
+                    else
+                    {
+                        currentExecutingActionExecutorIndex++;
+                    }
+                }
 
-            if (currentActionIndex >= actionExecutors.Count)
-            {
-                EndExecution();
+                if (currentExecutingActionExecutorIndex >= actionExecutors.Count)
+                {
+                    EndExecution();
+                }
             }
         }
 
         public void EndExecution()
         {
-            onSequenceExecutionEnd?.Invoke();
+            if (isExecuting)
+            {
+                isExecuting = false;
+                if (currentExecutingActionExecutorIndex >= 0 && currentExecutingActionExecutorIndex < actionExecutors.Count)
+                {
+                    actionExecutors[currentExecutingActionExecutorIndex].OnActionExecutionEnd.RemoveListener(ExecuteNextAction);
+                    actionExecutors[currentExecutingActionExecutorIndex].EndExecution();
+                }
+                onSequenceExecutionEnd?.Invoke();
+            }
         }
 
         public void AddActionExecutor(ActionExecutor actionExecutor)

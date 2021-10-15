@@ -181,14 +181,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3321615804975638919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c2b5a57e7311334e8d48a85a9d9110a, type: 3}
+  m_Script: {fileID: 11500000, guid: eed69d9b82c97c045947b4a14fd08901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 4031196622578521201}
+  interactable: 1
+  interactableIconColor: {r: 1, g: 1, b: 1, a: 1}
+  nonInteractableIconColor: {r: 1, g: 1, b: 1, a: 0.5}
   onSlotInteractable:
     m_PersistentCalls:
       m_Calls: []
   onSlotNonInteractable:
     m_PersistentCalls:
       m_Calls: []
-  interactable: 1

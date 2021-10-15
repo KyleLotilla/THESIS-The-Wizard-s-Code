@@ -9,22 +9,21 @@ namespace DLSU.WizardCode.Spells
     public class SpellInventory : ScriptableObject
     {
         [SerializeField]
-        private List<SpellInstance> unequippedSpells;
-        public IEnumerable<SpellInstance> UnequippedSpells
+        private List<SpellInstance> unequippedSpellInstances;
+        public IEnumerable<SpellInstance> UnequippedSpellInstances
         {
             get
             {
-                return unequippedSpells;
+                return unequippedSpellInstances;
             }
         }
-
         [SerializeField]
-        private List<SpellInstance> equippedSpells;
-        public IEnumerable<SpellInstance> EquippedSpells
+        private List<SpellInstance> equippedSpellInstances;
+        public IEnumerable<SpellInstance> EquippedSpellInstances
         {
             get
             {
-                return equippedSpells;
+                return equippedSpellInstances;
             }
         }
 
@@ -47,72 +46,72 @@ namespace DLSU.WizardCode.Spells
         {
             get
             {
-                List<SpellInstance> fullInventory = new List<SpellInstance>(unequippedSpells.Count + equippedSpells.Count);
-                fullInventory.AddRange(equippedSpells);
-                fullInventory.AddRange(unequippedSpells);
+                List<SpellInstance> fullInventory = new List<SpellInstance>(unequippedSpellInstances.Count + equippedSpellInstances.Count);
+                fullInventory.AddRange(equippedSpellInstances);
+                fullInventory.AddRange(unequippedSpellInstances);
                 return fullInventory;
             }
         }
 
         void OnEnable()
         {
-            if (unequippedSpells != null)
+            if (unequippedSpellInstances != null)
             {
-                unequippedSpells.Clear();
+                unequippedSpellInstances.Clear();
             }
             else
             {
-                unequippedSpells = new List<SpellInstance>();
+                unequippedSpellInstances = new List<SpellInstance>();
             }
 
-            if (EquippedSpells != null)
+            if (EquippedSpellInstances != null)
             {
-                equippedSpells.Clear();
+                equippedSpellInstances.Clear();
             }
             else
             {
-                equippedSpells = new List<SpellInstance>(MaxEquipped);
+                equippedSpellInstances = new List<SpellInstance>(MaxEquipped);
             }
         }
 
-        public void AddSpell(SpellInstance spell)
+        public void AddSpellInstance(SpellInstance spell)
         {
             Debug.Assert(!spell.IsEquipped, name + ": Adding Spell that is Equipped");
             if (!spell.IsEquipped)
             {
-                unequippedSpells.Add(spell);
+                unequippedSpellInstances.Add(spell);
             }
         }
 
-        public void EquipSpell(SpellInstance spell)
+        public void EquipSpellInstance(SpellInstance spell)
         {
-            if (equippedSpells.Count + 1 < MaxEquipped)
+            if (equippedSpellInstances.Count + 1 < MaxEquipped)
             {
                 Debug.Assert(!spell.IsEquipped, name + ": Equipping Spell that is already equipped");
                 if (!spell.IsEquipped)
                 {
-                    equippedSpells.Add(spell);
+                    equippedSpellInstances.Add(spell);
                     spell.IsEquipped = true;
                 }
             }
         }
 
-        public void UnequipSpell(SpellInstance spell)
+        public void UnequipSpellInstance(SpellInstance spell)
         {
             Debug.Assert(spell.IsEquipped, name + ": Unequipping Spell that is not equipped");
             if (spell.IsEquipped)
             {
-                equippedSpells.Remove(spell);
+                equippedSpellInstances.Remove(spell);
                 spell.IsEquipped = false;
             }
         }
 
-        public void RemoveSpell(SpellInstance spell)
+        public void RemoveSpellInstance(SpellInstance spell)
         {
             Debug.Assert(!spell.IsEquipped, name + ": Removing Spell that is Equipped");
             if (!spell.IsEquipped)
             {
-                unequippedSpells.Remove(spell);
+                unequippedSpellInstances.Remove(spell);
             }
         }
     }

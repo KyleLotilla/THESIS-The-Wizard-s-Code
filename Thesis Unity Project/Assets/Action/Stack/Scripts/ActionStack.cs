@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using DLSU.WizardCode.Collections;
 using DLSU.WizardCode.ScriptableObjectVariables;
 
@@ -37,6 +38,10 @@ namespace DLSU.WizardCode.Actions.Stack
         private float spawnRate;
         [SerializeField]
         private int nonCustomMaxSpawnedActions;
+        [SerializeField]
+        private IntVariable actionStackResetCount;
+        [SerializeField]
+        private UnityEvent onActionStackReset;
         [SerializeField]
         private List<ActionSpawnOptions> initialSpawnOptions;
 
@@ -94,6 +99,14 @@ namespace DLSU.WizardCode.Actions.Stack
                         spawnableActionSpawnOptions.Add(actionSpawnOptions);
                     }
                 }
+            }
+        }
+
+        private void AddEverySpawnableToSpawnableList()
+        {
+            foreach(ActionSpawnOptions spawnOption in spawnOptions)
+            {
+                AddToSpawnablesListIfSpawnable(spawnOption.TargetActionType);
             }
         }
 
@@ -247,20 +260,23 @@ namespace DLSU.WizardCode.Actions.Stack
                     Debug.Assert(actionToRemove != null, name + ": Spawned Action Holder has no Action");
                     ActionType actionTypeOfActionToRemove = actionToRemove.ActionType;
                     List<GameObject> spawnedActionsOfActionTypeToRemoveFrom = spawnedActions[actionTypeOfActionToRemove];
-                    spawnedActionsOfActionTypeToRemoveFrom.Remove(actionObject);
+                    bool isRemoved = spawnedActionsOfActionTypeToRemoveFrom.Remove(actionObject);
 
-                    ActionSpawnOptions spawnOption = spawnOptions[actionTypeOfActionToRemove];
-                    if (!spawnOption.HasCustomMaxSpawnedActions)
+                    if (isRemoved)
                     {
-                        spawnedNonCustomMaxCount--;
-                        AddNonCustomMaxToSpawnablesListIfSpawnable();
+                        ActionSpawnOptions spawnOption = spawnOptions[actionTypeOfActionToRemove];
+                        if (!spawnOption.HasCustomMaxSpawnedActions)
+                        {
+                            spawnedNonCustomMaxCount--;
+                            AddNonCustomMaxToSpawnablesListIfSpawnable();
+                        }
+                        else
+                        {
+                            AddToSpawnablesListIfSpawnable(actionTypeOfActionToRemove);
+                        }
+                        Destroy(actionObject);
                     }
-                    else
-                    {
-                        AddToSpawnablesListIfSpawnable(actionTypeOfActionToRemove);
-                    }                    
                 }
-                Destroy(actionObject);
             }
         }
 
@@ -281,6 +297,26 @@ namespace DLSU.WizardCode.Actions.Stack
                 }
             }
             return false;
+        }
+
+        public void ResetStack()
+        {
+            if (actionStackResetCount.Value > 0)
+            {
+                foreach (List<GameObject> spawnActionList in spawnedActions)
+                {
+                    foreach (GameObject spawnAction in spawnActionList)
+                    {
+                        Destroy(spawnAction);
+                    }
+                    spawnActionList.Clear();
+                }
+                spawnedNonCustomMaxCount = 0;
+                actionStackResetCount.Value--;
+                spawnableActionSpawnOptions.Clear();
+                onActionStackReset?.Invoke();
+                AddEverySpawnableToSpawnableList();
+            }
         }
     }
 }

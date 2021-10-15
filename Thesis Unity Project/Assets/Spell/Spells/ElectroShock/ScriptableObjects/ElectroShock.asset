@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellID: 3
   spellName: Electro Shock
-  description: 
+  description: Cast an electric shock
   maleIcon: {fileID: 21300000, guid: ffcaf3d6e2debbe4eb0b9e52a1902ca9, type: 3}
   femaleIcon: {fileID: 21300000, guid: ffcaf3d6e2debbe4eb0b9e52a1902ca9, type: 3}
   actionPrefab: {fileID: 5003781943714298953, guid: cf5ebe28587f45c4bb5251e85692f9cc,

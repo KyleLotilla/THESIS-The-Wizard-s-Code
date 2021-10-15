@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class DialogueVisualPanel : MonoBehaviour
 {
-    [SerializeField]
-    private DialoguePanel dialoguePanel;
     /*
     [SerializeField]
+    private DialoguePanel dialoguePanel;
+
+    [SerializeField]
     private TabsPanel tabsPanel;
-    */
+
     [SerializeField]
     private List<DialogueLinePagePair> dialogueLinePagePairs;
     private Dictionary<int, int> dialogueLinePageMapping;
     [SerializeField]
     private int defaultVisual = -1;
-    // Start is called before the first frame update
     void Start()
     {
         dialogueLinePageMapping = new Dictionary<int, int>();
@@ -48,7 +48,7 @@ public class DialogueVisualPanel : MonoBehaviour
         {
             tabsPanel.SwitchPage(defaultVisual);
         }
-        */
+       
     }
 
 
@@ -57,4 +57,5 @@ public class DialogueVisualPanel : MonoBehaviour
     {
         
     }
+    */
 }

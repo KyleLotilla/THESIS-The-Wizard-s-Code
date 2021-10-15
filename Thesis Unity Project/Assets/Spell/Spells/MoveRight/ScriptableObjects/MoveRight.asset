@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellID: 1
   spellName: Move Right
-  description: 
+  description: Walk to the Right
   maleIcon: {fileID: 21300000, guid: 5975cdd5fe3e52a48b8113a5a568f19a, type: 3}
   femaleIcon: {fileID: 21300000, guid: 244822dd32622b747b1fa5dfb1368778, type: 3}
   actionPrefab: {fileID: 859615774787422495, guid: b6c9a27f1317c1a4a80d7715b2dd4841,

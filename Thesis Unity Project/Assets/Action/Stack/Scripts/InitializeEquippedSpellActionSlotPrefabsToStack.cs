@@ -34,7 +34,7 @@ namespace DLSU.WizardCode.Actions.Stack
 
         public void Initialize()
         {
-            List<GameObject> actionSlotPrefabs = actionSlotPrefabsPool.GetActionSlotPrefabs(spellInventory.EquippedSpells);
+            List<GameObject> actionSlotPrefabs = actionSlotPrefabsPool.GetActionSlotPrefabs(spellInventory.EquippedSpellInstances);
             actionStack.AddActionPrefabsToStack(ActionType.SPELL, actionSlotPrefabs);
         }
     }

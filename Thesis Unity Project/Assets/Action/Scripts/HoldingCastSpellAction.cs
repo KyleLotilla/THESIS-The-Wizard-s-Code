@@ -49,7 +49,6 @@ namespace DLSU.WizardCode.Actions
         public void EndHoldingCast()
         {
             wizardCasting.EndHoldingCast();
-            EndExecution();
         }
 
         void Start()

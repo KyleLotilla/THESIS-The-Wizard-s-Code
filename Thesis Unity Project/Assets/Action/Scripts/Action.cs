@@ -67,7 +67,7 @@ namespace DLSU.WizardCode.Actions
             return isExecuting;
         }
 
-        public void EndExecution()
+        public virtual void EndExecution()
         {
             isExecuting = false;
             OnActionExecutionEnd?.Invoke();

@@ -26,9 +26,10 @@ public class SaveReader : MonoBehaviour
     private MaterialDatabase materialDatabase;
     [SerializeField]
     private MaterialInventory materialInventory;
-    */
+    
     [SerializeField]
-    private PlayerLevelProgression playerLevelProgression;
+    private LevelProgressionDatabase playerLevelProgression;
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -219,6 +220,7 @@ public class SaveReader : MonoBehaviour
             {
                 if (levelProgressionElement.Elements("LevelID").Any())
                 {
+                    /*
                     LevelProgression levelProgression = new LevelProgression();
                     levelProgression.levelID = int.Parse(levelProgressionElement.Element("LevelID").Value);
                     if (levelProgressionElement.Elements("HighScore").Any())
@@ -226,6 +228,7 @@ public class SaveReader : MonoBehaviour
                         levelProgression.highScore = int.Parse(levelProgressionElement.Element("HighScore").Value);
                     }
                     playerLevelProgression.AddProgression(levelProgression);
+                    */
                 }
             }
         }

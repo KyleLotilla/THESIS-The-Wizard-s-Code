@@ -13,8 +13,33 @@ namespace DLSU.WizardCode.Actions
         private GameObjectVariable previousExecutedActionObject;
         [SerializeField]
         private UnityEvent onActionExecutionStart;
+        public UnityEvent OnActionExecutionStart
+        {
+            get
+            {
+                return onActionExecutionStart;
+            }
+        }
+
         [SerializeField]
         private UnityEvent onActionExecutionEnd;
+
+        public UnityEvent OnActionExecutionEnd
+        {
+            get
+            {
+                return onActionExecutionEnd;
+            }
+        }
+
+        private bool isExecuting = false;
+        public bool IsExecuting
+        {
+            get
+            {
+                return isExecuting;
+            }
+        }
 
         public Action Action
         {
@@ -30,27 +55,42 @@ namespace DLSU.WizardCode.Actions
 
         public bool Execute()
         {
-            bool isExecuting = false;
-            if (Action != null)
+            if (!isExecuting)
             {
-                isExecuting = Action.Execute();
-                if (isExecuting)
+                isExecuting = false;
+                if (Action != null)
                 {
-                    Action.OnActionExecutionEnd.AddListener(OnActionExecutionEnd);
-                    currentExecutingActionObject.Value = Action.gameObject;
-                    onActionExecutionStart?.Invoke();
+                    isExecuting = Action.Execute();
+                    if (isExecuting)
+                    {
+                        Action.OnActionExecutionEnd.AddListener(EndExecution);
+                        currentExecutingActionObject.Value = Action.gameObject;
+                        onActionExecutionStart?.Invoke();
+                    }
                 }
+                return isExecuting;
             }
-            return isExecuting;
+            else
+            {
+                return false;
+            }
         }
 
-        private void OnActionExecutionEnd()
+        public void EndExecution()
         {
-            Action.OnActionExecutionEnd.RemoveListener(OnActionExecutionEnd);
-            currentExecutingActionObject.Value = null;
-            previousExecutedActionObject.Value = Action.gameObject;
-            onActionExecutionEnd?.Invoke();
-            previousExecutedActionObject.Value = null;
+            if (isExecuting)
+            {
+                Action.OnActionExecutionEnd.RemoveListener(EndExecution);
+                if (Action.IsExecuting)
+                {
+                    Action.EndExecution();
+                }
+                isExecuting = false;
+                currentExecutingActionObject.Value = null;
+                previousExecutedActionObject.Value = Action.gameObject;
+                onActionExecutionEnd?.Invoke();
+                previousExecutedActionObject.Value = null;
+            }
         }
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerProfile
   m_EditorClassIdentifier: 
   playerName: 
-  gender: 0
+  gender: 1
   tutorialProgression: 0

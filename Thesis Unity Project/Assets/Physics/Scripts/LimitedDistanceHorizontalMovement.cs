@@ -10,7 +10,7 @@ namespace DLSU.WizardCode.Physics
         [SerializeField]
         private Rigidbody2D rigidBody;
         private bool isMoving = false;
-        public bool IsWalking
+        public bool IsMoving
         {
             get
             {

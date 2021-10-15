@@ -8,6 +8,7 @@ public delegate void OnDialogueEnd();
 
 public class DialoguePanel : MonoBehaviour
 {
+    /*
     public event OnDialogueLineChanged OnDialogueLineChanged;
     public event OnDialogueEnd OnDialogueEnd;
 
@@ -52,9 +53,9 @@ public class DialoguePanel : MonoBehaviour
         /*
         OnDialogueLineChanged = null;
         OnDialogueEnd = null;
-        */
+        
         Time.timeScale = 1;
         this.gameObject.SetActive(false);
     }
-
+    */
 }

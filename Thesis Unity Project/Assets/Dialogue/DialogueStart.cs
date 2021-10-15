@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialogueStart : MonoBehaviour
 {
+    /*
     [SerializeField]
     private DialoguePanel dialoguePanel;
     [SerializeField]
@@ -26,4 +27,5 @@ public class DialogueStart : MonoBehaviour
     {
         
     }
+    */
 }

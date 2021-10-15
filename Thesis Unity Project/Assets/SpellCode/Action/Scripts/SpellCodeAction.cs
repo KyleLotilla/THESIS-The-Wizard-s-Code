@@ -54,5 +54,22 @@ namespace DLSU.WizardCode.SpellCodes.Actions
         {
 
         }
+
+        public override void EndExecution()
+        {
+            if (IsExecuting)
+            {
+                ActionSequence spellCodeActionSequence = spellCodeActionSequenceObject.Value.GetComponent<ActionSequence>();
+                Debug.Assert(spellCodeActionSequence != null, name + "Spell Action Sequence Object has no Action Sequence");
+                if (spellCodeActionSequence != null)
+                {
+                    if (spellCodeActionSequence.IsExecuting)
+                    {
+                        spellCodeActionSequence.EndExecution();
+                    }
+                }
+            }
+            base.EndExecution();
+        }
     }
 }
