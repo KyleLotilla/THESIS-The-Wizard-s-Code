@@ -74,19 +74,6 @@ namespace DLSU.WizardCode.UI.Slots
         private UnityEventTwoGameObjectParam onSlotSwapped;
         [SerializeField]
         private UnityEventOneGameObjectParam onSlotRemoved; 
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void RemoveSlot()
         {
             Slot = null;

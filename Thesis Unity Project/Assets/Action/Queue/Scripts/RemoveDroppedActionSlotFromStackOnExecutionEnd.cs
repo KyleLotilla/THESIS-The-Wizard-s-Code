@@ -24,13 +24,7 @@ namespace DLSU.WizardCode.Actions.Queue
             }
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public void OnPrefabInstantiated(GameObject dropped, GameObject instantiatedSlot)
+        public void OnSlotPrefabCreatedFromDropped(GameObject dropped, GameObject createdSlot)
         {
             if (actionStack.HasGameObjectAsSpawnedAction(dropped))
             {

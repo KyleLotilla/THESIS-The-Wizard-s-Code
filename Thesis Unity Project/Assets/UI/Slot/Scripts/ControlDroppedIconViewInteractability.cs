@@ -8,19 +8,8 @@ namespace DLSU.WizardCode.UI.Slots
     public class ControlDroppedIconViewInteractability : MonoBehaviour
     {
         private IconView currentDroppedIconView;
-        // Start is called before the first frame update
-        void Start()
-        {
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public void OnPrefabInstantiated(GameObject dropped, GameObject instantiatedSlot)
+        public void OnSlotPrefabCreatedFromDropped(GameObject dropped, GameObject createdSlot)
         {
             IconView droppedIconView = dropped.GetComponent<IconView>();
             if (droppedIconView != null)

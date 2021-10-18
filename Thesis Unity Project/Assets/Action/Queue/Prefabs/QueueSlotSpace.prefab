@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1650286452208031895}
   - component: {fileID: 3199115491392919840}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RemoveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,33 +678,22 @@ MonoBehaviour:
   slotSpace: {fileID: 6764422643495387051}
   slotPrefab: {fileID: 7436073067182543264, guid: d8d5ad73cf687e24dae3a33fc08443c2,
     type: 3}
-  onPrefabInstantiated:
+  onSlotPrefabCreatedFromDropped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 761712243816256197}
-        m_MethodName: OnPrefabInstantiated
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1702727739123344377}
-        m_MethodName: OnPrefabInstantiated
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1070535773589412882}
-        m_MethodName: OnPrefabInstantiated
+        m_MethodName: OnSlotPrefabCreatedFromDropped
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 761712243816256197}
+        m_MethodName: OnSlotPrefabCreatedFromDropped
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -715,7 +704,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2674061629193781485}
-        m_MethodName: OnPrefabInstantiated
+        m_MethodName: OnSlotPrefabCreatedFromDropped
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1702727739123344377}
+        m_MethodName: OnSlotPrefabCreatedFromDropped
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

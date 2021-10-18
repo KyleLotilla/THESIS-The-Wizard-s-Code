@@ -27,6 +27,14 @@ namespace DLSU.WizardCode.SpellCodes
             }
         }
 
+        public int EquippedSpellCodesCount
+        {
+            get
+            {
+                return equippedSpellCodes.Count;
+            }
+        }
+
         [SerializeField]
         private int maxEquipped;
         public int MaxEquipped
@@ -39,6 +47,14 @@ namespace DLSU.WizardCode.SpellCodes
 
             {
                 maxEquipped = value;
+            }
+        }
+
+        public bool IsMaxEquippedExceeded
+        {
+            get
+            {
+                return equippedSpellCodes.Count >= maxEquipped;
             }
         }
 
@@ -74,7 +90,7 @@ namespace DLSU.WizardCode.SpellCodes
             }
         }
 
-        public void AddSpellCode(SpellCode spellCode)
+        public void AddUnequippedSpellCode(SpellCode spellCode)
         {
             Debug.Assert(!spellCode.IsEquipped, name + ": Adding Spell that is Equipped");
             if (!spellCode.IsEquipped)
@@ -83,13 +99,23 @@ namespace DLSU.WizardCode.SpellCodes
             }
         }
 
+        public void RemoveUnequippedSpellCode(SpellCode spellCode)
+        {
+            Debug.Assert(!spellCode.IsEquipped, name + ": Removing Spell that is Equipped");
+            if (!spellCode.IsEquipped)
+            {
+                unequippedSpellCodes.Remove(spellCode);
+            }
+        }
+
         public void EquipSpellCode(SpellCode spellCode)
         {
-            if (equippedSpellCodes.Count + 1 < MaxEquipped)
+            if (equippedSpellCodes.Count < MaxEquipped)
             {
                 Debug.Assert(!spellCode.IsEquipped, name + ": Equipping Spell that is already equipped");
                 if (!spellCode.IsEquipped)
                 {
+                    RemoveUnequippedSpellCode(spellCode);
                     equippedSpellCodes.Add(spellCode);
                     spellCode.IsEquipped = true;
                 }
@@ -103,15 +129,7 @@ namespace DLSU.WizardCode.SpellCodes
             {
                 equippedSpellCodes.Remove(spellCode);
                 spellCode.IsEquipped = false;
-            }
-        }
-
-        public void RemoveSpellCode(SpellCode spellCode)
-        {
-            Debug.Assert(!spellCode.IsEquipped, name + ": Removing Spell that is Equipped");
-            if (!spellCode.IsEquipped)
-            {
-                unequippedSpellCodes.Remove(spellCode);
+                AddUnequippedSpellCode(spellCode);
             }
         }
     }

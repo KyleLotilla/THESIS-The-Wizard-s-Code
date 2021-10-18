@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6617473428028119694}
-  - component: {fileID: 8254837071551329670}
+  - component: {fileID: 6236776552709328175}
   m_Layer: 0
   m_Name: OnGoalReached
   m_TagString: Untagged
@@ -247,7 +247,7 @@ Transform:
   m_Father: {fileID: 5067573640866652475}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8254837071551329670
+--- !u!114 &6236776552709328175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

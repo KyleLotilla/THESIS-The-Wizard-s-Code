@@ -21,6 +21,7 @@ namespace DLSU.WizardCode.UI.Tabs
         private UnityEvent onNoTabSwitch;
 
         private Dictionary<Tag, Tab> tagTabMap;
+        private Tag previousTabTag;
 
         private void Awake()
         {
@@ -72,11 +73,17 @@ namespace DLSU.WizardCode.UI.Tabs
             SwitchTab(null);
         }
 
+        public void SwitchToPreviousTab()
+        {
+            SwitchTab(previousTabTag);
+        }
+
         private void HideCurrentTab()
         {
             if (tagOfCurrentTab != null)
             {
                 tagTabMap[tagOfCurrentTab].SwitchOutTab();
+                previousTabTag = tagOfCurrentTab;
                 tagOfCurrentTab = null;
             }
         }

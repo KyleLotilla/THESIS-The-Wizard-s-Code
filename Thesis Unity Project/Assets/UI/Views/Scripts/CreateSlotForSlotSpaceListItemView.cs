@@ -14,18 +14,6 @@ namespace DLSU.WizardCode.UI.Views
         private GameObject slotPrefab;
         [SerializeField]
         private UnityEventOneGameObjectOneNativeObjectParam onSlotWithDataCreated;
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void OnItemViewWithDataCreated(object data)
         {
             GameObject slot = Instantiate(slotPrefab);

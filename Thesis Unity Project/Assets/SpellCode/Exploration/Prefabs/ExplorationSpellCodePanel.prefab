@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 1379044103044695025}
   - component: {fileID: 2187255240621009522}
   m_Layer: 5
-  m_Name: NameText
+  m_Name: SpellCodeName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,5 +792,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a29a125a8a49842a7da51bfdf9f6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellIconsListView: {fileID: 8426017356716275728}
+  listView: {fileID: 8426017356716275728}
   maxSpellCodeSpells: {fileID: 11400000, guid: 3649c33d5d387f4438259c14d085317a, type: 2}

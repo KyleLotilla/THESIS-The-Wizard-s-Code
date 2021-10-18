@@ -18,31 +18,40 @@ public class ScriptableObjectTestScript : MonoBehaviour
     {
         
         SpellInstance moveRight = spellDatabase.GetSpellInstance(1);
-        SpellInstance fireball = spellDatabase.GetSpellInstance(5);
+        SpellInstance iceBeam = spellDatabase.GetSpellInstance(5);
         SpellInstance electro = spellDatabase.GetSpellInstance(3);
+        SpellInstance fireball = spellDatabase.GetSpellInstance(2);
         
-        spellInventory.EquipSpellInstance(fireball);
+        spellInventory.EquipSpellInstance(iceBeam);
         spellInventory.EquipSpellInstance(electro);
-
+        spellInventory.AddUnequippedSpellInstance(fireball);
        
         SpellCode spellCode = new SpellCode();
         spellCode.Name = "Penny!";
         spellCode.AddSpellInstance(moveRight);
-        spellCode.AddSpellInstance(fireball);
+        spellCode.AddSpellInstance(iceBeam);
         spellCodeInventory.EquipSpellCode(spellCode);
 
         SpellCode spellCode2 = new SpellCode();
         spellCode2.Name = "Not Penny!";
         spellCode2.AddSpellInstance(electro);
         spellCode2.AddSpellInstance(moveRight);
-        spellCode2.AddSpellInstance(fireball);
-        spellCodeInventory.EquipSpellCode(spellCode2);
-        /*
+        spellCode2.AddSpellInstance(iceBeam);
+        spellCodeInventory.AddUnequippedSpellCode(spellCode2);
+
+        for (int i = 0; i < 5; i++)
+        {
+            SpellCode spellCode3 = new SpellCode();
+            spellCode3.Name = "Test";
+            spellCode3.AddSpellInstance(electro);
+            spellCode3.AddSpellInstance(moveRight);
+            spellCodeInventory.AddUnequippedSpellCode(spellCode3);
+        }
+
         LevelProgression levelProgression = new LevelProgression();
         levelProgression.LevelID = 0;
-        levelProgression.HighScore = 3;
+        levelProgression.HighScore = 2;
         levelProgressionDatabase.AddProgression(levelProgression);
-       */
     }
 
     private void Start()

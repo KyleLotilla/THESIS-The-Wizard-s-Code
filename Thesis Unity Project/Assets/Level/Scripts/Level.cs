@@ -117,19 +117,17 @@ namespace DLSU.WizardCode.Levels
         [SerializeField]
         private List<int> movesRequirementsForStars;
 
-        public IEnumerable<int> MovesRequirementForStars
+        public int GetMovesRequirement(int numberOfStars)
         {
-            get
+            int movesRequirementIndex = numberOfStars - 2;
+            Debug.Assert(movesRequirementIndex >= 0 && movesRequirementIndex <= movesRequirementsForStars.Count, "Number Of Stars out of range");
+            if (movesRequirementIndex >= 0 && movesRequirementIndex <= movesRequirementsForStars.Count)
             {
-                return movesRequirementsForStars;
+                return movesRequirementsForStars[movesRequirementIndex];
             }
-        }
-
-        public int MaxStars
-        {
-            get
+            else
             {
-                return movesRequirementsForStars.Count + 1;
+                return 0;
             }
         }
 

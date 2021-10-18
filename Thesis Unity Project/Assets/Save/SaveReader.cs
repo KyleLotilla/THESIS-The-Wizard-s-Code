@@ -205,7 +205,7 @@ public class SaveReader : MonoBehaviour
                         int spellID = int.Parse(spellElement.Element("ID").Value);
                         //spellCode.AddSpell(spellDatabase.GetSpell(spellID));
                     }
-                    spellCodeInventory.AddSpellCode(spellCode);
+                    spellCodeInventory.AddUnequippedSpellCode(spellCode);
                 }
             }
         }

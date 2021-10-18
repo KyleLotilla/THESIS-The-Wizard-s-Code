@@ -12,18 +12,6 @@ public class SpaceHiglighter : MonoBehaviour
     [SerializeField]
     private Image spaceImage;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void HighlightSpace()
     {
         spaceImage.color = highlightedColor;

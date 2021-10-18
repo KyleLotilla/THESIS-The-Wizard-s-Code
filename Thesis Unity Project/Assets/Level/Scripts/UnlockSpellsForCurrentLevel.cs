@@ -24,7 +24,7 @@ namespace DLSU.WizardCode.Levels
             foreach (Spell spell in currentLevel.Value.UnlockableSpells)
             {
                 SpellInstance spellInstance = spellDatabase.GetSpellInstance(spell);
-                spellInventory.AddSpellInstance(spellInstance);
+                spellInventory.AddUnequippedSpellInstance(spellInstance);
                 unlockedSpellInstances.Add(spellInstance);
             }
             onUnlockedSpells?.Invoke(unlockedSpellInstances);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DLSU.WizardCode.Utit
+namespace DLSU.WizardCode.Util
 {
     public class DestroyGameObject : MonoBehaviour
     {
