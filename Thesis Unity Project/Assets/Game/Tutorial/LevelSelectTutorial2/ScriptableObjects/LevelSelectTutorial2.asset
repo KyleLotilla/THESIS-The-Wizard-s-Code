@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f550adc36848a3744a2ba10a6a6eca35, type: 3}
+  m_Name: LevelSelectTutorial2
+  m_EditorClassIdentifier: 
+  dialogues:
+  - tag: {fileID: 11400000, guid: 89876bc8e6de29e46b27ac077eea28d7, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 3419d7fa655e28e45b18041bb82cd0a1,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: c55142fca2c603c4bb99fe6b03fcab6f,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Looks like you have familiarized yourself with using spells to navigate
+        and perform actions of the stage!
+    - onDialogueReadEvent: {fileID: 11400000, guid: 90c41127a4111dd4caded5b70f3d0f13,
+        type: 2}
+      lineText: Head back to the <b>Spells</b> tab.
+  - tag: {fileID: 11400000, guid: f698c7d44ef16934fa9b27a9c3e59dd9, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 4c05b21ecf450b44280d376cea188d2e,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: 3ad660efa4c89c04ca22a036bafe2298,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: There's something that would be very useful that I want to teach
+        you!
+    - onDialogueReadEvent: {fileID: 11400000, guid: ca00646b1bef3ad488ed46a22c1cff75,
+        type: 2}
+      lineText: I think it's time you learned about using spellcodes. Head over to
+        the <b>Spellcodes</b> tab.
+  - tag: {fileID: 11400000, guid: 3ddb338a9d900b04f861391a0cc1ec04, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 5dee1bc116b8a6d4ca7c81d4b6b86c5d,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: f40b10f030d977145bb8a44315c0913a,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: 1c619ec2fa8ab2c46bd4a7d3228d6747,
+        type: 2}
+      lineText: <b>Spellcodes</b> are predefined sequence of spells combined together!
+    - onDialogueReadEvent: {fileID: 11400000, guid: 1c619ec2fa8ab2c46bd4a7d3228d6747,
+        type: 2}
+      lineText: This way you can immediately use them to perform certain actions
+        much more efficiently on your action queue!
+    - onDialogueReadEvent: {fileID: 11400000, guid: feed2d0149e4e10419680520ca05e497,
+        type: 2}
+      lineText: You can view your created spellcodes in the spellcode inventory and
+        equip them for use in your expeditions.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 1ab38bf1dae29e349b02f32a59f87d10,
+        type: 2}
+      lineText: You can add spellcodes to your inventory by pressing the create button.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: "Let\u2019s try to make a basic spellcode that will allow us to shoot
+        a fireball and move forward in succession."
+    - onDialogueReadEvent: {fileID: 11400000, guid: 1ab38bf1dae29e349b02f32a59f87d10,
+        type: 2}
+      lineText: Click the create button once you are ready.
+  - tag: {fileID: 11400000, guid: 205c25f67b9eac341a7ede48444d3b05, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: c090d6e9aeaed5c43a25fa6efcd6efb1,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: df092a55789021e4ab6528591b125cb7,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: You can create and edit your spellcode in this tab.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 289b92c2b0439ca44a89171c8fda00da,
+        type: 2}
+      lineText: "You can edit the contents of the spellcode and the spellcode\u2019s
+        name."
+    - onDialogueReadEvent: {fileID: 11400000, guid: 289b92c2b0439ca44a89171c8fda00da,
+        type: 2}
+      lineText: To start off, you give the spellcode any name that you like.
+    - onDialogueReadEvent: {fileID: 11400000, guid: b48b736a8cb195144a53fd7bfdd32757,
+        type: 2}
+      lineText: Then drag the fireball spell and the move right spell into the spellcode.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Take note that the order the spells are executed in the spellcode
+        are from left to right.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 66cf12832211e1e4e91765eed5aa7e1c,
+        type: 2}
+      lineText: "Once you\u2019re done creating the spellcode, click on the Save
+        button."
+  - tag: {fileID: 11400000, guid: ba9ed5465263454458fa1d2402549703, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 7ac81f25044e77449ab9eea45ef030e0,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: 8c6c8d35be5d5914ba1fa2786c422918,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Always remember to apply the concept of <b>abstraction</b> when performing
+        spells on the stage.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: Focus on using the spells that you think are relevant in completing
+        the stage!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: You can also use this concept when creating your spellcodes!
+    - onDialogueReadEvent: {fileID: 11400000, guid: e9d253b831d1cc64aa60f989b44fbee9,
+        type: 2}
+      lineText: Your created spellcodes will be displayed in your inventory below.
+    - onDialogueReadEvent: {fileID: 11400000, guid: b0b908654435f3443afbacf608583e90,
+        type: 2}
+      lineText: You can choose to edit them again if you feel like doing so by pressing
+        the edit button.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 476e9c667774e9a49ab7c7033940c0ca,
+        type: 2}
+      lineText: Or you could rather delete the spellcode instead by pressing the
+        delete button.
+    - onDialogueReadEvent: {fileID: 11400000, guid: b10233be88514fc43a459bfe663929e0,
+        type: 2}
+      lineText: "Let\u2019s add the created spellcode to our equipped spellcodes
+        by pressing the equip button."
+  - tag: {fileID: 11400000, guid: b86555e89d924c64ba90701ed561adaa, type: 2}
+    onDialogueStartEvent: {fileID: 11400000, guid: 3276f7b3e8bf7024694c7b63dca029e7,
+      type: 2}
+    onDialogueEndEvent: {fileID: 11400000, guid: 19b04ae8a10a34244b97e335749f8c15,
+      type: 2}
+    lines:
+    - onDialogueReadEvent: {fileID: 11400000, guid: a2ab938d3a8f3af4e9104e23cf3a6dd2,
+        type: 2}
+      lineText: Also note that you can also unequip your spellcodes and return them
+        to your inventory at any time.
+    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+        type: 2}
+      lineText: "Looks like we\u2019re ready to put our spellcode to use! Let\u2019s
+        head to the next stage."
+    - onDialogueReadEvent: {fileID: 11400000, guid: b2bb3c2b314781844af0b946ea8ece40,
+        type: 2}
+      lineText: Press the back button once you're ready.
