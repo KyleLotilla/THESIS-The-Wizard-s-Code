@@ -347,7 +347,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 230499655}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &168132346
+--- !u!114 &168132341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -356,23 +356,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 168132340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 317ade99d79749e439658bb5feb391ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 59a7dda9b65d7db4987723a156fd02ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelHolder: {fileID: 226247425}
+  tutorialSceneDatabase: {fileID: 11400000, guid: 61d834a8fb3bf0f45a093f85ecf5b487,
+    type: 2}
+  playerProfile: {fileID: 11400000, guid: 6782d752983911d4287d2683a358fb73, type: 2}
   currentLevel: {fileID: 11400000, guid: c5866b80fadaaa948b7a343c013a0b34, type: 2}
---- !u!114 &226247425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 430009204960224566, guid: 7fbd83b478251864c813f24305cecf69,
-    type: 3}
-  m_PrefabInstance: {fileID: 230499655}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e08a7134de35248ae6149daa5980a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  saveWriter: {fileID: 11400000, guid: d0025d299e7ce7a4cbef406467f6bb37, type: 2}
 --- !u!1001 &230499655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -923,13 +914,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772901917016828835, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772901917016828835, guid: 7fbd83b478251864c813f24305cecf69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772901917016828835, guid: 7fbd83b478251864c813f24305cecf69,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 168132346}
+      objectReference: {fileID: 168132341}
     - target: {fileID: 6772901917016828835, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
+      value: ProgressToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772901917016828835, guid: 7fbd83b478251864c813f24305cecf69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f912f3ce7158f74cbabc4162840134d,
+        type: 2}
+    - target: {fileID: 6772901917016828835, guid: 7fbd83b478251864c813f24305cecf69,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: DLSU.WizardCode.Tags.Tag, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6772901917174828181, guid: 7fbd83b478251864c813f24305cecf69,
         type: 3}

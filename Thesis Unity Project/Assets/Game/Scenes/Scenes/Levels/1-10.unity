@@ -5839,11 +5839,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: geyser_0 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8145711320261481979, guid: 0f712fbc156c7b54a9932e2553a8afb3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f712fbc156c7b54a9932e2553a8afb3, type: 3}
 --- !u!1001 &895319532
@@ -5857,11 +5852,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ice
-      objectReference: {fileID: 0}
-    - target: {fileID: 3033642671592210624, guid: 2b94276e9441cce47b5b0918a076cc18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3033642671592210684, guid: 2b94276e9441cce47b5b0918a076cc18,
         type: 3}
@@ -8023,11 +8013,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: geyser_0
       objectReference: {fileID: 0}
-    - target: {fileID: 8145711320261481979, guid: 0f712fbc156c7b54a9932e2553a8afb3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f712fbc156c7b54a9932e2553a8afb3, type: 3}
 --- !u!1001 &1285654096
@@ -8096,11 +8081,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: robot_0 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8204686937824286065, guid: 5bf1e61bf8c0d71459dfdc4f6b571613,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bf1e61bf8c0d71459dfdc4f6b571613, type: 3}
@@ -8312,11 +8292,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: fire_0
       objectReference: {fileID: 0}
-    - target: {fileID: 3361173649227034694, guid: 441946aafcf32d344a50375ebdfbb716,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3361173649227034698, guid: 441946aafcf32d344a50375ebdfbb716,
         type: 3}
       propertyPath: m_RootOrder
@@ -8441,11 +8416,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: robot_0
       objectReference: {fileID: 0}
-    - target: {fileID: 8204686937824286065, guid: 5bf1e61bf8c0d71459dfdc4f6b571613,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bf1e61bf8c0d71459dfdc4f6b571613, type: 3}
 --- !u!1001 &5945597139835213197
@@ -8455,28 +8425,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 729566037, guid: 78ba33f2799d37542b85570e14d87b8f, type: 3}
-      propertyPath: direction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945597138941657264, guid: 78ba33f2799d37542b85570e14d87b8f,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 20af795e9a4c0ea46a2aac01459af82e, type: 2}
     - target: {fileID: 5945597138941657265, guid: 78ba33f2799d37542b85570e14d87b8f,
         type: 3}
       propertyPath: m_Name
-      value: Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945597138941657265, guid: 78ba33f2799d37542b85570e14d87b8f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945597138941657265, guid: 78ba33f2799d37542b85570e14d87b8f,
-        type: 3}
-      propertyPath: m_TagString
       value: Wizard
       objectReference: {fileID: 0}
     - target: {fileID: 5945597138941657266, guid: 78ba33f2799d37542b85570e14d87b8f,

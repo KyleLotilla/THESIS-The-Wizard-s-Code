@@ -7952,23 +7952,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 729566037, guid: 78ba33f2799d37542b85570e14d87b8f, type: 3}
-      propertyPath: direction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945597138941657264, guid: 78ba33f2799d37542b85570e14d87b8f,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 20af795e9a4c0ea46a2aac01459af82e, type: 2}
     - target: {fileID: 5945597138941657265, guid: 78ba33f2799d37542b85570e14d87b8f,
         type: 3}
       propertyPath: m_Name
-      value: Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945597138941657265, guid: 78ba33f2799d37542b85570e14d87b8f,
-        type: 3}
-      propertyPath: m_TagString
       value: Wizard
       objectReference: {fileID: 0}
     - target: {fileID: 5945597138941657266, guid: 78ba33f2799d37542b85570e14d87b8f,

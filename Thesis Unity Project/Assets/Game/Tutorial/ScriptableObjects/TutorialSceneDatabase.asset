@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c687ddaef380274fb0f669989db239e, type: 3}
+  m_Name: TutorialSceneDatabase
+  m_EditorClassIdentifier: 
+  tutorialScenes:
+  - sceneTag: {fileID: 11400000, guid: ae492e1a54f2e6d4cba5ed424cf2a6a5, type: 2}
+    sceneName: OpeningCutscene
+    isALevelScene: 0
+    level: {fileID: 0}
+  - sceneTag: {fileID: 11400000, guid: 431bf01d499f5194e8dde9e4a4499779, type: 2}
+    sceneName: 1-1-Tutorial
+    isALevelScene: 1
+    level: {fileID: 11400000, guid: e20fabae7a4ad1749ad61094f2f9a22f, type: 2}
+  - sceneTag: {fileID: 11400000, guid: 0fe9e8b6b83b4c04fa992250b85df3fb, type: 2}
+    sceneName: LevelSelectTutorial1
+    isALevelScene: 0
+    level: {fileID: 0}
+  - sceneTag: {fileID: 11400000, guid: 7f912f3ce7158f74cbabc4162840134d, type: 2}
+    sceneName: 1-2-Tutorial
+    isALevelScene: 1
+    level: {fileID: 11400000, guid: 1082bf2da1fcd594985ced619be378d3, type: 2}
+  - sceneTag: {fileID: 11400000, guid: 7de84ee6a1848af4a86429bd4409a111, type: 2}
+    sceneName: LevelSelectTutorial2
+    isALevelScene: 0
+    level: {fileID: 0}
+  - sceneTag: {fileID: 11400000, guid: 7d1b5881655fd674399c441e697c9f8b, type: 2}
+    sceneName: 1-3-Tutorial
+    isALevelScene: 1
+    level: {fileID: 11400000, guid: f9e0a6d32b8705d41847a7b0d04bffbe, type: 2}

@@ -647,56 +647,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1577948716
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1577948718}
-  - component: {fileID: 1577948717}
-  m_Layer: 0
-  m_Name: ScriptableObjectContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1577948717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577948716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82a5ae444bf30145bc3eee935c62d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellDatabase: {fileID: 11400000, guid: fa9abf74d68861240a940fd130529673, type: 2}
-  spellInventory: {fileID: 11400000, guid: 806052326a32a4348bb5efd33e1be582, type: 2}
-  spellCodeInventory: {fileID: 11400000, guid: 6ddd5b4445676ff459e50133917c2fa8, type: 2}
-  levelDatabase: {fileID: 11400000, guid: ef8a46295ed920c4db8a50bf1b5137ba, type: 2}
-  playerLevelProgression: {fileID: 11400000, guid: f19662814661c2e47a353c1cfd24e68b,
-    type: 2}
-  playerProfile: {fileID: 11400000, guid: 6782d752983911d4287d2683a358fb73, type: 2}
---- !u!4 &1577948718
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577948716}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 666.33606, y: 398.83408, z: -220.83557}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905498894
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +807,9 @@ GameObject:
   - component: {fileID: 2088878584}
   - component: {fileID: 2088878583}
   - component: {fileID: 2088878582}
+  - component: {fileID: 2088878586}
   - component: {fileID: 2088878581}
+  - component: {fileID: 2088878585}
   m_Layer: 5
   m_Name: Play Game
   m_TagString: Untagged
@@ -940,8 +892,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2088878581}
-        m_MethodName: Load
+      - m_Target: {fileID: 2088878586}
+        m_MethodName: CheckTutorialProgression
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -992,3 +944,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088878579}
   m_CullTransparentMesh: 0
+--- !u!114 &2088878585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088878579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a7dda9b65d7db4987723a156fd02ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialSceneDatabase: {fileID: 11400000, guid: 61d834a8fb3bf0f45a093f85ecf5b487,
+    type: 2}
+  playerProfile: {fileID: 11400000, guid: 6782d752983911d4287d2683a358fb73, type: 2}
+  currentLevel: {fileID: 11400000, guid: c5866b80fadaaa948b7a343c013a0b34, type: 2}
+  saveWriter: {fileID: 11400000, guid: d0025d299e7ce7a4cbef406467f6bb37, type: 2}
+--- !u!114 &2088878586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088878579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75b0c6c0cfb1ca4b928875a547ac6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerProfile: {fileID: 11400000, guid: 6782d752983911d4287d2683a358fb73, type: 2}
+  tutorialSceneDatabase: {fileID: 11400000, guid: 61d834a8fb3bf0f45a093f85ecf5b487,
+    type: 2}
+  tutorialProgressionIsWithinTutorialProgression:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2088878585}
+        m_MethodName: ProgressToSceneWithTutorialProgressionOfPlayerProfile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  tutorialProgressionIsBeyondTutorialProgression:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2088878581}
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

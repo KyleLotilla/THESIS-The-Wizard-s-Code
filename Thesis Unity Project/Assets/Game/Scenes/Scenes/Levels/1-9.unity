@@ -6975,11 +6975,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: geyser_0 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8145711320261481979, guid: 0f712fbc156c7b54a9932e2553a8afb3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f712fbc156c7b54a9932e2553a8afb3, type: 3}
 --- !u!1001 &1056562689
@@ -7048,11 +7043,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: geyser_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8145711320261481979, guid: 0f712fbc156c7b54a9932e2553a8afb3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f712fbc156c7b54a9932e2553a8afb3, type: 3}
@@ -7194,11 +7184,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fire_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3361173649227034694, guid: 441946aafcf32d344a50375ebdfbb716,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3361173649227034698, guid: 441946aafcf32d344a50375ebdfbb716,
         type: 3}
@@ -7402,23 +7387,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 729566037, guid: 78ba33f2799d37542b85570e14d87b8f, type: 3}
-      propertyPath: direction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945597138941657264, guid: 78ba33f2799d37542b85570e14d87b8f,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 20af795e9a4c0ea46a2aac01459af82e, type: 2}
     - target: {fileID: 5945597138941657265, guid: 78ba33f2799d37542b85570e14d87b8f,
         type: 3}
       propertyPath: m_Name
-      value: Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 5945597138941657265, guid: 78ba33f2799d37542b85570e14d87b8f,
-        type: 3}
-      propertyPath: m_TagString
       value: Wizard
       objectReference: {fileID: 0}
     - target: {fileID: 5945597138941657266, guid: 78ba33f2799d37542b85570e14d87b8f,

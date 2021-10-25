@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/Scenes/LevelSelect.unity
     guid: aa7a4670df584fa47930528c189f3d4d
   - enabled: 1
-    path: Assets/Game/Scenes/Scenes/CutsceneTutorial.unity
+    path: Assets/Game/Scenes/Scenes/OpeningCutscene.unity
     guid: f5e82f1a4a7e3dd41aa971be567b8426
   - enabled: 1
     path: Assets/Game/Scenes/Scenes/Levels/1-1-Tutorial.unity

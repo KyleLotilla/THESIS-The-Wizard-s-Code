@@ -63,19 +63,6 @@ namespace DLSU.WizardCode.Levels
             }
         }
         [SerializeField]
-        private string tutorialSceneName;
-        public string TutorialSceneName
-        {
-            get
-            {
-                return tutorialSceneName;
-            }
-            set
-            {
-                tutorialSceneName = value;
-            }
-        }
-        [SerializeField]
         private Sprite levelOverview;
         public Sprite LevelOverview
         {

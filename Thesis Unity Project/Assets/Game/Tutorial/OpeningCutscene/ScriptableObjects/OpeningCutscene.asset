@@ -19,21 +19,37 @@ MonoBehaviour:
     onDialogueEndEvent: {fileID: 11400000, guid: a0cc4efab1617f148bd287e940b9d0e6,
       type: 2}
     lines:
-    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+    - onDialogueReadEvent: {fileID: 11400000, guid: 3da1b229405881c46a3d6bc4c6cffd9a,
         type: 2}
       lineText: Hello!
     - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
         type: 2}
-      lineText: 
+      lineText: Welcome to the magical world of <b> The Wizard's Code </b>
+    - onDialogueReadEvent: {fileID: 11400000, guid: 8f4ddead87c99d74e92e31053533f815,
+        type: 2}
+      lineText: This world is home to countless powerful wizards.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 1b47dafa69653de4094179222e6591eb,
+        type: 2}
+      lineText: These wizards have practiced and are able to wield various elemental
+        spells.
+    - onDialogueReadEvent: {fileID: 11400000, guid: a53e0a273dfd0c44c9679291461ae4ee,
+        type: 2}
+      lineText: However, this world is also home to many dangers and obstacles that
+        will challenge and block your path.
+    - onDialogueReadEvent: {fileID: 11400000, guid: bbf6e91421d2d5d4981c5506a1b7ead8,
+        type: 2}
+      lineText: Through training, the wizards have found out that their magical abilities
+        are able to get rid of these obstacles!
+    - onDialogueReadEvent: {fileID: 11400000, guid: 3da1b229405881c46a3d6bc4c6cffd9a,
+        type: 2}
+      lineText: Wait, are you a wizard in training? Well why didn't you say so!
     - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
         type: 2}
-      lineText: 
+      lineText: Are you looking to improve your skills and learn more spells?
     - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
         type: 2}
-      lineText: 
-    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
+      lineText: Lucky for you, I know my way around this world! I can join you and
+        tell you what I know as we go.
+    - onDialogueReadEvent: {fileID: 11400000, guid: 3da1b229405881c46a3d6bc4c6cffd9a,
         type: 2}
-      lineText: 
-    - onDialogueReadEvent: {fileID: 11400000, guid: e3186137c53ce8643b127f1faeb12dc7,
-        type: 2}
-      lineText: 
+      lineText: Well, are you ready to begin your adventure? Let's go!
