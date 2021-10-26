@@ -19,6 +19,10 @@ namespace DLSU.WizardCode.Scoring
             {
                 fillUpStarScoring.FillUp(levelProgressionOfLevel.HighScore);
             }
+            else
+            {
+                fillUpStarScoring.FillUp(0);
+            }
         }
     }
 }
