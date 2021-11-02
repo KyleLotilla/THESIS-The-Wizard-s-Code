@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 2298336390258907629}
   - component: {fileID: 3795406591845760813}
   - component: {fileID: 383440596189540415}
+  - component: {fileID: 4095560504851331446}
   m_Layer: 5
   m_Name: ResetButton
   m_TagString: Untagged
@@ -269,6 +270,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 4095560504851331446}
+        m_MethodName: CheckRemainingResets
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5910164354768336882}
         m_MethodName: ResetStack
         m_Mode: 1
@@ -310,6 +322,37 @@ MonoBehaviour:
   actionStackResetCount: {fileID: 11400000, guid: 5469bd73debdb034facfa0498a77d435,
     type: 2}
   resetButton: {fileID: 2298336390258907629}
+--- !u!114 &4095560504851331446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3609942912798254668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3170070f1e386ee449e9dd796a4f913d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionStackResetsCount: {fileID: 11400000, guid: 5469bd73debdb034facfa0498a77d435,
+    type: 2}
+  onHasResetsRemaining:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 927ede0c0120cec418996ba3c9a777e3, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onHasNoResetsRemaining:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4087289232062722352
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +699,7 @@ MonoBehaviour:
     type: 3}
   baseSpellCodeActionPrefab: {fileID: 7721501514287264453, guid: eca87138961626c488badc6d4f2e977a,
     type: 3}
+  spellCodeInventory: {fileID: 11400000, guid: 6ddd5b4445676ff459e50133917c2fa8, type: 2}
   spellCodeIcons: {fileID: 11400000, guid: 9864f4e82d3e73246b05bc01b549cd38, type: 2}
 --- !u!1 &7353591568813197342
 GameObject:

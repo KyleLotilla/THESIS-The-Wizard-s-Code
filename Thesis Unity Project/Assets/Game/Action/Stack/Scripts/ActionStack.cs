@@ -23,7 +23,6 @@ namespace DLSU.WizardCode.Actions.Stack
                 ticks = 0.0f;
             }
         }
-
         public bool CanSpawn
         {
             get
@@ -31,7 +30,6 @@ namespace DLSU.WizardCode.Actions.Stack
                 return spawnableActionSpawnOptions.Count > 0;
             }
         }
-
         [SerializeField]
         private Vector2 actionSlotSpawnPositionOffset;
         [SerializeField]
@@ -45,9 +43,22 @@ namespace DLSU.WizardCode.Actions.Stack
         [SerializeField]
         private List<ActionSpawnOptions> initialSpawnOptions;
 
+        private SparseArray<ActionType, List<GameObject>> spawnedActionObjectsLists;
+        public IEnumerable<GameObject> SpawnedActionObjects
+        {
+            get
+            {
+                List<GameObject> spawnedActions = new List<GameObject>();
+                foreach (List<GameObject> spawnActionObjectList in spawnedActionObjectsLists)
+                {
+                    spawnedActions.AddRange(spawnActionObjectList);
+                }
+                return spawnedActions;
+            }
+        }
+
         private SparseArray<ActionType, ActionSpawnOptions> spawnOptions;
         private Dictionary<ActionType, List<GameObject>> actionPrefabsMap;
-        private SparseArray<ActionType, List<GameObject>> spawnedActions;
         private List<ActionSpawnOptions> spawnableActionSpawnOptions;
         private int spawnedNonCustomMaxCount = 0;
         private float ticks = 0.0f;
@@ -56,7 +67,7 @@ namespace DLSU.WizardCode.Actions.Stack
         {
             spawnOptions = new SparseArray<ActionType, ActionSpawnOptions>();
             actionPrefabsMap = new Dictionary<ActionType, List<GameObject>>();
-            spawnedActions = new SparseArray<ActionType, List<GameObject>>();
+            spawnedActionObjectsLists = new SparseArray<ActionType, List<GameObject>>();
             spawnableActionSpawnOptions = new List<ActionSpawnOptions>();
 
             foreach (ActionSpawnOptions spawnOption in initialSpawnOptions)
@@ -88,7 +99,7 @@ namespace DLSU.WizardCode.Actions.Stack
                 {
                     if (actionSpawnOptions.HasCustomMaxSpawnedActions)
                     {
-                        List<GameObject> spawnedActionOfTargetType = spawnedActions[actionSpawnOptions.TargetActionType];
+                        List<GameObject> spawnedActionOfTargetType = spawnedActionObjectsLists[actionSpawnOptions.TargetActionType];
                         if (spawnedActionOfTargetType.Count < actionSpawnOptions.MaxSpawnedActions)
                         {
                             spawnableActionSpawnOptions.Add(actionSpawnOptions);
@@ -133,7 +144,7 @@ namespace DLSU.WizardCode.Actions.Stack
             {
                 if (actionSpawnOptions.HasCustomMaxSpawnedActions)
                 {
-                    List<GameObject> spawnedActionOfTargetType = spawnedActions[actionSpawnOptions.TargetActionType];
+                    List<GameObject> spawnedActionOfTargetType = spawnedActionObjectsLists[actionSpawnOptions.TargetActionType];
                     if (spawnedActionOfTargetType.Count >= actionSpawnOptions.MaxSpawnedActions)
                     {
                         spawnableActionSpawnOptions.Remove(actionSpawnOptions);
@@ -160,7 +171,7 @@ namespace DLSU.WizardCode.Actions.Stack
         public void AddActionSpawnOptions(ActionSpawnOptions actionSpawnOptions)
         {
             ActionType actionType = actionSpawnOptions.TargetActionType;
-            spawnedActions[actionType] = new List<GameObject>();
+            spawnedActionObjectsLists[actionType] = new List<GameObject>();
             spawnOptions[actionType] = actionSpawnOptions;
             actionPrefabsMap[actionType] = new List<GameObject>();
         }
@@ -221,7 +232,7 @@ namespace DLSU.WizardCode.Actions.Stack
                 if (actionHolder != null)
                 {
                     ActionType actionType = actionHolder.Action.ActionType;
-                    spawnedActions[actionType].Add(actionObject);
+                    spawnedActionObjectsLists[actionType].Add(actionObject);
                     ActionSpawnOptions spawnOption = spawnOptions[actionType];
                     if (!spawnOption.HasCustomMaxSpawnedActions)
                     {
@@ -259,8 +270,8 @@ namespace DLSU.WizardCode.Actions.Stack
                     Action actionToRemove = actionHolderToRemove.Action;
                     Debug.Assert(actionToRemove != null, name + ": Spawned Action Holder has no Action");
                     ActionType actionTypeOfActionToRemove = actionToRemove.ActionType;
-                    List<GameObject> spawnedActionsOfActionTypeToRemoveFrom = spawnedActions[actionTypeOfActionToRemove];
-                    bool isRemoved = spawnedActionsOfActionTypeToRemoveFrom.Remove(actionObject);
+                    List<GameObject> spawnedActionObjectsListOfActionTypeToRemoveFrom = spawnedActionObjectsLists[actionTypeOfActionToRemove];
+                    bool isRemoved = spawnedActionObjectsListOfActionTypeToRemoveFrom.Remove(actionObject);
 
                     if (isRemoved)
                     {
@@ -289,7 +300,7 @@ namespace DLSU.WizardCode.Actions.Stack
                 if (action != null)
                 {
                     ActionType actionType = action.ActionType;
-                    List<GameObject> spawnedActionsOfActionType = spawnedActions[actionType];
+                    List<GameObject> spawnedActionsOfActionType = spawnedActionObjectsLists[actionType];
                     if (spawnedActionsOfActionType != null)
                     {
                         return spawnedActionsOfActionType.Contains(actionObject);
@@ -303,13 +314,13 @@ namespace DLSU.WizardCode.Actions.Stack
         {
             if (actionStackResetCount.Value > 0)
             {
-                foreach (List<GameObject> spawnActionList in spawnedActions)
+                foreach (List<GameObject> spawnActionObjectList in spawnedActionObjectsLists)
                 {
-                    foreach (GameObject spawnAction in spawnActionList)
+                    foreach (GameObject spawnActionObject in spawnActionObjectList)
                     {
-                        Destroy(spawnAction);
+                        Destroy(spawnActionObject);
                     }
-                    spawnActionList.Clear();
+                    spawnActionObjectList.Clear();
                 }
                 spawnedNonCustomMaxCount = 0;
                 actionStackResetCount.Value--;

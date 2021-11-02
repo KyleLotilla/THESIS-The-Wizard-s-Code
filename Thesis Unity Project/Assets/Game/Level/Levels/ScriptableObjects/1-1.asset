@@ -16,12 +16,11 @@ MonoBehaviour:
   worldNumber: 1
   levelNumber: 1
   sceneName: 1-1
-  tutorialSceneName: 1-1-Tutorial
   levelOverview: {fileID: 21300000, guid: e08dc2038a2daf34e8502bc7ccf0b05e, type: 3}
   overallStarsNeededToUnlock: 0
   obstacles:
   - obstacle: {fileID: 11400000, guid: 61c542c3bd754e1478088bf668e0efcf, type: 2}
-    count: 1
+    count: 2
   unlockableSpells:
   - {fileID: 11400000, guid: 4151657c98eebf74d827600c955f77ad, type: 2}
   movesRequirementsForStars: 1200000010000000

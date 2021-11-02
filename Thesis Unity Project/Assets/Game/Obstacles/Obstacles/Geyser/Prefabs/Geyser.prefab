@@ -72,6 +72,8 @@ GameObject:
   - component: {fileID: 2586532627283012414}
   - component: {fileID: 9204768649403374375}
   - component: {fileID: 2035615758270999158}
+  - component: {fileID: 5893842815966260757}
+  - component: {fileID: 3512903469938552840}
   m_Layer: 0
   m_Name: Geyser
   m_TagString: Untagged
@@ -244,6 +246,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3512903469938552840}
+        m_MethodName: LogObstacleOvercame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDestroyAnimationEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5893842815966260757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145711320261481979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a32fffe97aa2d4d826ebc661a808cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle: {fileID: 11400000, guid: 9df5c61cb7fab384e887a9fc5b3a1896, type: 2}
+  onObstacleChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onNoObstacleSet:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3512903469938552840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145711320261481979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac389f310b4d874fa16b5bb2f8e5fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explorationLogger: {fileID: 11400000, guid: 7a7f3a4654973544ca74b86203ed5709, type: 2}
+  explorationTime: {fileID: 11400000, guid: 9bdd371b46e4d1342b1d63b3d2deb21f, type: 2}
+  obstalceHolder: {fileID: 5893842815966260757}

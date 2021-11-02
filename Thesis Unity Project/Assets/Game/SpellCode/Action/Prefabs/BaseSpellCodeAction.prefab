@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 7103650346026239755}
   - component: {fileID: 8267783335708112939}
   - component: {fileID: 8068822179018224686}
+  - component: {fileID: 8682122923731891742}
   m_Layer: 0
   m_Name: BaseSpellCodeAction
   m_TagString: Untagged
@@ -156,3 +157,18 @@ MonoBehaviour:
   onSpellCodeChanged:
     m_PersistentCalls:
       m_Calls: []
+  onNoSpellCodeSet:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8682122923731891742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721501514287264453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9604ad8f268209d42b7dcac07dd22af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

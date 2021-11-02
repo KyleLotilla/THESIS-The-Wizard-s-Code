@@ -72,6 +72,8 @@ GameObject:
   - component: {fileID: -3368515681234201635}
   - component: {fileID: 7490275123309857197}
   - component: {fileID: 2160075440013886470}
+  - component: {fileID: 2322140575343349351}
+  - component: {fileID: 8679392188635919012}
   m_Layer: 0
   m_Name: IceBlock
   m_TagString: Untagged
@@ -243,6 +245,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8679392188635919012}
+        m_MethodName: LogObstacleOvercame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDestroyAnimationEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2322140575343349351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3033642671592210624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a32fffe97aa2d4d826ebc661a808cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle: {fileID: 11400000, guid: 61c542c3bd754e1478088bf668e0efcf, type: 2}
+  onObstacleChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onNoObstacleSet:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8679392188635919012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3033642671592210624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac389f310b4d874fa16b5bb2f8e5fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explorationLogger: {fileID: 11400000, guid: 7a7f3a4654973544ca74b86203ed5709, type: 2}
+  explorationTime: {fileID: 11400000, guid: 9bdd371b46e4d1342b1d63b3d2deb21f, type: 2}
+  obstalceHolder: {fileID: 2322140575343349351}

@@ -16,6 +16,8 @@ namespace DLSU.WizardCode.Actions.UI
         [SerializeField]
         private GameObject baseSpellCodeActionPrefab;
         [SerializeField]
+        private SpellCodeInventory spellCodeInventory;
+        [SerializeField]
         private SpellCodeIcons spellCodeIcons;
 
         private Dictionary<int, GameObject> spellIDActionSlotPrefabMap;
@@ -27,11 +29,6 @@ namespace DLSU.WizardCode.Actions.UI
             spellIDActionSlotPrefabMap = new Dictionary<int, GameObject>();
             spellIDActionPrefabMap = new Dictionary<int, GameObject>();
             spellCodeActionSlotPrefabMap = new Dictionary<SpellCode, GameObject>();
-        }
-
-        void Update()
-        {
-
         }
 
         public GameObject GetActionSlotPrefab(SpellInstance spellInstace)
@@ -147,8 +144,11 @@ namespace DLSU.WizardCode.Actions.UI
                     spellCodeActionSlotPrefab.name = spellCode.Name;
                     spellCodeActionSlotPrefab.SetActive(false);
                     spellCodeActionSlotPrefabMap[spellCode] = spellCodeActionSlotPrefab;
-                    int spellCodeIndexInPool = spellCodeActionSlotPrefabMap.Count - 1;
-                    iconSlotOfActionSlot.Icon.sprite = spellCodeIcons.GetIcon(spellCodeIndexInPool);
+                    int spellCodeEquippedIndex = spellCodeInventory.GetEquippedSpellCodeIndex(spellCode);
+                    if (spellCodeEquippedIndex > -1)
+                    {
+                        iconSlotOfActionSlot.Icon.sprite = spellCodeIcons.GetIcon(spellCodeEquippedIndex);
+                    }
                     return spellCodeActionSlotPrefab;
                 }
             }
@@ -195,6 +195,11 @@ namespace DLSU.WizardCode.Actions.UI
                 if (spellCodeHolderOfSpellCodeAction != null)
                 {
                     spellCodeHolderOfSpellCodeAction.SpellCode = spellCode;
+                }
+                EquippedSpellCodeID equippedSpellCodeIDOfSpellCodeAction = spellCodeActionPrefab.GetComponent<EquippedSpellCodeID>();
+                if (equippedSpellCodeIDOfSpellCodeAction != null)
+                {
+                    equippedSpellCodeIDOfSpellCodeAction.ID = spellCodeInventory.GetEquippedSpellCodeIndex(spellCode);
                 }
             }
             return spellCodeActionPrefab;

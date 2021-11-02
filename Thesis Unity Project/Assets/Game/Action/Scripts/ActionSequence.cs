@@ -9,6 +9,13 @@ namespace DLSU.WizardCode.Actions
     {
         [SerializeField]
         private List<ActionExecutor> actionExecutors;
+        public IEnumerable<ActionExecutor> ActionExecutors
+        {
+            get
+            {
+                return actionExecutors;
+            }
+        }
         [SerializeField]
         private UnityEvent onSequenceExecutionStart;
         [SerializeField]
@@ -37,9 +44,11 @@ namespace DLSU.WizardCode.Actions
             if (!isExecuting)
             {
                 currentExecutingActionExecutorIndex = -1;
-                isExecuting = true;
-                onSequenceExecutionStart?.Invoke();
-                ExecuteNextAction();
+                isExecuting = TryToExecuteNextAction();
+                if (isExecuting)
+                {
+                    onSequenceExecutionStart?.Invoke();
+                }
             }
         }
 
@@ -55,7 +64,26 @@ namespace DLSU.WizardCode.Actions
             }
         }
 
-        public void ExecuteNextAction()
+        private bool TryToExecuteNextAction()
+        {
+            bool hasExecutedAction = false;
+            currentExecutingActionExecutorIndex++;
+            while (currentExecutingActionExecutorIndex < actionExecutors.Count && !hasExecutedAction)
+            {
+                hasExecutedAction = actionExecutors[currentExecutingActionExecutorIndex].Execute();
+                if (hasExecutedAction)
+                {
+                    actionExecutors[currentExecutingActionExecutorIndex].OnActionExecutionEnd.AddListener(ExecuteNextAction);
+                }
+                else
+                {
+                    currentExecutingActionExecutorIndex++;
+                }
+            }
+            return hasExecutedAction;
+        }
+
+        private void ExecuteNextAction()
         {
             if (isExecuting)
             {
@@ -63,22 +91,8 @@ namespace DLSU.WizardCode.Actions
                 {
                     actionExecutors[currentExecutingActionExecutorIndex].OnActionExecutionEnd.RemoveListener(ExecuteNextAction);
                 }
-                currentExecutingActionExecutorIndex++;
-                bool hasExecutedAction = false;
-                while (currentExecutingActionExecutorIndex < actionExecutors.Count && !hasExecutedAction)
-                {
-                    hasExecutedAction = actionExecutors[currentExecutingActionExecutorIndex].Execute();
-                    if (hasExecutedAction)
-                    {
-                        actionExecutors[currentExecutingActionExecutorIndex].OnActionExecutionEnd.AddListener(ExecuteNextAction);
-                    }
-                    else
-                    {
-                        currentExecutingActionExecutorIndex++;
-                    }
-                }
-
-                if (currentExecutingActionExecutorIndex >= actionExecutors.Count)
+                bool hasExecutedAction = TryToExecuteNextAction();
+                if (!hasExecutedAction)
                 {
                     EndExecution();
                 }

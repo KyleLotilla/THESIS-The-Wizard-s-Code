@@ -27,6 +27,14 @@ namespace DLSU.WizardCode.Spells
             }
         }
 
+        public int EquippedSpellInstancesCount
+        {
+            get
+            {
+                return equippedSpellInstances.Count;
+            }
+        }
+
         [SerializeField]
         private int maxEquipped;
         public int MaxEquipped

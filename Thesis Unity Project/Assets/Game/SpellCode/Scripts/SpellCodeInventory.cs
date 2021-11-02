@@ -133,6 +133,11 @@ namespace DLSU.WizardCode.SpellCodes
                 AddUnequippedSpellCode(spellCode);
             }
         }
+
+        public int GetEquippedSpellCodeIndex(SpellCode spellCode)
+        {
+            return equippedSpellCodes.IndexOf(spellCode);
+        }
     }
 
 }

@@ -70,6 +70,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9161124134927573467}
+        m_MethodName: LogObstacleOvercame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8204686937824286065
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +98,8 @@ GameObject:
   - component: {fileID: 4871620424916163760}
   - component: {fileID: 5443448478705369234}
   - component: {fileID: 263712566449553145}
+  - component: {fileID: 5142821308642275938}
+  - component: {fileID: 9161124134927573467}
   m_Layer: 0
   m_Name: UnpoweredRobot
   m_TagString: Untagged
@@ -316,3 +329,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialTagCollisionListeners:
   - {fileID: 2615403867876078893}
+--- !u!114 &5142821308642275938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204686937824286065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a32fffe97aa2d4d826ebc661a808cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle: {fileID: 11400000, guid: a1ee15a9a68cf904d805ea66af590c33, type: 2}
+  onObstacleChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onNoObstacleSet:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9161124134927573467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204686937824286065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac389f310b4d874fa16b5bb2f8e5fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explorationLogger: {fileID: 11400000, guid: 7a7f3a4654973544ca74b86203ed5709, type: 2}
+  explorationTime: {fileID: 11400000, guid: 9bdd371b46e4d1342b1d63b3d2deb21f, type: 2}
+  obstalceHolder: {fileID: 5142821308642275938}
