@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DLSU.WizardCode.Logging.TitleScreen
+namespace DLSU.WizardCode.Logging.UI
 {
-    public class ExportLogsWithTestCodeFromInputFieldAsFileName : MonoBehaviour
+    public class UploadLogsToDropboxWithTestCodeFromInputFieldAsFileName : MonoBehaviour
     {
         [SerializeField]
-        private LogsExporter logsExporter;
+        private LogsDropboxUploader logsDropboxUploader;
         [SerializeField]
         private InputField inputField;
 
-        public void ExportLogs()
+        public void UploadLogs()
         {
             if (inputField.text.Length > 0)
             {
                 string testCode = inputField.text;
                 string fileName = testCode + "_LOGS.zip";
-                logsExporter.ExportLogs(fileName);
+                logsDropboxUploader.StartUploadLogs(fileName);
             }
         }
     }

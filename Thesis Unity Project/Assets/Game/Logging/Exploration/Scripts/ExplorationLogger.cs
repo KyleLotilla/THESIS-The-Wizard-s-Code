@@ -49,7 +49,8 @@ namespace DLSU.WizardCode.Logging.Exploration
                 explorationLogXDocument.Root.Add(explorationLogEventsRootElement);
                 XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
                 xmlWriterSettings.Indent = true;
-                string savePath = Path.Combine(Application.dataPath, relativePathOfLogsInDataPath.Value);
+                //string savePath = Path.Combine(Application.dataPath, relativePathOfLogsInDataPath.Value);
+                string savePath = Path.Combine(Application.persistentDataPath, relativePathOfLogsInDataPath.Value);
                 string fileNamePath = Path.Combine(savePath, fileName);
 
                 if (!Directory.Exists(savePath))
